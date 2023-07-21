@@ -17,7 +17,11 @@ class ST(Enum):
 
 
 tableTags = {
-    frozenset({ST.keinParaOdMetaP, ST.sternPolygon, ST.galaxie}): {370},
+    frozenset({ST.keinParaOdMetaP, ST.sternPolygon, ST.galaxie}): {
+        370,
+        402,
+        403,
+    },
     frozenset(
         {ST.universum, ST.keinParaOdMetaP, ST.sternPolygon, ST.gleichfoermigesPolygon}
     ): {14},
@@ -152,6 +156,7 @@ tableTags = {
         397,
         398,
         399,
+        404,
     },
     frozenset({ST.sternPolygon, ST.galaxie}): {
         0,

@@ -86,7 +86,7 @@ Besser die Readme aus Markdown mit einem Markdown-Leseprogramm lesen!
     * --primzahlwirkung= 
         * universum,richtungrichtung,absichtgalaxie,absichtgalaxiereziproke,universumreziproke,dagegengegentranszendentalie,neutralegegentranszendentalie
     * --grundstrukturen= 
-        * modelofhierarchicalcomplexity,Transzendentalien,bedingung,massnahmen,relativreziprokuniversell,universellerkomperativ,existenzialien,extremalien,erwartungen,leidenschaft,relativerzeitbetrag,zahlenvergleich,bestrebung,prinzipien,attraktionen,optimierung,themen,bedeutung,reziproke,achtung,zeit,absicht16,absicht17,absicht6,absicht7,regung,verhalten,energie,garben,nachvollziehen,empathie,absicht1/6,innerewerte,absicht10,geist,reflex,lust,paradigmen,wirklichkeit,stimmung,klasse,ordnen,metasysteme,absicht1pro8,ziele,konkreta,gefuehle,abhaengigkeit,karte,fundament,positionen,vorstellungen,sollen,ansichten,verbundenheiten,absicht13,liebe,koalitionen,impulse,trieb,reflektion,zustaende
+        * modelofhierarchicalcomplexity,Transzendentalien,bedingung,massnahmen,relativreziprokuniversell,universellerkomperativ,existenzialien,extremalien,erwartungen,leidenschaft,relativerzeitbetrag,zahlenvergleich,bestrebung,prinzipien,attraktionen,optimierung,themen,bedeutung,reziproke,achtung,zeit,absicht16,absicht17,absicht6,absicht7,regung,verhalten,energie,garben,nachvollziehen,empathie,absicht1/6,innerewerte,absicht10,geist,reflex,lust,paradigmen,wirklichkeit,rechnen,stimmung,klasse,ordnen,metasysteme,absicht1pro8,ziele,konkreta,gefuehle,abhaengigkeit,karte,fundament,positionen,vorstellungen,sollen,ansichten,verbundenheiten,absicht13,liebe,koalitionen,impulse,trieb,reflektion,zustaende
     * --wirtschaft= 
         * fachgebiete,pflanzen,maschinen,organisationsform,system,funktioniert,erklärung,bwl
     * --procontra= 
@@ -95,9 +95,9 @@ Besser die Readme aus Markdown mit einem Markdown-Leseprogramm lesen!
     * --bedeutung= 
         * primzahlkreuz,inreta,vorzeichen,primzahlen,anwendungdersonnenundmonde,zählungen,jura,vollkommenheit,gestirn,konjunktiv,mechanismen
     * --gebrochen-rational_Galaxie_n/m= 
-        * 21,23,5,15,6,10,16,22,13,11,14,4,3,18,19,9,20,8,2,12,7,17
+        * 21,2,12,15,18,4,10,22,8,17,23,7,11,9,5,16,3,6,19,14,13,20
     * --gebrochen-rational_Universum_n/m= 
-        * 21,23,5,15,6,10,16,22,13,11,14,4,3,18,19,9,20,8,2,12,7,17
+        * 21,2,12,15,18,4,10,22,8,17,23,7,11,9,5,16,3,6,19,14,13,20
     * --symbole 
     * --eigenschaften= 
         * weisheit,rechte,unterlegen,streit,einklinken,familiebrauchen,bescheiden,selbstsucht,wissenschaft,arschloch,liebe,selbstlos,eintönig,abgeneigt,ehrlich,tragweite,wertlos,familiaer,sanft,vereinenverbinden,aehnlich,gut,sinn,zeit,egalitaerautoritaer,meinungen,meinungsintelligenz,sittlichkeit,führung,durchleuchten,foerdern,überheblich,liebepolung,egoismus,geltung,gleich,ueberleben

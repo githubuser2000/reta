@@ -762,12 +762,13 @@ for (i = 0; i < tdClasses1.length; i++)
         }
   }
   */
+  /*
   sPolygon = new StarPolygon(250, 'brown');
   polyg1 = sPolygon.drawStarPolygon(7, 125, 125, 36, Math.PI/14, 3);
   polyg2 = sPolygon.drawStarPolygon(10, 125, 125, 130, Math.PI/2, 5);
   polyg2 = sPolygon.drawStarPolygon(10, 125, 125, 130, Math.PI/2, 5);
   document.body.style.backgroundAttachment = "fixed"
-  document.body.style.backgroundImage = 'url(' + polyg2 + ')';
+  document.body.style.backgroundImage = 'url(' + polyg2 + ')';*/
 };
 
 function makeMapsOfHeadLCheckB(p1: string, p2: string | null, num: string | number, tags: any): void {

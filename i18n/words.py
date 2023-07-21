@@ -313,6 +313,7 @@ wahl15: dict = {
     "1": _("Regungen_(1)"),
     "30": _("Energie_und_universelle_Eigenschaften_(30)"),
     "14": _("Stimmungen_Kombinationen_(14)"),
+    "14_6": _("Rechnen"),
     "20": _("Klassen_(20)"),
     "37": _("Empathie_(37)"),
     "31": _("Garben_und_Verhalten_nachfühlen(31)"),
@@ -2194,13 +2195,23 @@ paraNdataMatrix: list = [
     (
         ParametersMain.grundstrukturen,
         (
+            _("Rechnen"),
+            _("rechnen"),
+        ),
+        {
+            404,
+        },
+    ),
+    (
+        ParametersMain.grundstrukturen,
+        (
             _("Stimmungen_Kombinationen_(14)"),
             _("stimmung"),
             _("stimmungen"),
             _("kombination"),
             _("kombinationen"),
         ),
-        {290, 296, 325, 326, 327},
+        {290, 296, 325, 326, 327, 402, 403},
     ),
     (
         ParametersMain.grundstrukturen,
