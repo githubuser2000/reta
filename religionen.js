@@ -73,7 +73,7 @@ class gleichfPolygon {
         this.context.strokeStyle = farbe;
         this.context.globalAlpha = 0.6;
     }
-    drawPolygon(n, centerX, centerY, radius, startAngle = 0) {
+    drawPolygon(n, centerX, centerY, radius, startAngle = 0, blurVar = 1) {
         if (n < 2) {
             // Koordinaten des Punkts
             const x = centerX;
@@ -86,7 +86,7 @@ class gleichfPolygon {
             this.context.beginPath();
             //this.context.fillRect(x - size, y - size, size * 2, size * 2);
             this.context.arc(x, y, radius1, 0, size * Math.PI);
-            this.context.filter = "blur(1px)";
+            this.context.filter = "blur(" + blurVar.toString() + "px)";
             this.context.closePath();
             this.context.stroke();
             return this.canvas.toDataURL();
@@ -104,7 +104,7 @@ class gleichfPolygon {
                 this.context.lineTo(x, y);
             }
         }
-        this.context.filter = "blur(1px)";
+        this.context.filter = "blur(" + blurVar.toString() + "px)";
         this.context.closePath();
         this.context.stroke();
         return this.canvas.toDataURL();
@@ -728,13 +728,48 @@ window.onload = function () {
           }
     }
     */
-    /*
-    sPolygon = new StarPolygon(250, 'brown');
-    polyg1 = sPolygon.drawStarPolygon(7, 125, 125, 36, Math.PI/14, 3);
-    polyg2 = sPolygon.drawStarPolygon(10, 125, 125, 130, Math.PI/2, 5);
-    polyg2 = sPolygon.drawStarPolygon(10, 125, 125, 130, Math.PI/2, 5);
-    document.body.style.backgroundAttachment = "fixed"
-    document.body.style.backgroundImage = 'url(' + polyg2 + ')';*/
+    const backgr = urlParams.get("background");
+    if (backgr === "710" || backgr === "107") {
+        sPolygon = new StarPolygon(250, 'brown');
+        polyg1 = sPolygon.drawStarPolygon(7, 125, 125, 36, Math.PI / 14, 3);
+        polyg2 = sPolygon.drawStarPolygon(10, 125, 125, 130, Math.PI / 2, 5);
+        polyg2 = sPolygon.drawStarPolygon(10, 125, 125, 130, Math.PI / 2, 5);
+        document.body.style.backgroundAttachment = "fixed";
+        document.body.style.backgroundImage = 'url(' + polyg2 + ')';
+    }
+    else if (backgr === "7") {
+        sPolygon = new StarPolygon(250, 'brown');
+        polyg1 = sPolygon.drawStarPolygon(7, 125, 125, 130, Math.PI / 14, 3);
+        document.body.style.backgroundAttachment = "fixed";
+        document.body.style.backgroundImage = 'url(' + polyg1 + ')';
+    }
+    else if (backgr === "10") {
+        sPolygon = new StarPolygon(250, 'brown');
+        polyg2 = sPolygon.drawStarPolygon(10, 125, 125, 130, Math.PI / 2, 5);
+        polyg2 = sPolygon.drawStarPolygon(10, 125, 125, 130, Math.PI / 2, 5);
+        document.body.style.backgroundAttachment = "fixed";
+        document.body.style.backgroundImage = 'url(' + polyg2 + ')';
+    }
+    else if (backgr === "1pro5") {
+        gfPolygon = new gleichfPolygon(250, 'brown');
+        polyg2 = gfPolygon.drawPolygon(5, 125, 125, 100, 0, 5);
+        document.body.style.backgroundAttachment = "fixed";
+        document.body.style.backgroundImage = 'url(' + polyg2 + ')';
+    }
+    else if (backgr === "1pro6") {
+        gfPolygon = new gleichfPolygon(250, 'brown');
+        polyg2 = gfPolygon.drawPolygon(6, 125, 125, 100, 0, 5);
+        document.body.style.backgroundAttachment = "fixed";
+        document.body.style.backgroundImage = 'url(' + polyg2 + ')';
+    }
+    else if (backgr === "1pro5m6" || backgr == "1pro6m5") {
+        gfPolygon = new gleichfPolygon(250, 'brown');
+        polyg2 = gfPolygon.drawPolygon(5, 125, 125, 80, 0, 5);
+        polyg2 = gfPolygon.drawPolygon(6, 125, 125, 100, 0, 5);
+        polyg2 = gfPolygon.drawPolygon(100, 125, 125, 110, 0, 5);
+        document.body.style.backgroundAttachment = "fixed";
+        document.body.style.backgroundImage = 'url(' + polyg2 + ')';
+    }
 };
 function makeMapsOfHeadLCheckB(p1, p2, num, tags) {
     try {
