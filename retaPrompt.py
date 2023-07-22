@@ -677,7 +677,6 @@ def PromptScope():
             (i18n.befehle2["l"] in Txt.liste)
             or ("BefehlSpeicherungLöschen" in Txt.liste)
         ) and len(Txt.liste) == 1:
-
             if "--" + i18n.ausgabeParas["nocolor"] in Txt.listeE:
                 print(
                     str(
@@ -795,7 +794,6 @@ def PromptGrosseAusgabe(
         and i18n.befehle2["keineEinZeichenZeilenPlusKeineAusgabeWelcherBefehlEsWar"]
         not in Txt.listeE
     ):
-
         if ifPrintCmdAgain(Txt):
             if "--" + i18n.ausgabeParas["nocolor"] in Txt.listeE:
                 print(
@@ -831,23 +829,43 @@ def PromptGrosseAusgabe(
     ) and len(Txt.liste) == 2:
         cmd_gave_output = True
         buchstabe: str
+        befehlskette = Txt.text.split()
         if (
-            Txt.liste[0] == i18n.befehle2["abc"]
-            or Txt.liste[0] == i18n.befehle2["abcd"]
+            len(befehlskette)
+            == 2
+            # and len(befehlskette[0]) > 1
+            # and len(befehlskette[1]) > 1
         ):
-            buchstaben = Txt.liste[1]
-        else:
-            buchstaben = Txt.liste[0]
-        print(
-            str(
-                " ".join(
-                    [
-                        "".join(str(ord(buchstabe.lower()) - 96))
-                        for buchstabe in buchstaben
-                    ]
+            if befehlskette[1] not in i18nRP.replacements.values():
+                if (
+                    befehlskette[0] == i18n.befehle2["abc"]
+                    or befehlskette[0] == i18n.befehle2["abcd"]
+                ):
+                    buchstaben = befehlskette[1]
+                else:
+                    buchstaben = befehlskette[0]
+            else:
+                if (
+                    befehlskette[0] == i18n.befehle2["abc"]
+                    or befehlskette[0] == i18n.befehle2["abcd"]
+                ):
+                    buchstaben = {
+                        value: key for key, value in i18nRP.replacements.items()
+                    }[befehlskette[1]]
+                else:
+                    buchstaben = {
+                        value: key for key, value in i18nRP.replacements.items()
+                    }[befehlskette[0]]
+            print(
+                str(
+                    " ".join(
+                        [
+                            "".join(str(ord(buchstabe.lower()) - 96))
+                            for buchstabe in buchstaben
+                        ]
+                    )
                 )
             )
-        )
     if len({i18n.befehle2["kurzbefehle"]} & Txt.mengeE) > 0:
         cmd_gave_output = True
         print(
@@ -861,10 +879,8 @@ def PromptGrosseAusgabe(
     if len({i18n.befehle2["befehle"]} & Txt.mengeE) > 0:
         cmd_gave_output = True
         print("{}: {}".format(i18nRP.befehleWort["Befehle"], str(befehle)[1:-1]))
-    if len({i18n.befehle2["help"], i18n.befehle2["hilfe"]} & Txt.mengeE) > 0 or (
-        i18n.befehle2["h"] in Txt.listeE
-        and i18n.befehle2["abc"] not in Txt.listeE
-        and i18n.befehle2["abcd"] not in Txt.listeE
+    if Txt.hasWithoutABC(
+        {i18n.befehle2["h"], i18n.befehle2["help"], i18n.befehle2["hilfe"]}
     ):
         cmd_gave_output = True
         retaPromptHilfe()
@@ -971,7 +987,6 @@ def PromptGrosseAusgabe(
             i18nRP = i18n.retaPrompt
 
     if fullBlockIsZahlenbereichAndBruch and (bedingungZahl or bedingungBrueche):
-
         if Txt.hasWithoutABC({i18n.befehle2["leeren"]}):
             for _ in range(os.get_terminal_size().lines + 1):
                 print()
@@ -1887,7 +1902,6 @@ def retaExecuteNprint(
         i18n.befehle2["keineEinZeichenZeilenPlusKeineAusgabeWelcherBefehlEsWar"]
         not in stextE
     ):
-
         if ifPrintCmdAgain(Txt):
             if "--" + i18n.ausgabeParas["nocolor"] in stextE:
                 print("[code]" + (" ".join(kette)) + "[/code]")
@@ -2051,7 +2065,6 @@ def bruchBereichsManagementAndWbefehl(zahlenBereichC, stext, zahlenAngaben_):
                 )
                 or EsGabzahlenAngaben
             ):
-
                 print(i18nRP.out3Saetze)
         bdNeu = set()
         for bDazu in bruch_GanzZahlReziproke:
@@ -2081,7 +2094,6 @@ def bruchBereichsManagementAndWbefehl(zahlenBereichC, stext, zahlenAngaben_):
         bruchRanges3 = {}
         bruch_KeinGanzZahlReziprokeEnDict = {}
         for k, (brZahlen, no1brueche) in enumerate(bruch_KeinGanzZahlReziproke.items()):
-
             for no1bruch in no1brueche:
                 if len(no1bruch) > 0 and no1bruch[0] == i18n.befehle2["v"]:
                     no1bruch = no1bruch[1:]
@@ -2201,7 +2213,7 @@ def bruchBereichsManagementAndWbefehl(zahlenBereichC, stext, zahlenAngaben_):
             )
 
         bruchDict = {}
-        for ((bruchRange, bruch_KeinGanzZahlReziprok_), pfauList) in zip(
+        for (bruchRange, bruch_KeinGanzZahlReziprok_), pfauList in zip(
             bruch_KeinGanzZahlReziproke.items(), pfaue.values()
         ):
             bruch_KeinGanzZahlReziprok_2 = set()
@@ -2390,8 +2402,8 @@ def addMoreVals(EsGabzahlenAngaben, bruch2, bruch_GanzZahlReziprokeDazu, dazu, s
         sdazu += [str(int(bruch2))]
         EsGabzahlenAngaben = True
     if bruch2.denominator % bruch2.numerator == 0:
-        dazu += ["1/" + str(int(bruch2 ** -1))]
-        bruch_GanzZahlReziprokeDazu += [str(int(bruch2 ** -1))]
+        dazu += ["1/" + str(int(bruch2**-1))]
+        bruch_GanzZahlReziprokeDazu += [str(int(bruch2**-1))]
     return EsGabzahlenAngaben, bruch_GanzZahlReziprokeDazu, dazu, sdazu
 
 
@@ -2428,7 +2440,6 @@ def PromptVonGrosserAusgabeSonderBefehlAusgaben(loggingSwitch, Txt, cmd_gave_out
 
 
 def verdreheWoReTaBefehl(text1: str, text2: str, text3: str, PromptMode: PromptModus):
-
     # x("VERDREHT ?", [text1, text2, text3, PromptMode])
     if text2[:4] == "reta" and text1[:4] != "reta" and len(text3) > 0:
         return text2, text1, re.split(gspattern, text2)
