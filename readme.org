@@ -47,6 +47,7 @@
 ***** unwichtiges
 + Ich könnte erweitern aus welchen Dingen ich noch bestehe, der höheren Art, wie höhere Gefühle und Impulse, etc. Denn das gabs vorher nicht.
 *** 2. Feature Ideen
++ Dass man in der html per Parameter Dinge vorselektieren kann.
 + " * " mit "?" oder regex überall auch, z.B. bei 15_*_10 oder bei Zahlenbereichen oder bei spalten.
   + Ich könnte direkt die Python Regexe dafür verwenden, das also weiterleiten.
 + Alles in Klammern ermöglichen und nicht nur Generatoren aus Python. Außerdem Formeln erlauben, wo jetzt schon Generatoren funktionieren.
