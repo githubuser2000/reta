@@ -64,6 +64,32 @@ function checksum(object) {
         return hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
     });
 }
+function getRandomColor() {
+    // Generiere eine zufällige Hex-Farbe (#RRGGBB)
+    const letters = "0123456789ABCDEF";
+    let color = "#";
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+function darkenColor(color) {
+    // Wandele die Hex-Farbe in eine RGB-Farbe um
+    const hex = color.slice(1); // Entferne das #-Zeichen am Anfang
+    const r = parseInt(hex.substring(0, 2), 16);
+    const g = parseInt(hex.substring(2, 4), 16);
+    const b = parseInt(hex.substring(4, 6), 16);
+    // Verringere die RGB-Werte, um die Farbe zu verdunkeln
+    const darkerR = Math.max(0, Math.round(r * 0.5));
+    const darkerG = Math.max(0, Math.round(g * 0.5));
+    const darkerB = Math.max(0, Math.round(b * 0.5));
+    // Wandle die verdunkelten RGB-Werte zurück in eine Hex-Farbe um
+    const darkerHex = "#" +
+        ("00" + darkerR.toString(16)).slice(-2) +
+        ("00" + darkerG.toString(16)).slice(-2) +
+        ("00" + darkerB.toString(16)).slice(-2);
+    return darkerHex;
+}
 class gleichfPolygon {
     constructor(size = 100, farbe = 'black') {
         this.canvas = document.createElement('canvas');
@@ -729,8 +755,10 @@ window.onload = function () {
     }
     */
     const backgr = urlParams.get("background");
+    const randomColor = getRandomColor();
+    const darkenedColor = darkenColor(randomColor);
     if (backgr === "710" || backgr === "107") {
-        sPolygon = new StarPolygon(250, 'brown');
+        sPolygon = new StarPolygon(250, darkenedColor);
         polyg1 = sPolygon.drawStarPolygon(7, 125, 125, 36, Math.PI / 14, 3);
         polyg2 = sPolygon.drawStarPolygon(10, 125, 125, 130, Math.PI / 2, 5);
         polyg2 = sPolygon.drawStarPolygon(10, 125, 125, 130, Math.PI / 2, 5);
@@ -738,32 +766,32 @@ window.onload = function () {
         document.body.style.backgroundImage = 'url(' + polyg2 + ')';
     }
     else if (backgr === "7") {
-        sPolygon = new StarPolygon(250, 'brown');
+        sPolygon = new StarPolygon(250, darkenedColor);
         polyg1 = sPolygon.drawStarPolygon(7, 125, 125, 130, Math.PI / 14, 3);
         document.body.style.backgroundAttachment = "fixed";
         document.body.style.backgroundImage = 'url(' + polyg1 + ')';
     }
     else if (backgr === "10") {
-        sPolygon = new StarPolygon(250, 'brown');
+        sPolygon = new StarPolygon(250, darkenedColor);
         polyg2 = sPolygon.drawStarPolygon(10, 125, 125, 130, Math.PI / 2, 5);
         polyg2 = sPolygon.drawStarPolygon(10, 125, 125, 130, Math.PI / 2, 5);
         document.body.style.backgroundAttachment = "fixed";
         document.body.style.backgroundImage = 'url(' + polyg2 + ')';
     }
     else if (backgr === "1pro5") {
-        gfPolygon = new gleichfPolygon(250, 'brown');
+        gfPolygon = new gleichfPolygon(250, darkenedColor);
         polyg2 = gfPolygon.drawPolygon(5, 125, 125, 100, 0, 5);
         document.body.style.backgroundAttachment = "fixed";
         document.body.style.backgroundImage = 'url(' + polyg2 + ')';
     }
     else if (backgr === "1pro6") {
-        gfPolygon = new gleichfPolygon(250, 'brown');
+        gfPolygon = new gleichfPolygon(250, darkenedColor);
         polyg2 = gfPolygon.drawPolygon(6, 125, 125, 100, 0, 5);
         document.body.style.backgroundAttachment = "fixed";
         document.body.style.backgroundImage = 'url(' + polyg2 + ')';
     }
     else if (backgr === "1pro5m6" || backgr == "1pro6m5") {
-        gfPolygon = new gleichfPolygon(250, 'brown');
+        gfPolygon = new gleichfPolygon(250, darkenedColor);
         polyg2 = gfPolygon.drawPolygon(5, 125, 125, 80, 0, 5);
         polyg2 = gfPolygon.drawPolygon(6, 125, 125, 100, 0, 5);
         polyg2 = gfPolygon.drawPolygon(100, 125, 125, 110, 0, 5);
