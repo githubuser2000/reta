@@ -577,7 +577,9 @@ def PromptScope():
     Txt = TXT("")
     nochAusageben = ""
     ketten = []
-    while len(Txt.menge & befehleBeenden) == 0:
+    while len(Txt.menge & befehleBeenden) == 0 or Txt.has(
+        {i18n.befehle2["abc"], i18n.befehle2["abcd"]}
+    ):
         cmd_gave_output = False
         promptModeLast = promptMode
 
@@ -611,37 +613,48 @@ def PromptScope():
         promptMode = PromptModus.normal
 
         if (
-            (i18n.befehle2["S"] in Txt.liste)
-            or (i18n.befehle2["BefehlSpeichernDanach"] in Txt.liste)
+            (
+                Txt.hasWithoutABC(
+                    {i18n.befehle2["S"], i18n.befehle2["BefehlSpeichernDanach"]}
+                )
+            )
         ) and len(Txt.liste) == 1:
             promptMode = PromptModus.speichern
             continue
         elif (
-            (i18n.befehle2["s"] in Txt.liste)
-            or (i18n.befehle2["BefehlSpeichernDavor"] in Txt.liste)
+            (
+                Txt.hasWithoutABC(
+                    {i18n.befehle2["s"], i18n.befehle2["BefehlSpeichernDavor"]}
+                )
+            )
         ) and len(Txt.liste) == 1:
             ketten, Txt = speichern(ketten, Txt.platzhalter, Txt.befehlDavor)
             promptMode = PromptModus.normal
             continue
-        elif len(
-            Txt.menge
-            - {
-                i18n.befehle2["s"],
-                i18n.befehle2["BefehlSpeichernDavor"],
-                i18n.befehle2["S"],
-                i18n.befehle2["BefehlSpeichernDanach"],
-            }
-        ) > 0 and (
+        elif (
             len(
                 Txt.menge
-                & {
+                - {
                     i18n.befehle2["s"],
                     i18n.befehle2["BefehlSpeichernDavor"],
                     i18n.befehle2["S"],
                     i18n.befehle2["BefehlSpeichernDanach"],
                 }
             )
-            == 1
+            > 0
+            and (
+                len(
+                    Txt.menge
+                    & {
+                        i18n.befehle2["s"],
+                        i18n.befehle2["BefehlSpeichernDavor"],
+                        i18n.befehle2["S"],
+                        i18n.befehle2["BefehlSpeichernDanach"],
+                    }
+                )
+                == 1
+            )
+            and not Txt.has({i18n.befehle2["abc"], i18n.befehle2["abcd"]})
         ):
             stextB = copy(Txt.liste)
             for val in (
@@ -661,21 +674,30 @@ def PromptScope():
             promptMode = PromptModus.normal
             continue
         elif (
-            (i18n.befehle2["o"] in Txt.liste)
-            or ("BefehlSpeicherungAusgeben" in Txt.liste)
+            (
+                Txt.hasWithoutABC(
+                    {i18n.befehle2["o"], i18n.befehle2["BefehlSpeicherungAusgeben"]}
+                )
+            )
         ) and len(Txt.liste) == 1:
             promptMode = PromptModus.speicherungAusgaben
             continue
         elif (
-            (i18n.befehle2["o"] in Txt.liste)
-            or ("BefehlSpeicherungAusgeben" in Txt.liste)
-        ) and len(Txt.menge - {i18n.befehle2["o"], "BefehlSpeicherungAusgeben"}) > 1:
+            Txt.hasWithoutABC(
+                {i18n.befehle2["o"], i18n.befehle2["BefehlSpeicherungAusgeben"]}
+            )
+        ) and len(
+            Txt.menge - {i18n.befehle2["o"], i18n.befehle2["BefehlSpeicherungAusgeben"]}
+        ) > 1:
             nochAusageben = Txt.liste
             promptMode = PromptModus.speicherungAusgabenMitZusatz
             continue
         elif (
-            (i18n.befehle2["l"] in Txt.liste)
-            or ("BefehlSpeicherungLöschen" in Txt.liste)
+            (
+                Txt.hasWithoutABC(
+                    {i18n.befehle2["l"], i18n.befehle2["BefehlSpeicherungLöschen"]}
+                )
+            )
         ) and len(Txt.liste) == 1:
             if "--" + i18n.ausgabeParas["nocolor"] in Txt.listeE:
                 print(
@@ -824,11 +846,11 @@ def PromptGrosseAusgabe(
                     True,
                     "",
                 )
-    if (
-        i18n.befehle2["abc"] in Txt.listeE or i18n.befehle2["abcd"] in Txt.listeE
-    ) and len(Txt.liste) == 2:
-        cmd_gave_output = True
+    if Txt.has({i18n.befehle2["abcd"], i18n.befehle2["abc"]}):
         buchstabe: str
+        # befehlskette = list(
+        #    set(Txt.text.split()) - {i18n.befehle2["multis"], i18n.befehle2["prim"]}
+        # )
         befehlskette = Txt.text.split()
         if (
             len(befehlskette)
@@ -836,7 +858,8 @@ def PromptGrosseAusgabe(
             # and len(befehlskette[0]) > 1
             # and len(befehlskette[1]) > 1
         ):
-            if befehlskette[1] not in i18nRP.replacements.values():
+            cmd_gave_output = True
+            if True or befehlskette[1] not in i18nRP.replacements.values():
                 if (
                     befehlskette[0] == i18n.befehle2["abc"]
                     or befehlskette[0] == i18n.befehle2["abcd"]
@@ -866,7 +889,7 @@ def PromptGrosseAusgabe(
                     )
                 )
             )
-    if len({i18n.befehle2["kurzbefehle"]} & Txt.mengeE) > 0:
+    if Txt.hasWithoutABC({i18n.befehle2["kurzbefehle"]}):
         cmd_gave_output = True
         print(
             "{}: {}\n{}".format(
@@ -876,7 +899,7 @@ def PromptGrosseAusgabe(
             )
         )
 
-    if len({i18n.befehle2["befehle"]} & Txt.mengeE) > 0:
+    if Txt.hasWithoutABC({i18n.befehle2["befehle"]}):
         cmd_gave_output = True
         print("{}: {}".format(i18nRP.befehleWort["Befehle"], str(befehle)[1:-1]))
     if Txt.hasWithoutABC(
@@ -917,11 +940,7 @@ def PromptGrosseAusgabe(
     )
 
     if bedingungZahl:
-        if (len({i18n.befehle2["thomas"]} & Txt.mengeE) > 0) or (
-            i18n.befehle2["t"] in Txt.listeE
-            and i18n.befehle2["abc"] not in Txt.listeE
-            and i18n.befehle2["abcd"] not in Txt.listeE
-        ):
+        if Txt.hasWithoutABC({i18n.befehle2["thomas"], i18n.befehle2["t"]}):
             cmd_gave_output = True
             retaExecuteNprint(
                 ketten,
@@ -1584,11 +1603,7 @@ def PromptGrosseAusgabe(
             )
             import reta
 
-        if (len({i18n.befehle2["richtung"]} & Txt.mengeE) > 0) or (
-            i18n.befehle2["r"] in Txt.listeE
-            and i18n.befehle2["abc"] not in Txt.listeE
-            and i18n.befehle2["abcd"] not in Txt.listeE
-        ):
+        if Txt.hasWithoutABC({i18n.befehle2["richtung"], i18n.befehle2["r"]}):
             cmd_gave_output = True
             retaExecuteNprint(
                 ketten,
@@ -2408,14 +2423,28 @@ def addMoreVals(EsGabzahlenAngaben, bruch2, bruch_GanzZahlReziprokeDazu, dazu, s
 
 
 def PromptVonGrosserAusgabeSonderBefehlAusgaben(loggingSwitch, Txt, cmd_gave_output):
-    if len(Txt.listeS) > 0 and Txt.listeS[0] in (i18n.befehle2["shell"],):
+    if (
+        len(Txt.listeS) > 0
+        and Txt.listeS[0] == i18n.befehle2["shell"]
+        and not (
+            Txt.has({i18n.befehle2["abc"], i18n.befehle2["abcd"]})
+            and len(Txt.liste) == 2
+        )
+    ):
         cmd_gave_output = True
         try:
             process = subprocess.Popen([*Txt.listeS[1:]])
             process.wait()
         except:
             pass
-    if len(Txt.listeS) > 0 and i18n.befehle2["python"] == Txt.listeS[0]:
+    if (
+        len(Txt.listeS) > 0
+        and i18n.befehle2["python"] == Txt.listeS[0]
+        and not (
+            Txt.has({i18n.befehle2["abc"], i18n.befehle2["abcd"]})
+            and len(Txt.liste) == 2
+        )
+    ):
         cmd_gave_output = True
         try:
             process = subprocess.Popen(["python3", "-c", " ".join(Txt.listeS[1:])])
@@ -2430,10 +2459,10 @@ def PromptVonGrosserAusgabeSonderBefehlAusgaben(loggingSwitch, Txt, cmd_gave_out
                 process.wait()
             except:
                 pass
-    if i18n.befehle2["loggen"] in Txt.liste:
+    if Txt.hasWithoutABC({i18n.befehle2["loggen"]}):
         cmd_gave_output = True
         loggingSwitch = True
-    elif i18n.befehle2["nichtloggen"] in Txt.liste:
+    elif Txt.hasWithoutABC({i18n.befehle2["nichtloggen"]}):
         cmd_gave_output = True
         loggingSwitch = False
     return loggingSwitch, cmd_gave_output
@@ -2557,7 +2586,7 @@ def promptVorbereitungGrosseAusgabe(
     brueche = []
     zahlenAngaben_ = []
     zahlenAngabenC = ""
-    if len(Txt.menge & befehleBeenden) > 0:
+    if Txt.hasWithoutABC(set(befehleBeenden)):
         Txt.liste = [tuple(befehleBeenden)[0]]
         exit()
     replacements = i18nRP.replacements
