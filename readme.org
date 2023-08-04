@@ -47,6 +47,7 @@
 ***** unwichtiges
 + Ich könnte erweitern aus welchen Dingen ich noch bestehe, der höheren Art, wie höhere Gefühle und Impulse, etc. Denn das gabs vorher nicht.
 *** 2. Feature Ideen
++ Weitere Farbschemen, wenigstens konzeptionalisieren: Aber eigentlich dürfte das Einprogrammieren nicht so das große Ding sein.
 + Dass man in der html per Parameter Dinge vorselektieren kann.
 + " * " mit "?" oder regex überall auch, z.B. bei 15_*_10 oder bei Zahlenbereichen oder bei spalten.
   + Ich könnte direkt die Python Regexe dafür verwenden, das also weiterleiten.
@@ -79,6 +80,7 @@
 + mit AI csvs übersetzen
 + "Mache mir eine Datenstruktur, in der nur alle diese strings drin auf die Art gespeichert sind, dass man mit dem python tool babel diese strings auch mit anderen strings für andere sprachen befüllen kann und programmiere mir, dass diese Datenstruktur aus nur diesen strings, die strings der einen großen Datenstruktur befüllt, sodass sie im einfachen Fall letztlich die gleiche Datenstruktur sein wird, nachdem sie wieder mit den strings befüllt wurde, die sie eigentlich ursprünglich hatte."
 ****  2.2. minder wichtig, aber geht schnell:
+  + Weitere Farbschemen, wenigstens konzeptionalisieren: Aber eigentlich dürfte das Einprogrammieren nicht so das große Ding sein.
   + Ich sollte aber das gesamte Design in ReTa ändern, von der Kombinierbarkeit der Zeilenangaben und das so machen, wie in der html. Dazu muss ich mir aber geduldig ein neues Design überlegen, das durchdacht genug ist, das alles so perfekt kombiniert werden kann, wie bei SQL-Sprachen und nicht so unflexibel, wie es bisher immer war.
   + Erst nachdem ich das neu designt habe, sollte ich das mit der besseren Kombinierbarkeit von v und w nicht in rp, sondern reta umsetzen:
     1. Weil das so sehr viel besser geht,
