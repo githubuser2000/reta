@@ -343,7 +343,9 @@ wahl15: dict = {
     "1pro12": _("Karte_Filter_und_Unterscheidung_(1/12)"),
     "39": _("Maßnahmen_(39)"),
     "1pro6": _("innere_Werte_1/6_der_Reinigung_und_Klarheit"),
+    "28": _("Lebensbereiche_(28)"),
 }
+
 wahl16 = {
     "16": ",".join(wahl16Words.values()),
     "1": _("Meta-Physik-Teilchen_(1)"),
@@ -1862,6 +1864,15 @@ paraNdataMatrix: list = [
             _("ausloeser"),
         ),
         {338},
+    ),
+    (
+        ParametersMain.grundstrukturen,
+        (
+            _("Lebensbereiche_(28)"),
+            _("lebensbereiche"),
+            _("lebensfelder"),
+        ),
+        {405},
     ),
     (
         ParametersMain.grundstrukturen,
