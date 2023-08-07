@@ -907,7 +907,7 @@ paraNdataMatrix: list = [
             _("identitaet"),
             _("Identität"),
         ),
-        {219, 223, 307, 308, 333, 387, 388},
+        {219, 223, 307, 308, 333, 387, 388, 406},
     ),
     (
         ParametersMain.galaxie,
@@ -962,7 +962,7 @@ paraNdataMatrix: list = [
             _("identitaet"),
             _("Identität"),
         ),
-        {219, 223, 307, 308, 333, 387, 388},
+        {219, 223, 307, 308, 333, 387, 388, 406},
     ),
     (
         ParametersMain.universum,
@@ -2222,7 +2222,7 @@ paraNdataMatrix: list = [
             _("kombination"),
             _("kombinationen"),
         ),
-        {290, 296, 325, 326, 327, 402, 403},
+        {290, 296, 325, 326, 327, 402, 403, 406, 407},
     ),
     (
         ParametersMain.grundstrukturen,

@@ -5,6 +5,7 @@ import sys
 import unittest
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "../libs/"))
 sys.path.insert(1, os.path.join(os.path.dirname(__file__), "..", "i18n"))
 import center
 import retaPrompt
