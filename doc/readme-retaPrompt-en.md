@@ -46,7 +46,8 @@ weight = -7
 -   "M" resp. "mind" shows the universal mind (examples: M1/2 or M3)
 -   "C" resp. "consciousness" shows consciousness (examples: C1/2 or C3)
 -   "E" resp. "emotion" shows the universal mind (examples: E1/2 or E3)
--   "I" resp. "impulses" shows the impulses (examples: E1/2 or E3)
+-   "I" resp. "impulses" shows the impulses (examples: I1/2 or I3)
+-   "T" resp. "truth" shows the reality truths (examples: T1/2 or T3)
 -   "size" shows the structure size of n or 1/n
 -   "equality" resp. "freedom" shows that information (examples: "freedom 9")
 -   "m" resp. multiple" causes in output commands except "reta" that their line specifications e.g. 7 mean not only line 7, but all multiples of these line specifications as well, i.e. also 14,21, etc.

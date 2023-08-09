@@ -46,7 +46,8 @@ Besser die Readme Markdown mit einem Markdown-Leseprogramm lesen!
 -   "G" bzw. "geist" gibt den universellen Geist aus, für n oder 1/n aus, z.B. G1/2
 -   "B" bzw. "bewusstsein" gibt das Bewusstsein aus, für n oder 1/n aus, z.B. B2
 -   "E" bzw. "emotion" gibt die Gefühle für n oder 1/n aus, z.B. E1/2
--   "I" bzw. "impulse" gibt die Impulse für n oder 1/n aus, z.B. E1/2
+-   "I" bzw. "impulse" gibt die Impulse für n oder 1/n aus, z.B. I1/2
+-   "W" bzw. "wirklichkeit" gibt die Wirklichkeiten für n oder 1/n aus, z.B. W1/2
 -   "groesse" gibt die Strukturgröße für n oder 1/n aus
 -   "kugeln" bzw. "kreise" gibt die kugeln kreise für n aus, z.B. kugeln 7,14
 -   "freiheit" bzw. "gleichheit" gibt entsprechendes für n oder 1/n aus

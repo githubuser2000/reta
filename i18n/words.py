@@ -401,6 +401,8 @@ befehle2.update(
         "u": _("u"),
         "I": _("I"),
         "T": _("T"),
+        "W": _("W"),
+        "wirklichkeit": _("wirklichkeit"),
         "triebe": _("triebe"),
         "befehle": _("befehle"),
         "t": _("t"),
@@ -4135,6 +4137,7 @@ class retaPrompt:
         befehle2["s"]: befehle2["BefehlSpeichernDavor"],
         befehle2["l"]: befehle2["BefehlSpeicherungLöschen"],
         befehle2["o"]: befehle2["BefehlSpeicherungAusgeben"],
+        befehle2["W"]: befehle2["wirklichkeit"],
     }
     retaPromptParameter = {
         "vi": _("vi"),

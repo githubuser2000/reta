@@ -1036,6 +1036,31 @@ def PromptGrosseAusgabe(
             zeiln4,
         )
         was_n_1proN_cmd, cmd_gave_output = retaCmdAbstraction_n_and_1pron(
+            Txt.hasWithoutABC({i18n.befehle2["W"], i18n.befehle2["wirklichkeit"]}),
+            [
+                "".join(
+                    (
+                        "--",
+                        i18n.ParametersMain.grundstrukturen[0],
+                        "=",
+                        wahl15["10"],
+                    )
+                )
+            ],
+            None,
+            ("1,2", "5"),
+            Txt,
+            bruch_GanzZahlReziproke,
+            zahlenBereichC,
+            ketten,
+            cmd_gave_output,
+            zeiln1,
+            zeiln2,
+            zeiln3,
+            zeiln4,
+        )
+
+        was_n_1proN_cmd, cmd_gave_output = retaCmdAbstraction_n_and_1pron(
             Txt.hasWithoutABC({i18n.befehle2["T"], i18n.befehle2["triebe"]}),
             [
                 "".join(
