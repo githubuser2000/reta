@@ -2,8 +2,10 @@ import gettext
 import os
 import pprint
 import sys
+
 # import sys
 from collections import OrderedDict, defaultdict, namedtuple
+
 # from dataclasses import dataclass
 from typing import Any, NamedTuple, Optional, Tuple, Union
 
@@ -919,6 +921,15 @@ paraNdataMatrix: list = [
             _("hochzuechten"),
         ),
         {318, 319},
+    ),
+    (
+        ParametersMain.universum,
+        (
+            _("künstliches_Leben_(15)"),
+            _("künstlichesleben"),
+            _("grosseki"),
+        ),
+        {409},
     ),
     (
         ParametersMain.universum,
@@ -2224,7 +2235,7 @@ paraNdataMatrix: list = [
             _("kombination"),
             _("kombinationen"),
         ),
-        {290, 296, 325, 326, 327, 402, 403, 406, 407},
+        {290, 296, 325, 326, 327, 402, 403, 406, 407, 408},
     ),
     (
         ParametersMain.grundstrukturen,
