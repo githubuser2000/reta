@@ -540,7 +540,7 @@ befehle: list = list(befehle2.values())
 kugelnKreise = ["kugeln", "kreise"]
 ParametersMain: NamedTuple = namedtuple(
     "ParametersMain",
-    "wichtigste wichtigste2 religionen galaxie strukturgroesse universum multiversum wirtschaft menschliches procontra licht bedeutung symbole Multiplikationen konzept konzept2 inkrementieren operationen universummetakonkret primzahlwirkung gebrochenuniversum gebrochengalaxie primvielfache planet strukturenkleinere grundstrukturen alles",
+    "wichtigste wichtigste2 religionen galaxie strukturgroesse universum multiversum wirtschaft menschliches procontra licht bedeutung symbole Multiplikationen konzept konzept2 inkrementieren operationen universummetakonkret primzahlwirkung gebrochenuniversum gebrochengalaxie primvielfache planet strukturenkleinere grundstrukturen teilchen alles",
 )
 konzeptE = {"konzept": _("konzept"), "konzept2": _("konzept2")}
 gebrochenUniGal = {
@@ -655,6 +655,7 @@ ParametersMain: NamedTuple = ParametersMain(
         _("strukturkleinerzehn"),
     ),
     (_("Grundstrukturen"), _("grundstrukturen")),
+    (_("Teilchen-Meta-Physik"), _("teilchen")),
     (_("alles"),),
 )
 thomasWort = _("thomas")
@@ -969,13 +970,43 @@ paraNdataMatrix: list = [
     ),
     (
         ParametersMain.universum,
-        (
-            _("Teilchen-Meta-Physik"),
-            _("addition"),
-            _("identitaet"),
-            _("Identität"),
-        ),
-        {219, 223, 307, 308, 333, 387, 388, 406, 411},
+        (_("Teilchen-Meta-Physik"),),
+        {219, 308},
+    ),
+    (
+        ParametersMain.teilchen,
+        (_("das_Universelle_(15)"),),
+        {219, 308},
+    ),
+    (
+        ParametersMain.teilchen,
+        (_("das_Glaktische_(14)"),),
+        {406},
+    ),
+    (
+        ParametersMain.teilchen,
+        (_("das_Multiverselle_(16)"),),
+        {388},
+    ),
+    (
+        ParametersMain.teilchen,
+        (_("die_Tugendsortierung_(13_mit_14)"),),
+        {411},
+    ),
+    (
+        ParametersMain.teilchen,
+        (_("die_Galaxie_Unterbereiche_(13)"),),
+        {223, 307, 412},
+    ),
+    (
+        ParametersMain.teilchen,
+        (_("das_Gute_die_Richtung_(7)"),),
+        {333},
+    ),
+    (
+        ParametersMain.teilchen,
+        (_("Raum_und_Dimensionen_(8)"),),
+        {387},
     ),
     (
         ParametersMain.universum,
