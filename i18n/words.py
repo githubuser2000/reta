@@ -718,7 +718,7 @@ paraNdataMatrix: list = [
             _("meta-systeme"),
             _("meta-system"),
         ),
-        {232, 288, 334},
+        {232, 288, 334, 410, 411},
     ),
     (
         ParametersMain.planet,
@@ -975,7 +975,7 @@ paraNdataMatrix: list = [
             _("identitaet"),
             _("Identität"),
         ),
-        {219, 223, 307, 308, 333, 387, 388, 406},
+        {219, 223, 307, 308, 333, 387, 388, 406, 411},
     ),
     (
         ParametersMain.universum,
@@ -2203,7 +2203,7 @@ paraNdataMatrix: list = [
             _("paradigmen"),
             _("absichten"),
         ),
-        {10, 42},
+        {10, 42, 410, 411},
     ),
     (
         ParametersMain.grundstrukturen,
@@ -2267,7 +2267,7 @@ paraNdataMatrix: list = [
             _("menge"),
             _("mengen"),
         ),
-        {232, 288, 334},
+        {232, 288, 334, 410, 411},
     ),
     (
         ParametersMain.grundstrukturen,
