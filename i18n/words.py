@@ -2129,7 +2129,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.grundstrukturen,
         (_("Verhalten_(11)"), _("verhalten")),
-        {301, 302},
+        {301, 302, 413},
     ),
     (
         ParametersMain.grundstrukturen,
