@@ -2327,7 +2327,7 @@ paraNdataMatrix: list = [
             _("focus"),
             _("fokus"),
         ),
-        {250, 269},
+        {250, 269, 253},
     ),
     (
         ParametersMain.grundstrukturen,
