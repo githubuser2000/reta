@@ -3649,6 +3649,7 @@ kombiParaNdataMatrix: OrderedDict = OrderedDict(
             _("kombinierteswirtschaftssystem"),
             _("kombiniertewirtschaftssysteme"),
         ),
+        17: (_("Eigentum_und_Besitz"),),
     }
 )
 
