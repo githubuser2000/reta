@@ -295,6 +295,7 @@ wahl15: dict = {
     "7": _("Gefühle_(7)"),
     "8": _("Modus_und_Sein_(8)"),
     "10": _("Wirklichkeiten_Wahrheit_Wahrnehmung_(10)"),
+    "1pro10": _("analytische_Ontologie"),
     "12": ",".join((_("Meta-Systeme_(12)"), _("Ordnung_und_Filterung_12_und_1pro12"))),
     "13": _("Paradigmen_sind_Absichten_(13)"),
     "17": _("Gedanken_sind_Positionen_(17)"),
@@ -1074,6 +1075,15 @@ paraNdataMatrix: list = [
         ParametersMain.galaxie,
         (_("Thomasevangelium"), _("thomasevangelium"), thomasWort),
         {0, 3, 303},
+    ),
+    (
+        ParametersMain.grundstrukturen,
+        (
+            _("analytische_Ontologie"),
+            _("analytischeontologie"),
+            _("ontologie"),
+        ),
+        {84},
     ),
     (
         ParametersMain.galaxie,
@@ -1996,7 +2006,7 @@ paraNdataMatrix: list = [
             _("bestrebung"),
             _("bestrebungen"),
         ),
-        {332},
+        {332, 414},
     ),
     (
         ParametersMain.grundstrukturen,
