@@ -295,7 +295,7 @@ wahl15: dict = {
     "7": _("Gefühle_(7)"),
     "8": _("Modus_und_Sein_(8)"),
     "10": _("Wirklichkeiten_Wahrheit_Wahrnehmung_(10)"),
-    "1pro10": _("analytische_Ontologie"),
+    "1pro30": _("analytische_Ontologie"),
     "12": ",".join((_("Meta-Systeme_(12)"), _("Ordnung_und_Filterung_12_und_1pro12"))),
     "13": _("Paradigmen_sind_Absichten_(13)"),
     "17": _("Gedanken_sind_Positionen_(17)"),
@@ -346,7 +346,7 @@ wahl15: dict = {
     "1pro12": _("Karte_Filter_und_Unterscheidung_(1/12)"),
     "39": _("Maßnahmen_(39)"),
     "1pro6": _("innere_Werte_1/6_der_Reinigung_und_Klarheit"),
-    "28": _("Lebensbereiche_(28)"),
+    "28": _("Lebensbereiche_Problemklassen_(28)"),
 }
 
 wahl16 = {
@@ -1922,11 +1922,12 @@ paraNdataMatrix: list = [
     (
         ParametersMain.grundstrukturen,
         (
-            _("Lebensbereiche_(28)"),
+            _("Lebensbereiche_Problemklassen_(28)"),
             _("lebensbereiche"),
             _("lebensfelder"),
+            _("problemklassen"),
         ),
-        {405},
+        {405, 415, 416},
     ),
     (
         ParametersMain.grundstrukturen,
