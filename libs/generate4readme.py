@@ -264,7 +264,17 @@ if "-language=english" in sys.argv or "-language=englisch" in sys.argv:
       -20,m10 means all multiples of 10 without the 20 in it
 
 ### Example (one line, not several):
-        `reta -lines --thisrangebefore=1-9 -columns --religions=starpolygon,uniformpolygon --galaxy=babylon --width=50`"""
+        `reta -lines --thisrangebefore=1-9 -columns --religions=starpolygon,uniformpolygon --galaxy=babylon --width=50`
+    * Python Ranges are possible for ranges
+        * in retaPrompt:
+        `reta -lines --thisrangebefore={2*n for n in range(2,5)},10 -columns --human=motifs -output --columnorderandonlythese=[3*n for n in range(2)]`
+        * in a Shell as Bash:
+            `reta -lines "--thisrangebefore={2*n for n in range(2,5)},10" -columns --human=motifs -output "--columnorderandonlythese=[3*n for n in range(2)]"  -language=english`
+        a minus before subtracts instead of adding ranges: -[n for n in range(3)]
+        * instead generator {2*n for n in range(2,5)} python calculations are possible as [2*3].
+
+Better read this with a markdown reader!
+        """
 else:
     print()
     print()
@@ -349,7 +359,6 @@ else:
         * in der Shell z.B. Bash:
         `reta -zeilen "--vorhervonausschnitt={2*n for n in range(2,5)},10" --oberesmaximum=1025 -spalten --Menschliches=motivation --breite=0 -ausgabe "--spaltenreihenfolgeundnurdiese=[3*n for n in range(2)]"`
         Ein Minus vor so einem Python Generator würde den Bereich abziehen: -[n for n in range(3)]
-Besser die Readme aus Markdown mit einem Markdown-Leseprogramm lesen!"""
-
-
+        * statt Generator {2*n for n in range(2,5)} geht auch eine Rechnung wie [2*3].
+        Besser die Readme aus Markdown mit einem Markdown-Leseprogramm lesen!"""
 print(ende)

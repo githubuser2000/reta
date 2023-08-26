@@ -97,9 +97,9 @@ Besser die Readme aus Markdown mit einem Markdown-Leseprogramm lesen!
     * --bedeutung= 
         * primzahlkreuz,inreta,vorzeichen,primzahlen,anwendungdersonnenundmonde,zählungen,jura,vollkommenheit,gestirn,konjunktiv,mechanismen
     * --gebrochen-rational_Galaxie_n/m= 
-        * 11,16,21,10,14,3,8,9,23,19,12,22,4,18,2,6,13,15,17,20,7,5
+        * 6,4,13,14,17,12,16,11,20,23,15,10,8,2,21,18,22,9,19,3,7,5
     * --gebrochen-rational_Universum_n/m= 
-        * 11,16,21,10,14,3,8,9,23,19,12,22,4,18,2,6,13,15,17,20,7,5
+        * 6,4,13,14,17,12,16,11,20,23,15,10,8,2,21,18,22,9,19,3,7,5
     * --symbole 
     * --eigenschaften= 
         * weisheit,rechte,unterlegen,streit,einklinken,familiebrauchen,bescheiden,selbstsucht,wissenschaft,arschloch,liebe,selbstlos,eintönig,abgeneigt,ehrlich,tragweite,wertlos,familiaer,sanft,vereinenverbinden,aehnlich,gut,sinn,zeit,egalitaerautoritaer,meinungen,meinungsintelligenz,sittlichkeit,führung,durchleuchten,foerdern,überheblich,liebepolung,egoismus,geltung,gleich,ueberleben
@@ -183,4 +183,5 @@ Besser die Readme aus Markdown mit einem Markdown-Leseprogramm lesen!
         * in der Shell z.B. Bash:
         `reta -zeilen "--vorhervonausschnitt={2*n for n in range(2,5)},10" --oberesmaximum=1025 -spalten --Menschliches=motivation --breite=0 -ausgabe "--spaltenreihenfolgeundnurdiese=[3*n for n in range(2)]"`
         Ein Minus vor so einem Python Generator würde den Bereich abziehen: -[n for n in range(3)]
-Besser die Readme aus Markdown mit einem Markdown-Leseprogramm lesen!
+        * statt Generator {2*n for n in range(2,5)} geht auch eine Rechnung wie [2*3].
+        Besser die Readme aus Markdown mit einem Markdown-Leseprogramm lesen!

@@ -97,9 +97,9 @@ Secondary parameters start with 2 minus --.
     * --meaning= 
         * primecross,inreta,signbefore,primenumbers,applicationofsunsandmoons,ranges,law,perfection,spaceObject,subjunctive,mechanisms
     * --fractional_galaxy_n/m= 
-        * 3,10,22,8,9,7,6,21,18,19,17,23,20,16,11,13,4,5,2,12,14,15
+        * 16,4,11,8,17,14,19,12,21,7,2,5,3,23,13,9,10,6,15,20,18,22
     * --fractional_universe_n/m= 
-        * 3,10,22,8,9,7,6,21,18,19,17,23,20,16,11,13,4,5,2,12,14,15
+        * 16,4,11,8,17,14,19,12,21,7,2,5,3,23,13,9,10,6,15,20,18,22
     * --symbols 
     * --properties= 
         * wisdom,rights,inferior,dispute,latchOn,familyneeds,humble,selfishness,science,asshole,love,selfless,monotonous,averse,honest,scope,worthless,familial,soft,uniteConnect,similar,good,senseAndMeaning,time,egalitarianAuthoritarian,opinions,opinionintelligence,morality,leadership,X-ray,encourage,arrogant,polarityOfLove,egoism,cachetPrestigeValidity,equal,survive
@@ -177,3 +177,13 @@ Secondary parameters start with 2 minus --.
 
 ### Example (one line, not several):
         `reta -lines --thisrangebefore=1-9 -columns --religions=starpolygon,uniformpolygon --galaxy=babylon --width=50`
+    * Python Ranges are possible for ranges
+        * in retaPrompt:
+        `reta -lines --thisrangebefore={2*n for n in range(2,5)},10 -columns --human=motifs -output --columnorderandonlythese=[3*n for n in range(2)]`
+        * in a Shell as Bash:
+            `reta -lines "--thisrangebefore={2*n for n in range(2,5)},10" -columns --human=motifs -output "--columnorderandonlythese=[3*n for n in range(2)]"  -language=english`
+        a minus before subtracts instead of adding ranges: -[n for n in range(3)]
+        * instead generator {2*n for n in range(2,5)} python calculations are possible as [2*3].
+
+Better read this with a markdown reader!
+        

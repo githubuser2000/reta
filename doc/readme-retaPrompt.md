@@ -100,6 +100,7 @@ Zeilenangaben oder Zahlenbereiche für andere Angaben können sein (ohne Anführ
 -   Statt Zahlenbereiche sind auch Python Generatoren möglich wie: {n*2+1 for n in range(3)}
     - ein Minus vor dem Generator bewirkt, dass der Bereich entfernt werden soll
     "-[5 * n for n in range(5)],19-21" entfernt die "20", sodass das Ergebnis "19,21" ist.
+-   Statt Zahlenbereiche sind auch Python Rechnungen möglich wie: [2*3]
 
 ### Die Befehle 15\_.... und EIG..... {#die-befehle-15-dot-dot-dot-dot}
 

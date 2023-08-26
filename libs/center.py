@@ -27,7 +27,7 @@ from rich.console import Console
 from rich.markdown import Markdown
 from rich.syntax import Syntax
 
-gspattern = r"\s+(?![^(){}\[\]]*(?:\([^(){}\[\]]*\)[^(){}\[\]]*|{[^(){}\[\]]*}[^(){}\[\]]*|\[[^(){}\[\]]*\][^(){}\[\]]*))"
+# gspattern = r"\s+(?![^(){}\[\]]*(?:\([^(){}\[\]]*\)[^(){}\[\]]*|{[^(){}\[\]]*}[^(){}\[\]]*|\[[^(){}\[\]]*\][^(){}\[\]]*))"
 
 kpattern = r",(?![^\[\]\{\}\(\)]*[\]\}\)])"
 Primzahlkreuz_pro_contra_strs = i18n.Primzahlkreuz_pro_contra_strs_Dict[
@@ -293,11 +293,10 @@ def cliout(text, color=False, stype=""):
 
 def strAsGeneratorToListOfNumStrs(text: str) -> set:
     try:
-        if (
-            (text[0] == "[" and text[-1] == "]")
-            or (text[0] == "(" and text[-1] == ")")
-            or (text[0] == "{" and text[-1] == "}")
-        ):
+        if text[0] == "(" and text[-1] == ")":
+            text = "[" + text[1:-1] + "]"
+
+        if (text[0] == "[" and text[-1] == "]") or (text[0] == "{" and text[-1] == "}"):
             try:
                 result = eval(text)
                 result = set(result)

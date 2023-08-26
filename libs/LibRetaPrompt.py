@@ -11,7 +11,6 @@ import reta
 from center import (
     BereichToNumbers2,
     Primzahlkreuz_pro_contra_strs,
-    gspattern,
     i18n,
     isZeilenAngabe,
     isZeilenAngabe_betweenKommas,
@@ -34,6 +33,27 @@ for pp in retaProgram.paraDict.keys():
         eigsN += [pp[1]]
     elif pp[0] == i18n.konzeptE["konzept2"]:
         eigsR += [pp[1]]
+
+
+def custom_split(text):
+    stack = []
+    result = []
+    start = 0  # Start index for each substring
+    for i, char in enumerate(text):
+        if char in "({[":
+            stack.append(char)
+
+        elif char in ")}]":
+            if stack:
+                stack.pop()
+        elif char.isspace() and not stack:
+            result.append(text[start:i])
+            start = i + 1  # Skip the whitespace character for the next substring
+    # Append the last substring if it exists
+    if start < len(text):
+        result.append(text[start:])
+
+    return result
 
 
 class PromptModus(Enum):
@@ -319,7 +339,7 @@ def stextFromKleinKleinKleinBefehl(promptMode2, stext, textDazu):
     xtext = " ".join(stext)
     # if isZeilenAngabe(xtext):
     #    stext = [",".join(str(B) for B in BereichToNumbers2(xtext))]
-    stext2 = re.split(gspattern, xtext)
+    stext2 = custom_split(xtext)
     stext3 = []
     del xtext
     for kkk, s_ in enumerate(tuple(deepcopy(stext2))):
@@ -452,6 +472,9 @@ def stextFromKleinKleinKleinBefehl(promptMode2, stext, textDazu):
             stext3 += textDazu
         else:
             stext3 += [str(s_)]
+    for jjj, _s_ in enumerate(copy(stext3)):
+        if _s_[0] == "(" and _s_[-1] == ")":
+            stext3[jjj] = "[" + stext3[jjj][1:-1] + "]"
     if stext[0] not in [
         "reta",
         "shell",

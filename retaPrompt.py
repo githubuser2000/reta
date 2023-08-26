@@ -19,7 +19,6 @@ from typing import Optional
 from center import (
     alxp,
     cliout,
-    gspattern,
     i18n,
     invert_dict_B,
     isZeilenAngabe,
@@ -45,6 +44,7 @@ from LibRetaPrompt import (
     verkuerze_dict,
     wahl15,
     wahl16,
+    custom_split,
 )
 
 # import reta
@@ -152,7 +152,7 @@ class TXT(object):
         value = str(value).strip()
         self._text = value
         if value[:4] != "reta":
-            self._stext = re.split(gspattern, self._text)
+            self._stext = custom_split(self._text)
         else:
             self._stext = [s.strip() for s in self._text.split() if len(s.strip()) > 0]
         self._stextS = value.split()
@@ -214,8 +214,8 @@ def newSession(history=False):
         def append_string(self, string):
             if (
                 self.logging_enabled
-                and i18n.befehle2["nichtloggen"] not in re.split(gspattern, string)
-                and i18n.befehle2["loggen"] not in re.split(gspattern, string)
+                and i18n.befehle2["nichtloggen"] not in custom_split(string)
+                and i18n.befehle2["loggen"] not in custom_split(string)
             ):
                 super().append_string(string)
 
@@ -534,14 +534,14 @@ def speichern(ketten, platzhalter, text):
                 # nochmal für nicht Kurzbefehle befehle, also ohne "reta" am Anfang
                 textUndPlatzHalterNeu = []
                 langKurzBefehle = []
-                for rpBefehl in re.split(gspattern, Txt.platzhalter) + Txt.liste:
+                for rpBefehl in custom_split(Txt.platzhalter) + Txt.liste:
                     if rpBefehl in befehle and len(rpBefehl) > 1:
                         langKurzBefehle += [rpBefehl.strip()]
                     else:  # Kurzbefehl oder irgendwas anderes
                         textUndPlatzHalterNeu += [rpBefehl.strip()]
                 rpBefehlE = ""
                 for rpBefehl in textUndPlatzHalterNeu:
-                    rpBefehlSplitted = re.split(gspattern, str(rpBefehl))
+                    rpBefehlSplitted = custom_split(str(rpBefehl))
                     if len(rpBefehlSplitted) > 0:
                         rpBefehlE += " ".join(rpBefehlSplitted) + " "
                 rpBefehlE = rpBefehlE[:-1]
@@ -739,7 +739,7 @@ def PromptScope():
                     str(
                         [
                             {i + 1, a}
-                            for i, a in enumerate(re.split(gspattern, Txt.platzhalter))
+                            for i, a in enumerate(custom_split(Txt.platzhalter))
                         ]
                     )
                 )
@@ -748,7 +748,7 @@ def PromptScope():
                     str(
                         [
                             {i + 1, a}
-                            for i, a in enumerate(re.split(gspattern, Txt.platzhalter))
+                            for i, a in enumerate(custom_split(Txt.platzhalter))
                         ]
                     ),
                     True,
@@ -1905,18 +1905,17 @@ def zeiln1234create(
                 )
             ):
                 if (
-                    (
-                        zahlenReiheKeineWteiler[0] == "("
-                        and zahlenReiheKeineWteiler[-1] == ")"
-                    )
-                    or (
-                        zahlenReiheKeineWteiler[0] == "["
-                        and zahlenReiheKeineWteiler[-1] == "]"
-                    )
-                    or (
-                        zahlenReiheKeineWteiler[0] == "{"
-                        and zahlenReiheKeineWteiler[-1] == "}"
-                    )
+                    zahlenReiheKeineWteiler[0] == "("
+                    and zahlenReiheKeineWteiler[-1] == ")"
+                ):
+                    zahlenReiheKeineWteiler[0] == "["
+                    zahlenReiheKeineWteiler[-1] == "]"
+                if (
+                    zahlenReiheKeineWteiler[0] == "["
+                    and zahlenReiheKeineWteiler[-1] == "]"
+                ) or (
+                    zahlenReiheKeineWteiler[0] == "{"
+                    and zahlenReiheKeineWteiler[-1] == "}"
                 ):
                     zahlenReiheKeineWteiler2 = ",".join(
                         [
@@ -2562,7 +2561,7 @@ def PromptVonGrosserAusgabeSonderBefehlAusgaben(loggingSwitch, Txt, cmd_gave_out
 def verdreheWoReTaBefehl(text1: str, text2: str, text3: str, PromptMode: PromptModus):
     # x("VERDREHT ?", [text1, text2, text3, PromptMode])
     if text2[:4] == "reta" and text1[:4] != "reta" and len(text3) > 0:
-        return text2, text1, re.split(gspattern, text2)
+        return text2, text1, custom_split(text2)
     # x("NICHT VERDREHT", PromptMode)
     return text1, text2, text3
 
