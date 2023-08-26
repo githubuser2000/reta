@@ -49,6 +49,8 @@ weight = -7
 -   "I" resp. "impulses" shows the impulses (examples: I1/2 or I3)
 -   "T" resp. "truth" shows the reality truths (examples: T1/2 or T3)
 -   "size" shows the structure size of n or 1/n
+-   "complex" shows the complexity steps of n or 1/n
+-   "ee" hides headlines
 -   "equality" resp. "freedom" shows that information (examples: "freedom 9")
 -   "m" resp. multiple" causes in output commands except "reta" that their line specifications e.g. 7 mean not only line 7, but all multiples of these line specifications as well, i.e. also 14,21, etc.
 -   "single" is the standard for short commands: that line specifications do not mean multiples, but single lines.

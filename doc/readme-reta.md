@@ -76,17 +76,19 @@ Besser die Readme aus Markdown mit einem Markdown-Leseprogramm lesen!
     * --inkrementieren= 
         * addition,um1,um2,um3,warumtranszendentaliezustrukturgroesseundcharakter,warumtranszendentaliegleichkomplexitaet
     * --universum= 
-        * strategie,verhaeltnisgleicherzahl,recht,kombinierenetc,hochzüchten,addition,metaparadigmareligion,kugelnkreise,analytischeontologie,gegentranszendentalien,systemsachen,transzendentalien,transzendentalienreziproke,netzwerk,warumtranszendentaliezustrukturgroesseundcharakter,kategorie,weltall,programmierparadigmen,geist,warumtranszendentaliegleichkomplexitaet,modelofhierarchicalcomplexity
+        * künstlichesleben,strategie,verhaeltnisgleicherzahl,recht,kombinierenetc,hochzüchten,Teilchen-Meta-Physik,metaparadigmareligion,kugelnkreise,analytischeontologie,gegentranszendentalien,systemsachen,transzendentalien,transzendentalienreziproke,netzwerk,warumtranszendentaliezustrukturgroesseundcharakter,kategorie,weltall,programmierparadigmen,geist,warumtranszendentaliegleichkomplexitaet,modelofhierarchicalcomplexity
+    * --teilchen= 
+        * das_Universelle_(15),das_Glaktische_(14),das_Multiverselle_(16),die_Tugendsortierung_(13_mit_14),die_Galaxie_Unterbereiche_(13),das_Gute_die_Richtung_(7),Raum_und_Dimensionen_(8)
     * --multiversum= 
         * multiversalien,teilchen
+    * --grundstrukturen= 
+        * analytischeontologie,modelofhierarchicalcomplexity,Transzendentalien,bedingung,lebensbereiche,massnahmen,relativreziprokuniversell,universellerkomperativ,existenzialien,extremalien,erwartungen,leidenschaft,relativerzeitbetrag,zahlenvergleich,bestrebung,prinzipien,attraktionen,optimierung,themen,bedeutung,reziproke,achtung,zeit,absicht16,absicht17,absicht6,absicht7,regung,verhalten,energie,garben,nachvollziehen,empathie,absicht1/6,innerewerte,absicht10,geist,reflex,lust,paradigmen,wirklichkeit,rechnen,stimmung,klasse,ordnen,metasysteme,absicht1pro8,ziele,konkreta,gefuehle,abhaengigkeit,karte,fundament,positionen,vorstellungen,sollen,ansichten,verbundenheiten,absicht13,liebe,koalitionen,impulse,trieb,reflektion,zustaende
     * --groessenordnung= 
         * licht,Größenordnung,organisationen,politischesysteme
     * --universummetakonkret= 
         * meta,konkret,theorie,praxis,management,veraendernd,mathematisch_diskret,hinausgehend,unternehmen,wert,regieren,richtung
     * --primzahlwirkung= 
         * universum,richtungrichtung,absichtgalaxie,absichtgalaxiereziproke,universumreziproke,dagegengegentranszendentalie,neutralegegentranszendentalie
-    * --grundstrukturen= 
-        * modelofhierarchicalcomplexity,Transzendentalien,bedingung,massnahmen,relativreziprokuniversell,universellerkomperativ,existenzialien,extremalien,erwartungen,leidenschaft,relativerzeitbetrag,zahlenvergleich,bestrebung,prinzipien,attraktionen,optimierung,themen,bedeutung,reziproke,achtung,zeit,absicht16,absicht17,absicht6,absicht7,regung,verhalten,energie,garben,nachvollziehen,empathie,absicht1/6,innerewerte,absicht10,geist,reflex,lust,paradigmen,wirklichkeit,rechnen,stimmung,klasse,ordnen,metasysteme,absicht1pro8,ziele,konkreta,gefuehle,abhaengigkeit,karte,fundament,positionen,vorstellungen,sollen,ansichten,verbundenheiten,absicht13,liebe,koalitionen,impulse,trieb,reflektion,zustaende
     * --wirtschaft= 
         * fachgebiete,pflanzen,maschinen,organisationsform,system,funktioniert,erklärung,bwl
     * --procontra= 
@@ -95,9 +97,9 @@ Besser die Readme aus Markdown mit einem Markdown-Leseprogramm lesen!
     * --bedeutung= 
         * primzahlkreuz,inreta,vorzeichen,primzahlen,anwendungdersonnenundmonde,zählungen,jura,vollkommenheit,gestirn,konjunktiv,mechanismen
     * --gebrochen-rational_Galaxie_n/m= 
-        * 21,2,12,15,18,4,10,22,8,17,23,7,11,9,5,16,3,6,19,14,13,20
+        * 11,16,21,10,14,3,8,9,23,19,12,22,4,18,2,6,13,15,17,20,7,5
     * --gebrochen-rational_Universum_n/m= 
-        * 21,2,12,15,18,4,10,22,8,17,23,7,11,9,5,16,3,6,19,14,13,20
+        * 11,16,21,10,14,3,8,9,23,19,12,22,4,18,2,6,13,15,17,20,7,5
     * --symbole 
     * --eigenschaften= 
         * weisheit,rechte,unterlegen,streit,einklinken,familiebrauchen,bescheiden,selbstsucht,wissenschaft,arschloch,liebe,selbstlos,eintönig,abgeneigt,ehrlich,tragweite,wertlos,familiaer,sanft,vereinenverbinden,aehnlich,gut,sinn,zeit,egalitaerautoritaer,meinungen,meinungsintelligenz,sittlichkeit,führung,durchleuchten,foerdern,überheblich,liebepolung,egoismus,geltung,gleich,ueberleben
@@ -109,7 +111,7 @@ Besser die Readme aus Markdown mit einem Markdown-Leseprogramm lesen!
 
 ## -kombination
     * --galaxie=
-        * Lebewesen,tiere,tier,lebewesen,Berufe,berufe,beruf,Kreativität_und_Intelligenz,kreativität,intelligenz,kreativitaet,Liebe,liebe,Männer,männer,maenner,frauen,Persönlichkeit_evolutionär_erwerben,evolution,erwerben,persoenlichkeit,persönlichkeit,Religion,religion,religionen,Motive_Ziele,motivation,ziele,ziel,motive,Emotionen,emotionen,gefuehle,emotion,gefühl,gefühle,Personen,personen,berühmtheiten,beruehmtheiten,Wirtschaftssysteme,wirtschaftssystem,wirtschaftssysteme,kombinierteswirtschaftssystem,kombiniertewirtschaftssysteme
+        * Lebewesen,tiere,tier,lebewesen,Berufe,berufe,beruf,Kreativität_und_Intelligenz,kreativität,intelligenz,kreativitaet,Liebe,liebe,Männer,männer,maenner,frauen,Persönlichkeit_evolutionär_erwerben,evolution,erwerben,persoenlichkeit,persönlichkeit,Religion,religion,religionen,Motive_Ziele,motivation,ziele,ziel,motive,Emotionen,emotionen,gefuehle,emotion,gefühl,gefühle,Personen,personen,berühmtheiten,beruehmtheiten,Wirtschaftssysteme,wirtschaftssystem,wirtschaftssysteme,kombinierteswirtschaftssystem,kombiniertewirtschaftssysteme,Eigentum_und_Besitz
     * --universum=
         * Lebewesen,tiere,tier,lebewesen,Berufe,berufe,beruf,Transzendentalien_Strukturalien,transzendenz,transzendentalien,strukturalien,alien,Primzahlkreuz,leibnitz,primzahlkreuz,Persönlichkeit_evolutionär_erwerben,evolution,erwerben,persoenlichkeit,persönlichkeit,Religion,religion,religionen,Motive_Ziele,motivation,motive,ziele,ziel,analytische_Ontologie,analytischeontologie,ontologie,Personen,personen,berühmtheiten,beruehmtheiten,Mechanismen_der_Zuechtung,mechanismen,wesen,zuechten,züchten,Gegentranszendentalien,gegentranszendentalien,gegenstrukturalien,Maschinen,maschinen,geräte,geraete,Geist,geist,Bewusstsein,bewusstsein
 

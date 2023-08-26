@@ -76,17 +76,19 @@ Secondary parameters start with 2 minus --.
     * --increment= 
         * addition,of1,of2,of3,whytranscendentalstructuralsizeandcharacter,whyTranscendentalEqualsComplexity
     * --universe= 
-        * strategy,ratioSameNumber,law,combineetc,breedingup,addition,metaparadigmreligion,spherescircles,analyticontology,countertranscendentals,systemthings,transcendentals,transcendentalreciprocal,network,whytranscendentalstructuralsizeandcharacter,category,space,programmingparadigms,mind,whyTranscendentalEqualsComplexity,modelofhierarchicalcomplexity
+        * artificiallife,strategy,ratioSameNumber,law,combineetc,breedingup,particle-meta-physics,metaparadigmreligion,spherescircles,analyticontology,countertranscendentals,systemthings,transcendentals,transcendentalreciprocal,network,whytranscendentalstructuralsizeandcharacter,category,space,programmingparadigms,mind,whyTranscendentalEqualsComplexity,modelofhierarchicalcomplexity
+    * --particles= 
+        * universal_(16),galactic_(14),multiverse_(16),non_value_virtue_sorting_(13_with_14),galaxy_sub_areas_(13),goodness_and_direction_(7),space_and_dimension_(8)
     * --multiverse= 
         * multiversalias,particles
+    * --basic_structures= 
+        * analyticontology,modelofhierarchicalcomplexity,transcendentals,condition,areas_of_life,measures,relativereciprocal,universalcomparative,existentials,extremalia,expectations,passion,relativetimeamount,numericalcomparison,aspiration,principles,attractions,optimization,topics,meaning,reciprocal,attention,time,intention16,intention17,intention6,intention7,notemotionnotimpulsesbutsimilar,behavior,energy,sheafs,comprehend,empathy,intention1/6,innervalues,intention10,mind,reflex,lust,paradigms,truthRealities,calculate,mood,class,order,metasystems,intention1pro8,goals,concreta,emotions,dependence,map,foundation,positions,imaginations,shall,views,affiliations,intention13,love,coalitions,impulses,drive,reflection,states
     * --scale= 
         * light,scale,organizations,politicalsystems
     * --universeMetaConcrete= 
         * meta,concrete,theory,practice,management,changing,mathematical_discrete,beyond,enterprise,value,rule,direction
     * --primeeffect= 
         * universe,directiondirection,intentionGalaxy,intentGalaxyReciprocal,universeReciprocal,against-against-transcendentalism,neutral_against_transcendentalism
-    * --basic_structures= 
-        * modelofhierarchicalcomplexity,transcendentals,condition,measures,relativereciprocal,universalcomparative,existentials,extremalia,expectations,passion,relativetimeamount,numericalcomparison,aspiration,principles,attractions,optimization,topics,meaning,reciprocal,attention,time,intention16,intention17,intention6,intention7,notemotionnotimpulsesbutsimilar,behavior,energy,sheafs,comprehend,empathy,intention1/6,innervalues,intention10,mind,reflex,lust,paradigms,truthRealities,rechnen,mood,class,order,metasystems,intention1pro8,goals,concreta,emotions,dependence,map,foundation,positions,imaginations,shall,views,affiliations,intention13,love,coalitions,impulses,drive,reflection,states
     * --economy= 
         * specialties,plants,machines,typeoforganization,system,works,explanation,businessadministration
     * --procontra= 
@@ -95,9 +97,9 @@ Secondary parameters start with 2 minus --.
     * --meaning= 
         * primecross,inreta,signbefore,primenumbers,applicationofsunsandmoons,ranges,law,perfection,spaceObject,subjunctive,mechanisms
     * --fractional_galaxy_n/m= 
-        * 6,7,9,2,16,12,23,10,21,15,17,19,3,8,4,22,13,14,11,20,18,5
+        * 3,10,22,8,9,7,6,21,18,19,17,23,20,16,11,13,4,5,2,12,14,15
     * --fractional_universe_n/m= 
-        * 6,7,9,2,16,12,23,10,21,15,17,19,3,8,4,22,13,14,11,20,18,5
+        * 3,10,22,8,9,7,6,21,18,19,17,23,20,16,11,13,4,5,2,12,14,15
     * --symbols 
     * --properties= 
         * wisdom,rights,inferior,dispute,latchOn,familyneeds,humble,selfishness,science,asshole,love,selfless,monotonous,averse,honest,scope,worthless,familial,soft,uniteConnect,similar,good,senseAndMeaning,time,egalitarianAuthoritarian,opinions,opinionintelligence,morality,leadership,X-ray,encourage,arrogant,polarityOfLove,egoism,cachetPrestigeValidity,equal,survive
@@ -109,7 +111,7 @@ Secondary parameters start with 2 minus --.
 
 ## -combination
     * --galaxy=
-        * livingbeing,animals,animal,creatures,jobs,jobs,job,creativity_and_intelligence,creativity,intelligence,creativity,love,love,men,men,men,women,personality_evolutionary_acquisition,evolution,acquire,personality,personality,religion,religion,religions,motives_goals,motivation,goals,goal,motifs,Emotions,emotions,emotions,emotions,emotion,feelings,people,persons,celebrities,celebrities,economicsystems,economicsystem,economicsystems,combinedeconomicsystem,combinedeconomicsystems
+        * livingbeing,animals,animal,creatures,jobs,jobs,job,creativity_and_intelligence,creativity,intelligence,creativity,love,love,men,men,men,women,personality_evolutionary_acquisition,evolution,acquire,personality,personality,religion,religion,religions,motives_goals,motivation,goals,goal,motifs,Emotions,emotions,emotions,emotions,emotion,feelings,people,persons,celebrities,celebrities,economicsystems,economicsystem,economicsystems,combinedeconomicsystem,combinedeconomicsystems,ownership_and_possession
     * --universe=
         * livingbeing,animals,animal,creatures,jobs,jobs,job,transcendentalia_structuralia,transcendence,transcendentals,structurals,philoalias,primecross,leibnitz,primecross,personality_evolutionary_acquisition,evolution,acquire,personality,personality,religion,religion,religions,motives_goals,motivation,motifs,goals,goal,analytic_ontology,analyticontology,ontology,people,persons,celebrities,celebrities,mechanisms_of_breeding,mechanisms,essence,breed,breed,countertranscendentals,countertranscendentals,counter-structuralias,machines,machines,devices,equipment,mind,mind,consciousness,consciousness
 

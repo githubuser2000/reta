@@ -362,6 +362,8 @@ befehle2.update({"16_15_" + a: "16_15_" + a for a in wahl15.keys() if a != "15"}
 befehle2.update({"16_" + a: "16_" + a for a in wahl16.keys()})
 befehle2.update(
     {
+        "komplex": _("komplex"),
+        "ee": _("ee"),
         "groesse": _("groesse"),
         "emotion": emotionWort,
         freiheitGleichheit[0]: _(freiheitGleichheit[0]),
@@ -661,6 +663,7 @@ ParametersMain: NamedTuple = ParametersMain(
 )
 thomasWort = _("thomas")
 motivationWort = _("motivation")
+komplexWort = _("komplex")
 transzendentalienWort = _("transzendentalien")
 transzendentaliereziprokeWort = _("transzendentaliereziproke")
 verhaeltnisgleicherzahlWort = _("verhaeltnisgleicherzahl")
@@ -1613,7 +1616,7 @@ paraNdataMatrix: list = [
         (
             _("Model_of_Hierarchical_Complexity"),
             _("modelofhierarchicalcomplexity"),
-            _("komplex"),
+            komplexWort,
             _("komplexität"),
             _("komplexitaet"),
             _("complexity"),

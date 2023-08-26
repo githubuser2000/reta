@@ -16,20 +16,55 @@ from fractions import Fraction
 from itertools import zip_longest
 from typing import Optional
 
-from center import (alxp, cliout, gspattern, i18n, invert_dict_B,
-                    isZeilenAngabe, isZeilenAngabe_betweenKommas,
-                    isZeilenBruchAngabe, kpattern, moduloA, primfaktoren,
-                    primRepeat, retaPromptHilfe, teiler, textHatZiffer, x)
-from LibRetaPrompt import (BereichToNumbers2, PromptModus,
-                           gebrochenErlaubteZahlen, isReTaParameter,
-                           notParameterValues, stextFromKleinKleinKleinBefehl,
-                           verifyBruchNganzZahlBetweenCommas, verkuerze_dict,
-                           wahl15, wahl16)
+from center import (
+    alxp,
+    cliout,
+    gspattern,
+    i18n,
+    invert_dict_B,
+    isZeilenAngabe,
+    isZeilenAngabe_betweenKommas,
+    isZeilenBruchAngabe,
+    kpattern,
+    moduloA,
+    primfaktoren,
+    primRepeat,
+    retaPromptHilfe,
+    teiler,
+    textHatZiffer,
+    x,
+)
+from LibRetaPrompt import (
+    BereichToNumbers2,
+    PromptModus,
+    gebrochenErlaubteZahlen,
+    isReTaParameter,
+    notParameterValues,
+    stextFromKleinKleinKleinBefehl,
+    verifyBruchNganzZahlBetweenCommas,
+    verkuerze_dict,
+    wahl15,
+    wahl16,
+)
+
 # import reta
-from nestedAlx import (ComplSitua, NestedCompleter, ausgabeParas, befehle,
-                       befehle2, hauptForNeben, kombiMainParas, mainParas,
-                       reta, retaProgram, spalten, spaltenDict, zeilenParas)
+from nestedAlx import (
+    ComplSitua,
+    NestedCompleter,
+    ausgabeParas,
+    befehle,
+    befehle2,
+    hauptForNeben,
+    kombiMainParas,
+    mainParas,
+    reta,
+    retaProgram,
+    spalten,
+    spaltenDict,
+    zeilenParas,
+)
 from prompt_toolkit import PromptSession, print_formatted_text, prompt
+
 # from prompt_toolkit.completion import Completer, Completion, WordCompleter
 from prompt_toolkit.completion import Completer, Completion
 from prompt_toolkit.history import FileHistory, InMemoryHistory
@@ -1240,6 +1275,34 @@ def PromptGrosseAusgabe(
         was_n_1proN_cmd, cmd_gave_output = retaCmdAbstraction_n_and_1pron(
             Txt.hasWithoutABC(
                 {
+                    i18n.befehle2["komplex"],
+                }
+            ),
+            [
+                "".join(
+                    (
+                        "--",
+                        i18n.ParametersMain.universum[0],
+                        "=",
+                        i18n.komplexWort,
+                    )
+                )
+            ],
+            None,
+            ("1", "3"),
+            Txt,
+            bruch_GanzZahlReziproke,
+            zahlenBereichC,
+            ketten,
+            cmd_gave_output,
+            zeiln1,
+            zeiln2,
+            zeiln3,
+            zeiln4,
+        )
+        was_n_1proN_cmd, cmd_gave_output = retaCmdAbstraction_n_and_1pron(
+            Txt.hasWithoutABC(
+                {
                     i18n.befehle2["absicht"],
                     i18n.befehle2["absichten"],
                     i18n.befehle2["motiv"],
@@ -1695,12 +1758,15 @@ def PromptGrosseAusgabe(
 
             befehle15 = []
             for token in Txt.listeE:
-                if token[:3] == "15_":
-                    befehle15 += [wahl15[token[3:]]]
-                if token == "16_15":
-                    befehle15 += [wahl15["15"]]
-                if token[:6] == "16_15_":
-                    befehle15 += [wahl15[token[6:]]]
+                try:
+                    if token[:3] == "15_":
+                        befehle15 += [wahl15[token[3:]]]
+                    if token == "16_15":
+                        befehle15 += [wahl15["15"]]
+                    if token[:6] == "16_15_":
+                        befehle15 += [wahl15[token[6:]]]
+                except KeyError:
+                    pass
             grundstruk = ",".join(befehle15)
             retaExecuteNprint(
                 ketten,

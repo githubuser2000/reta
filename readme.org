@@ -47,10 +47,6 @@
 ***** unwichtiges
 + Ich könnte erweitern aus welchen Dingen ich noch bestehe, der höheren Art, wie höhere Gefühle und Impulse, etc. Denn das gabs vorher nicht.
 *** 2. Feature Ideen
-+ Dass es wieder geht reta befehl zu speichern und dann nur eine Zeilenangabe machen, und umgekehrt
-  Dazu muss wohl nur etwas aus stext gelöscht werden.
-+ Kurzbefehl complex für commons stufen
-+ Kurzbefehl, um Überschriften weg zu bekommen: ee statt e - d.h. Neue KurzKurzBefehlKategorie der Steigerung der eigenen Wirkung - sollte ich?
 + Weitere Farbschemen, wenigstens konzeptionalisieren: Aber eigentlich dürfte das Einprogrammieren nicht so das große Ding sein.
 + Dass man in der html per Parameter Dinge vorselektieren kann.
 + " * " mit "?" oder regex überall auch, z.B. bei 15_*_10 oder bei Zahlenbereichen oder bei spalten.

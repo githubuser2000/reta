@@ -8,10 +8,18 @@ from typing import Optional
 
 import reta
 
-from center import (BereichToNumbers2, Primzahlkreuz_pro_contra_strs,
-                    gspattern, i18n, isZeilenAngabe,
-                    isZeilenAngabe_betweenKommas, isZeilenBruchAngabe,
-                    isZeilenBruchOrGanzZahlAngabe, kpattern, x)
+from center import (
+    BereichToNumbers2,
+    Primzahlkreuz_pro_contra_strs,
+    gspattern,
+    i18n,
+    isZeilenAngabe,
+    isZeilenAngabe_betweenKommas,
+    isZeilenBruchAngabe,
+    isZeilenBruchOrGanzZahlAngabe,
+    kpattern,
+    x,
+)
 
 wahl15 = i18n.wahl15
 wahl16 = i18n.wahl16
@@ -312,17 +320,17 @@ def stextFromKleinKleinKleinBefehl(promptMode2, stext, textDazu):
     # if isZeilenAngabe(xtext):
     #    stext = [",".join(str(B) for B in BereichToNumbers2(xtext))]
     stext2 = re.split(gspattern, xtext)
+    stext3 = []
     del xtext
     for kkk, s_ in enumerate(tuple(deepcopy(stext2))):
         s_m = s_
+        textDazu = []
         if not is15or16command(s_) and s_ not in befehle and stext[0] != "reta":
-            textDazu = []
             nn: Optional[int] = 0
             for iii, s_3 in enumerate(s_[::-1]):
                 if s_3.isdecimal() or (
                     s_3 in (")", "]", "}")
                     and "reta" not in s_
-                    and "reta" not in textDazu
                     and any(("(" in at or "[" in at or "{" for at in s_))
                 ):
                     nn = iii
@@ -336,7 +344,6 @@ def stextFromKleinKleinKleinBefehl(promptMode2, stext, textDazu):
                 if s_3.isdecimal() or (
                     s_3 in ("(", "[", "{")
                     and "reta" not in s_b
-                    and "reta" not in textDazu
                     and any((")" in at or "]" in at or "}" for at in s_b))
                 ):
                     n = ii
@@ -420,7 +427,7 @@ def stextFromKleinKleinKleinBefehl(promptMode2, stext, textDazu):
                                     "keineEinZeichenZeilenPlusKeineAusgabeWelcherBefehlEsWar"
                                 ],
                             ]
-                            if "/" in stext[0]:
+                            if any(("/" in _s_ for _s_ in stext)):
                                 textDazu += i18n.befehle2["u"]
                                 textDazu += i18n.befehle2["B"]
                                 textDazu += i18n.befehle2["G"]
@@ -433,17 +440,24 @@ def stextFromKleinKleinKleinBefehl(promptMode2, stext, textDazu):
                                     "--" + i18n.ausgabeParas["keineueberschriften"],
                                 ]
         else:
-            textDazu += [s_]
+            if i18n.befehle2["ee"] == s_:
+                textDazu += [
+                    "-" + i18n.mainParaCmds["ausgabe"],
+                    "--" + i18n.ausgabeParas["keineueberschriften"],
+                ]
+            else:
+                textDazu += [s_]
+
         if len(textDazu) > 0:
-            stext2 += textDazu
+            stext3 += textDazu
         else:
-            stext2 += [str(s_)]
+            stext3 += [str(s_)]
     if stext[0] not in [
         "reta",
         "shell",
         "python",
     ]:
-        stext = stext2
+        stext = stext3
     # x("stext", stext)
     return ifKurzKurz, stext
 
