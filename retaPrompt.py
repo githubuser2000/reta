@@ -45,6 +45,7 @@ from LibRetaPrompt import (
     wahl15,
     wahl16,
     custom_split,
+    custom_split2,
 )
 
 # import reta
@@ -153,9 +154,10 @@ class TXT(object):
         self._text = value
         if value[:4] != "reta":
             self._stext = custom_split(self._text)
+            self._stextS = custom_split(self._text)
         else:
             self._stext = [s.strip() for s in self._text.split() if len(s.strip()) > 0]
-        self._stextS = value.split()
+            self._stextS = value.split()
         self._stextSet = set(self._stext)
         self._stextEmenge = self._stextSet | set(self._e)
         self._stextE = self._stext + self._e
@@ -167,7 +169,7 @@ class TXT(object):
         self._stextSet = set(self._stext)
         self._stextEmenge = self._stextSet | set(self._e)
         self._stextE = self._stext + self._e
-        self._stextS = [s for g in [v.split() for v in value] for s in g]
+        self._stextS = [s for g in [custom_split(v) for v in value] for s in g]
 
     @e.setter
     def e(self, value):
@@ -2053,7 +2055,7 @@ def bruchBereichsManagementAndWbefehl(zahlenBereichC, stext, zahlenAngaben_):
         bruchRanges = []
         abzug = False
         if a[:1] != "-":
-            for etwaBruch in a.split(","):
+            for etwaBruch in custom_split2(a, ","):
                 x("etwaBruch", etwaBruch)
                 bruchRange, bruchBereichsAngabe = createRangesForBruchLists(
                     bruchSpalt(etwaBruch)
@@ -2413,8 +2415,6 @@ def bruchBereichsManagementAndWbefehl(zahlenBereichC, stext, zahlenAngaben_):
     except (UnboundLocalError, NameError):
         zahlenReiheKeineWteiler = ""
 
-    # print(zahlenBereichC)
-    #  print(rangesBruecheDict)
     dazu = []
     sdazu = []
     bruch_GanzZahlReziprokeDazu = []
@@ -2435,11 +2435,6 @@ def bruchBereichsManagementAndWbefehl(zahlenBereichC, stext, zahlenAngaben_):
         True,
     )
 
-    # print("C")
-
-    # print(bruch_GanzZahlReziproke)
-    # print(zahlenBereichC)
-    # print(stext)
     if len(dazu) > 0:
         x("K", zahlenBereichC)
         zahlenBereichC = ",".join(
@@ -2454,9 +2449,6 @@ def bruchBereichsManagementAndWbefehl(zahlenBereichC, stext, zahlenAngaben_):
                 + re.split(kpattern, bruch_GanzZahlReziproke),
             )
         )
-    # print(bruch_GanzZahlReziproke)
-    # print(zahlenBereichC)
-    # print(stext)
 
     return (
         bruch_GanzZahlReziproke,

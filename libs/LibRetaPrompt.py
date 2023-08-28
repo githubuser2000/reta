@@ -56,6 +56,31 @@ def custom_split(text):
     return result
 
 
+def custom_split2(input_string, delimiter):
+    result = []
+    temp = ""
+    stack = []
+
+    for char in input_string:
+        if char in "({[":
+            stack.append("(")
+            temp += char
+        elif char in ")}]":
+            if stack and stack[-1] in "({[":
+                stack.pop()
+                temp += char
+            else:
+                temp += char
+        elif char == delimiter and not stack:
+            result.append(temp)
+            temp = ""
+        else:
+            temp += char
+    if temp:
+        result.append(temp)
+    return result
+
+
 class PromptModus(Enum):
     normal = 0
     speichern = 1
