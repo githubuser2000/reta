@@ -58,6 +58,10 @@ Secondary parameters start with 2 minus --.
         * 1,2,3,4,5,...
     * -type=
         * sun,moon,planet,black_sun
+        * -sun,-moon,-planet,-black_sun
+    * --primenumbers=
+        * insidefirst,insideall,outsidefirst,outsideall
+        * -insidefirst,-insideall,-outsidefirst,-outsideall
     * --multiplesofnumbers=
         * 1,2,3,4,5,...
     * --primemultiples=
@@ -122,6 +126,10 @@ Besser die Readme aus Markdown mit einem Markdown-Leseprogramm lesen!
         * 1,2,3,4,5,...
     * --typ=
         * sonne,mond,planet,schwarzesonne
+        * -sonne,-mond,-planet,-schwarzesonne
+    * --primzahlen=
+        * aussenalle,innenalle,aussenerste,innenerste
+        * -aussenalle,-innenalle,-aussenerste,-innenerste
     * --vielfachevonzahlen=
         * 1,2,3,4,5,...
     * --primzahlvielfache=

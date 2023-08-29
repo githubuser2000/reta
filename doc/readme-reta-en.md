@@ -28,6 +28,10 @@ Secondary parameters start with 2 minus --.
         * 1,2,3,4,5,...
     * -type=
         * sun,moon,planet,black_sun
+        * -sun,-moon,-planet,-black_sun
+    * --primenumbers=
+        * insidefirst,insideall,outsidefirst,outsideall
+        * -insidefirst,-insideall,-outsidefirst,-outsideall
     * --multiplesofnumbers=
         * 1,2,3,4,5,...
     * --primemultiples=
@@ -97,9 +101,9 @@ Secondary parameters start with 2 minus --.
     * --meaning= 
         * primecross,inreta,signbefore,primenumbers,applicationofsunsandmoons,ranges,law,perfection,spaceObject,subjunctive,mechanisms
     * --fractional_galaxy_n/m= 
-        * 16,4,11,8,17,14,19,12,21,7,2,5,3,23,13,9,10,6,15,20,18,22
+        * 15,7,2,11,20,12,8,14,21,16,10,18,22,6,17,3,5,19,23,9,4,13
     * --fractional_universe_n/m= 
-        * 16,4,11,8,17,14,19,12,21,7,2,5,3,23,13,9,10,6,15,20,18,22
+        * 15,7,2,11,20,12,8,14,21,16,10,18,22,6,17,3,5,19,23,9,4,13
     * --symbols 
     * --properties= 
         * wisdom,rights,inferior,dispute,latchOn,familyneeds,humble,selfishness,science,asshole,love,selfless,monotonous,averse,honest,scope,worthless,familial,soft,uniteConnect,similar,good,senseAndMeaning,time,egalitarianAuthoritarian,opinions,opinionintelligence,morality,leadership,X-ray,encourage,arrogant,polarityOfLove,egoism,cachetPrestigeValidity,equal,survive

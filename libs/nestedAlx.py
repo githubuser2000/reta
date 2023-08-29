@@ -364,8 +364,10 @@ class NestedCompleter(Completer):
             first_term if gleich else self.zeilenParaWort if komma else None
         )
         var4 = {key: [] for key in zeilenParas}
-        var4[i18n.zeilenParas["typ"]] = zeilenTypen
-        var4[i18n.zeilenParas["primzahlen"]] = zeilenTypenB
+        var4[i18n.zeilenParas["typ"]] = zeilenTypen + ["-" + t for t in zeilenTypen]
+        var4[i18n.zeilenParas["primzahlen"]] = zeilenTypenB + [
+            "-" + t for t in zeilenTypenB
+        ]
         var4[i18n.zeilenParas["zeit"]] = zeilenZeit
         var2 = ComplSitua.zeilenPara
         var3 = self.zeilenParaWort

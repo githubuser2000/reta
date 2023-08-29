@@ -1,13 +1,25 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 import math
+import sys
+
+sys.path.insert(0, "libs")
 from collections import OrderedDict
 from enum import Enum
 from fractions import Fraction
 from functools import lru_cache
-
-from center import (Multiplikationen, alxp, cliout, getTextWrapThings, i18n,
-                    infoLog, multiples, output, re, x)
+from center import (
+    Multiplikationen,
+    alxp,
+    cliout,
+    getTextWrapThings,
+    i18n,
+    infoLog,
+    multiples,
+    output,
+    re,
+    x,
+)
 
 i18n = i18n.lib4tables
 
@@ -379,7 +391,7 @@ def primCreativity(num: int):
     if len(fak) < 1:
         return 0
     primAmounts = []
-    for (prim, primAmount) in fak:
+    for prim, primAmount in fak:
         primAmounts += [primAmount]
     for primAmount in primAmounts:
         divisors = set(divisorGenerator(primAmount)) - {1}

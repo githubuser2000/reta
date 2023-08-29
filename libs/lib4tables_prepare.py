@@ -6,10 +6,22 @@ from enum import Enum
 from typing import Iterable, Optional, Union
 
 import lib4tables_Enum
-from center import (BereichToNumbers2, Multiplikationen, alxp, cliout,
-                    getTextWrapThings, i18n, infoLog, isZeilenAngabe, output,
-                    re, teiler, x)
-from lib4tables import isPrimMultiple, moonNumber
+from center import (
+    BereichToNumbers2,
+    Multiplikationen,
+    alxp,
+    cliout,
+    getTextWrapThings,
+    i18n,
+    infoLog,
+    isZeilenAngabe,
+    output,
+    re,
+    teiler,
+    x,
+    primRepeat,
+)
+from lib4tables import isPrimMultiple, moonNumber, primFak
 from lib4tables_Enum import ST
 
 shellRowsAmount, h_de, dic, fill = getTextWrapThings()
@@ -198,7 +210,6 @@ class Prepare:
         return isItNone
 
     def setWidth(self, rowToDisplay: int, combiRows1: int = 0) -> int:
-
         if self.shellRowsAmount == 0:
             return 0
         combiRows = combiRows1 if combiRows1 != 0 else len(self.rowsAsNumbers)
@@ -377,7 +388,6 @@ class Prepare:
             if condition[:3] == "_w_":
                 ifTeiler = True
         if if_a_AtAll:
-
             numRange |= BereichToNumbers2(
                 ",".join(mehrere), False, self.hoechsteZeile[1024] + 1
             )
@@ -510,34 +520,100 @@ class Prepare:
 
             # set().add
             # exit()
+        # ANFANG
         ifTypAtAll = False
         numRangeYesZ = set()
         if len(numRange) == 0 and len(set(paramLines) - {"ka", "ka2"}) > 0:
             numRange = set(range(1, self.hoechsteZeile[1024] + 1))
 
-            for condition in paramLines:
-                if "mond" in condition:
-                    numRangeYesZ, ifTypAtAll = (
-                        self.moonsun(True, numRangeYesZ, numRange, ifZaehlungenAtAll),
-                        True,
+        if (
+            len(
+                {"aussenerste", "innenerste", "aussenalle", "innenalle"}
+                & set(paramLines)
+            )
+            > 0
+        ):
+            primList = {}
+            innenAussen = {}
+            innenAussen[1] = (True, False, True)
+            numRangeB = numRange - {1, 2, 3}
+            for n in numRangeB:
+                primList[n] = primFak(n)
+            for anfangsZahl, primZahlen in primList.items():
+                NurEineZahl = len(primZahlen) == 1
+                einFachVorkommen = NurEineZahl
+                innenAussen[anfangsZahl] = (False, False, NurEineZahl)
+                innen, aussen = False, False
+                for primZahl in primZahlen:
+                    if primZahl not in range(4):
+                        innenOrAussen = primZahl % 6
+                        innen = innenOrAussen == 1 or innen
+                        aussen = innenOrAussen == 5 or aussen
+                innenAussen[anfangsZahl] = (innen, aussen, einFachVorkommen)
+            if len({"aussenerste"} & set(paramLines)) > 0:
+                numRangeYesZ |= set(
+                    (
+                        anfangsZahl
+                        for anfangsZahl, Tupel in innenAussen.items()
+                        if Tupel[0] and Tupel[2]
                     )
-                elif "schwarzesonne" in condition:
-                    ifTypAtAll = True
-                    for n in numRange:
-                        if n % 3 == 0:
-                            numRangeYesZ.add(n)
-                elif "sonne" in condition:
-                    numRangeYesZ, ifTypAtAll = (
-                        self.moonsun(False, numRangeYesZ, numRange, ifZaehlungenAtAll),
-                        True,
+                )
+            if len({"innenerste"} & set(paramLines)) > 0:
+                numRangeYesZ |= set(
+                    (
+                        anfangsZahl
+                        for anfangsZahl, Tupel in innenAussen.items()
+                        if Tupel[1] and Tupel[2]
                     )
-                elif "planet" in condition:
-                    ifTypAtAll = True
-                    for n in numRange:
-                        if n % 2 == 0:
-                            numRangeYesZ.add(n)
-
+                )
+            if len({"aussenalle"} & set(paramLines)) > 0:
+                numRangeYesZ |= set(
+                    (
+                        anfangsZahl
+                        for anfangsZahl, Tupel in innenAussen.items()
+                        if Tupel[0]
+                    )
+                )
+            if len({"innenalle"} & set(paramLines)) > 0:
+                numRangeYesZ |= set(
+                    (
+                        anfangsZahl
+                        for anfangsZahl, Tupel in innenAussen.items()
+                        if Tupel[1]
+                    )
+                )
+            ifTypAtAll = len(numRangeYesZ) > 0
             numRange = cutset(ifTypAtAll, numRange, numRangeYesZ)
+        # ENDE
+
+        ifTypAtAll = False
+        numRangeYesZ = set()
+        if len(numRange) == 0 and len(set(paramLines) - {"ka", "ka2"}) > 0:
+            numRange = set(range(1, self.hoechsteZeile[1024] + 1))
+
+        for condition in paramLines:
+            if "mond" in condition:
+                numRangeYesZ, ifTypAtAll = (
+                    self.moonsun(True, numRangeYesZ, numRange, ifZaehlungenAtAll),
+                    True,
+                )
+            elif "schwarzesonne" in condition:
+                ifTypAtAll = True
+                for n in numRange:
+                    if n % 3 == 0:
+                        numRangeYesZ.add(n)
+            elif "sonne" in condition:
+                numRangeYesZ, ifTypAtAll = (
+                    self.moonsun(False, numRangeYesZ, numRange, ifZaehlungenAtAll),
+                    True,
+                )
+            elif "planet" in condition:
+                ifTypAtAll = True
+                for n in numRange:
+                    if n % 2 == 0:
+                        numRangeYesZ.add(n)
+
+        numRange = cutset(ifTypAtAll, numRange, numRangeYesZ)
 
         primMultiples: list = []
         ifPrimAtAll = False
