@@ -174,6 +174,11 @@ zeilenParas: dict = {
     "vorhervonausschnittteiler": _("vorhervonausschnittteiler"),
     "zaehlung": _("zaehlung"),
     "zeit": _("zeit"),
+    "primzahlen": _("primzahlen"),
+    "aussenerste": _("aussenerste"),
+    "innenerste": _("innenerste"),
+    "aussenalle": _("aussenalle"),
+    "innenalle": _("innenalle"),
 }
 
 zeilenParasLen = {key: len(value) for (key, value) in zeilenParas.items()}

@@ -18,14 +18,36 @@ try:
 except:
     OrderedSet = set
 
-from center import (BereichToNumbers2, Primzahlkreuz_pro_contra_strs, i18n,
-                    retaHilfe)
-from tableHandling import (Enum, Iterable, Multiplikationen, OutputSyntax,
-                           Tables, Union, alxp, bbCodeSyntax, cliout, copy,
-                           csv, csvSyntax, deepcopy, emacsSyntax,
-                           getTextWrapThings, htmlSyntax, infoLog,
-                           markdownSyntax, math, os, output, primCreativity,
-                           re, setShellRowsAmount, shellRowsAmount, sys, x)
+from center import BereichToNumbers2, Primzahlkreuz_pro_contra_strs, i18n, retaHilfe
+from tableHandling import (
+    Enum,
+    Iterable,
+    Multiplikationen,
+    OutputSyntax,
+    Tables,
+    Union,
+    alxp,
+    bbCodeSyntax,
+    cliout,
+    copy,
+    csv,
+    csvSyntax,
+    deepcopy,
+    emacsSyntax,
+    getTextWrapThings,
+    htmlSyntax,
+    infoLog,
+    markdownSyntax,
+    math,
+    os,
+    output,
+    primCreativity,
+    re,
+    setShellRowsAmount,
+    shellRowsAmount,
+    sys,
+    x,
+)
 
 gebrochenSpaltenMaximumPlus1 = i18n.gebrochenSpaltenMaximumPlus1
 
@@ -822,6 +844,22 @@ class Program:
                                 paramLines.add("planet")
                             elif word == neg + i18n.zeilenParas["mond"]:
                                 paramLines.add("mond")
+                    elif (
+                        arg[2 : 3 + i18n.zeilenParasLen["primzahlen"]]
+                        == i18n.zeilenParas["primzahlen"] + "="
+                    ):
+                        self.obZeilenBereicheAngegeben = True
+                        for word in arg[3 + i18n.zeilenParasLen["primzahlen"] :].split(
+                            ","
+                        ):
+                            if word == neg + i18n.zeilenParas["aussenerste"]:
+                                paramLines.add("aussenerste")
+                            elif word == neg + i18n.zeilenParas["innenerste"]:
+                                paramLines.add("innenerste")
+                            elif word == neg + i18n.zeilenParas["aussenalle"]:
+                                paramLines.add("aussenalle")
+                            elif word == neg + i18n.zeilenParas["innenalle"]:
+                                paramLines.add("innenalle")
                     elif (
                         arg[2 : 3 + i18n.zeilenParasLen["potenzenvonzahlen"]]
                         == i18n.zeilenParas["potenzenvonzahlen"] + "="

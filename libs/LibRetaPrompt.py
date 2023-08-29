@@ -124,6 +124,13 @@ zeilenZeit = [
     i18n.zeilenParas["morgen"],
 ]
 
+zeilenTypenB = [
+    i18n.zeilenParas["aussenerste"],
+    i18n.zeilenParas["innenerste"],
+    i18n.zeilenParas["aussenalle"],
+    i18n.zeilenParas["innenalle"],
+]
+
 ausgabeParas = [
     "--" + s + ("=" if l else "")
     for s, l in zip(i18n.ausgabeParas.values(), i18n.ausgabeParasEqSign.values())
@@ -161,6 +168,7 @@ zeilenParas = [
     "--" + i18n.zeilenParas["typ"] + "=",
     "--" + i18n.zeilenParas["vielfachevonzahlen"] + "=",
     "--" + i18n.zeilenParas["oberesmaximum"] + "=",
+    "--" + i18n.zeilenParas["primzahlen"] + "=",
 ]
 hauptForNeben = ["-" + s for s in set(i18n.hauptForNeben.values()) - {"debug"}]
 # hauptForNeben = ("-zeilen", "-spalten", "-kombination", "-ausgabe", "-h", "-help")

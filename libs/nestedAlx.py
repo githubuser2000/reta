@@ -9,17 +9,38 @@ from enum import Enum
 from typing import Any, Dict, Iterable, Mapping, Optional, Set, Union
 
 from center import i18n
-from LibRetaPrompt import (PromptModus, ausgabeArt, ausgabeParas, befehle,
-                           befehle2, hauptForNeben, hauptForNebenSet,
-                           isZeilenBruchOrGanzZahlAngabe, kombiMainParas,
-                           mainParas, reta, retaProgram, spalten, spaltenDict,
-                           stextFromKleinKleinKleinBefehl, zeilenParas,
-                           zeilenTypen, zeilenZeit)
+from LibRetaPrompt import (
+    PromptModus,
+    ausgabeArt,
+    ausgabeParas,
+    befehle,
+    befehle2,
+    hauptForNeben,
+    hauptForNebenSet,
+    isZeilenBruchOrGanzZahlAngabe,
+    kombiMainParas,
+    mainParas,
+    reta,
+    retaProgram,
+    spalten,
+    spaltenDict,
+    stextFromKleinKleinKleinBefehl,
+    zeilenParas,
+    zeilenTypen,
+    zeilenTypenB,
+    zeilenZeit,
+)
+
 # from baseAlx import WordCompleter
 # from completionAlx import Completion
-from prompt_toolkit.completion import (CompleteEvent, Completer, Completion,
-                                       FuzzyWordCompleter)
+from prompt_toolkit.completion import (
+    CompleteEvent,
+    Completer,
+    Completion,
+    FuzzyWordCompleter,
+)
 from prompt_toolkit.document import Document
+
 # from prompt_toolkit.completion.word_completer import WordCompleter
 from word_completerAlx import WordCompleter
 
@@ -192,7 +213,6 @@ class NestedCompleter(Completer):
                 )
                 and first_term not in hauptForNeben
             ):
-
                 if (
                     (
                         len(self.lastCommands & befehle2) > 0
@@ -345,6 +365,7 @@ class NestedCompleter(Completer):
         )
         var4 = {key: [] for key in zeilenParas}
         var4[i18n.zeilenParas["typ"]] = zeilenTypen
+        var4[i18n.zeilenParas["primzahlen"]] = zeilenTypenB
         var4[i18n.zeilenParas["zeit"]] = zeilenZeit
         var2 = ComplSitua.zeilenPara
         var3 = self.zeilenParaWort
