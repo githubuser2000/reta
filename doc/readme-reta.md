@@ -26,6 +26,8 @@ Besser die Readme aus Markdown mit einem Markdown-Leseprogramm lesen!
             bedeutet Religionen > 10
         * "gestern,heute,morgen"
             bedeutet Religion 1-10 und höher als 10,
+        * "-gestern,-heute,-morgen"
+            zum Abziehen
     * --zaehlung=
         * 1,2,3,4,5,...
     * --typ=
@@ -101,9 +103,9 @@ Besser die Readme aus Markdown mit einem Markdown-Leseprogramm lesen!
     * --bedeutung= 
         * primzahlkreuz,inreta,vorzeichen,primzahlen,anwendungdersonnenundmonde,zählungen,jura,vollkommenheit,gestirn,konjunktiv,mechanismen
     * --gebrochen-rational_Galaxie_n/m= 
-        * 3,12,19,15,11,10,5,14,22,21,13,17,2,16,20,7,18,8,23,4,9,6
+        * 7,11,19,18,2,12,17,20,21,23,13,9,6,3,5,15,10,4,8,22,16,14
     * --gebrochen-rational_Universum_n/m= 
-        * 3,12,19,15,11,10,5,14,22,21,13,17,2,16,20,7,18,8,23,4,9,6
+        * 7,11,19,18,2,12,17,20,21,23,13,9,6,3,5,15,10,4,8,22,16,14
     * --symbole 
     * --eigenschaften= 
         * weisheit,rechte,unterlegen,streit,einklinken,familiebrauchen,bescheiden,selbstsucht,wissenschaft,arschloch,liebe,selbstlos,eintönig,abgeneigt,ehrlich,tragweite,wertlos,familiaer,sanft,vereinenverbinden,aehnlich,gut,sinn,zeit,egalitaerautoritaer,meinungen,meinungsintelligenz,sittlichkeit,führung,durchleuchten,foerdern,überheblich,liebepolung,egoismus,geltung,gleich,ueberleben

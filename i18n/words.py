@@ -247,7 +247,7 @@ wahl15Words: dict = {
         "Absicht_1/6_ist_Reinigung_und_Klarheit"
     ),
     "Reflektion_und_Kategorien_(1/15)": _("Reflektion_und_Kategorien_(1/15)"),
-    "Regungen_(1)": _("Regungen_(1)"),
+    "Bewusstheit_statt_Bewusstsein_(1)": _("Bewusstheit_statt_Bewusstsein_(1)"),
     "Energie_und_universelle_Eigenschaften_(30)": _(
         "Energie_und_universelle_Eigenschaften_(30)"
     ),
@@ -318,7 +318,7 @@ wahl15: dict = {
     "13_1pro8": _("Absicht_1/8"),
     "13_1pro6": _("Absicht_1/6_ist_Reinigung_und_Klarheit"),
     "1pro15": _("Reflektion_und_Kategorien_(1/15)"),
-    "1": _("Regungen_(1)"),
+    "1": _("Bewusstheit_statt_Bewusstsein_(1)"),
     "30": _("Energie_und_universelle_Eigenschaften_(30)"),
     "14": _("Stimmungen_Kombinationen_(14)"),
     "14_6": _("Rechnen"),
@@ -2139,9 +2139,8 @@ paraNdataMatrix: list = [
     (
         ParametersMain.grundstrukturen,
         (
-            _("Regungen_(1)"),
-            _("regung"),
-            _("regungen"),
+            _("Bewusstheit_statt_Bewusstsein_(1)"),
+            _("bewusstheit"),
         ),
         {282},
     ),

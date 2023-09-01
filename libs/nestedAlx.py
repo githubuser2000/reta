@@ -368,7 +368,8 @@ class NestedCompleter(Completer):
         var4[i18n.zeilenParas["primzahlen"]] = zeilenTypenB + [
             "-" + t for t in zeilenTypenB
         ]
-        var4[i18n.zeilenParas["zeit"]] = zeilenZeit
+        var4[i18n.zeilenParas["zeit"]] = zeilenZeit + ["-" + t for t in zeilenZeit]
+
         var2 = ComplSitua.zeilenPara
         var3 = self.zeilenParaWort
         completer.situationsTyp = ComplSitua.zeilenValPara

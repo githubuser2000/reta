@@ -47,23 +47,19 @@
 ***** unwichtiges
 + Ich könnte erweitern aus welchen Dingen ich noch bestehe, der höheren Art, wie höhere Gefühle und Impulse, etc. Denn das gabs vorher nicht.
 *** 2. Feature Ideen
++ Ich sollte in die endgültige cliout die Möglichkeit einbauen, dass man stattdessen in eine Datenstruktur speichern möchte.
+  + Damit könnte man anderweitig mit fremden Python Code mit der Ergebnis-Tabelle weiter-arbeiten.
+  + Für Unit Tests hilfreich
 + Weitere Farbschemen, wenigstens konzeptionalisieren: Aber eigentlich dürfte das Einprogrammieren nicht so das große Ding sein.
-+ Dass man in der html per Parameter Dinge vorselektieren kann.
++ Dass man in der html per Parameter Spalten über Checkboxen vorselektieren kann.
 + " * " mit "?" oder regex überall auch, z.B. bei 15_*_10 oder bei Zahlenbereichen oder bei spalten.
   + Ich könnte direkt die Python Regexe dafür verwenden, das also weiterleiten.
 + Alles in Klammern ermöglichen und nicht nur Generatoren aus Python. Außerdem Formeln erlauben, wo jetzt schon Generatoren funktionieren.
-+ KI die höheren antik griechischen Symbolnamen fortsetzen lassen: also nur content
 + Reziproke und n/m für w Befehl ermöglichen
-+ Brucherweiterungen aus Spalte aus der csv in n/m und n/n Dingen in retaPrompt mit dazu ausgeben.
 + andere Primzahlbedeutungen, außer 28 bis 32, der anderen Reihen auch hinzufügen
-+ Halb-Mond-Halb-Sonne Zahlen, wie 12 und 18 markieren: Für die Zeilenfilterung
-+ Filtern nach Primzahlarten und deren Vielfachern und nach 6*n zusätzlich, wegen besonderer Bedeutung (obwohl "grins" oder "lach" alle Zahlen besonders sind.)
-+ Filtern wie die HTML: Dafür ein System ausdenken
-+ Parameter hinzufügen für das Nicht-Printen von Spalten, in welchen nur ein Zeichen oder keins vorhanden ist.
-+ Teile der reta readme einfach besser generieren lassen: sparrt am Ende Zeit und sparrt noch mehr Zeit bei Mehrsprachigkeit und sorgt für weniger Fehler!
++ Filtern wie die HTML: Dafür ein System ausdenken: Refactoring und Neuprogrammierung des ganzen Systems zur Filterung von Zeilen
 + Feature Primfaktorzerlegungsvergleich: alles - das dazu ausgegeben werden sollte.
-+ Zeilen-Befehle für Primzahlen und deren Vielfachern (und welche) und der Primzahlart von 4
-+ die Primzahlfilterung und alle Filterungen von der html
++ alle Zeilen-Filterungen von der html
 + SQL like Relationen, z.B. 2:1, d.h. 3 Spalten, und auch alles wie bei SQL, d.h. z.B. n Spalten nach oben/unten: bei z.B. Abstand 1: Gegenspieler. Warum nicht gleich eine SQL (like) Sprache übernehmen, statt das Rad neu zu erfinden!
 + alle Features von retaPrompt und der von reta ausgegebenen html bei beiden haben, weil nicht ganz beide ganz alles von beiden können, sondern nur fast: was fehlt da eigentlich noch? Aufgabe: herausfinden, was noch ungleich ist: detailliert austesten
 + Nein: Syntax highlighting: hä?
@@ -89,7 +85,10 @@
   + html zstd pro Spalte: sukkzessiv mit zentraler lib aber dennoch pro zelle komprimiert: so wie mehrere dateien auch zusammen verschlüsselt werden können, ohne dass die Kompression wieder von vorn beginnen muss: spart platz insgesamt.
   + --nocolor auch für html und bbcode für deren Tag als option umsetzen
   + --parameter=* könnte alle Unter-Parameter meinen, als Kommandozeilenargument. Dürfte nicht so lange dauern einprogrammiert zu werden
+    besser gleich: regexen von allen, das man alles regexn könnte
   + Dass man bei Kombinationen filtern kann nach nur bestimmten Zahlen, dazu und hinweg - am Besten mit den bisherigeen allen Filtermethoden, den Bereichsangaben, aber auch für Brüche dann ja wohl - das aber vorher detailliert und umfangreich und lang genug vorher planen!
+  + KI die höheren antik griechischen Symbolnamen fortsetzen lassen: also nur content
+  + Halb-Mond-Halb-Sonne Zahlen, wie 12 und 18 markieren: Für die Zeilenfilterung
 **** 2.3. aus reta.py
 + kombinationen sortiert ausgeben und als Hierarchiebaum den Zahlenkombinationen entlang
 + kombinationen filterbar machen, dass nicht alle kombinationen bei einer Zahl immer angezeigt werden
@@ -103,11 +102,9 @@
 + Immer dann wenn ich die ganze relitable matrix deepcopy geklont habe, hätte ich das gar nicht tun müssen, da ich einfach nur die werte, die ich vorher raus genommen habe, einfach nur per copy oder deepcopy hätte nur rausnehmen müssen
 + Ich muss bei vielen Funktionen noch den Funktionskopf, Quellcode hier dokumentieren
 + vim: iIaAoOjJ mit Registern arbeiten wegen Löschen ohne ausschneiden
-+ Die Geschwindigkeitsteigerugnen entstehn meist durch anschließndes Zusammenfügen zu einer dann festen Größe.
++ Die Geschwindigkeitsteigerungen entstehn meist durch anschließndes Zusammenfügen zu einer dann festen Größe.
 + py datei erstellen, die dafür da ist datenstrukturen für die js zu bilden, die für die Zeilenangelegenheiten da sind, so dass die js die nicht jedes Mal berechnen muss.
 + Ich müsste wirklich noch total überall schauen und zu jedem Punkt im Forum zu gleichförmiges-Polygon-Religionen
-+ rp Parameterangabe, dass loggen ja nein
-+ cli out: org mode , und für shell lib als pretty print für tabellen, schöner
 **** 2.4. eher Luxus, aber nett, fancy und cool
 + auf Basis des Bereich-Regex generieren lassen: AutoComplete für alle ZahlenBereiche für mindestens immer stückweise 2 felder (was dann komisch aussieht, weils nicht das Ganze ist), wodurch bei Zahlen 0-9 bereits 100 und dann mehr ZeichenKombis möglich sind, aber was solls: Könnte machbar sein. Wird aber ein wenig umständliches hin und her: Aber nicht so super viele Codezeilen: vielleicht schaffbar an 3 Tagen. Der schaut dann immer in die Zukunft im ganzen langen Zahlenbereich von nur 1+1 Zeichen. Sieht dann merkwürdig aus, aber das könnte gehen. Der Regex generiert das dann, dadurch dass ich einen Brutforce mit begrenzten Zeichen auf ihn werfe. Ansich eigentlich eine coole Idee finde ich, das so zu lösen.
   + ist ein wenig schwieriger, aber nicht super viel Code - machbar

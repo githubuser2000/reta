@@ -24,6 +24,8 @@ Secondary parameters start with 2 minus --.
             means religions > 10
         * "yesterday,today,tomorrow"
             means religion 1-10 and higher than 10,
+        * "-yesterday,-today,-tomorrow"
+            to substract
     * --counting=
         * 1,2,3,4,5,...
     * -type=
@@ -101,9 +103,9 @@ Secondary parameters start with 2 minus --.
     * --meaning= 
         * primecross,inreta,signbefore,primenumbers,applicationofsunsandmoons,ranges,law,perfection,spaceObject,subjunctive,mechanisms
     * --fractional_galaxy_n/m= 
-        * 15,7,2,11,20,12,8,14,21,16,10,18,22,6,17,3,5,19,23,9,4,13
+        * 11,14,3,2,22,15,6,8,16,13,9,17,21,23,5,20,4,12,19,7,10,18
     * --fractional_universe_n/m= 
-        * 15,7,2,11,20,12,8,14,21,16,10,18,22,6,17,3,5,19,23,9,4,13
+        * 11,14,3,2,22,15,6,8,16,13,9,17,21,23,5,20,4,12,19,7,10,18
     * --symbols 
     * --properties= 
         * wisdom,rights,inferior,dispute,latchOn,familyneeds,humble,selfishness,science,asshole,love,selfless,monotonous,averse,honest,scope,worthless,familial,soft,uniteConnect,similar,good,senseAndMeaning,time,egalitarianAuthoritarian,opinions,opinionintelligence,morality,leadership,X-ray,encourage,arrogant,polarityOfLove,egoism,cachetPrestigeValidity,equal,survive

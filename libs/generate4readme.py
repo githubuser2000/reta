@@ -54,6 +54,8 @@ Secondary parameters start with 2 minus --.
             means religions > 10
         * "yesterday,today,tomorrow"
             means religion 1-10 and higher than 10,
+        * "-yesterday,-today,-tomorrow"
+            to substract
     * --counting=
         * 1,2,3,4,5,...
     * -type=
@@ -122,6 +124,8 @@ Besser die Readme aus Markdown mit einem Markdown-Leseprogramm lesen!
             bedeutet Religionen > 10
         * "gestern,heute,morgen"
             bedeutet Religion 1-10 und höher als 10,
+        * "-gestern,-heute,-morgen"
+            zum Abziehen
     * --zaehlung=
         * 1,2,3,4,5,...
     * --typ=
