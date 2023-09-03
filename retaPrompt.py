@@ -1610,6 +1610,74 @@ def PromptGrosseAusgabe(
                     .replace(", ", " ")
                 )
 
+        if Txt.hasWithoutABC({i18n.befehle2["primfaktorenvergleich"]}):
+            cmd_gave_output = True
+            bereiche = {}
+            for geschriebenerZahlenBereich in re.split(
+                r"\s|,", zahlenReiheKeineWteiler
+            ):
+                zahlenBereichBerechnet = BereichToNumbers2(
+                    geschriebenerZahlenBereich, False, 0
+                )
+                for zahlInZahlenBereich in zahlenBereichBerechnet:
+                    primFaktoren = primfaktoren(zahlInZahlenBereich)
+                    bereiche[zahlInZahlenBereich] = {
+                        primZahl: primFaktoren.count(primZahl)
+                        for primZahl in primFaktoren
+                    }
+            gemeinsamePrimzahlen = {}
+            for i, (geschriebenerZahlenBereich, primMap) in enumerate(bereiche.items()):
+                if i == 0:
+                    gemeinsamePrimzahlen = set(primMap.keys())
+                else:
+                    gemeinsamePrimzahlen &= set(primMap.keys())
+            primGemeinsameVorkommen = {}
+            for gemeinsamePrimzahl in gemeinsamePrimzahlen:
+                vorkommens = []
+                for i, (geschriebenerZahlenBereich, primMap) in enumerate(
+                    bereiche.items()
+                ):
+                    vorkommens += [primMap[gemeinsamePrimzahl]]
+                primGemeinsameVorkommen[gemeinsamePrimzahl] = min(vorkommens)
+            gemeinsamePrimzahlenMatrix = [
+                [primzahl] * vorkommenAnzahl
+                for primzahl, vorkommenAnzahl in primGemeinsameVorkommen.items()
+            ]
+            gemeinsamePrimzahlenStr = " * ".join(
+                [
+                    str(primZahl)
+                    for primZahlListe in gemeinsamePrimzahlenMatrix
+                    for primZahl in primZahlListe
+                ]
+            )
+            if len(gemeinsamePrimzahlenStr.strip()) == 0:
+                gemeinsamePrimzahlenStr = "1"
+            from functools import reduce
+
+            try:
+                grGv = reduce(
+                    lambda x, y: x * y,
+                    [
+                        primZahl
+                        for primZahlListe in gemeinsamePrimzahlenMatrix
+                        for primZahl in primZahlListe
+                    ],
+                )
+            except TypeError:
+                grGv = 1
+
+            print(
+                i18n.gemeinsamkeitenWort
+                + ": {} := {}".format(grGv, gemeinsamePrimzahlenStr)
+            )
+            for zahl, hierUnwichtig in bereiche.items():
+                dazu = " * ".join([str(p) for p in primfaktoren(round(zahl / grGv))])
+                print(
+                    f"{round(zahl / grGv):<5} := {zahl:<5} / {grGv:<5} -> "
+                    + (dazu if len(dazu.strip()) > 0 else "1")
+                )
+            # print("Unterschiede: {}".format(d))
+
         if Txt.hasWithoutABC({"prim", "primfaktorzerlegung"}):
             for arg in BereichToNumbers2(zahlenReiheKeineWteiler, False, 0):
                 cmd_gave_output = True
