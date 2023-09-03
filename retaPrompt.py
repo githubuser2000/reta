@@ -840,8 +840,12 @@ def PromptGrosseAusgabe(
             rangesBruecheDictReverse,
             Txt.liste,
         ) = bruchBereichsManagementAndWbefehl(zahlenBereichC, Txt.liste, zahlenAngaben_)
-    if i18n.befehle2["mulpri"] in Txt.listeE or i18n.befehle2["p"] in Txt.listeE:
-        Txt.liste += [i18n.befehle2["multis"], i18n.befehle2["prim"]]
+    if Txt.hasWithoutABC({i18n.befehle2["mulpri"], i18n.befehle2["p"]}):
+        Txt.liste += [
+            i18n.befehle2["multis"],
+            i18n.befehle2["prim"],
+            i18n.befehle2["primfaktorenvergleich"],
+        ]
 
     if ifPrintCmdAgain(Txt):
         if "--" + i18n.ausgabeParas["nocolor"] in Txt.listeE:

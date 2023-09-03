@@ -506,7 +506,7 @@ def stextFromKleinKleinKleinBefehl(promptMode2, stext, textDazu):
         else:
             stext3 += [str(s_)]
     for jjj, _s_ in enumerate(copy(stext3)):
-        if _s_[0] == "(" and _s_[-1] == ")":
+        if len(_s_) > 0 and _s_[0] == "(" and _s_[-1] == ")":
             stext3[jjj] = "[" + stext3[jjj][1:-1] + "]"
     if stext[0] not in [
         "reta",
