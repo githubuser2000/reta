@@ -16,13 +16,36 @@ try:
 except:
     OrderedSet = set
 
-from center import (Multiplikationen, alxp, cliout, getTextWrapThings, i18n,
-                    infoLog, output, primfaktoren, primRepeat, re, x)
-from lib4tables import (OutputSyntax, bbCodeSyntax,
-                        couldBePrimeNumberPrimzahlkreuz, csvSyntax,
-                        divisorGenerator, emacsSyntax, htmlSyntax,
-                        isPrimMultiple, markdownSyntax, math, moonNumber,
-                        primCreativity, primFak, primMultiple, primRepeat)
+from center import (
+    Multiplikationen,
+    alxp,
+    cliout,
+    getTextWrapThings,
+    i18n,
+    infoLog,
+    output,
+    primfaktoren,
+    primRepeat,
+    re,
+    x,
+)
+from lib4tables import (
+    OutputSyntax,
+    bbCodeSyntax,
+    couldBePrimeNumberPrimzahlkreuz,
+    csvSyntax,
+    divisorGenerator,
+    emacsSyntax,
+    htmlSyntax,
+    isPrimMultiple,
+    markdownSyntax,
+    math,
+    moonNumber,
+    primCreativity,
+    primFak,
+    primMultiple,
+    primRepeat,
+)
 from lib4tables_concat import Concat
 from lib4tables_Enum import ST
 from lib4tables_prepare import Prepare, setShellRowsAmount, shellRowsAmount
@@ -86,9 +109,9 @@ class Tables:
     def ifPrimMultis(self, value: bool):
         self.getPrepare.ifprimmultis = value
 
-    @property
-    def primUniversePrimsSet(self):
-        return self.puniverseprims
+    # @property
+    # def primUniversePrimsSet(self):
+    #    return self.puniverseprims
 
     @property
     def gebrUnivSet(self):
@@ -189,11 +212,10 @@ class Tables:
         self.spaltegGestirn = False
         self.breitenn: list = []
         # welche Spalten von "primenumbers.csv"
-        self.puniverseprims: set = OrderedSet()
-        self.gebrUniv: set = OrderedSet()
-        self.getOut.primUniversePrimsSet = self.puniverseprims
-        self.getConcat.primUniversePrimsSet = self.puniverseprims
-        self.getConcat.gebrUnivSet = self.gebrUniv
+        # self.puniverseprims: set = OrderedSet()
+        # self.getOut.primUniversePrimsSet = self.puniverseprims
+        # self.getConcat.primUniversePrimsSet = self.puniverseprims
+        # self.getConcat.gebrUnivSet = self.gebrUniv
         self.religionNumbers: list = []
         self.getOut.religionNumbers = self.religionNumbers
         self.getPrepare.religionNumbers = self.religionNumbers
@@ -235,13 +257,13 @@ class Tables:
         def oneTable(self, value: bool):
             self.__oneTable = value
 
-        @property
-        def primUniversePrimsSet(self):
-            return self.puniverseprims
+        # @property
+        # def primUniversePrimsSet(self):
+        #    return self.puniverseprims
 
-        @primUniversePrimsSet.setter
-        def primUniversePrimsSet(self, value: set):
-            self.puniverseprims = value
+        # @primUniversePrimsSet.setter
+        # def primUniversePrimsSet(self, value: set):
+        #    self.puniverseprims = value
 
         @property
         def breitenn(self):
@@ -766,7 +788,6 @@ class Tables:
                                                 != 1
                                             )
                                         ):
-
                                             self.cliout2(
                                                 "|----"
                                                 + (
@@ -1103,7 +1124,6 @@ class Tables:
                                             else:
                                                 table2[colNum][row][-1] += hinein[0]
                                         else:
-
                                             if (
                                                 len(table2[colNum][row]) == 1
                                                 and table2[colNum][row][0] == ""
@@ -1161,12 +1181,14 @@ class Tables:
                 if condition in ("ka", "ka2"):
                     for kombiLineNumber, kombiLine in enumerate(kombiTable_Kombis):
                         """kombiLineNumber ist die csv Zeilennummer in der Kombitabelle
-                        kombiLine ist aus der ersten Spalte die jeweilige Liste an Zahlenkombinationen pro Zeile"""
+                        kombiLine ist aus der ersten Spalte die jeweilige Liste an Zahlenkombinationen pro Zeile
+                        """
                         for kombiNumber in kombiLine:
                             """kombiNumber ist demzufolge eine so eine Zahl
                             von n*m Zahlen
                             if: wenn eine dieser Zahlen zu denen gehört, die am Ende angezeigt werden sollen und
-                            wenn diese Zahl eine ist, die genau der richtigen Anzeigezeile entspricht"""
+                            wenn diese Zahl eine ist, die genau der richtigen Anzeigezeile entspricht
+                            """
 
                             if kombiNumber in displayingZeilen:
                                 try:

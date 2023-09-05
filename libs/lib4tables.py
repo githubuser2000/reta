@@ -379,7 +379,7 @@ def divisorGenerator(n):
         yield divisor
 
 
-@lru_cache(maxsize=10489)
+# @lru_cache(maxsize=10489)
 def primCreativity(num: int):
     if num == 0:
         return 0

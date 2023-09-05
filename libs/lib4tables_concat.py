@@ -29,6 +29,7 @@ from center import (
     re,
     unique_everseen,
     x,
+    nPmEnum,
 )
 from lib4tables import (
     OutputSyntax,
@@ -59,23 +60,6 @@ i18n = i18n.concat
 #    "Primzahlkreuz pro contra",
 #    "nachvollziehen_emotional_oder_geistig_durch_Primzahl-Kreuz-Algorithmus_(15)",
 # )
-class nPmEnum(Enum):
-    galN = 2
-    gal1pN = 3
-    uniN = 4
-    uni1pN = 5
-    emoN = 6
-    emo1pN = 7
-    groeN = 8
-    groe1pN = 9
-    gal = 2, 3
-    uni = 4, 5
-    emo = 6, 7
-    groe = 8, 9
-    n = 2, 4, 6, 8
-    EinzProN = 3, 5, 7, 9
-
-
 class Concat:
     def __init__(self, tables):
         self.tables = tables
@@ -95,21 +79,21 @@ class Concat:
         self.gebrRatMulGleichfGal = OrderedSet()
         self.gebrRatDivGleichfGal = OrderedSet()
 
-    @property
-    def gebrUnivSet(self):
-        return self.puniverseprims
+    # @property
+    # def gebrUnivSet(self):
+    #    return self.puniverseprims
 
     @gebrUnivSet.setter
     def gebrUnivSet(self, value: set):
         self.gebrUniv = value
 
-    @property
-    def primUniversePrimsSet(self):
-        return self.puniverseprims
+    # @property
+    # def primUniversePrimsSet(self):
+    #    return self.puniverseprims
 
-    @primUniversePrimsSet.setter
-    def primUniversePrimsSet(self, value: set):
-        self.puniverseprims = value
+    # @primUniversePrimsSet.setter
+    # def primUniversePrimsSet(self, value: set):
+    #    self.puniverseprims = value
 
     def concatLovePolygon(self, relitable: list, rowsAsNumbers: set) -> tuple:
         self.relitable = relitable

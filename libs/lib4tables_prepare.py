@@ -489,7 +489,8 @@ class Prepare:
                 numRange = set(range(1, self.hoechsteZeile[1024] + 1))
             for n in numRange:  # nur die nummern, die noch infrage kommen
                 for z in numRangeYesZ:
-                    if self.zaehlungen[3][n] == int(z):  # 1-4:1,5-9:2 == jetzt ?
+                    # 1-4:1,5-9:2 == jetzt ?
+                    if self.zaehlungen[3][n] == int(z):
                         numRangeYesZ2 |= {n}
                         # numRange.remove(n)
             if ifZaehlungenAtAll:
@@ -729,10 +730,10 @@ class Prepare:
         paramLinesNot: set,
         contentTable: list,
         rowsAsNumbers: set,
+        gebrSpalten: dict,
         combiRows: int = 0,
         reliTableLenUntilNow=None,
         primSpalten: set = None,
-        gebrSpalten: set = [None] * 8,
         # gebrGalSpalten: set = None,
         # gebrUnivSpalten2: set = None,
         # gebrGalSpalten2: set = None,
@@ -775,10 +776,7 @@ class Prepare:
             if u in finallyDisplayLines or combiRows != 0:
                 new2Lines = self.prepare4out_LoopBody(
                     combiRows,
-                    gebrGalSpalten,
-                    gebrGalSpalten2,
-                    gebrUnivSpalten,
-                    gebrUnivSpalten2,
+                    gebrSpalten,
                     headingsAmount,
                     line,
                     old2Rows,
@@ -837,10 +835,7 @@ class Prepare:
     def prepare4out_LoopBody(
         self,
         combiRows,
-        gebrGalSpalten,
-        gebrGalSpalten2,
-        gebrUnivSpalten,
-        gebrUnivSpalten2,
+        gebrSpalten,
         headingsAmount,
         line,
         old2Rows,
@@ -862,10 +857,7 @@ class Prepare:
                 if u == 0:
                     self.prepare4out_Tagging(
                         combiRows,
-                        gebrGalSpalten,
-                        gebrGalSpalten2,
-                        gebrUnivSpalten,
-                        gebrUnivSpalten2,
+                        gebrSpalten,
                         primSpalten,
                         reliTableLenUntilNow,
                         rowToDisplay,
@@ -889,10 +881,7 @@ class Prepare:
     def prepare4out_Tagging(
         self,
         combiRows,
-        gebrGalSpalten,
-        gebrGalSpalten2,
-        gebrUnivSpalten,
-        gebrUnivSpalten2,
+        gebrSpalten,
         primSpalten,
         reliTableLenUntilNow,
         rowToDisplay,
@@ -912,7 +901,7 @@ class Prepare:
                     self.tables.generatedSpaltenParameter_Tags[
                         rowToDisplay
                     ] = frozenset({ST.sternPolygon, ST.universum, ST.galaxie})
-                elif gebrGalSpalten is not None and t in gebrGalSpalten:
+                elif gebrSpalten["Gal"] is not None and t in gebrSpalten["Gal"]:
                     self.tables.generatedSpaltenParameter_Tags[
                         rowToDisplay
                     ] = frozenset(
@@ -923,7 +912,7 @@ class Prepare:
                             ST.gebrRat,
                         }
                     )
-                elif gebrUnivSpalten2 is not None and t in gebrUnivSpalten2:
+                elif gebrSpalten["Uni2"] is not None and t in gebrSpalten["Uni2"]:
                     self.tables.generatedSpaltenParameter_Tags[
                         rowToDisplay
                     ] = frozenset(
@@ -935,7 +924,7 @@ class Prepare:
                         }
                     )
 
-                elif gebrGalSpalten2 is not None and t in gebrGalSpalten2:
+                elif gebrSpalten["Gal2"] is not None and t in gebrSpalten["Gal2"]:
                     self.tables.generatedSpaltenParameter_Tags[
                         rowToDisplay
                     ] = frozenset(
@@ -946,7 +935,7 @@ class Prepare:
                             ST.gebrRat,
                         }
                     )
-                elif gebrUnivSpalten is not None and t in gebrUnivSpalten:
+                elif gebrSpalten["Uni"] is not None and t in gebrSpalten["Uni"]:
                     self.tables.generatedSpaltenParameter_Tags[
                         rowToDisplay
                     ] = frozenset(

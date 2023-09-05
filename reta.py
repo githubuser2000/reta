@@ -18,7 +18,13 @@ try:
 except:
     OrderedSet = set
 
-from center import BereichToNumbers2, Primzahlkreuz_pro_contra_strs, i18n, retaHilfe
+from center import (
+    BereichToNumbers2,
+    Primzahlkreuz_pro_contra_strs,
+    i18n,
+    retaHilfe,
+    nPmEnum,
+)
 from tableHandling import (
     Enum,
     Iterable,
@@ -89,23 +95,22 @@ class Program:
                         tuple,
                         # set,
                     ]
-                    or befehlName in Program.ParametersMain.gebrochenuniversum[0]
-                    or befehlName in Program.ParametersMain.gebrochengalaxie[0]
+                    or befehlName in i18n.gebrochenUniGal
                 ):
-                    if befehlName == Program.ParametersMain.Multiplikationen[0]:
-                        self.spaltenArtenKey_SpaltennummernValue[
-                            (len(neg), 2)
-                        ] |= Program.lambdaPrimGalax(paraValue)
-                    elif befehlName in Program.ParametersMain.gebrochenuniversum[0]:
-                        self.spaltenArtenKey_SpaltennummernValue[
-                            (len(neg), 5)
-                        ] |= Program.lambdaGebrUnivUndGalax(paraValue)
-                    elif befehlName in Program.ParametersMain.gebrochengalaxie[0]:
-                        self.spaltenArtenKey_SpaltennummernValue[
-                            (len(neg), 6)
-                        ] |= Program.lambdaGebrUnivUndGalax(paraValue)
-                    else:
-                        raise ValueError
+                    gebrBefehleDict: dict = {
+                        Program.ParametersMain.Multiplikationen[0]: 2,
+                        Program.ParametersMain.gebrochenuniversum[0]: 5,
+                        Program.ParametersMain.gebrochengalaxie[0]: 6,
+                        Program.ParametersMain.gebrochenemotion[0]: 9,
+                        Program.ParametersMain.gebrochengroesse[0]: 10,
+                    }
+                    self.spaltenArtenKey_SpaltennummernValue[
+                        len(neg), gebrBefehleDict[befehlName]
+                    ] |= (
+                        Program.lambdaPrimGalax(paraValue)
+                        if befehlName == Program.ParametersMain.Multiplikationen[0]
+                        else Program.lambdaGebrUnivUndGalax(paraValue)
+                    )
                 elif (
                     paraValue == i18nR.beschriebenWort
                     and befehlName in Program.ParametersMain.primvielfache
@@ -1278,22 +1283,16 @@ class Program:
         self.onlyGenerated = self.spaltenArtenKey_SpaltennummernValue[
             self.spaltenTypeNaming.boolAndTupleSet1
         ]
-        self.gebrUni = self.spaltenArtenKey_SpaltennummernValue[
-            self.spaltenTypeNaming.gebroUni1
-        ]
-        self.gebrGal = self.spaltenArtenKey_SpaltennummernValue[
-            self.spaltenTypeNaming.gebrGal1
-        ]
         ones = []
         for a in self.onlyGenerated:
             if len(a) == 1:
                 ones += a
         self.tables.getConcat.ones = ones
 
-        for gebrUniva in self.gebrUni:
-            self.tables.gebrUnivSet.add(gebrUniva)
-        for prims in self.puniverseprims:
-            self.tables.primUniversePrimsSet.add(prims)
+        # for gebrUniva in self.gebrUni:
+        #    self.tables.gebrUnivSet.add(gebrUniva)
+        # for prims in self.puniverseprims:
+        #    self.tables.primUniversePrimsSet.add(prims)
 
         if len(self.rowsOfcombi) > 0:
             paramLines.add("ka")
@@ -1307,13 +1306,33 @@ class Program:
 
         CsvTheirsSpalten: dict = {}
         for i, input1 in enumerate(
-            [
+            (
                 self.puniverseprims,
-                self.gebrUni,
-                self.gebrGal,
-                self.gebrUni,
-                self.gebrGal,
-            ],
+                self.spaltenArtenKey_SpaltennummernValue[
+                    self.spaltenTypeNaming.gebrGal1
+                ],
+                self.spaltenArtenKey_SpaltennummernValue[
+                    self.spaltenTypeNaming.gebrGal1
+                ],
+                self.spaltenArtenKey_SpaltennummernValue[
+                    self.spaltenTypeNaming.gebroUni1
+                ],
+                self.spaltenArtenKey_SpaltennummernValue[
+                    self.spaltenTypeNaming.gebroUni1
+                ],
+                self.spaltenArtenKey_SpaltennummernValue[
+                    self.spaltenTypeNaming.gebrEmo1
+                ],
+                self.spaltenArtenKey_SpaltennummernValue[
+                    self.spaltenTypeNaming.gebrEmo1
+                ],
+                self.spaltenArtenKey_SpaltennummernValue[
+                    self.spaltenTypeNaming.gebrGroe1
+                ],
+                self.spaltenArtenKey_SpaltennummernValue[
+                    self.spaltenTypeNaming.gebrGroe1
+                ],
+            ),
             start=1,
         ):
             (
@@ -1324,10 +1343,15 @@ class Program:
                 self.relitable, self.rowsAsNumbers, input1, i
             )
         primSpalten = CsvTheirsSpalten[1]
-        gebrUnivSpalten = CsvTheirsSpalten[2]
-        gebrGalSpalten = CsvTheirsSpalten[3]
-        gebrUnivSpalten2 = CsvTheirsSpalten[4]
-        gebrGalSpalten2 = CsvTheirsSpalten[5]
+        gebr: dict = {}
+        gebr["Gal"] = CsvTheirsSpalten[2]
+        gebr["Gal2"] = CsvTheirsSpalten[3]
+        gebr["Uni"] = CsvTheirsSpalten[4]
+        gebr["Uni2"] = CsvTheirsSpalten[5]
+        gebr["Emo"] = CsvTheirsSpalten[6]
+        gebr["Emo2"] = CsvTheirsSpalten[7]
+        gebr["Groe"] = CsvTheirsSpalten[8]
+        gebr["Groe2"] = CsvTheirsSpalten[9]
 
         (
             finallyDisplayLinesEarly,
@@ -1474,10 +1498,7 @@ class Program:
             maintable2subtable_Relation,
             spaltenreihenfolgeundnurdiese,
             primSpalten,
-            gebrUnivSpalten,
-            gebrGalSpalten,
-            gebrUnivSpalten2,
-            gebrGalSpalten2,
+            gebr,
             animalsProfessionsTable2,
             kombiTable_Kombis2,
             maintable2subtable_Relation2,
@@ -1564,10 +1585,7 @@ class Program:
             maintable2subtable_Relation,
             spaltenreihenfolgeundnurdiese,
             primSpalten,
-            gebrUnivSpalten,
-            gebrGalSpalten,
-            gebrUnivSpalten2,
-            gebrGalSpalten2,
+            gebr,
             animalsProfessionsTable2,
             kombiTable_Kombis2,
             maintable2subtable_Relation2,
@@ -1584,13 +1602,8 @@ class Program:
             paramLinesNot,
             self.relitable,
             self.rowsAsNumbers,
+            gebrSpalten=gebr,
             primSpalten=primSpalten,
-            gebrUnivSpalten=[
-                gebrUnivSpalten,
-                gebrGalSpalten,
-                gebrUnivSpalten2,
-                gebrGalSpalten2,
-            ],
         )
 
         if len(self.rowsOfcombi) > 0:
