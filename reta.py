@@ -469,7 +469,7 @@ class Program:
                     paraDict[(name1, name2)] = datas
                 if len(parameterNames) == 0:
                     paraDict[(name1, "")] = datas
-            dataDicts: tuple = ({}, {}, {}, {}, {}, {}, {}, {}, {})
+            dataDicts: tuple = ({}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {})
 
             # datas sind nicht die Haupt-und-Neben-Parameter, sondern alles das diese enthalten und meinen können
             # ein datas Datensatz sind alle sets, die ein Haupt-Neben-Parameter Zusammenhang enthalten kann an sets
@@ -501,7 +501,12 @@ class Program:
                                         parameterName,
                                     )
                                 ]
-                            elif i in (5, 6):  # and type(spaltenNummerOderEtc) is set:
+                            elif i in (
+                                5,
+                                6,
+                                7,
+                                8,
+                            ):  # and type(spaltenNummerOderEtc) is set:
                                 case = 2
                                 into += [[(parameterMainName, parameterName)]]
                                 parameterMainNamePerLoop += [parameterName]

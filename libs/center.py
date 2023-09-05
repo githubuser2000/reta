@@ -26,6 +26,7 @@ except (ModuleNotFoundError, ImportError):
 from rich.console import Console
 from rich.markdown import Markdown
 from rich.syntax import Syntax
+from enum import IntEnum
 
 # gspattern = r"\s+(?![^(){}\[\]]*(?:\([^(){}\[\]]*\)[^(){}\[\]]*|{[^(){}\[\]]*}[^(){}\[\]]*|\[[^(){}\[\]]*\][^(){}\[\]]*))"
 
@@ -59,6 +60,41 @@ for arg in sys.argv:
 
 Multiplikationen = i18n.Multiplikationen
 shellRowsAmount: int
+
+
+class nPmEnum(IntEnum):
+    galN = 2
+    gal1pN = 3
+    uniN = 4
+    uni1pN = 5
+    emoN = 6
+    emo1pN = 7
+    groeN = 8
+    groe1pN = 9
+
+    @classmethod
+    def gal(cls):
+        return cls.galN, cls.gal1pN
+
+    @classmethod
+    def uni(cls):
+        return cls.uniN, cls.uni1pN
+
+    @classmethod
+    def emo(cls):
+        return cls.emoN, cls.emo1pN
+
+    @classmethod
+    def groe(cls):
+        return cls.groeN, cls.groe1pN
+
+    @classmethod
+    def n(cls):
+        return cls.galN, cls.uniN, cls.emoN, cls.groeN
+
+    @classmethod
+    def einsPn(cls):
+        return cls.gal1pN, cls.uni1pN, cls.emo1pN, cls.groe1pN
 
 
 def isZeilenBruchAngabe_betweenKommas(g):

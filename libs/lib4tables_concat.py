@@ -7,7 +7,6 @@ from collections import OrderedDict, defaultdict
 from copy import copy, deepcopy
 from fractions import Fraction
 from itertools import zip_longest
-import Enum
 
 try:
     from orderedset import OrderedSet
@@ -83,9 +82,9 @@ class Concat:
     # def gebrUnivSet(self):
     #    return self.puniverseprims
 
-    @gebrUnivSet.setter
-    def gebrUnivSet(self, value: set):
-        self.gebrUniv = value
+    # @gebrUnivSet.setter
+    # def gebrUnivSet(self, value: set):
+    #    self.gebrUniv = value
 
     # @property
     # def primUniversePrimsSet(self):
@@ -2523,16 +2522,16 @@ class Concat:
             with open(place, mode="r", encoding="utf-8") as csv_file:
                 gebrRatTable = list(csv.reader(csv_file, delimiter=";"))
             self.CSVsAlreadRead[place] = gebrRatTable
-            if wahl in nPmEnum.uni:
+            if wahl in nPmEnum.uni():
                 self.BruecheUni = tuple(self.getAllBrueche(gebrRatTable))
 
-            if wahl in nPmEnum.gal:
+            if wahl in nPmEnum.gal():
                 self.BruecheGal = tuple(self.getAllBrueche(gebrRatTable))
 
-            if wahl in nPmEnum.emo:
+            if wahl in nPmEnum.emo():
                 self.BruecheEmo = tuple(self.getAllBrueche(gebrRatTable))
 
-            if wahl in nPmEnum.groe:
+            if wahl in nPmEnum.groe():
                 self.BruecheStrukGroesse = tuple(self.getAllBrueche(gebrRatTable))
 
             return gebrRatTable
@@ -2864,7 +2863,7 @@ class Concat:
                 gebrRatZahl,
                 self.struktAndInversSpalten,
                 self.gebrUnivTable4metaKonkret,
-                concatTable in nPmEnum.EinzProN,
+                concatTable in nPmEnum.einsPn(),
             )
             tabelleDazuColNeu += [cellNeu if cellNeu is not None else ""]
 
@@ -2890,7 +2889,8 @@ class Concat:
         """
         global folder
 
-        spaltenDict = {
+        spaltenDict: dict = {
+            1: None,
             nPmEnum.uniN: (5, 131),
             nPmEnum.uni1pN: (5, 131),
             nPmEnum.galN: (10, 42),
@@ -2981,8 +2981,8 @@ class Concat:
                         i,
                         dazu,
                         concatTable,
-                        concatTable in nPmEnum.EinzProN
-                        and not concatTable in nPmEnum.n,
+                        concatTable in nPmEnum.einsPn()
+                        and concatTable not in nPmEnum.n(),
                     )
 
                 self.relitable[i] += dazu
@@ -3010,40 +3010,40 @@ class Concat:
                 csvNames.prim
                 if concatTable == 1
                 else csvNames.bruch13
-                if concatTable in nPmEnum.gal
+                if concatTable in nPmEnum.gal()
                 else csvNames.bruch15
-                if concatTable in nPmEnum.uni
+                if concatTable in nPmEnum.uni()
                 else csvNames.bruch7
-                if concatTable in nPmEnum.emo
+                if concatTable in nPmEnum.emo()
                 else csvNames.bruchStrukGroesse
-                if concatTable in nPmEnum.groe
+                if concatTable in nPmEnum.groe()
                 else None
             ),
         )
         return place
 
     def readConcatCsv_ChangeTableToAddToTable(self, concatTable, tableToAdd, transpose):
-        if concatTable in nPmEnum.EinzProN:
+        if concatTable in nPmEnum.einsPn():
             tableToAdd = transpose(tableToAdd)
         if concatTable in range(2, 10):
             tableToAdd = [
                 [
                     (
                         ("n/" + str(n + 1))
-                        if concatTable in nPmEnum.n
+                        if concatTable in nPmEnum.n()
                         else (str(n + 1) + "/n")
-                        if concatTable in nPmEnum.EinzProN
+                        if concatTable in nPmEnum.einsPn()
                         else i18n.GalOrUniOrFehler["Fehler"]
                     )
                     + (
                         " " + i18n.GalOrUniOrFehler["Universum"]
-                        if concatTable in nPmEnum.uni
+                        if concatTable in nPmEnum.uni()
                         else " " + i18n.GalOrUniOrFehler["Galaxie"]
-                        if concatTable in nPmEnum.gal
+                        if concatTable in nPmEnum.gal()
                         else " " + i18n.GalOrUniOrFehler["Emotion"]
-                        if concatTable in nPmEnum.emo
+                        if concatTable in nPmEnum.emo()
                         else " " + i18n.GalOrUniOrFehler["Strukturgroesse"]
-                        if concatTable in nPmEnum.groe
+                        if concatTable in nPmEnum.groe()
                         else i18n.GalOrUniOrFehler["Fehler"]
                     )
                     for n in range(len(tableToAdd[0]))
