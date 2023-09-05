@@ -47,6 +47,10 @@
 ***** unwichtiges
 + Ich könnte erweitern aus welchen Dingen ich noch bestehe, der höheren Art, wie höhere Gefühle und Impulse, etc. Denn das gabs vorher nicht.
 *** 2. Feature Ideen
++ refactoring: viel zu ändern, aber geht schnell: bei rp: statt viele if's für einzelne Befehle: merge der dicts und sets mit schnittmenge der befehle bilden, wo dicts auf funktionen oder so zeigen, und dann diese funktionen zu einer sogenannten komposition bauen bla1().bla2().bla3() und diese komposition dann ausführen: elegantere feinere Lösung, die auch schneller läuft
+  aber eigentlich nicht so wichtig
++ n/m Gefühle und n/m Strukturgrößen als 2 zusätzliche csv Tabellen einbauen in ganz reta und dann in retaPrompt
+  Das ist gar nicht so wenig Arbeit!
 + Ich sollte in die endgültige cliout die Möglichkeit einbauen, dass man stattdessen in eine Datenstruktur speichern möchte.
   + Damit könnte man anderweitig mit fremden Python Code mit der Ergebnis-Tabelle weiter-arbeiten.
   + Für Unit Tests hilfreich
@@ -76,6 +80,8 @@
 + mit AI csvs übersetzen
 + "Mache mir eine Datenstruktur, in der nur alle diese strings drin auf die Art gespeichert sind, dass man mit dem python tool babel diese strings auch mit anderen strings für andere sprachen befüllen kann und programmiere mir, dass diese Datenstruktur aus nur diesen strings, die strings der einen großen Datenstruktur befüllt, sodass sie im einfachen Fall letztlich die gleiche Datenstruktur sein wird, nachdem sie wieder mit den strings befüllt wurde, die sie eigentlich ursprünglich hatte."
 ****  2.2. minder wichtig, aber geht schnell:
++ refactoring: viel zu ändern, aber geht schnell: bei rp: statt viele if's für einzelne Befehle: merge der dicts und sets mit schnittmenge der befehle bilden, wo dicts auf funktionen oder so zeigen, und dann diese funktionen zu einer sogenannten komposition bauen bla1().bla2().bla3() und diese komposition dann ausführen: elegantere feinere Lösung, die auch schneller läuft
+  aber eigentlich nicht so wichtig
   + Weitere Farbschemen, wenigstens konzeptionalisieren: Aber eigentlich dürfte das Einprogrammieren nicht so das große Ding sein.
   + Ich sollte aber das gesamte Design in ReTa ändern, von der Kombinierbarkeit der Zeilenangaben und das so machen, wie in der html. Dazu muss ich mir aber geduldig ein neues Design überlegen, das durchdacht genug ist, das alles so perfekt kombiniert werden kann, wie bei SQL-Sprachen und nicht so unflexibel, wie es bisher immer war.
   + Erst nachdem ich das neu designt habe, sollte ich das mit der besseren Kombinierbarkeit von v und w nicht in rp, sondern reta umsetzen:

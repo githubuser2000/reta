@@ -732,10 +732,14 @@ class Prepare:
         combiRows: int = 0,
         reliTableLenUntilNow=None,
         primSpalten: set = None,
-        gebrUnivSpalten: set = None,
-        gebrGalSpalten: set = None,
-        gebrUnivSpalten2: set = None,
-        gebrGalSpalten2: set = None,
+        gebrSpalten: set = [None] * 8,
+        # gebrGalSpalten: set = None,
+        # gebrUnivSpalten2: set = None,
+        # gebrGalSpalten2: set = None,
+        # gebrEmoSpalten: set = None,
+        # gebrEmoSpalten2: set = None,
+        # gebrGroeSpalten: set = None,
+        # gebrGroeSpalten2: set = None,
         kombiCSVNumber: int = 0,
     ) -> tuple:
         """Aus einer Tabelle wird eine gemacht, bei der der Zeilenumbruch durchgeführt wird.

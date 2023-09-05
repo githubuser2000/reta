@@ -7,31 +7,73 @@ from collections import OrderedDict, defaultdict
 from copy import copy, deepcopy
 from fractions import Fraction
 from itertools import zip_longest
+import Enum
 
 try:
     from orderedset import OrderedSet
 except (ModuleNotFoundError, ImportError):
     OrderedSet = set
 
-from center import (DefaultOrderedDict, Multiplikationen,
-                    Primzahlkreuz_pro_contra_strs, alxp, cliout,
-                    getTextWrapThings, i18n, infoLog, multiples, output,
-                    primfaktoren, re, unique_everseen, x)
-from lib4tables import (OutputSyntax, bbCodeSyntax,
-                        couldBePrimeNumberPrimzahlkreuz,
-                        couldBePrimeNumberPrimzahlkreuz_fuer_aussen,
-                        couldBePrimeNumberPrimzahlkreuz_fuer_innen, csvSyntax,
-                        divisorGenerator, emacsSyntax, htmlSyntax,
-                        isPrimMultiple, markdownSyntax, math, moonNumber,
-                        primCreativity, primFak, primMultiple, primRepeat)
+from center import (
+    DefaultOrderedDict,
+    Multiplikationen,
+    Primzahlkreuz_pro_contra_strs,
+    alxp,
+    cliout,
+    getTextWrapThings,
+    i18n,
+    infoLog,
+    multiples,
+    output,
+    primfaktoren,
+    re,
+    unique_everseen,
+    x,
+)
+from lib4tables import (
+    OutputSyntax,
+    bbCodeSyntax,
+    couldBePrimeNumberPrimzahlkreuz,
+    couldBePrimeNumberPrimzahlkreuz_fuer_aussen,
+    couldBePrimeNumberPrimzahlkreuz_fuer_innen,
+    csvSyntax,
+    divisorGenerator,
+    emacsSyntax,
+    htmlSyntax,
+    isPrimMultiple,
+    markdownSyntax,
+    math,
+    moonNumber,
+    primCreativity,
+    primFak,
+    primMultiple,
+    primRepeat,
+)
 from lib4tables_Enum import ST
 
 csvNames = i18n.csvFileNames
 i18n = i18n.concat
+
+
 # Primzahlkreuz_pro_contra_strs = (
 #    "Primzahlkreuz pro contra",
 #    "nachvollziehen_emotional_oder_geistig_durch_Primzahl-Kreuz-Algorithmus_(15)",
 # )
+class nPmEnum(Enum):
+    galN = 2
+    gal1pN = 3
+    uniN = 4
+    uni1pN = 5
+    emoN = 6
+    emo1pN = 7
+    groeN = 8
+    groe1pN = 9
+    gal = 2, 3
+    uni = 4, 5
+    emo = 6, 7
+    groe = 8, 9
+    n = 2, 4, 6, 8
+    EinzProN = 3, 5, 7, 9
 
 
 class Concat:
@@ -191,7 +233,6 @@ class Concat:
     ) -> tuple:
         self.relitable = relitable
         if set(rowsAsNumbers) >= {132}:
-
             rowsAsNumbers |= {len(self.relitable[0])}
             self.tables.generatedSpaltenParameter_Tags[
                 len(rowsAsNumbers) - 1
@@ -226,7 +267,6 @@ class Concat:
     ) -> tuple:
         self.relitable = relitable
         if set(rowsAsNumbers) >= {242}:
-
             rowsAsNumbers |= {len(self.relitable[0])}
             self.tables.generatedSpaltenParameter_Tags[
                 len(rowsAsNumbers) - 1
@@ -395,7 +435,7 @@ class Concat:
                 if len(content.strip()) > 0:
                     store[(z, s)] = content  # interessant
             multis = {}
-            for (coords, content) in store.items():
+            for coords, content in store.items():
                 vielfacher = 1
                 ergebnis = vielfacher * coords[0]
                 # multis[ergebnis] = [coords[0]]
@@ -995,7 +1035,6 @@ class Concat:
                 if couldBePrimeNumberPrimzahlkreuz(num):
                     primAmounts += 1
                 if primCreativity(num) == 1 or num == 1:
-
                     if couldBePrimeNumberPrimzahlkreuz_fuer_innen(num):
                         list1 += [num]
                         if num > 16:
@@ -1054,7 +1093,6 @@ class Concat:
 
                         keinePrimzahl2 = False
                 else:
-
                     if couldBePrimeNumberPrimzahlkreuz_fuer_innen(num):
                         keinePrimzahl1 = True
                     elif couldBePrimeNumberPrimzahlkreuz_fuer_aussen(num):
@@ -1268,7 +1306,6 @@ class Concat:
                 if num == 0:
                     kette2 = [headline]
                 elif contra2 != [] or pro2 != []:
-
                     dahinter1a = (
                         dreli[c][206].split("|")[1]
                         if c <= self.tables.lastLineNumber
@@ -1610,7 +1647,6 @@ class Concat:
             for KeyGalUniUniGal, ValueSternOrGleichf in self.gebrRatAllCombis.items():
                 for KeySternOrGleichf, ValueMulOrDiv in ValueSternOrGleichf.items():
                     for KeyMulOrDiv, Couples in ValueMulOrDiv.items():
-
                         alleFractionErgebnisse2[KeyGalUniUniGal][KeySternOrGleichf][
                             KeyMulOrDiv
                         ] = (
@@ -1992,7 +2028,7 @@ class Concat:
         self.relitable = relitable
         self.rowsAsNumbers = rowsAsNumbers
         if len(geordnetePaare) > 0:
-            self.gebrUnivTable4metaKonkret = self.readOneCSVAndReturn(2)
+            self.gebrUnivTable4metaKonkret = self.readOneCSVAndReturn(nPmEnum.uniN)
         for paar in tuple(geordnetePaare):
             self.spalteMetaKontretTheorieAbstrakt_etc(
                 relitable,
@@ -2423,7 +2459,6 @@ class Concat:
                 # and False
                 # and self.struktAndInversSpalten == transzendentalienSpalten
             ):
-
                 gebrStrukWort = (
                     self.spalteMetaKonkretTheorieAbstrakt_getGebrRatUnivStrukturalie(
                         vier[0][1],
@@ -2504,17 +2539,25 @@ class Concat:
             with open(place, mode="r", encoding="utf-8") as csv_file:
                 gebrRatTable = list(csv.reader(csv_file, delimiter=";"))
             self.CSVsAlreadRead[place] = gebrRatTable
-            if wahl in (2, 4):
+            if wahl in nPmEnum.uni:
                 self.BruecheUni = tuple(self.getAllBrueche(gebrRatTable))
 
-            if wahl in (3, 5):
+            if wahl in nPmEnum.gal:
                 self.BruecheGal = tuple(self.getAllBrueche(gebrRatTable))
+
+            if wahl in nPmEnum.emo:
+                self.BruecheEmo = tuple(self.getAllBrueche(gebrRatTable))
+
+            if wahl in nPmEnum.groe:
+                self.BruecheStrukGroesse = tuple(self.getAllBrueche(gebrRatTable))
 
             return gebrRatTable
 
     def findAllBruecheAndTheirCombinations(self):
-        self.readOneCSVAndReturn(2)
-        self.readOneCSVAndReturn(3)
+        self.readOneCSVAndReturn(nPmEnum.galN)
+        self.readOneCSVAndReturn(nPmEnum.uniN)
+        # self.readOneCSVAndReturn(6)
+        # self.readOneCSVAndReturn(7)
         kombis2 = OrderedDict({"mul": OrderedSet(), "div": OrderedSet()})
         kombis1 = OrderedDict(
             {"stern": deepcopy(kombis2), "gleichf": deepcopy(kombis2)}
@@ -2541,7 +2584,6 @@ class Concat:
             for BruecheUn in brueche1:
                 for BruecheUn2 in brueche2:
                     if BruecheUn != BruecheUn2:
-
                         couple = OrderedSet({(BruecheUn, BruecheUn2)})
                         if (
                             round(BruecheUn * BruecheUn2)
@@ -2838,7 +2880,7 @@ class Concat:
                 gebrRatZahl,
                 self.struktAndInversSpalten,
                 self.gebrUnivTable4metaKonkret,
-                concatTable in (3, 5),
+                concatTable in nPmEnum.EinzProN,
             )
             tabelleDazuColNeu += [cellNeu if cellNeu is not None else ""]
 
@@ -2864,14 +2906,18 @@ class Concat:
         """
         global folder
 
-        if concatTable in (2, 4):
-            self.struktAndInversSpalten: tuple = (5, 131)
-
-            self.gebrUnivTable4metaKonkret = self.readOneCSVAndReturn(2)
-
-        elif concatTable in (3, 5):
-            self.struktAndInversSpalten: tuple = (10, 42)
-            self.gebrUnivTable4metaKonkret = self.readOneCSVAndReturn(3)
+        spaltenDict = {
+            nPmEnum.uniN: (5, 131),
+            nPmEnum.uni1pN: (5, 131),
+            nPmEnum.galN: (10, 42),
+            nPmEnum.gal1pN: (10, 42),
+            nPmEnum.emoN: (243, 284),
+            nPmEnum.emo1pN: (243, 284),
+            nPmEnum.groeN: (4, 197),
+            nPmEnum.groe1pN: (4, 197),
+        }
+        self.struktAndInversSpalten: tuple = spaltenDict[concatTable]
+        self.gebrUnivTable4metaKonkret = self.readOneCSVAndReturn(concatTable)
 
         def transpose(matrix):
             t = []
@@ -2885,7 +2931,7 @@ class Concat:
 
         self.relitable = relitable
         concatCSVspalten: set = OrderedSet()
-        if len(concatTableSelection) > 0 and concatTable in range(1, 6):
+        if len(concatTableSelection) > 0 and concatTable in range(1, 10):
             tableToAdd = self.readOneCSVAndReturn(concatTable)
             tableToAdd = self.readConcatCsv_ChangeTableToAddToTable(
                 concatTable, tableToAdd, transpose
@@ -2941,17 +2987,18 @@ class Concat:
             for i, (tabelleDazuCol, relicol) in enumerate(
                 zip(tableToAdd, self.relitable)
             ):
-
                 lastlen = len(tabelleDazuCol)
                 if lastlen > maxlen:
                     maxlen = lastlen
                 dazu = list(tabelleDazuCol) + [""] * (maxlen - len(tabelleDazuCol))
 
-                if concatTable in (2, 3) and i != 0:
-                    dazu = self.readConcatCsv_tabelleDazuColchange(i, dazu, concatTable)
-                elif concatTable in (4, 5) and i != 0:
+                if i != 0:
                     dazu = self.readConcatCsv_tabelleDazuColchange(
-                        i, dazu, concatTable, True
+                        i,
+                        dazu,
+                        concatTable,
+                        concatTable in nPmEnum.EinzProN
+                        and not concatTable in nPmEnum.n,
                     )
 
                 self.relitable[i] += dazu
@@ -2978,33 +3025,41 @@ class Concat:
             os.path.basename(
                 csvNames.prim
                 if concatTable == 1
-                else csvNames.bruch15
-                if concatTable in (2, 4)
                 else csvNames.bruch13
-                if concatTable in (3, 5)
+                if concatTable in nPmEnum.gal
+                else csvNames.bruch15
+                if concatTable in nPmEnum.uni
+                else csvNames.bruch7
+                if concatTable in nPmEnum.emo
+                else csvNames.bruchStrukGroesse
+                if concatTable in nPmEnum.groe
                 else None
             ),
         )
         return place
 
     def readConcatCsv_ChangeTableToAddToTable(self, concatTable, tableToAdd, transpose):
-        if concatTable in (4, 5):
+        if concatTable in nPmEnum.EinzProN:
             tableToAdd = transpose(tableToAdd)
-        if concatTable in range(2, 6):
+        if concatTable in range(2, 10):
             tableToAdd = [
                 [
                     (
                         ("n/" + str(n + 1))
-                        if concatTable in (2, 3)
+                        if concatTable in nPmEnum.n
                         else (str(n + 1) + "/n")
-                        if concatTable in (4, 5)
+                        if concatTable in nPmEnum.EinzProN
                         else i18n.GalOrUniOrFehler["Fehler"]
                     )
                     + (
                         " " + i18n.GalOrUniOrFehler["Universum"]
-                        if concatTable in (2, 4)
+                        if concatTable in nPmEnum.uni
                         else " " + i18n.GalOrUniOrFehler["Galaxie"]
-                        if concatTable in (3, 5)
+                        if concatTable in nPmEnum.gal
+                        else " " + i18n.GalOrUniOrFehler["Emotion"]
+                        if concatTable in nPmEnum.emo
+                        else " " + i18n.GalOrUniOrFehler["Strukturgroesse"]
+                        if concatTable in nPmEnum.groe
                         else i18n.GalOrUniOrFehler["Fehler"]
                     )
                     for n in range(len(tableToAdd[0]))
@@ -3022,11 +3077,11 @@ class Concat:
         rowsAsNumbers,
         u,
     ):
-        if (u + 2 in concatTableSelection and concatTable in range(2, 6)) or (
+        if (u + 2 in concatTableSelection and concatTable in range(2, 10)) or (
             concatTable == 1  # and int(heading) in concatTableSelection
         ):
-            if concatTable not in range(2, 6) or u + 1 != len(dazu):
-                delta = 1 if concatTable in range(2, 6) else 0
+            if concatTable not in range(2, 10) or u + 1 != len(dazu):
+                delta = 1 if concatTable in range(2, 10) else 0
                 selectedSpalten = u + len(self.relitable[0]) - len(dazu) + delta
                 rowsAsNumbers.add(selectedSpalten)
                 concatCSVspalten.add(selectedSpalten)
@@ -3040,7 +3095,7 @@ class Concat:
                 self.readConcatCsv_SetHtmlParamaters(concatTable, heading, u)
 
     def readConcatCsv_SetHtmlParamaters(self, concatTable, heading, u):
-        if concatTable in range(2, 6):
+        if concatTable in range(2, 10):
             self.tables.generatedSpaltenParameter[
                 len(self.tables.generatedSpaltenParameter)
                 + self.tables.SpaltenVanillaAmount

@@ -669,6 +669,8 @@ class Program:
             OrderedSet(),
             OrderedSet(),
             OrderedSet(),
+            OrderedSet(),
+            OrderedSet(),
         ]
         for possibleCommands in paraNdataMatrix:
             for commandValue, aAllValue in zip(possibleCommands[2:], allValues):
@@ -694,7 +696,8 @@ class Program:
         allValues[5] = set(range(2, gebrochenSpaltenMaximumPlus1))
         allValues[6] = set(range(2, gebrochenSpaltenMaximumPlus1))
         allValues[8] = set(Program.kombiParaNdataMatrix2.keys())
-
+        allValues[9] = set(range(2, gebrochenSpaltenMaximumPlus1))
+        allValues[10] = set(range(2, gebrochenSpaltenMaximumPlus1))
         """
         self.paraDictGenerated = {}
         self.paraDictGenerated4htmlTags = {}
@@ -1194,10 +1197,10 @@ class Program:
             self.puniverseprimsNot,
             self.generRowsNot,
         ) = self.parametersToCommandsAndNumbers(argv, "-")
-        self.dataDict: list = [{}, {}, {}, {}, {}, {}, {}, {}, {}]
+        self.dataDict: list = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}]
         self.spaltenTypeNaming: namedtuple = namedtuple(
             "SpaltenTyp",
-            "ordinary generated1 concat1 kombi1 boolAndTupleSet1 gebroUni1 gebrGal1 generated2 kombi2 ordinaryNot generate1dNot concat1Not kombi1Not boolAndTupleSet1Not gebroUni1Not gebrGal1Not generated2Not kombi2Not",
+            "ordinary generated1 concat1 kombi1 boolAndTupleSet1 gebroUni1 gebrGal1 generated2 kombi2 gebrEmo1 gebrGroe1 ordinaryNot generate1dNot concat1Not kombi1Not boolAndTupleSet1Not gebroUni1Not gebrGal1Not generated2Not kombi2Not gebrEmo1Not gebrGroe1Not",
         )
         self.spaltenTypeNaming = self.spaltenTypeNaming(
             (0, 0),
@@ -1209,6 +1212,8 @@ class Program:
             (0, 6),
             (0, 7),
             (0, 8),
+            (0, 9),
+            (0, 10),
             (1, 0),
             (1, 1),
             (1, 2),
@@ -1218,6 +1223,8 @@ class Program:
             (1, 6),
             (1, 7),
             (1, 8),
+            (1, 9),
+            (1, 10),
         )
         self.spaltenArtenKey_SpaltennummernValue = {
             (0, 0): OrderedSet(),
@@ -1229,6 +1236,8 @@ class Program:
             (0, 6): OrderedSet(),
             (0, 7): OrderedSet(),
             (0, 8): OrderedSet(),
+            (0, 9): OrderedSet(),
+            (0, 10): OrderedSet(),
             (1, 0): OrderedSet(),
             (1, 1): OrderedSet(),
             (1, 2): OrderedSet(),
@@ -1238,6 +1247,8 @@ class Program:
             (1, 6): OrderedSet(),
             (1, 7): OrderedSet(),
             (1, 8): OrderedSet(),
+            (1, 9): OrderedSet(),
+            (1, 10): OrderedSet(),
         }
 
         self.storeParamtersForColumns()
@@ -1574,10 +1585,12 @@ class Program:
             self.relitable,
             self.rowsAsNumbers,
             primSpalten=primSpalten,
-            gebrUnivSpalten=gebrUnivSpalten,
-            gebrGalSpalten=gebrGalSpalten,
-            gebrUnivSpalten2=gebrUnivSpalten2,
-            gebrGalSpalten2=gebrGalSpalten2,
+            gebrUnivSpalten=[
+                gebrUnivSpalten,
+                gebrGalSpalten,
+                gebrUnivSpalten2,
+                gebrGalSpalten2,
+            ],
         )
 
         if len(self.rowsOfcombi) > 0:

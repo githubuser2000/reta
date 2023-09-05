@@ -551,12 +551,14 @@ befehle: list = list(befehle2.values())
 kugelnKreise = ["kugeln", "kreise"]
 ParametersMain: NamedTuple = namedtuple(
     "ParametersMain",
-    "wichtigste wichtigste2 religionen galaxie strukturgroesse universum multiversum wirtschaft menschliches procontra licht bedeutung symbole Multiplikationen konzept konzept2 inkrementieren operationen universummetakonkret primzahlwirkung gebrochenuniversum gebrochengalaxie primvielfache planet strukturenkleinere grundstrukturen teilchen alles",
+    "wichtigste wichtigste2 religionen galaxie strukturgroesse universum multiversum wirtschaft menschliches procontra licht bedeutung symbole Multiplikationen konzept konzept2 inkrementieren operationen universummetakonkret primzahlwirkung gebrochenuniversum gebrochengalaxie gebrochenemotion gebrochengroesse primvielfache planet strukturenkleinere grundstrukturen teilchen alles",
 )
 konzeptE = {"konzept": _("konzept"), "konzept2": _("konzept2")}
 gebrochenUniGal = {
     "gebrochenuniversum": _("gebrochen-rational_Universum_n/m"),
     "gebrochengalaxie": _("gebrochen-rational_Galaxie_n/m"),
+    "gebrochenemotion": _("gebrochen-rational_Gefuehle_n/m"),
+    "gebrochengroesse": _("gebrochen-rational_Strukturgroessee_n/m"),
 }
 ParametersMain: NamedTuple = ParametersMain(
     (
@@ -656,6 +658,8 @@ ParametersMain: NamedTuple = ParametersMain(
     ),
     (gebrochenUniGal["gebrochenuniversum"],),
     (gebrochenUniGal["gebrochengalaxie"],),
+    (gebrochenUniGal["gebrochenemotion"],),
+    (gebrochenUniGal["gebrochengroesse"],),
     (
         _("Multiplikationen"),
         _("multiplikationen"),
@@ -2962,6 +2966,35 @@ paraNdataMatrix: list = [
         set(),
         set([str(a) for a in range(2, gebrochenSpaltenMaximumPlus1)]),
     ),
+    (
+        ParametersMain.gebrochenemotion,
+        set([str(a) for a in range(2, gebrochenSpaltenMaximumPlus1)]),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set([str(a) for a in range(2, gebrochenSpaltenMaximumPlus1)]),
+    ),
+    (
+        ParametersMain.gebrochengroesse,
+        set([str(a) for a in range(2, gebrochenSpaltenMaximumPlus1)]),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set([str(a) for a in range(2, gebrochenSpaltenMaximumPlus1)]),
+    ),
     (ParametersMain.symbole, (), {36, 37}),
     # (
     #    ParametersMain.Multiplikationen,
@@ -4058,6 +4091,8 @@ class concat:
         "Fehler": _("Fehler"),
         "Universum": _("Universum"),
         "Galaxie": _("Galaxie"),
+        "Emotion": _("Emotion"),
+        "Strukturgroesse": _("Strukturgroesse"),
     }
 
     multipl = {"Multiplikationen": _("Multiplikationen")}
@@ -4293,6 +4328,8 @@ class csvFileNames:
     sunMoon = _("sunMoonEtc.csv")
     meaningOfLife = _("meaningOfLife.csv")
     dualitaetenTrinities = _("dualism-trinities-etc.csv")
+    bruch7 = _("gebrochen-rational-emotionen.csv")
+    bruchStrukGroesse = _("gebrochen-rational-strukturgroesse.csv")
 
 
 EIGS_N_R = (_("EIGN"), _("EIGR"))
