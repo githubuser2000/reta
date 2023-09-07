@@ -53,6 +53,7 @@
     + kombi15 fehlt in alles
     + Emotion gibt es nur n/ zahlenreiche und nicht zahlenreihe /n
     + generierte Multiplikationen ist verschwundenüberall unsicherheit ergänzen bei allen n/m absichten.
+  + üall noch Testen üall in html wo brüche sind: Brucherweiterung von Universum dabei: ja nein, z.B. bei 2:=14/7 oder 7:=21/3
   + Emotion immer noch nur eins von beiden n/m vs m/n: aber nur bei --alles: liegt wahrscheinlich nur daran, weil inhaltsleer, gut
   + Zeile 1 nach überschrift, Probleme:
     + Fehler nur bei vielen n/m Sachen

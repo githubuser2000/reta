@@ -2447,6 +2447,7 @@ class Concat:
                         vier[0][1],
                         self.struktAndInversSpalten,
                         self.gebrUnivTable4metaKonkret,
+                        False,
                     )
                 )
                 if gebrStrukWort is not None:
@@ -2611,8 +2612,9 @@ class Concat:
         koord: Fraction,
         n_and_invers_spalten,
         gebrTable4metaKonkretAndMore,
-        isGalaxie=False,
+        isNotUniverse=True,
     ) -> str:
+        isUniverse = not isNotUniverse
         if koord.denominator == 0 or koord.numerator == 0:
             return ""
         elif koord.denominator > 100 or koord.numerator > 100:
@@ -2638,7 +2640,7 @@ class Concat:
                         else "",
                         self.relitable[koord.denominator][201],
                     )
-                    if not isGalaxie
+                    if isUniverse
                     else (self.relitable[koord.denominator][n_and_invers_spalten[1]],)
                 )
                 return "".join(strukname)
@@ -2665,9 +2667,10 @@ class Concat:
                         else "",
                         self.relitable[koord.numerator][198],
                     )
-                    if not isGalaxie
+                    if isUniverse
                     else (self.relitable[koord.numerator][n_and_invers_spalten[0]],)
                 )
+                x("strukname_", strukname)
                 return "".join(strukname)
             else:
                 return ""
@@ -2865,7 +2868,7 @@ class Concat:
                 gebrRatZahl,
                 self.struktAndInversSpalten,
                 self.gebrUnivTable4metaKonkret,
-                concatTable in nPmEnum.einsPn(),
+                concatTable not in nPmEnum.uni(),
             )
             tabelleDazuColNeu += [cellNeu if cellNeu is not None else ""]
 
@@ -3091,7 +3094,7 @@ class Concat:
 
     def readConcatCsv_SetHtmlParamaters(self, concatTable, heading, u):
         if concatTable in range(2, 10):
-            rangeToDataDict = {2: 5, 3: 5, 4: 6, 5: 6, 6: 9, 7: 9, 8: 10, 9: 10}
+            rangeToDataDict = {2: 6, 3: 6, 4: 5, 5: 5, 6: 9, 7: 9, 8: 10, 9: 10}
             self.tables.generatedSpaltenParameter[
                 len(self.tables.generatedSpaltenParameter)
                 + self.tables.SpaltenVanillaAmount
