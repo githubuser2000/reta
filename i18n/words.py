@@ -555,11 +555,18 @@ ParametersMain: NamedTuple = namedtuple(
 )
 konzeptE = {"konzept": _("konzept"), "konzept2": _("konzept2")}
 gebrochenUniGal = {
-    "gebrochenuniversum": _("gebrochen-rational_Universum_n/m"),
-    "gebrochengalaxie": _("gebrochen-rational_Galaxie_n/m"),
-    "gebrochenemotion": _("gebrochen-rational_Gefuehle_n/m"),
-    "gebrochengroesse": _("gebrochen-rational_Strukturgroessee_n/m"),
+    "gebrochenuniversum": (
+        _("gebrochen-rational_Universum_n/m"),
+        _("gebrochenuniversum"),
+    ),
+    "gebrochengalaxie": (_("gebrochen-rational_Galaxie_n/m"), _("gebrochengalaxie")),
+    "gebrochenemotion": (_("gebrochen-rational_Gefuehle_n/m"), _("gebrochenemotion")),
+    "gebrochengroesse": (
+        _("gebrochen-rational_Strukturgroessee_n/m"),
+        _("gebrochengroesse"),
+    ),
 }
+gebrochenUniGalEinzeln = {b for a in gebrochenUniGal.values() for b in a}
 ParametersMain: NamedTuple = ParametersMain(
     (
         _("Wichtigstes_zum_verstehen"),
@@ -656,10 +663,10 @@ ParametersMain: NamedTuple = ParametersMain(
         _("Primzahlwirkung"),
         _("primzahlwirkung"),
     ),
-    (gebrochenUniGal["gebrochenuniversum"],),
-    (gebrochenUniGal["gebrochengalaxie"],),
-    (gebrochenUniGal["gebrochenemotion"],),
-    (gebrochenUniGal["gebrochengroesse"],),
+    gebrochenUniGal["gebrochenuniversum"],
+    gebrochenUniGal["gebrochengalaxie"],
+    gebrochenUniGal["gebrochenemotion"],
+    gebrochenUniGal["gebrochengroesse"],
     (
         _("Multiplikationen"),
         _("multiplikationen"),

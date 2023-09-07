@@ -1351,7 +1351,7 @@ def PromptGrosseAusgabe(
                             "".join(
                                 (
                                     "--",
-                                    i18n.gebrochenUniGal["gebrochengalaxie"],
+                                    i18n.gebrochenUniGal["gebrochengalaxie"][0],
                                     "=",
                                     str(nenner),
                                 )
@@ -1372,7 +1372,7 @@ def PromptGrosseAusgabe(
                             "".join(
                                 (
                                     "--",
-                                    i18n.gebrochenUniGal["gebrochengalaxie"],
+                                    i18n.gebrochenUniGal["gebrochengalaxie"][0],
                                     "=",
                                     str(nenner),
                                 )
@@ -1535,7 +1535,7 @@ def PromptGrosseAusgabe(
                             "".join(
                                 (
                                     "--",
-                                    i18n.gebrochenUniGal["gebrochenuniversum"],
+                                    i18n.gebrochenUniGal["gebrochenuniversum"][0],
                                     "=",
                                     str(nenner),
                                 )
@@ -1561,7 +1561,7 @@ def PromptGrosseAusgabe(
                             "".join(
                                 (
                                     "--",
-                                    i18n.gebrochenUniGal["gebrochenuniversum"],
+                                    i18n.gebrochenUniGal["gebrochenuniversum"][0],
                                     "=",
                                     str(nenner),
                                 )

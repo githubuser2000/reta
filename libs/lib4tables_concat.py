@@ -2888,7 +2888,7 @@ class Concat:
         @return: relitable + weitere Tabelle daneben
         """
         global folder
-
+        # x("concatTableSelection", concatTableSelection)
         spaltenDict: dict = {
             1: None,
             nPmEnum.uniN: (5, 131),
@@ -2988,6 +2988,7 @@ class Concat:
                 self.relitable[i] += dazu
                 if i == 0:
                     for u, heading in enumerate(dazu):
+                        # x("concatTableSelectionB", concatTableSelection)
                         self.readConcatCsv_LoopBody(
                             concatCSVspalten,
                             concatTable,
@@ -2998,6 +2999,7 @@ class Concat:
                             u,
                         )
 
+        # x("rowsAsNumbers", rowsAsNumbers)
         return self.relitable, rowsAsNumbers, concatCSVspalten
 
     def readConcatCSV_choseCsvFile(self, concatTable):
@@ -3061,14 +3063,19 @@ class Concat:
         rowsAsNumbers,
         u,
     ):
+        # x("concatTable0", concatTable)
+        # x("concatTableSelection_I", concatTableSelection)
+        # x("u+2", u + 2)
         if (u + 2 in concatTableSelection and concatTable in range(2, 10)) or (
             concatTable == 1  # and int(heading) in concatTableSelection
         ):
+            x("concatTable1", concatTable)
             if concatTable not in range(2, 10) or u + 1 != len(dazu):
                 delta = 1 if concatTable in range(2, 10) else 0
                 selectedSpalten = u + len(self.relitable[0]) - len(dazu) + delta
                 rowsAsNumbers.add(selectedSpalten)
                 concatCSVspalten.add(selectedSpalten)
+                x("concatTable2", concatTable)
                 if (
                     len(self.tables.generatedSpaltenParameter)
                     + self.tables.SpaltenVanillaAmount

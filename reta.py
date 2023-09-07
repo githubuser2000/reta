@@ -72,6 +72,7 @@ class Program:
         def resultingSpaltenFromTuple(
             tupl: tuple, neg, paraValue=None, befehlName=None
         ) -> tuple:
+            x("tupl", tupl)
             for i, eineSpaltenArtmitSpaltenNummern in enumerate(tupl):
                 """
                 Die Variable self.tables.spalteGestirn braucht man gar nicht mehr !!!
@@ -88,6 +89,20 @@ class Program:
                         eineSpaltenArtmitSpaltenNummern = set(
                             eineSpaltenArtmitSpaltenNummern[0]
                         )
+                x(
+                    "if ",
+                    [
+                        type(eineSpaltenArtmitSpaltenNummern),
+                        [
+                            list,
+                            tuple,
+                            # set,
+                        ],
+                        befehlName,
+                        i18n.gebrochenUniGalEinzeln,
+                        {b for a in i18n.gebrochenUniGal.values() for b in a},
+                    ],
+                )
                 if i == 2 and (
                     type(eineSpaltenArtmitSpaltenNummern)
                     in [
@@ -95,7 +110,7 @@ class Program:
                         tuple,
                         # set,
                     ]
-                    or befehlName in i18n.gebrochenUniGal
+                    or befehlName in i18n.gebrochenUniGalEinzeln
                 ):
                     gebrBefehleDict: dict = {
                         Program.ParametersMain.Multiplikationen[0]: 2,
@@ -104,6 +119,15 @@ class Program:
                         Program.ParametersMain.gebrochenemotion[0]: 9,
                         Program.ParametersMain.gebrochengroesse[0]: 10,
                     }
+                    x("bli 1", befehlName)
+                    x("bli 2", gebrBefehleDict[befehlName])
+                    x("bli 3", paraValue)
+                    x(
+                        "bli 4",
+                        Program.lambdaPrimGalax(paraValue)
+                        if befehlName == Program.ParametersMain.Multiplikationen[0]
+                        else Program.lambdaGebrUnivUndGalax(paraValue),
+                    )
                     self.spaltenArtenKey_SpaltennummernValue[
                         len(neg), gebrBefehleDict[befehlName]
                     ] |= (
@@ -116,8 +140,15 @@ class Program:
                     and befehlName in Program.ParametersMain.primvielfache
                 ):
                     self.spaltenArtenKey_SpaltennummernValue[(len(neg), 2)] |= {2}
-                else:
+                elif i not in range(5, 9):
                     try:
+                        # x(
+                        #    "dazu_T",
+                        #    [
+                        #        self.spaltenArtenKey_SpaltennummernValue[(len(neg), i)],
+                        #        eineSpaltenArtmitSpaltenNummern,
+                        #    ],
+                        # )
                         self.spaltenArtenKey_SpaltennummernValue[
                             (len(neg), i)
                         ] |= eineSpaltenArtmitSpaltenNummern

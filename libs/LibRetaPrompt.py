@@ -242,16 +242,7 @@ gebrochenErlaubteZahlen: set = set()
 for a in reta.Program(["reta", "-" + i18n.mainParaCmds["zeilen"]]).paraNdataMatrix:
     for b in a[1]:
         zumVergleich += [b]
-        if (
-            len(
-                set(a[0])
-                & {
-                    i18n.gebrochenUniGal["gebrochenuniversum"],
-                    i18n.gebrochenUniGal["gebrochengalaxie"],
-                }
-            )
-            > 0
-        ):
+        if len(set(a[0]) & i18n.gebrochenUniGalEinzeln) > 0:
             gebrochenErlaubteZahlen |= {int(b)}
 gebrochenErlaubteZahlen -= {max(gebrochenErlaubteZahlen)}
 
