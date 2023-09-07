@@ -472,9 +472,13 @@ def stextFromKleinKleinKleinBefehl(promptMode2, stext, textDazu):
                                 ],
                             ]
                             if any(("/" in _s_ for _s_ in stext)):
-                                textDazu += i18n.befehle2["u"]
-                                textDazu += i18n.befehle2["B"]
-                                textDazu += i18n.befehle2["G"]
+                                textDazu += [
+                                    i18n.befehle2["u"],
+                                    i18n.befehle2["B"],
+                                    i18n.befehle2["G"],
+                                    i18n.befehle2["E"],
+                                    i18n.befehle2["groesse"],
+                                ]
                             if (
                                 "-" + i18n.retaPrompt.retaPromptParameter["e"]
                                 in sys.argv
@@ -506,6 +510,7 @@ def stextFromKleinKleinKleinBefehl(promptMode2, stext, textDazu):
     ]:
         stext = stext3
     # x("stext", stext)
+    # print(stext)
     return ifKurzKurz, stext
 
 

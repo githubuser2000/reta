@@ -1076,6 +1076,60 @@ def PromptGrosseAusgabe(
             zeiln3,
             zeiln4,
         )
+        if was_n_1proN_cmd:
+            nennerZaehlerGleich = []
+            if len(rangesBruecheDict) > 0:
+                cmd_gave_output = True
+                for nenner, zaehler in rangesBruecheDict.items():
+                    hierBereich = ",".join(zaehler)
+                    retaExecuteNprint(
+                        ketten,
+                        Txt.listeE,
+                        vorherVonAusschnittOderZaehlung(Txt, hierBereich),
+                        "",
+                        [
+                            "".join(
+                                (
+                                    "--",
+                                    i18n.gebrochenUniGal["gebrochenemotion"][0],
+                                    "=",
+                                    str(nenner),
+                                )
+                            )
+                        ],
+                        "2",
+                        Txt,
+                    )
+                    nennerZaehlerGleich += findEqualNennerZaehler(
+                        hierBereich, nenner, nennerZaehlerGleich
+                    )
+
+            elif len(rangesBruecheDictReverse) > 0:
+                cmd_gave_output = True
+                for nenner, zaehler in rangesBruecheDictReverse.items():
+                    hierBereich = ",".join(zaehler)
+                    retaExecuteNprint(
+                        ketten,
+                        Txt.listeE,
+                        vorherVonAusschnittOderZaehlung(Txt, hierBereich),
+                        "",
+                        [
+                            "".join(
+                                (
+                                    "--",
+                                    i18n.gebrochenUniGal["gebrochenemotion"][0],
+                                    "=",
+                                    str(nenner),
+                                )
+                            )
+                        ],
+                        "1",
+                        Txt,
+                    )
+                    nennerZaehlerGleich += findEqualNennerZaehler(
+                        hierBereich, nenner, nennerZaehlerGleich
+                    )
+
         was_n_1proN_cmd, cmd_gave_output = retaCmdAbstraction_n_and_1pron(
             Txt.hasWithoutABC({i18n.befehle2["W"], i18n.befehle2["wirklichkeit"]}),
             [
@@ -1249,6 +1303,60 @@ def PromptGrosseAusgabe(
             zeiln3,
             zeiln4,
         )
+        if was_n_1proN_cmd:
+            nennerZaehlerGleich = []
+            if len(rangesBruecheDict) > 0:
+                cmd_gave_output = True
+                for nenner, zaehler in rangesBruecheDict.items():
+                    hierBereich = ",".join(zaehler)
+                    retaExecuteNprint(
+                        ketten,
+                        Txt.listeE,
+                        vorherVonAusschnittOderZaehlung(Txt, hierBereich),
+                        "",
+                        [
+                            "".join(
+                                (
+                                    "--",
+                                    i18n.gebrochenUniGal["gebrochengroesse"][0],
+                                    "=",
+                                    str(nenner),
+                                )
+                            )
+                        ],
+                        "2",
+                        Txt,
+                    )
+                    nennerZaehlerGleich += findEqualNennerZaehler(
+                        hierBereich, nenner, nennerZaehlerGleich
+                    )
+
+            elif len(rangesBruecheDictReverse) > 0:
+                cmd_gave_output = True
+                for nenner, zaehler in rangesBruecheDictReverse.items():
+                    hierBereich = ",".join(zaehler)
+                    retaExecuteNprint(
+                        ketten,
+                        Txt.listeE,
+                        vorherVonAusschnittOderZaehlung(Txt, hierBereich),
+                        "",
+                        [
+                            "".join(
+                                (
+                                    "--",
+                                    i18n.gebrochenUniGal["gebrochengroesse"][0],
+                                    "=",
+                                    str(nenner),
+                                )
+                            )
+                        ],
+                        "1",
+                        Txt,
+                    )
+                    nennerZaehlerGleich += findEqualNennerZaehler(
+                        hierBereich, nenner, nennerZaehlerGleich
+                    )
+
         was_n_1proN_cmd, cmd_gave_output = retaCmdAbstraction_n_and_1pron(
             Txt.hasWithoutABC(
                 {
