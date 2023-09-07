@@ -69,6 +69,8 @@ class Program:
     def produceAllSpaltenNumbers(self, neg=""):
         global shellRowsAmount
 
+        # x("ANFANG metakonkret", self.paraDict[(cmd[:eq], "konkret")])
+
         def resultingSpaltenFromTuple(
             tupl: tuple, neg, paraValue=None, befehlName=None
         ) -> tuple:
@@ -77,6 +79,10 @@ class Program:
                 """
                 Die Variable self.tables.spalteGestirn braucht man gar nicht mehr !!!
                 """
+                x(
+                    "eineSpaltenArtmitSpaltenNummernWW",
+                    [i, eineSpaltenArtmitSpaltenNummern],
+                )
                 if (
                     type(eineSpaltenArtmitSpaltenNummern) in [list, tuple]
                     and len(eineSpaltenArtmitSpaltenNummern) > 0
@@ -142,13 +148,15 @@ class Program:
                     self.spaltenArtenKey_SpaltennummernValue[(len(neg), 2)] |= {2}
                 elif i not in range(5, 9):
                     try:
-                        # x(
-                        #    "dazu_T",
-                        #    [
-                        #        self.spaltenArtenKey_SpaltennummernValue[(len(neg), i)],
-                        #        eineSpaltenArtmitSpaltenNummern,
-                        #    ],
-                        # )
+                        x(
+                            "dazu_T",
+                            [
+                                i,
+                                self.spaltenArtenKey_SpaltennummernValue[(len(neg), i)],
+                                eineSpaltenArtmitSpaltenNummern,
+                                neg,
+                            ],
+                        )
                         self.spaltenArtenKey_SpaltennummernValue[
                             (len(neg), i)
                         ] |= eineSpaltenArtmitSpaltenNummern
@@ -228,6 +236,16 @@ class Program:
                                 yes1 = True if len(neg) == 0 else False
                             if yes1:
                                 try:
+                                    x(
+                                        "tupleQ4",
+                                        [
+                                            self.paraDict[
+                                                (cmd[:eq], oneOfThingsAfterEqSign)
+                                            ],
+                                            oneOfThingsAfterEqSign,
+                                            cmd[:eq],
+                                        ],
+                                    )
                                     resultingSpaltenFromTuple(
                                         self.paraDict[
                                             (cmd[:eq], oneOfThingsAfterEqSign)
@@ -319,6 +337,7 @@ class Program:
                                 if len(cmd) > 0 and cmd[-1] == "-" and len(neg) > 0:
                                     cmd = cmd[:-1]
 
+                                x("tupleP4", self.paraDict[(cmd, "")])
                                 resultingSpaltenFromTuple(
                                     self.paraDict[(cmd, "")], neg, befehlName=cmd
                                 )
@@ -500,7 +519,7 @@ class Program:
                     paraDict[(name1, name2)] = datas
                 if len(parameterNames) == 0:
                     paraDict[(name1, "")] = datas
-            dataDicts: tuple = ({}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {})
+            dataDicts: tuple = ({}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {})
 
             # datas sind nicht die Haupt-und-Neben-Parameter, sondern alles das diese enthalten und meinen können
             # ein datas Datensatz sind alle sets, die ein Haupt-Neben-Parameter Zusammenhang enthalten kann an sets
@@ -589,6 +608,8 @@ class Program:
                         index2a if case == 2 else (index2a,), intoA, fillvalue=into
                     ):
                         try:
+                            # x("index1", index1)
+                            # x("index1", d)
                             dataDicts[index1][index2] += (
                                 (into2,)
                                 if dataDicts[index1][index2][-1] != into2
@@ -712,14 +733,23 @@ class Program:
             OrderedSet(),
             OrderedSet(),
             OrderedSet(),
+            OrderedSet(),
         ]
+        x("allValues 4a", allValues[4])
+        # x("paraNdataMatrix A4", paraNdataMatrix)
+        x("allValues 11 A", allValues[11])
         for possibleCommands in paraNdataMatrix:
             for commandValue, aAllValue in zip(possibleCommands[2:], allValues):
                 try:
                     aAllValue |= commandValue
                 except TypeError:
-                    pass
-
+                    print("FEHLER")
+                    print(commandValue)
+                    raise ValueError
+                    exit()
+        x("allV1", allValues)
+        x("allValues 4b", allValues[4])
+        x("allValues 11 B", allValues[11])
         """
         Folgende Schleife ist eigentlich unnötig.
         Sie ist für bool Werte da, wenn Sachen generiert werden.
@@ -749,6 +779,16 @@ class Program:
             self.paraDictGenerated4htmlTags[(value[0][0], value[1][0])] = key
             allValues[7] |= {key}
         """
+        x("allValues 2", allValues[2])
+        x("allValues 3", allValues[3])
+        x("allValues 4", allValues[4])
+        x("allValues 5", allValues[5])
+        x("allValues 6", allValues[6])
+        x("allValues 7", allValues[7])
+        x("allValues 8", allValues[8])
+        x("allValues 9", allValues[9])
+        x("allValues 10", allValues[10])
+        x("allValues 11", allValues[11])
 
         paraNdataMatrix += [
             (
@@ -1238,10 +1278,10 @@ class Program:
             self.puniverseprimsNot,
             self.generRowsNot,
         ) = self.parametersToCommandsAndNumbers(argv, "-")
-        self.dataDict: list = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}]
+        self.dataDict: list = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}]
         self.spaltenTypeNaming: namedtuple = namedtuple(
             "SpaltenTyp",
-            "ordinary generated1 concat1 kombi1 boolAndTupleSet1 gebroUni1 gebrGal1 generated2 kombi2 gebrEmo1 gebrGroe1 ordinaryNot generate1dNot concat1Not kombi1Not boolAndTupleSet1Not gebroUni1Not gebrGal1Not generated2Not kombi2Not gebrEmo1Not gebrGroe1Not",
+            "ordinary generated1 concat1 kombi1 boolAndTupleSet1 gebroUni1 gebrGal1 generated2 kombi2 gebrEmo1 gebrGroe1 metakonkret ordinaryNot generate1dNot concat1Not kombi1Not boolAndTupleSet1Not gebroUni1Not gebrGal1Not generated2Not kombi2Not gebrEmo1Not gebrGroe1Not metakonkretNot",
         )
         self.spaltenTypeNaming = self.spaltenTypeNaming(
             (0, 0),
@@ -1255,6 +1295,7 @@ class Program:
             (0, 8),
             (0, 9),
             (0, 10),
+            (0, 11),
             (1, 0),
             (1, 1),
             (1, 2),
@@ -1266,6 +1307,7 @@ class Program:
             (1, 8),
             (1, 9),
             (1, 10),
+            (1, 11),
         )
         self.spaltenArtenKey_SpaltennummernValue = {
             (0, 0): OrderedSet(),
@@ -1279,6 +1321,7 @@ class Program:
             (0, 8): OrderedSet(),
             (0, 9): OrderedSet(),
             (0, 10): OrderedSet(),
+            (0, 11): OrderedSet(),
             (1, 0): OrderedSet(),
             (1, 1): OrderedSet(),
             (1, 2): OrderedSet(),
@@ -1290,10 +1333,29 @@ class Program:
             (1, 8): OrderedSet(),
             (1, 9): OrderedSet(),
             (1, 10): OrderedSet(),
+            (1, 11): OrderedSet(),
         }
+        x(
+            "onlyGeneratedA",
+            self.spaltenArtenKey_SpaltennummernValue[
+                self.spaltenTypeNaming.boolAndTupleSet1
+            ],
+        )
 
         self.storeParamtersForColumns()
+        x(
+            "onlyGeneratedB",
+            self.spaltenArtenKey_SpaltennummernValue[
+                self.spaltenTypeNaming.boolAndTupleSet1
+            ],
+        )
         self.produceAllSpaltenNumbers()
+        x(
+            "onlyGeneratedC",
+            self.spaltenArtenKey_SpaltennummernValue[
+                self.spaltenTypeNaming.boolAndTupleSet1
+            ],
+        )
         if self.htmlOrBBcode and not self.breiteORbreiten:
             shellRowsAmount = 0
             self.tables.textWidth = 0
@@ -1320,6 +1382,12 @@ class Program:
             self.spaltenTypeNaming.boolAndTupleSet1
         ]
         ones = []
+        x(
+            "onlyGeneratedD",
+            self.spaltenArtenKey_SpaltennummernValue[
+                self.spaltenTypeNaming.boolAndTupleSet1
+            ],
+        )
         for a in self.onlyGenerated:
             if len(a) == 1:
                 ones += a
@@ -1442,6 +1510,8 @@ class Program:
         )
 
         paraTextNamen = {}
+        x("NIXDA", self.spaltenArtenKey_SpaltennummernValue[(0, 7)])
+        x("NIXDA2", self.spaltenArtenKey_SpaltennummernValue[(0, 11)])
         for text in self.spaltenArtenKey_SpaltennummernValue[(0, 7)]:
             paraTextNamen[text] = [self.dataDict[7][text]]
 
@@ -1476,10 +1546,8 @@ class Program:
             self.relitable, self.rowsAsNumbers
         )
 
-        couplesX = []
-        for a in self.onlyGenerated:
-            if len(a) == 2:
-                couplesX += [a]
+        couplesX = list(self.spaltenArtenKey_SpaltennummernValue[(0, 11)])
+        x("couplesX", couplesX)
 
         (
             self.relitable,

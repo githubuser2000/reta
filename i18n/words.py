@@ -1218,12 +1218,19 @@ paraNdataMatrix: list = [
         set(),
         set(),
         set(),
-        (
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        {
             (
                 2,
                 0,
             ),
-        ),
+        },
     ),
     (
         ParametersMain.universummetakonkret,
@@ -1232,12 +1239,19 @@ paraNdataMatrix: list = [
         set(),
         set(),
         set(),
-        (
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        {
             (
                 2,
                 1,
             ),
-        ),
+        },
     ),
     (
         ParametersMain.universummetakonkret,
@@ -1246,12 +1260,19 @@ paraNdataMatrix: list = [
         set(),
         set(),
         set(),
-        (
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        {
             (
                 3,
                 0,
             ),
-        ),
+        },
     ),
     (
         ParametersMain.universummetakonkret,
@@ -1260,12 +1281,19 @@ paraNdataMatrix: list = [
         set(),
         set(),
         set(),
-        (
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        {
             (
                 3,
                 1,
             ),
-        ),
+        },
     ),
     (
         ParametersMain.universummetakonkret,
@@ -1278,12 +1306,19 @@ paraNdataMatrix: list = [
         set(),
         set(),
         set(),
-        (
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        {
             (
                 4,
                 0,
             ),
-        ),
+        },
     ),
     (
         ParametersMain.universummetakonkret,
@@ -1296,12 +1331,19 @@ paraNdataMatrix: list = [
         set(),
         set(),
         set(),
-        (
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        {
             (
                 4,
                 1,
             ),
-        ),
+        },
     ),
     (
         ParametersMain.universummetakonkret,
@@ -1314,12 +1356,19 @@ paraNdataMatrix: list = [
         set(),
         set(),
         set(),
-        (
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        {
             (
                 5,
                 0,
             ),
-        ),
+        },
     ),
     (
         ParametersMain.universummetakonkret,
@@ -1332,12 +1381,19 @@ paraNdataMatrix: list = [
         set(),
         set(),
         set(),
-        (
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        {
             (
                 5,
                 1,
             ),
-        ),
+        },
     ),
     (
         ParametersMain.primzahlwirkung,
@@ -1460,12 +1516,19 @@ paraNdataMatrix: list = [
         set(),
         set(),
         set(),
-        (
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        {
             (
                 6,
                 0,
             ),
-        ),
+        },
     ),
     (
         ParametersMain.universummetakonkret,
@@ -1474,12 +1537,19 @@ paraNdataMatrix: list = [
         set(),
         set(),
         set(),
-        (
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        {
             (
                 6,
                 1,
             ),
-        ),
+        },
     ),
     (
         ParametersMain.universummetakonkret,
@@ -1492,12 +1562,19 @@ paraNdataMatrix: list = [
         set(),
         set(),
         set(),
-        (
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        {
             (
                 7,
                 0,
             ),
-        ),
+        },
     ),
     (
         ParametersMain.universummetakonkret,
@@ -1510,12 +1587,19 @@ paraNdataMatrix: list = [
         set(),
         set(),
         set(),
-        (
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+        {
             (
                 7,
                 1,
             ),
-        ),
+        },
     ),
     (
         ParametersMain.universum,
@@ -1541,7 +1625,9 @@ paraNdataMatrix: list = [
     (
         ParametersMain.universum,
         (_("Systemsachen"), _("systemsachen")),
-        (150,),
+        {
+            150,
+        },
     ),
     (
         ParametersMain.universum,
@@ -1748,7 +1834,9 @@ paraNdataMatrix: list = [
             _("System"),
             _("system"),
         ),
-        (69,),
+        {
+            69,
+        },
     ),
     (
         ParametersMain.wirtschaft,
@@ -2076,7 +2164,7 @@ paraNdataMatrix: list = [
             _("reziproke"),
             _("reziprokes"),
         ),
-        (
+        {
             42,
             131,
             204,
@@ -2099,7 +2187,7 @@ paraNdataMatrix: list = [
             334,
             335,
             338,
-        ),
+        },
     ),
     (
         ParametersMain.grundstrukturen,

@@ -2272,7 +2272,7 @@ class Concat:
             self.tables.generatedSpaltenParameter[
                 len(self.tables.generatedSpaltenParameter)
                 + self.tables.SpaltenVanillaAmount
-            ] = self.tables.dataDict[4][(metavariable, lower1greater2both3 - 1)]
+            ] = self.tables.dataDict[11][(metavariable, lower1greater2both3 - 1)]
         else:
             for both in (
                 0,

@@ -47,6 +47,10 @@
 ***** unwichtiges
 + Ich könnte erweitern aus welchen Dingen ich noch bestehe, der höheren Art, wie höhere Gefühle und Impulse, etc. Denn das gabs vorher nicht.
 *** 2. Feature Ideen
++ Alle Spalten zu Meta-Konkret sind verschwunden.
++ Bug bei:
+  reta -zeilen --vorhervonausschnitt=2 -spalten --Meta_vs_Konkret_(Universum)=konkret
++ unvollständig eingebaut: --alles hat noch nicht alles dabei in Neuimplementierung
 + überall unsicherheit ergänzen bei allen n/m absichten.
 + refactoring: viel zu ändern, aber geht schnell: bei rp: statt viele if's für einzelne Befehle: merge der dicts und sets mit schnittmenge der befehle bilden, wo dicts auf funktionen oder so zeigen, und dann diese funktionen zu einer sogenannten komposition bauen bla1().bla2().bla3() und diese komposition dann ausführen: elegantere feinere Lösung, die auch schneller läuft
   aber eigentlich nicht so wichtig
