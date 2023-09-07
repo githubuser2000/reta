@@ -893,6 +893,7 @@ class Prepare:
         if combiRows == 0:
             try:
                 if rowToDisplay not in self.tables.generatedSpaltenParameter:
+                    # x("JAHA",[self.tables.dataDict[0][t],t])
                     self.tables.generatedSpaltenParameter[
                         rowToDisplay
                     ] = self.tables.dataDict[0][t]
@@ -903,7 +904,9 @@ class Prepare:
                     self.tables.generatedSpaltenParameter_Tags[
                         rowToDisplay
                     ] = frozenset({ST.sternPolygon, ST.universum, ST.galaxie})
-                elif gebrSpalten["Gal"] is not None and t in gebrSpalten["Gal"]:
+                elif (gebrSpalten["Gal"] is not None and t in gebrSpalten["Gal"]) or (
+                    gebrSpalten["Gal2"] is not None and t in gebrSpalten["Gal2"]
+                ):
                     self.tables.generatedSpaltenParameter_Tags[
                         rowToDisplay
                     ] = frozenset(
@@ -914,7 +917,9 @@ class Prepare:
                             ST.gebrRat,
                         }
                     )
-                elif gebrSpalten["Uni2"] is not None and t in gebrSpalten["Uni2"]:
+                elif (gebrSpalten["Uni"] is not None and t in gebrSpalten["Uni"]) or (
+                    gebrSpalten["Uni2"] is not None and t in gebrSpalten["Uni2"]
+                ):
                     self.tables.generatedSpaltenParameter_Tags[
                         rowToDisplay
                     ] = frozenset(
@@ -926,26 +931,31 @@ class Prepare:
                         }
                     )
 
-                elif gebrSpalten["Gal2"] is not None and t in gebrSpalten["Gal2"]:
+                elif (gebrSpalten["Emo"] is not None and t in gebrSpalten["Emo"]) or (
+                    gebrSpalten["Emo2"] is not None and t in gebrSpalten["Emo2"]
+                ):
                     self.tables.generatedSpaltenParameter_Tags[
                         rowToDisplay
                     ] = frozenset(
                         {
                             ST.sternPolygon,
-                            ST.galaxie,
+                            ST.keinParaOdMetaP,
                             ST.gleichfoermigesPolygon,
                             ST.gebrRat,
                         }
                     )
-                elif gebrSpalten["Uni"] is not None and t in gebrSpalten["Uni"]:
+
+                elif (gebrSpalten["Groe"] is not None and t in gebrSpalten["Groe"]) or (
+                    gebrSpalten["Groe2"] is not None and t in gebrSpalten["Groe2"]
+                ):
                     self.tables.generatedSpaltenParameter_Tags[
                         rowToDisplay
                     ] = frozenset(
                         {
                             ST.sternPolygon,
-                            ST.universum,
                             ST.gleichfoermigesPolygon,
                             ST.gebrRat,
+                            ST.keinParaOdMetaP,
                         }
                     )
 

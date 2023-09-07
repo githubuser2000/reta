@@ -121,9 +121,13 @@ class Program:
                     gebrBefehleDict: dict = {
                         Program.ParametersMain.Multiplikationen[0]: 2,
                         Program.ParametersMain.gebrochenuniversum[0]: 5,
+                        Program.ParametersMain.gebrochenuniversum[1]: 5,
                         Program.ParametersMain.gebrochengalaxie[0]: 6,
+                        Program.ParametersMain.gebrochengalaxie[1]: 6,
                         Program.ParametersMain.gebrochenemotion[0]: 9,
+                        Program.ParametersMain.gebrochenemotion[1]: 9,
                         Program.ParametersMain.gebrochengroesse[0]: 10,
+                        Program.ParametersMain.gebrochengroesse[1]: 10,
                     }
                     x("bli 1", befehlName)
                     x("bli 2", gebrBefehleDict[befehlName])
@@ -613,7 +617,7 @@ class Program:
                             # x("index1", d)
                             dataDicts[index1][index2] += (
                                 (into2,)
-                                if dataDicts[index1][index2][-1] != into2
+                                if into2 not in dataDicts[index1][index2]
                                 else ()
                             )
                         except KeyError:

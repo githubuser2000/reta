@@ -3091,10 +3091,14 @@ class Concat:
 
     def readConcatCsv_SetHtmlParamaters(self, concatTable, heading, u):
         if concatTable in range(2, 10):
+            rangeToDataDict = {2: 5, 3: 5, 4: 6, 5: 6, 6: 9, 7: 9, 8: 10, 9: 10}
             self.tables.generatedSpaltenParameter[
                 len(self.tables.generatedSpaltenParameter)
                 + self.tables.SpaltenVanillaAmount
-            ] = self.tables.dataDict[5 + ((concatTable - 2) % 2)][u + 2]
+            ] = ([self.tables.dataDict[rangeToDataDict[concatTable]][u + 2][0][0]],)
+            # print(self.tables.dataDict[rangeToDataDict[concatTable]][u + 2])
+            # print(self.tables.dataDict[rangeToDataDict[concatTable]][u + 2][0][0])
+
         if concatTable == 1:
             intoHtmlPara = (
                 [

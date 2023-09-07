@@ -194,6 +194,7 @@ class htmlSyntax(OutputSyntax):
             )
         else:
             try:
+                # print(SpaltenParameter[spalte])
                 tupleOfListsOfCouples = SpaltenParameter[spalte]
             except:
                 if str(spalte).isdecimal():
@@ -206,6 +207,7 @@ class htmlSyntax(OutputSyntax):
         # listOfListsOfCouples.sort(
         #    key=lambda x: sorted([(s.upper(), v) for s, v in x])
         # )  # damit pypy3 == python3
+        # print(listOfListsOfCouples)
         for c, couples in enumerate(listOfListsOfCouples):
             for paraNum in (0, 1):
                 if len(couples[0]) > paraNum:

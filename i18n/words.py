@@ -10,7 +10,9 @@ from collections import OrderedDict, defaultdict, namedtuple
 from typing import Any, NamedTuple, Optional, Tuple, Union
 
 # from typing import Optional, Union
+import pprint
 
+pp = pprint.PrettyPrinter(indent=4)
 try:
     from orderedset import OrderedSet
 except (ModuleNotFoundError, ImportError):
@@ -25,6 +27,18 @@ def alxp(text):
         if type(text) is str:
             print(text)
         else:
+            pp.pprint(text)
+
+
+def x(text1, text):
+    global output
+    """Für mich, damit ich mal alle prints ausschalten kann zum vorführen,
+    wenn ich noch beim Entwicklen war."""
+    if "-debug" in sys.argv:
+        if type(text) is str:
+            print(text1 + ": " + text)
+        else:
+            print(text1 + ": ", end="")
             pp.pprint(text)
 
 
@@ -680,6 +694,9 @@ ParametersMain: NamedTuple = ParametersMain(
     (_("Teilchen-Meta-Physik"), _("teilchen")),
     (_("alles"),),
 )
+
+# x("ParametersMain", ParametersMain)
+
 thomasWort = _("thomas")
 motivationWort = _("motivation")
 komplexWort = _("komplex")
