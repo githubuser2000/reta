@@ -2228,7 +2228,7 @@ def bruchBereichsManagementAndWbefehl(zahlenBereichC, stext, zahlenAngaben_):
     Minusse = {}
     pfaue = {}
     pfaueAbzug = {}
-    alxp(stext)
+    # alxp(stext)
     for g, a in enumerate(stext):
         bruchAndGanzZahlEtwaKorrekterBereich = []
         bruchBereichsAngaben = []
@@ -2236,11 +2236,11 @@ def bruchBereichsManagementAndWbefehl(zahlenBereichC, stext, zahlenAngaben_):
         abzug = False
         if a[:1] != "-":
             for etwaBruch in custom_split2(a, ","):
-                x("etwaBruch", etwaBruch)
+                # x("etwaBruch", etwaBruch)
                 bruchRange, bruchBereichsAngabe = createRangesForBruchLists(
                     bruchSpalt(etwaBruch)
                 )
-                x("L", zahlenAngaben_)
+                # x("L", zahlenAngaben_)
                 (
                     bruchAndGanzZahlEtwaKorrekterBereich,
                     bruchBereichsAngaben,
@@ -2256,7 +2256,7 @@ def bruchBereichsManagementAndWbefehl(zahlenBereichC, stext, zahlenAngaben_):
                     etwaBruch,
                     zahlenAngaben_,
                 )
-                x("W", zahlenAngaben_)
+                # x("W", zahlenAngaben_)
                 if etwaAllTrue:
                     fullBlockIsZahlenbereichAndBruch = (
                         fullBlockIsZahlenbereichAndBruch
@@ -2329,7 +2329,7 @@ def bruchBereichsManagementAndWbefehl(zahlenBereichC, stext, zahlenAngaben_):
                             EsGabzahlenAngaben = True
                             zahlenAngaben_mehrere += [neueRange]
         zahlenAngaben_mehrere = list(set(zahlenAngaben_ + zahlenAngaben_mehrere))
-        x("zahlenAngaben_mehrere", zahlenAngaben_mehrere)
+        # x("zahlenAngaben_mehrere", zahlenAngaben_mehrere)
     try:
         EsGabzahlenAngaben
     except UnboundLocalError:
@@ -2559,7 +2559,7 @@ def bruchBereichsManagementAndWbefehl(zahlenBereichC, stext, zahlenAngaben_):
         if avg < 1:
             rangesBruecheDictReverse = invert_dict_B(rangesBruecheDict2)
             rangesBruecheDict = {}
-    x("J", zahlenAngaben_mehrere)
+    # x("J", zahlenAngaben_mehrere)
     zahlenAngaben_mehrere = list(set(zahlenAngaben_mehrere))
     if len(zahlenAngaben_mehrere) > 0:
         zahlenAngaben_mehrereStr = ",".join(zahlenAngaben_mehrere)
@@ -2588,7 +2588,7 @@ def bruchBereichsManagementAndWbefehl(zahlenBereichC, stext, zahlenAngaben_):
                 zahlenBereichC += "," + zahlenReiheKeineWteiler
         else:
             zahlenBereichC = zahlenAngaben_mehrereStr
-            x("H", zahlenBereichC)
+            # x("H", zahlenBereichC)
 
     try:
         zahlenReiheKeineWteiler
@@ -2616,11 +2616,11 @@ def bruchBereichsManagementAndWbefehl(zahlenBereichC, stext, zahlenAngaben_):
     )
 
     if len(dazu) > 0:
-        x("K", zahlenBereichC)
+        # x("K", zahlenBereichC)
         zahlenBereichC = ",".join(
             filter(None, sdazu + re.split(kpattern, zahlenBereichC))
         )
-        x("X", zahlenBereichC)
+        # x("X", zahlenBereichC)
         stext += [",".join(sdazu + dazu)]
         bruch_GanzZahlReziproke = ",".join(
             filter(

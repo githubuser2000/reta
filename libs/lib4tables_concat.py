@@ -2670,7 +2670,7 @@ class Concat:
                     if isUniverse
                     else (self.relitable[koord.numerator][n_and_invers_spalten[0]],)
                 )
-                x("strukname_", strukname)
+                # x("strukname_", strukname)
                 return "".join(strukname)
             else:
                 return ""
@@ -2858,12 +2858,12 @@ class Concat:
         tabelleDazuColNeu: list = []
 
         for i, cell in enumerate(tabelleDazuCol, 1):
-            x("transposeA", ifTransponiert)
+            # x("transposeA", ifTransponiert)
             gebrRatZahl = (
                 Fraction(zeilenNr, i) if not ifTransponiert else Fraction(i, zeilenNr)
             )
-            x("gebrRatZahl", gebrRatZahl)
-            x("whyNone", self.struktAndInversSpalten)
+            # x("gebrRatZahl", gebrRatZahl)
+            # x("whyNone", self.struktAndInversSpalten)
             cellNeu = self.spalteMetaKonkretTheorieAbstrakt_getGebrRatUnivStrukturalie(
                 gebrRatZahl,
                 self.struktAndInversSpalten,
@@ -2908,7 +2908,7 @@ class Concat:
         if concatTable != 1:
             self.struktAndInversSpalten: tuple = spaltenDict[concatTable]
             self.gebrUnivTable4metaKonkret = self.readOneCSVAndReturn(concatTable)
-            x("WhyNone2", self.struktAndInversSpalten)
+            # x("WhyNone2", self.struktAndInversSpalten)
 
         def transpose(matrix):
             t = []
@@ -3076,13 +3076,13 @@ class Concat:
         if (u + 2 in concatTableSelection and concatTable in range(2, 10)) or (
             concatTable == 1  # and int(heading) in concatTableSelection
         ):
-            x("concatTable1", concatTable)
+            # x("concatTable1", concatTable)
             if concatTable not in range(2, 10) or u + 1 != len(dazu):
                 delta = 1 if concatTable in range(2, 10) else 0
                 selectedSpalten = u + len(self.relitable[0]) - len(dazu) + delta
                 rowsAsNumbers.add(selectedSpalten)
                 concatCSVspalten.add(selectedSpalten)
-                x("concatTable2", concatTable)
+                # x("concatTable2", concatTable)
                 if (
                     len(self.tables.generatedSpaltenParameter)
                     + self.tables.SpaltenVanillaAmount

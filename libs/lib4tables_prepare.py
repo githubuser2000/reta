@@ -759,7 +759,7 @@ class Prepare:
             range aus zu zeigenden Spalten 1-n nicht alle , welche neuen Spalten welche alten waren und umgekehrt
         return finallyDisplayLines, newerTable, numlen, rowsRange, old2Rows
         """
-        x("gebrSpaltenF", gebrSpalten)
+        # x("gebrSpaltenF", gebrSpalten)
         (
             finallyDisplayLines,
             headingsAmount,
@@ -775,7 +775,7 @@ class Prepare:
         reliNumbersBool = False if self.religionNumbers != [] else True
         for u, line in enumerate(contentTable):
             if u in finallyDisplayLines or combiRows != 0:
-                x("gebrSpaltenE", gebrSpalten)
+                # x("gebrSpaltenE", gebrSpalten)
                 new2Lines = self.prepare4out_LoopBody(
                     combiRows,
                     gebrSpalten,
