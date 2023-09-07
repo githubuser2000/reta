@@ -1371,6 +1371,7 @@ class Program:
             ),
             start=1,
         ):
+            x("nix1", [self.rowsAsNumbers, input1, i])
             (
                 self.relitable,
                 rowsAsNumbers,
@@ -1378,6 +1379,7 @@ class Program:
             ) = self.tables.getConcat.readConcatCsv(
                 self.relitable, self.rowsAsNumbers, input1, i
             )
+            x("nix2", [self.rowsAsNumbers, CsvTheirsSpalten[i]])
         primSpalten = CsvTheirsSpalten[1]
         gebr: dict = {}
         gebr["Gal"] = CsvTheirsSpalten[2]
@@ -1627,6 +1629,7 @@ class Program:
             maintable2subtable_Relation2,
         ) = self.bringAllImportantBeginThings(argv)
 
+        x("gebr", gebr)
         (
             finallyDisplayLines,
             newTable,
@@ -1733,6 +1736,7 @@ class Program:
             OrderedSet(),
             animalsProfessionsTable,
             komb_rows,
+            {},
             self.tables.getCombis.sumOfAllCombiRowsAmount,
             reliTableLenUntilNow=len(newTable[0])
             - (

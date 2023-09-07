@@ -2855,10 +2855,12 @@ class Concat:
         tabelleDazuColNeu: list = []
 
         for i, cell in enumerate(tabelleDazuCol, 1):
+            x("transposeA", ifTransponiert)
             gebrRatZahl = (
                 Fraction(zeilenNr, i) if not ifTransponiert else Fraction(i, zeilenNr)
             )
-
+            x("gebrRatZahl", gebrRatZahl)
+            x("whyNone", self.struktAndInversSpalten)
             cellNeu = self.spalteMetaKonkretTheorieAbstrakt_getGebrRatUnivStrukturalie(
                 gebrRatZahl,
                 self.struktAndInversSpalten,
@@ -2900,8 +2902,10 @@ class Concat:
             nPmEnum.groeN: (4, 197),
             nPmEnum.groe1pN: (4, 197),
         }
-        self.struktAndInversSpalten: tuple = spaltenDict[concatTable]
-        self.gebrUnivTable4metaKonkret = self.readOneCSVAndReturn(concatTable)
+        if concatTable != 1:
+            self.struktAndInversSpalten: tuple = spaltenDict[concatTable]
+            self.gebrUnivTable4metaKonkret = self.readOneCSVAndReturn(concatTable)
+            x("WhyNone2", self.struktAndInversSpalten)
 
         def transpose(matrix):
             t = []
@@ -2976,7 +2980,7 @@ class Concat:
                     maxlen = lastlen
                 dazu = list(tabelleDazuCol) + [""] * (maxlen - len(tabelleDazuCol))
 
-                if i != 0:
+                if i != 0 and concatTable in range(2, 10):
                     dazu = self.readConcatCsv_tabelleDazuColchange(
                         i,
                         dazu,
