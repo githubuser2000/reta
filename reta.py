@@ -146,7 +146,8 @@ class Program:
                     and befehlName in Program.ParametersMain.primvielfache
                 ):
                     self.spaltenArtenKey_SpaltennummernValue[(len(neg), 2)] |= {2}
-                elif i not in range(5, 9):
+                # elif i not in (5, 6, 9, 10):
+                else:
                     try:
                         x(
                             "dazu_T",
@@ -237,11 +238,11 @@ class Program:
                             if yes1:
                                 try:
                                     x(
-                                        "tupleQ4",
+                                        "tupleQ4_5",
                                         [
                                             self.paraDict[
                                                 (cmd[:eq], oneOfThingsAfterEqSign)
-                                            ],
+                                            ][5],
                                             oneOfThingsAfterEqSign,
                                             cmd[:eq],
                                         ],
@@ -337,7 +338,7 @@ class Program:
                                 if len(cmd) > 0 and cmd[-1] == "-" and len(neg) > 0:
                                     cmd = cmd[:-1]
 
-                                x("tupleP4", self.paraDict[(cmd, "")])
+                                x("tupleP4_5", self.paraDict[(cmd, "")][5])
                                 resultingSpaltenFromTuple(
                                     self.paraDict[(cmd, "")], neg, befehlName=cmd
                                 )
@@ -554,8 +555,8 @@ class Program:
                             elif i in (
                                 5,
                                 6,
-                                7,
-                                8,
+                                9,
+                                10,
                             ):  # and type(spaltenNummerOderEtc) is set:
                                 case = 2
                                 into += [[(parameterMainName, parameterName)]]
@@ -735,9 +736,8 @@ class Program:
             OrderedSet(),
             OrderedSet(),
         ]
-        x("allValues 4a", allValues[4])
         # x("paraNdataMatrix A4", paraNdataMatrix)
-        x("allValues 11 A", allValues[11])
+        # x("allValues 11 A", allValues[11])
         for possibleCommands in paraNdataMatrix:
             for commandValue, aAllValue in zip(possibleCommands[2:], allValues):
                 try:
@@ -779,6 +779,8 @@ class Program:
             self.paraDictGenerated4htmlTags[(value[0][0], value[1][0])] = key
             allValues[7] |= {key}
         """
+        x("allValues 0", allValues[0])
+        x("allValues 1", allValues[1])
         x("allValues 2", allValues[2])
         x("allValues 3", allValues[3])
         x("allValues 4", allValues[4])
@@ -1342,6 +1344,10 @@ class Program:
             ],
         )
 
+        x(
+            "NEIN_X1",
+            self.spaltenArtenKey_SpaltennummernValue[self.spaltenTypeNaming.gebrGal1],
+        )
         self.storeParamtersForColumns()
         x(
             "onlyGeneratedB",
@@ -1349,12 +1355,20 @@ class Program:
                 self.spaltenTypeNaming.boolAndTupleSet1
             ],
         )
+        x(
+            "NEIN_X2",
+            self.spaltenArtenKey_SpaltennummernValue[self.spaltenTypeNaming.gebrGal1],
+        )
         self.produceAllSpaltenNumbers()
         x(
             "onlyGeneratedC",
             self.spaltenArtenKey_SpaltennummernValue[
                 self.spaltenTypeNaming.boolAndTupleSet1
             ],
+        )
+        x(
+            "NEIN_X3",
+            self.spaltenArtenKey_SpaltennummernValue[self.spaltenTypeNaming.gebrGal1],
         )
         if self.htmlOrBBcode and not self.breiteORbreiten:
             shellRowsAmount = 0
@@ -1458,6 +1472,7 @@ class Program:
         gebr["Emo2"] = CsvTheirsSpalten[7]
         gebr["Groe"] = CsvTheirsSpalten[8]
         gebr["Groe2"] = CsvTheirsSpalten[9]
+        x("gebR", gebr)
 
         (
             finallyDisplayLinesEarly,

@@ -47,11 +47,21 @@
 ***** unwichtiges
 + Ich könnte erweitern aus welchen Dingen ich noch bestehe, der höheren Art, wie höhere Gefühle und Impulse, etc. Denn das gabs vorher nicht.
 *** 2. Feature Ideen
-+ Alle Spalten zu Meta-Konkret sind verschwunden.
-+ Bug bei:
-  reta -zeilen --vorhervonausschnitt=2 -spalten --Meta_vs_Konkret_(Universum)=konkret
 + unvollständig eingebaut: --alles hat noch nicht alles dabei in Neuimplementierung
-+ überall unsicherheit ergänzen bei allen n/m absichten.
+  + fehlt:
+    + uni gal für n/m
+    + kombi15 fehlt in alles
+    + Emotion gibt es nur n/ zahlenreiche und nicht zahlenreihe /n
+    + generierte Multiplikationen ist verschwundenüberall unsicherheit ergänzen bei allen n/m absichten.
+  + Emotion immer noch nur eins von beiden n/m vs m/n: aber nur bei --alles: liegt wahrscheinlich nur daran, weil inhaltsleer, gut
+  + Zeile 1 nach überschrift, Probleme:
+    + Fehler nur bei vielen n/m Sachen
+    + möglich vs art und weise 1/2
+    + all schauen
+      + bei meta konkret,
+      + bei u und a und u 1/n und a 1/n
+      + bei multiplik
+      + bei den 4 gebr rat
 + refactoring: viel zu ändern, aber geht schnell: bei rp: statt viele if's für einzelne Befehle: merge der dicts und sets mit schnittmenge der befehle bilden, wo dicts auf funktionen oder so zeigen, und dann diese funktionen zu einer sogenannten komposition bauen bla1().bla2().bla3() und diese komposition dann ausführen: elegantere feinere Lösung, die auch schneller läuft
   aber eigentlich nicht so wichtig
 + Ich sollte in die endgültige cliout die Möglichkeit einbauen, dass man stattdessen in eine Datenstruktur speichern möchte.
