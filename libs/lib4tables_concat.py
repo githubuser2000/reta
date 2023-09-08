@@ -2687,9 +2687,20 @@ class Concat:
     ):
         rowsAsNumbers |= {len(self.relitable[0])}
         self.tables.generatedSpaltenParameter_Tags[len(rowsAsNumbers) - 1] = (
-            frozenset({ST.sternPolygon, ST.universum})
+            frozenset(
+                {
+                    ST.gleichfoermigesPolygon if ifInvers else ST.sternPolygon,
+                    ST.universum,
+                }
+            )
             if bothRows == 0
-            else frozenset({ST.sternPolygon, ST.universum, ST.gebrRat})
+            else frozenset(
+                {
+                    ST.gleichfoermigesPolygon if ifInvers else ST.sternPolygon,
+                    ST.universum,
+                    ST.gebrRat,
+                }
+            )
         )
         self.relitable[1] += [""]
         if bothRows == 0:

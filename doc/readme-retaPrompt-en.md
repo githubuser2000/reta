@@ -39,16 +39,16 @@ weight = -7
 -   Line specifications are e.g. a number or a range of numbers like 2-5 or these things separated with comma like 1,3-5,20
     For the command "u" and "i", i.e. "universe" and "intent", you can also specify fractions, like 2/3,4/5,1/2.
 -   These output commands can be combined in one input line.
--   "i" or "intention" or "motive" or "motive" outputs the one column of intrinsic intentions of the star polygons, together with a line specification, (example a1 or a1/2)
+-   "i" or "intention" or "motive" or "motive" outputs the one column of intrinsic intentions of the star polygons, together with a line specification, (example a1 or a3/2)
 -   "spheres" or "circles" displays infos about those some kind of things for Types n
--   "u" or "universum" outputs the one column of the universal structurals or transcendentals of the star polygons, together with a line specification (example u2 or u2/2,1/2)
+-   "u" or "universum" outputs the one column of the universal structurals or transcendentals of the star polygons, together with a line specification (example u2 or u2/2,1/2,3/2)
 -   "t" or "thomas" outputs the one column of the thomas vanglium which corresponds to the intrinsic intentions of the star polygons in coded form, together with a line specification
 -   "M" resp. "mind" shows the universal mind (examples: M1/2 or M3)
 -   "C" resp. "consciousness" shows consciousness (examples: C1/2 or C3)
--   "E" resp. "emotion" shows the universal mind (examples: E1/2 or E3)
+-   "E" resp. "emotion" shows emotions n or 1/n or n/m (examples: E1/2 or E3)
 -   "I" resp. "impulses" shows the impulses (examples: I1/2 or I3)
 -   "T" resp. "truth" shows the reality truths (examples: T1/2 or T3)
--   "size" shows the structure size of n or 1/n
+-   "size" shows the structure size of n or 1/n or n/m
 -   "complex" shows the complexity steps of n or 1/n
 -   "ee" hides headlines
 -   "equality" resp. "freedom" shows that information (examples: "freedom 9")

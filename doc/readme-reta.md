@@ -88,7 +88,7 @@ Besser die Readme aus Markdown mit einem Markdown-Leseprogramm lesen!
     * --multiversum= 
         * multiversalien,teilchen
     * --grundstrukturen= 
-        * analytischeontologie,modelofhierarchicalcomplexity,Transzendentalien,bedingung,lebensbereiche,massnahmen,relativreziprokuniversell,universellerkomperativ,existenzialien,extremalien,erwartungen,leidenschaft,relativerzeitbetrag,zahlenvergleich,bestrebung,prinzipien,attraktionen,optimierung,themen,bedeutung,reziproke,achtung,zeit,absicht16,absicht17,absicht6,absicht7,regung,verhalten,energie,garben,nachvollziehen,empathie,absicht1/6,innerewerte,absicht10,geist,reflex,lust,paradigmen,wirklichkeit,rechnen,stimmung,klasse,ordnen,metasysteme,absicht1pro8,ziele,konkreta,gefuehle,abhaengigkeit,karte,fundament,positionen,vorstellungen,sollen,ansichten,verbundenheiten,absicht13,liebe,koalitionen,impulse,trieb,reflektion,zustaende
+        * analytischeontologie,modelofhierarchicalcomplexity,Transzendentalien,bedingung,lebensbereiche,massnahmen,relativreziprokuniversell,universellerkomperativ,existenzialien,extremalien,erwartungen,leidenschaft,relativerzeitbetrag,zahlenvergleich,bestrebung,prinzipien,attraktionen,optimierung,themen,bedeutung,reziproke,achtung,zeit,absicht16,absicht17,absicht6,absicht7,bewusstheit,verhalten,energie,garben,nachvollziehen,empathie,absicht1/6,innerewerte,absicht10,geist,reflex,lust,paradigmen,wirklichkeit,rechnen,stimmung,klasse,ordnen,metasysteme,absicht1pro8,ziele,konkreta,gefuehle,abhaengigkeit,karte,fundament,positionen,vorstellungen,sollen,ansichten,verbundenheiten,absicht13,liebe,koalitionen,impulse,trieb,reflektion,zustaende
     * --groessenordnung= 
         * licht,Größenordnung,organisationen,politischesysteme
     * --universummetakonkret= 
@@ -102,10 +102,14 @@ Besser die Readme aus Markdown mit einem Markdown-Leseprogramm lesen!
     * --licht 
     * --bedeutung= 
         * primzahlkreuz,inreta,vorzeichen,primzahlen,anwendungdersonnenundmonde,zählungen,jura,vollkommenheit,gestirn,konjunktiv,mechanismen
-    * --gebrochen-rational_Galaxie_n/m= 
-        * 7,11,19,18,2,12,17,20,21,23,13,9,6,3,5,15,10,4,8,22,16,14
-    * --gebrochen-rational_Universum_n/m= 
-        * 7,11,19,18,2,12,17,20,21,23,13,9,6,3,5,15,10,4,8,22,16,14
+    * --gebrochengalaxie= 
+        * 22,18,20,5,8,3,6,17,16,19,9,21,10,12,11,15,14,2,23,4,13,7
+    * --gebrochenuniversum= 
+        * 22,18,20,5,8,3,6,17,16,19,9,21,10,12,11,15,14,2,23,4,13,7
+    * --gebrochenemotion= 
+        * 22,18,20,5,8,3,6,17,16,19,9,21,10,12,11,15,14,2,23,4,13,7
+    * --gebrochengroesse= 
+        * 22,18,20,5,8,3,6,17,16,19,9,21,10,12,11,15,14,2,23,4,13,7
     * --symbole 
     * --eigenschaften= 
         * weisheit,rechte,unterlegen,streit,einklinken,familiebrauchen,bescheiden,selbstsucht,wissenschaft,arschloch,liebe,selbstlos,eintönig,abgeneigt,ehrlich,tragweite,wertlos,familiaer,sanft,vereinenverbinden,aehnlich,gut,sinn,zeit,egalitaerautoritaer,meinungen,meinungsintelligenz,sittlichkeit,führung,durchleuchten,foerdern,überheblich,liebepolung,egoismus,geltung,gleich,ueberleben

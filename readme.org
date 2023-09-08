@@ -47,18 +47,13 @@
 ***** unwichtiges
 + Ich könnte erweitern aus welchen Dingen ich noch bestehe, der höheren Art, wie höhere Gefühle und Impulse, etc. Denn das gabs vorher nicht.
 *** 2. Feature Ideen
-+ unvollständig eingebaut: --alles hat noch nicht alles dabei in Neuimplementierung
-  + fehlt:
-    + uni gal für n/m
-    + kombi15 fehlt in alles
-    + Emotion gibt es nur n/ zahlenreiche und nicht zahlenreihe /n
-    + generierte Multiplikationen ist verschwundenüberall unsicherheit ergänzen bei allen n/m absichten.
++ Testing und Debugging Notes statt Feature-Ideen
   + üall noch Testen üall in html wo brüche sind: Brucherweiterung von Universum dabei: ja nein, z.B. bei 2:=14/7 oder 7:=21/3
-  + Emotion immer noch nur eins von beiden n/m vs m/n: aber nur bei --alles: liegt wahrscheinlich nur daran, weil inhaltsleer, gut
+  + ts Problem: bei metakonkret wird die checkbox ausgegraut, wenn eine der beiden spalten ausgegraut wird
+  + nachträgliche Zeilenfilterung geht nicht perfekt genug
   + Zeile 1 nach überschrift, Probleme:
-    + Fehler nur bei vielen n/m Sachen
-    + möglich vs art und weise 1/2
-    + all schauen
+    + mögliche wahrscheinliche Fehler nur bei vielen n/m Sachen
+    + +all schauen
       + bei meta konkret,
       + bei u und a und u 1/n und a 1/n
       + bei multiplik

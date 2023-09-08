@@ -88,7 +88,7 @@ Secondary parameters start with 2 minus --.
     * --multiverse= 
         * multiversalias,particles
     * --basic_structures= 
-        * analyticontology,modelofhierarchicalcomplexity,transcendentals,condition,areas_of_life,measures,relativereciprocal,universalcomparative,existentials,extremalia,expectations,passion,relativetimeamount,numericalcomparison,aspiration,principles,attractions,optimization,topics,meaning,reciprocal,attention,time,intention16,intention17,intention6,intention7,notemotionnotimpulsesbutsimilar,behavior,energy,sheafs,comprehend,empathy,intention1/6,innervalues,intention10,mind,reflex,lust,paradigms,truthRealities,calculate,mood,class,order,metasystems,intention1pro8,goals,concreta,emotions,dependence,map,foundation,positions,imaginations,shall,views,affiliations,intention13,love,coalitions,impulses,drive,reflection,states
+        * analyticontology,modelofhierarchicalcomplexity,transcendentals,condition,areas_of_life,measures,relativereciprocal,universalcomparative,existentials,extremalia,expectations,passion,relativetimeamount,numericalcomparison,aspiration,principles,attractions,optimization,topics,meaning,reciprocal,attention,time,intention16,intention17,intention6,intention7,awareness,behavior,energy,sheafs,comprehend,empathy,intention1/6,innervalues,intention10,mind,reflex,lust,paradigms,truthRealities,calculate,mood,class,order,metasystems,intention1pro8,goals,concreta,emotions,dependence,map,foundation,positions,imaginations,shall,views,affiliations,intention13,love,coalitions,impulses,drive,reflection,states
     * --scale= 
         * light,scale,organizations,politicalsystems
     * --universeMetaConcrete= 
@@ -102,10 +102,14 @@ Secondary parameters start with 2 minus --.
     * --light 
     * --meaning= 
         * primecross,inreta,signbefore,primenumbers,applicationofsunsandmoons,ranges,law,perfection,spaceObject,subjunctive,mechanisms
-    * --fractional_galaxy_n/m= 
-        * 11,14,3,2,22,15,6,8,16,13,9,17,21,23,5,20,4,12,19,7,10,18
-    * --fractional_universe_n/m= 
-        * 11,14,3,2,22,15,6,8,16,13,9,17,21,23,5,20,4,12,19,7,10,18
+    * --gebrochengalaxie_fractionalgalaxy= 
+        * 8,13,15,3,10,9,11,14,5,6,4,12,7,18,2,19,21,17,22,16,20,23
+    * --gebrochenuniversum_fractionaluniverse= 
+        * 8,13,15,3,10,9,11,14,5,6,4,12,7,18,2,19,21,17,22,16,20,23
+    * --fractionedemotion= 
+        * 8,13,15,3,10,9,11,14,5,6,4,12,7,18,2,19,21,17,22,16,20,23
+    * --fractionalnumberedstructuresize= 
+        * 8,13,15,3,10,9,11,14,5,6,4,12,7,18,2,19,21,17,22,16,20,23
     * --symbols 
     * --properties= 
         * wisdom,rights,inferior,dispute,latchOn,familyneeds,humble,selfishness,science,asshole,love,selfless,monotonous,averse,honest,scope,worthless,familial,soft,uniteConnect,similar,good,senseAndMeaning,time,egalitarianAuthoritarian,opinions,opinionintelligence,morality,leadership,X-ray,encourage,arrogant,polarityOfLove,egoism,cachetPrestigeValidity,equal,survive
