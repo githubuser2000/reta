@@ -816,57 +816,58 @@ function makeMapsOfHeadLCheckB(p1, p2, num, tags) {
 }
 function disEnAbleChks(Enums1) {
     var Enums = subFkt1_PolyTpes(Enums1);
-    subFkt3(Enums, SubFkt3SubFkt1Ptr, SubFkt3SubFkt2Ptr, chks2);
     subFkt3(Enums, SubFkt3SubFkt1Ptr2, SubFkt3SubFkt2Ptr2, spaltenTags);
-    var Achks = document.getElementsByClassName("chksA");
-    var Bchks;
-    for (var i = 0; i < Achks.length; i++) {
+    // weg kommentiert, weil die Fkt fehlerhaft funktioniert und das erst mal weniger wichtig is
+    // in der Fkt steht, wie der Fehler ist. Es werden oft nicht die richtigen Checkboxen deaktiviert und aktiviert
+    //subFkt3(Enums, SubFkt3SubFkt1Ptr, SubFkt3SubFkt2Ptr, chks2);
+    /*
+      var Achks: HTMLCollectionOf<HTMLInputElement> = document.getElementsByClassName("chksA") as HTMLCollectionOf<HTMLInputElement>;
+      var Bchks: HTMLCollectionOf<HTMLInputElement>;
+      for (var i: number = 0; i < Achks.length; i++) {
         Bchks = Achks[i]
-            .getElementsByTagName("div")[0]
-            .getElementsByTagName("input");
-        var deakAmount = 0;
-        for (var k = 0; k < Bchks.length; k++)
-            if (Bchks[k].disabled)
-                deakAmount++;
+          .getElementsByTagName("div")[0]
+          .getElementsByTagName("input");
+        var deakAmount: number = 0;
+        for (var k: number = 0; k < Bchks.length; k++) if (Bchks[k].disabled) deakAmount++;
         if (deakAmount == Bchks.length && deakAmount != 0) {
-            Achks[i].getElementsByTagName("label")[0].style.fontSize =
-                tdStyleFontSizeKl;
-            Achks[i].getElementsByTagName("label")[0].style.color = tdStyleColorKl;
-            Achks[i].getElementsByTagName("label")[0].style.whiteSpace =
-                tdStyleWhiteSpace;
+          Achks[i].getElementsByTagName("label")[0].style.fontSize =
+            tdStyleFontSizeKl;
+          Achks[i].getElementsByTagName("label")[0].style.color = tdStyleColorKl;
+          Achks[i].getElementsByTagName("label")[0].style.whiteSpace =
+            tdStyleWhiteSpace;
+        } else {
+          Achks[i].getElementsByTagName("label")[0].style.fontSize =
+            tdStyleFontSize;
+          Achks[i].getElementsByTagName("label")[0].style.color = "";
+          Achks[i].getElementsByTagName("label")[0].style.whiteSpace =
+            tdStyleWhiteSpace;
         }
-        else {
-            Achks[i].getElementsByTagName("label")[0].style.fontSize =
-                tdStyleFontSize;
-            Achks[i].getElementsByTagName("label")[0].style.color = "";
-            Achks[i].getElementsByTagName("label")[0].style.whiteSpace =
-                tdStyleWhiteSpace;
-        }
-    }
-    var chksA1label = document.getElementsByClassName("chksA1");
-    for (var i = 0; i < chksA1label.length; i++) {
-        var tagsPerA1Label = chksA1label[i].className.match(/c1_([\d,]+)/g);
-        if (tagsPerA1Label == null)
-            tagsPerA1Label = [];
+      }
+      var chksA1label: HTMLCollectionOf<HTMLInputElement> = document.getElementsByClassName("chksA1");
+      for (var i: number = 0; i < chksA1label.length; i++) {
+        var tagsPerA1Label: RegExpMatchArray  = chksA1label[i].className.match(/c1_([\d,]+)/g);
+        if (tagsPerA1Label == null) tagsPerA1Label = [];
         else
-            var tagsPerA1Label = String(chksA1label[i].className.match(/c1_([\d,]+)/g))
-                .substr(3)
-                .split(",");
+          var tagsPerA1Label: RegExpMatchArray  = String(chksA1label[i].className.match(/c1_([\d,]+)/g))
+            .substr(3)
+            .split(",");
         if (tagsPerA1Label.length != 0) {
-            var enumo = new Set();
-            for (var k = 0; k < tagsPerA1Label.length; k++)
-                for (var l = 0; l < Enums.length; l++)
-                    if (tagsPerA1Label[k] == Enums[l].toString())
-                        enumo.add(Enums[l]);
-            if ((!enumo.has(0) && !enumo.has(1) && !enumo.has(6)) ||
-                (!enumo.has(3) && !enumo.has(4) && !enumo.has(5)) ||
-                enumo.size == 0) {
-                chksA1label[i].style.fontSize = tdStyleFontSizeKl;
-                chksA1label[i].style.color = tdStyleColorKl;
-                chksA1label[i].style.whiteSpace = tdStyleWhiteSpace;
-            }
+          var enumo: Set<number> = new Set();
+          for (var k: number = 0; k < tagsPerA1Label.length; k++)
+            for (var l:number  = 0; l < Enums.length; l++)
+              if (tagsPerA1Label[k] == Enums[l].toString()) enumo.add(Enums[l]);
+          if (
+            (!enumo.has(0) && !enumo.has(1) && !enumo.has(6)) ||
+            (!enumo.has(3) && !enumo.has(4) && !enumo.has(5)) ||
+            enumo.size == 0
+          ) {
+            chksA1label[i].style.fontSize = tdStyleFontSizeKl;
+            chksA1label[i].style.color = tdStyleColorKl;
+            chksA1label[i].style.whiteSpace = tdStyleWhiteSpace;
+          }
         }
-    }
+      }
+      */
 }
 const alleMonde = [
     4, 8, 9, 16, 25, 27, 32, 36, 49, 64, 81, 100, 121, 125, 128, 144, 169, 196,
@@ -903,18 +904,36 @@ function subFkt3(Enums, SubFkt3SubFkt2Var, SubFkt3SubFkt1Var, chks2orSpaltenTags
     /*console.log(chks2orSpaltenTagsOrTRs[0].cells.length)
     console.log(TRs[0].cells.length)
     console.log(spaltenTags.length)*/
-    for (var i = ((chks2orSpaltenTagsOrTRs === spaltenTags) ? 2 : 0); i < chks2orSpaltenTagsOrTRs.length; i++) {
+    //var counter: number = 0;
+    // i sind Spalten oder die checkboxnummer und k sind deren Zeilen
+    var enumi2 = new Array();
+    var beginI = ((chks2orSpaltenTagsOrTRs === spaltenTags) ? 2 : 0);
+    for (var i = beginI; i < chks2orSpaltenTagsOrTRs.length; i++) {
         enumi = new Set();
         for (var k = 0; k < ((TRs === chks2orSpaltenTagsOrTRs) ? chks2orSpaltenTagsOrTRs[i].cells.length : chks2orSpaltenTagsOrTRs[i].length); k++) {
-            for (var l = 0; l < Enums.length; l++)
-                if (chks2orSpaltenTagsOrTRs === TRs) {
-                    if (spaltenTags[i][k] == Enums[l].toString()) {
+            if (chks2orSpaltenTagsOrTRs === TRs) {
+                for (var l = 0; l < Enums.length; l++)
+                    if (spaltenTags[i][k] == Enums[l].toString())
                         enumi.add(Enums[l]);
-                    }
-                }
-                else if (chks2orSpaltenTagsOrTRs[i][k] == Enums[l].toString())
-                    enumi.add(Enums[l]);
+            }
+            else
+                for (var l = 0; l < Enums.length; l++)
+                    if (chks2orSpaltenTagsOrTRs[i][k] == Enums[l].toString())
+                        enumi.add(Enums[l]);
+            // spaltenTags ist für die Filterung nach Spalten statt Checkboxen
+            // spaltenTags und chks2orSpaltenTagsOrTRs haben als Paramter erst Spalten dann Zeilen
+            // ich brauche ein map dict, dass abbildet, welche spalten zu welchen checkboxen gehören
+            // irgendwie zählt immer die letzte Spalte, zum entscheiden, ob die zugehörige Checkbox disabled oder enabled werden soll. Das sollte so nicht sein.
+            // chks2orSpaltenTagsOrTRs kann chks2 sein, was fast wie chks1 ist, nur nach c_ gefiltert.
+            // c_ enthält danach die kleinen TaggingNummern für die Checkbox
         }
+        enumi2.push(enumi);
+        //console.log(i)
+    }
+    //console.log(enumi2.length)
+    for (var i = beginI; i < chks2orSpaltenTagsOrTRs.length; i++) {
+        //console.log(i);
+        //console.log(enumi);
         if (TRs === chks2orSpaltenTagsOrTRs) {
             TDs = TRs[i].cells;
             if (i > 4 && i < 21) {
@@ -938,15 +957,18 @@ function subFkt3(Enums, SubFkt3SubFkt2Var, SubFkt3SubFkt1Var, chks2orSpaltenTags
                 }
             }
             if (i == 1)
-                SubFkt3SubFkt2Var(i, k);
+                SubFkt3SubFkt2Var(i);
         }
-        if ((!enumi.has(0) && !enumi.has(1) && !enumi.has(6)) ||
-            (!enumi.has(3) && !enumi.has(4) && !enumi.has(5)) ||
-            enumi.size == 0) {
-            SubFkt3SubFkt1Var(i, k);
+        //console.log(i)
+        //console.log(enumi2.length)
+        enumi = enumi2[i - beginI];
+        if ((enumi.has(0) || enumi.has(1) || enumi.has(6)) &&
+            (enumi.has(3) || enumi.has(4) || enumi.has(5)) &&
+            enumi.size != 0) {
+            SubFkt3SubFkt2Var(i);
         }
         else {
-            SubFkt3SubFkt2Var(i, k);
+            SubFkt3SubFkt1Var(i);
         }
     }
 }
@@ -968,7 +990,7 @@ var SubFkt3SubFkt1Ptr = function SubFkt3SubFkt2(i, k = 0) {
     chks1[i].style.color = "";
     chks1[i].style.whiteSpace = tdStyleWhiteSpace;
 };
-var SubFkt3SubFkt2Ptr = function SubFkt3SubFkt1(i, k = 0) {
+var SubFkt3SubFkt2Ptr = function nubFkt3SubFkt1(i, k = 0) {
     chks1[i].disabled = true;
     chks1[i].style.fontSize = tdStyleFontSizeKl;
     chks1[i].style.color = tdStyleColorKl;

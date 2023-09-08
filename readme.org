@@ -51,6 +51,7 @@
   + üall noch Testen üall in html wo brüche sind: Brucherweiterung von Universum dabei: ja nein, z.B. bei 2:=14/7 oder 7:=21/3
   + ts Problem: bei metakonkret wird die checkbox ausgegraut, wenn eine der beiden spalten ausgegraut wird
   + nachträgliche Zeilenfilterung geht nicht perfekt genug
+  + Stimmungen Kombinationen sollte nicht später ausgegraut bleiben
   + Zeile 1 nach überschrift, Probleme:
     + mögliche wahrscheinliche Fehler nur bei vielen n/m Sachen
     + +all schauen

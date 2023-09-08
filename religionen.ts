@@ -856,9 +856,12 @@ function makeMapsOfHeadLCheckB(p1: string, p2: string | null, num: string | numb
 
 function disEnAbleChks(Enums1: Array<number> | Set<number> | HTMLCollectionOf<any>) {
   var Enums = subFkt1_PolyTpes(Enums1);
-  subFkt3(Enums, SubFkt3SubFkt1Ptr, SubFkt3SubFkt2Ptr, chks2);
-  subFkt3(Enums, SubFkt3SubFkt1Ptr2, SubFkt3SubFkt2Ptr2, spaltenTags);
+  subFkt3(Enums, SubFkt3SubFkt1Ptr2, SubFkt3SubFkt2Ptr2, spaltenTags)
+  // weg kommentiert, weil die Fkt fehlerhaft funktioniert und das erst mal weniger wichtig is
+  // in der Fkt steht, wie der Fehler ist. Es werden oft nicht die richtigen Checkboxen deaktiviert und aktiviert
+  //subFkt3(Enums, SubFkt3SubFkt1Ptr, SubFkt3SubFkt2Ptr, chks2);
 
+/*
   var Achks: HTMLCollectionOf<HTMLInputElement> = document.getElementsByClassName("chksA") as HTMLCollectionOf<HTMLInputElement>;
   var Bchks: HTMLCollectionOf<HTMLInputElement>;
   for (var i: number = 0; i < Achks.length; i++) {
@@ -905,6 +908,7 @@ function disEnAbleChks(Enums1: Array<number> | Set<number> | HTMLCollectionOf<an
       }
     }
   }
+  */
 }
 const alleMonde: number[] = [
   4, 8, 9, 16, 25, 27, 32, 36, 49, 64, 81, 100, 121, 125, 128, 144, 169, 196,
@@ -940,23 +944,41 @@ const primZahlen: number[] = [
         if (chks2[i][k] == Enums[l].toString()) enumi.add(Enums[l]);
 */
 
-
 function subFkt3(Enums: number[], SubFkt3SubFkt2Var: (i3: number, k3?: number) => void | Set<number>, SubFkt3SubFkt1Var: (i3: number, k3?: number) => void | Set<number>, chks2orSpaltenTagsOrTRs: any[][]| HTMLCollectionOf<HTMLTableRowElement>): void {
   /*console.log(chks2orSpaltenTagsOrTRs[0].cells.length)
   console.log(TRs[0].cells.length)
   console.log(spaltenTags.length)*/
-  for (var i: number = ((chks2orSpaltenTagsOrTRs === spaltenTags) ? 2 : 0); i < chks2orSpaltenTagsOrTRs.length; i++) {
+  //var counter: number = 0;
+  // i sind Spalten oder die checkboxnummer und k sind deren Zeilen
+  var enumi2: Array<Set<number>> =new Array();
+  var beginI: number = ((chks2orSpaltenTagsOrTRs === spaltenTags) ? 2 : 0);
+  for (var i: number = beginI; i < chks2orSpaltenTagsOrTRs.length; i++) {
     enumi = new Set();
     for (var k: number = 0; k < ((TRs === chks2orSpaltenTagsOrTRs) ? chks2orSpaltenTagsOrTRs[i].cells.length : chks2orSpaltenTagsOrTRs[i].length); k++) {
-      for (var l: number = 0; l < Enums.length; l++)
-        if (chks2orSpaltenTagsOrTRs === TRs) {
-            if (spaltenTags[i][k] == Enums[l].toString()) {
-                enumi.add(Enums[l]);
-            }
-        } else
-            if (chks2orSpaltenTagsOrTRs[i][k] == Enums[l].toString())
-                enumi.add(Enums[l]);
+      if (chks2orSpaltenTagsOrTRs === TRs) {
+        for (var l: number = 0; l < Enums.length; l++)
+          if (spaltenTags[i][k] == Enums[l].toString())
+            enumi.add(Enums[l]);
+
+      } else
+        for (var l: number = 0; l < Enums.length; l++)
+          if (chks2orSpaltenTagsOrTRs[i][k] == Enums[l].toString())
+            enumi.add(Enums[l]);
+
+        // spaltenTags ist für die Filterung nach Spalten statt Checkboxen
+        // spaltenTags und chks2orSpaltenTagsOrTRs haben als Paramter erst Spalten dann Zeilen
+        // ich brauche ein map dict, dass abbildet, welche spalten zu welchen checkboxen gehören
+        // irgendwie zählt immer die letzte Spalte, zum entscheiden, ob die zugehörige Checkbox disabled oder enabled werden soll. Das sollte so nicht sein.
+        // chks2orSpaltenTagsOrTRs kann chks2 sein, was fast wie chks1 ist, nur nach c_ gefiltert.
+        // c_ enthält danach die kleinen TaggingNummern für die Checkbox
     }
+    enumi2.push(enumi)
+    //console.log(i)
+  }
+  //console.log(enumi2.length)
+  for (var i: number = beginI; i < chks2orSpaltenTagsOrTRs.length; i++) {
+    //console.log(i);
+    //console.log(enumi);
     if (TRs === chks2orSpaltenTagsOrTRs) {
         TDs = TRs[i].cells as HTMLCollectionOf<HTMLTableCellElement>;
         if (i>4 && i<21) {
@@ -980,14 +1002,17 @@ function subFkt3(Enums: number[], SubFkt3SubFkt2Var: (i3: number, k3?: number) =
                 }
             }
       if (i == 1)
-        SubFkt3SubFkt2Var(i,k);
+        SubFkt3SubFkt2Var(i);
     }
-    if ((!enumi.has(0) && !enumi.has(1) && !enumi.has(6)) ||
-      (!enumi.has(3) && !enumi.has(4) && !enumi.has(5)) ||
-      enumi.size == 0) {
-      SubFkt3SubFkt1Var(i,k);
+    //console.log(i)
+    //console.log(enumi2.length)
+    enumi = enumi2[i-beginI];
+    if ((enumi.has(0) || enumi.has(1) || enumi.has(6)) &&
+      (enumi.has(3) || enumi.has(4) || enumi.has(5)) &&
+      enumi.size != 0) {
+      SubFkt3SubFkt2Var(i);
     } else {
-      SubFkt3SubFkt2Var(i,k);
+      SubFkt3SubFkt1Var(i);
     }
   }
 }
@@ -1015,7 +1040,7 @@ var SubFkt3SubFkt1Ptr: (i: number, k?: number) => void | Set<number> = function 
   chks1[i].style.whiteSpace = tdStyleWhiteSpace;
 }
 
-var SubFkt3SubFkt2Ptr: (i: number, k?: number) => void | Set<number> = function SubFkt3SubFkt1(i: number,k: number=0): void {
+var SubFkt3SubFkt2Ptr: (i: number, k?: number) => void | Set<number> = function nubFkt3SubFkt1(i: number,k: number=0): void {
   chks1[i].disabled = true;
   chks1[i].style.fontSize = tdStyleFontSizeKl;
   chks1[i].style.color = tdStyleColorKl;

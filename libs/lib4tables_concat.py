@@ -2788,10 +2788,10 @@ class Concat:
         )
         tags = [
             (ST.sternPolygon, ST.universum),
+            (ST.sternPolygon, ST.universum),
             (ST.sternPolygon, ST.galaxie),
             (ST.gleichfoermigesPolygon, ST.galaxie),
             (ST.gleichfoermigesPolygon, ST.universum),
-            (ST.sternPolygon, ST.universum),
             (ST.sternPolygon, ST.universum),
             (ST.sternPolygon, ST.universum),
         ]

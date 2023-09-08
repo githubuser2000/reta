@@ -1853,15 +1853,8 @@ paraNdataMatrix: list = [
         ),
         {
             69,
+            70,
         },
-    ),
-    (
-        ParametersMain.wirtschaft,
-        (
-            _("realistisch"),
-            _("funktioniert"),
-        ),
-        {70},
     ),
     (
         ParametersMain.wirtschaft,
