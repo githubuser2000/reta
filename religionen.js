@@ -40,6 +40,7 @@ var sPolygon;
 var gfPolygon;
 var polyg1;
 var polyg2;
+var chkClassNameBySpaltenNr = new Map();
 //var ifDrawSpoly: Set<number>;
 //var ifDrawgfPoly: Set<number>;
 let pSize = 120;
@@ -311,6 +312,7 @@ window.onload = function () {
             spalten4spaltenTags[k].push(TDs[k]);
         }
     }
+    // spalten4spaltenTags[k]: Index ist Spalte und Werte sind alle Zeilen dieser Spalte
     /*(async () => {
     const result = await checksum(TRs);
     console.log("Checksum:", result);
@@ -340,6 +342,11 @@ window.onload = function () {
             //num = i
             var p1a = name.match(/p1_([^\s])+/g);
             var p2a = name.match(/p2_([^\s])+/g);
+            // p1a und p2a entsprechen 2 Dingen in Tabellen-Zellen-Klassen von: -spalten --ding1a=ding2a,ding2b --ding1b=ding2a
+            // aus diesen beiden listen und der Nummer der Spalte und den tags wird etwas gebaut
+            // mapMapMap und mapMapMapTags: indexe sind ding1+ding2 und
+            // das eine hat als Wert die Tags und das andere die Nummern der Spalten
+            // die Spaltennummern sind ints
             if (p1a != null) {
                 for (var p1i = 0; p1i < p1a.length; p1i++) {
                     if (p1a[p1i].includes("p1_"))
@@ -403,7 +410,8 @@ window.onload = function () {
         for (var k = 0; k < p2keys.length; k++) {
             //console.log(typeof mapMapMap[p1keys[i]][p2keys[k]]);
             //console.log(mapMapMap[p1keys[i]][p2keys[k]]);
-            var mapMapMapSetValue = mapMapMap[p1keys[i]][p2keys[k]];
+            var spaltenNrs = mapMapMap[p1keys[i]][p2keys[k]];
+            var mapMapMapSetValue = spaltenNrs;
             /*console.log("das Array Objekt 3: "+Array)
             console.log(mapMapMapSetValue);
             console.log(p1keys[i]);
@@ -450,6 +458,16 @@ window.onload = function () {
                 //console.log("das Array Objekt 6: "+Array)
             }
             //console.log("das Array Objekt 7: "+Array)
+            for (var numr of spaltenNrs) {
+                try {
+                    chkClassNameBySpaltenNr[numr].push("chks c_ " + Array.from(mapMapMapTags[p1keys[i]][p2keys[k]]).join(","));
+                }
+                catch (_a) {
+                    chkClassNameBySpaltenNr[numr] = [];
+                    chkClassNameBySpaltenNr[numr].push("chks c_ " + Array.from(mapMapMapTags[p1keys[i]][p2keys[k]]).join(","));
+                    // hat also die Spaltennummer als index und den Klassennamen der zugehörigen checkboxen als werte eines Arrays
+                }
+            }
         }
         if (p1keys[i] === "✗Grundstrukturen") {
             var grunSi = i;
@@ -798,6 +816,20 @@ window.onload = function () {
         document.body.style.backgroundAttachment = "fixed";
         document.body.style.backgroundImage = 'url(' + polyg2 + ')';
     }
+    //var keys1: number[] = chkClassNameBySpaltenNr.keys();
+    var ByChkClassNamesToGetSpaltenNr = new Map();
+    for (var i = 0; i < chkClassNameBySpaltenNr.size; i++) {
+        //chkClassNameBySpaltenNr[numr].push("chks c_ "+Array.from(mapMapMapTags[p1keys[i]][p2keys[k]]).join(","));
+        for (var k = 0; k < chkClassNameBySpaltenNr[i].length; k++) {
+            try {
+                ByChkClassNamesToGetSpaltenNr[chkClassNameBySpaltenNr[i][k]].add(i);
+            }
+            catch (_b) {
+                ByChkClassNamesToGetSpaltenNr[chkClassNameBySpaltenNr[i][k]] = new Set();
+                ByChkClassNamesToGetSpaltenNr[chkClassNameBySpaltenNr[i][k]].add(i);
+            }
+        }
+    }
 };
 function makeMapsOfHeadLCheckB(p1, p2, num, tags) {
     try {
@@ -820,6 +852,23 @@ function disEnAbleChks(Enums1) {
     // weg kommentiert, weil die Fkt fehlerhaft funktioniert und das erst mal weniger wichtig is
     // in der Fkt steht, wie der Fehler ist. Es werden oft nicht die richtigen Checkboxen deaktiviert und aktiviert
     //subFkt3(Enums, SubFkt3SubFkt1Ptr, SubFkt3SubFkt2Ptr, chks2);
+    for (var [key, value] of ByChkClassNamesToGetSpaltenNr.entries()) {
+        console.log(`${key}: ${value}`);
+        var flag = true;
+        for (var j = 0; j < value.size; j++) {
+            if (spalten4spaltenTags[j][0].style.opacity != "1")
+                flag = false;
+        }
+        var chkX = chks1.getElementsByClassName(key)[0];
+        if (!flag) {
+            chkX.style.opacy = "0.4";
+            chkX.style.fontSize = "80%";
+        }
+        else {
+            chkX.style.opacy = "1";
+            chkX.style.fontSize = "100%";
+        }
+    }
     /*
       var Achks: HTMLCollectionOf<HTMLInputElement> = document.getElementsByClassName("chksA") as HTMLCollectionOf<HTMLInputElement>;
       var Bchks: HTMLCollectionOf<HTMLInputElement>;

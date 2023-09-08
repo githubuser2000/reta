@@ -241,6 +241,14 @@ Sollte ich das umsetzen wollen, dann sollte ich unbedingt einen neuen eigenen Br
 + Oder statische Klassen, statt Instanzen verwenden.
 + Aufhören damit, weg machen: mehrfache Art gleichzeitig Variablen zu übergeben und zu referenzieren: Das ist liederlich, unordentlich.
 + Vielleicht mal besser doch Clean Code umsetzen, obwohl mir das den Spaß wegnimmt.
++ builder pattern für ausprinten und code builden aus code, statt selbst geschrieben
++ Neudesign in reli ts der funktion des Ausgrauens: Fokus: lesbarer Code
++ Dokumentation in der ts welche Variable genau wohl was macht und in die Funktionsköpfe schreiben, was die Fkt tut
++ viele Nummern Statusse in der ts durch lesbare Enums und map dicts mit strings als keys verwenden für die lesbarkeit - könnte es aber langsamer machen - naja
++ in rp sollte ich mit dem builder pattern die befehlsabfolge hintereinader zusammen bauen lassen - wäre eleganter
++ in rp gibt es viele ftk hintereinander mit vielen gleichen paramtern argumenten: daraus sollte ich eine Klasse mit dieser Methode bauen, damit die Variablenzuweisung nicht so redundant häufig ist
++ genauso in reta.py mit den Hinzufügungen vieler Sonder-Spalten, die generiert werden: daraus eine Klasse bauen, um die Redundanzen weg zu bekommen.
++ Fkt für die 4 n/m Befehle sind redundanter Code und sollten in eine Fkt oder neue Klasse rein.
 *** 7. Typescript
 **** Allgemeines
 + Alles zusammen gleichzeitig refactoren und dabei gleichzeitig Unit-Tests einbauen.
