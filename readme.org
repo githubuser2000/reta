@@ -47,6 +47,17 @@
 ***** unwichtiges
 + Ich könnte erweitern aus welchen Dingen ich noch bestehe, der höheren Art, wie höhere Gefühle und Impulse, etc. Denn das gabs vorher nicht.
 *** 2. Feature Ideen
++ ts index signaturen gehen so:
+  interface dict {
+    [key: string]: string;
+  }
+  + also für Klassen und Objekte und Maps sind Objekte: also das interace als Typ angeben
+  + oder sowas
+  interface Options {
+    [key: string]: string | number | boolean;
+    timeout: number;
+  }
+
 + Testing und Debugging Notes statt Feature-Ideen
   + üall noch Testen üall in html wo brüche sind: Brucherweiterung von Universum dabei: ja nein, z.B. bei 2:=14/7 oder 7:=21/3
   + ts Problem: bei metakonkret wird die checkbox ausgegraut, wenn eine der beiden spalten ausgegraut wird

@@ -40,7 +40,7 @@ var sPolygon;
 var gfPolygon;
 var polyg1;
 var polyg2;
-var chkClassNameBySpaltenNr = new Map();
+//var chkClassNameBySpaltenNr: Map<number, string[][]> = new Map<number, string[][]>();
 //var ifDrawSpoly: Set<number>;
 //var ifDrawgfPoly: Set<number>;
 let pSize = 120;
@@ -458,16 +458,18 @@ window.onload = function () {
                 //console.log("das Array Objekt 6: "+Array)
             }
             //console.log("das Array Objekt 7: "+Array)
+            //
+            // nein, das geht so nicht:
+            /*
             for (var numr of spaltenNrs) {
-                try {
-                    chkClassNameBySpaltenNr[numr].push("chks c_ " + Array.from(mapMapMapTags[p1keys[i]][p2keys[k]]).join(","));
-                }
-                catch (_a) {
-                    chkClassNameBySpaltenNr[numr] = [];
-                    chkClassNameBySpaltenNr[numr].push("chks c_ " + Array.from(mapMapMapTags[p1keys[i]][p2keys[k]]).join(","));
-                    // hat also die Spaltennummer als index und den Klassennamen der zugehörigen checkboxen als werte eines Arrays
-                }
-            }
+              try {
+                  chkClassNameBySpaltenNr[numr].push("chks c_ "+Array.from(mapMapMapTags[p1keys[i]][p2keys[k]]).join(","));
+              } catch {
+                  chkClassNameBySpaltenNr[numr] = [];
+                  chkClassNameBySpaltenNr[numr].push("chks c_ "+Array.from(mapMapMapTags[p1keys[i]][p2keys[k]]).join(","));
+                  // hat also die Spaltennummer als index und den Klassennamen der zugehörigen checkboxen als werte eines Arrays
+              }
+            }*/
         }
         if (p1keys[i] === "✗Grundstrukturen") {
             var grunSi = i;
@@ -526,6 +528,7 @@ window.onload = function () {
             "</div></div>";
         checkboxes += checkbox;
     }
+    //console.log(chkClassNameBySpaltenNr);
     var str2 = checkboxes + "</span></div>";
     /*(async () => {
     const result = await checksum(checkboxes);
@@ -817,19 +820,21 @@ window.onload = function () {
         document.body.style.backgroundImage = 'url(' + polyg2 + ')';
     }
     //var keys1: number[] = chkClassNameBySpaltenNr.keys();
-    var ByChkClassNamesToGetSpaltenNr = new Map();
-    for (var i = 0; i < chkClassNameBySpaltenNr.size; i++) {
-        //chkClassNameBySpaltenNr[numr].push("chks c_ "+Array.from(mapMapMapTags[p1keys[i]][p2keys[k]]).join(","));
-        for (var k = 0; k < chkClassNameBySpaltenNr[i].length; k++) {
-            try {
-                ByChkClassNamesToGetSpaltenNr[chkClassNameBySpaltenNr[i][k]].add(i);
-            }
-            catch (_b) {
-                ByChkClassNamesToGetSpaltenNr[chkClassNameBySpaltenNr[i][k]] = new Set();
-                ByChkClassNamesToGetSpaltenNr[chkClassNameBySpaltenNr[i][k]].add(i);
-            }
+    // nein, das geht so nicht:
+    /*
+    var ByChkClassNamesToGetSpaltenNr: Map<string, Set<number>> = new Map<string, Set<number>>();
+    for (var i=0; i < chkClassNameBySpaltenNr.size;i++ ) {
+     //chkClassNameBySpaltenNr[numr].push("chks c_ "+Array.from(mapMapMapTags[p1keys[i]][p2keys[k]]).join(","));
+      for (var k=0; k < chkClassNameBySpaltenNr[i].length ;k++) {
+        try {
+          ByChkClassNamesToGetSpaltenNr[chkClassNameBySpaltenNr[i][k]].add(i)
+        } catch {
+          ByChkClassNamesToGetSpaltenNr[chkClassNameBySpaltenNr[i][k]] = new Set<number>()
+          ByChkClassNamesToGetSpaltenNr[chkClassNameBySpaltenNr[i][k]].add(i)
         }
+      }
     }
+    */
 };
 function makeMapsOfHeadLCheckB(p1, p2, num, tags) {
     try {
@@ -852,23 +857,27 @@ function disEnAbleChks(Enums1) {
     // weg kommentiert, weil die Fkt fehlerhaft funktioniert und das erst mal weniger wichtig is
     // in der Fkt steht, wie der Fehler ist. Es werden oft nicht die richtigen Checkboxen deaktiviert und aktiviert
     //subFkt3(Enums, SubFkt3SubFkt1Ptr, SubFkt3SubFkt2Ptr, chks2);
+    // nein, das geht so nicht:
+    /*
     for (var [key, value] of ByChkClassNamesToGetSpaltenNr.entries()) {
-        console.log(`${key}: ${value}`);
-        var flag = true;
-        for (var j = 0; j < value.size; j++) {
-            if (spalten4spaltenTags[j][0].style.opacity != "1")
-                flag = false;
-        }
-        var chkX = chks1.getElementsByClassName(key)[0];
-        if (!flag) {
-            chkX.style.opacy = "0.4";
-            chkX.style.fontSize = "80%";
-        }
-        else {
-            chkX.style.opacy = "1";
-            chkX.style.fontSize = "100%";
-        }
+      console.log(`${key}: ${value}`);
+      var flag = true;
+      for (var j=0; j < value.size; j++) {
+          if (spalten4spaltenTags[j][0].style.opacity != "1")
+              flag = false;
+  
+      }
+      var chkX = chks1.getElementsByClassName(key)[0];
+      if (!flag) {
+        //chkX.style.opacy = "0.4";
+        //chkX.style.fontSize = "80%";
+      } else {
+        //chkX.style.opacy = "1";
+        //chkX.style.fontSize = "100%";
+      }
     }
+    */
+    // für später noch verwendbar, aber erst mal nicht:
     /*
       var Achks: HTMLCollectionOf<HTMLInputElement> = document.getElementsByClassName("chksA") as HTMLCollectionOf<HTMLInputElement>;
       var Bchks: HTMLCollectionOf<HTMLInputElement>;

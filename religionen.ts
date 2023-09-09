@@ -30,7 +30,7 @@ var sPolygon: StarPolygon;
 var gfPolygon: gleichfPolygon;
 var polyg1: string;
 var polyg2: string;
-var chkClassNameBySpaltenNr: Map<number, string[][]> = new Map<number, string[][]>();
+//var chkClassNameBySpaltenNr: Map<number, string[][]> = new Map<number, string[][]>();
 //var ifDrawSpoly: Set<number>;
 //var ifDrawgfPoly: Set<number>;
 let pSize: number = 120;
@@ -484,6 +484,9 @@ for (i = 0; i < tdClasses1.length; i++)
         //console.log("das Array Objekt 6: "+Array)
       }
       //console.log("das Array Objekt 7: "+Array)
+      //
+      // nein, das geht so nicht:
+      /*
       for (var numr of spaltenNrs) {
         try {
             chkClassNameBySpaltenNr[numr].push("chks c_ "+Array.from(mapMapMapTags[p1keys[i]][p2keys[k]]).join(","));
@@ -492,7 +495,7 @@ for (i = 0; i < tdClasses1.length; i++)
             chkClassNameBySpaltenNr[numr].push("chks c_ "+Array.from(mapMapMapTags[p1keys[i]][p2keys[k]]).join(","));
             // hat also die Spaltennummer als index und den Klassennamen der zugehörigen checkboxen als werte eines Arrays
         }
-      }
+      }*/
 
     }
     if (p1keys[i] === "✗Grundstrukturen") {
@@ -553,6 +556,7 @@ for (i = 0; i < tdClasses1.length; i++)
 
     checkboxes += checkbox;
   }
+  //console.log(chkClassNameBySpaltenNr);
   var str2: string = checkboxes + "</span></div>";
       /*(async () => {
       const result = await checksum(checkboxes);
@@ -857,6 +861,8 @@ for (i = 0; i < tdClasses1.length; i++)
     document.body.style.backgroundImage = 'url(' + polyg2 + ')';
   }
   //var keys1: number[] = chkClassNameBySpaltenNr.keys();
+  // nein, das geht so nicht:
+  /*
   var ByChkClassNamesToGetSpaltenNr: Map<string, Set<number>> = new Map<string, Set<number>>();
   for (var i=0; i < chkClassNameBySpaltenNr.size;i++ ) {
    //chkClassNameBySpaltenNr[numr].push("chks c_ "+Array.from(mapMapMapTags[p1keys[i]][p2keys[k]]).join(","));
@@ -869,7 +875,7 @@ for (i = 0; i < tdClasses1.length; i++)
       }
     }
   }
-
+  */
 };
 
 function makeMapsOfHeadLCheckB(p1: string, p2: string | null, num: string | number, tags: any): void {
@@ -893,6 +899,8 @@ function disEnAbleChks(Enums1: Array<number> | Set<number> | HTMLCollectionOf<an
   // in der Fkt steht, wie der Fehler ist. Es werden oft nicht die richtigen Checkboxen deaktiviert und aktiviert
   //subFkt3(Enums, SubFkt3SubFkt1Ptr, SubFkt3SubFkt2Ptr, chks2);
 
+  // nein, das geht so nicht:
+  /*
   for (var [key, value] of ByChkClassNamesToGetSpaltenNr.entries()) {
     console.log(`${key}: ${value}`);
     var flag = true;
@@ -910,6 +918,8 @@ function disEnAbleChks(Enums1: Array<number> | Set<number> | HTMLCollectionOf<an
       //chkX.style.fontSize = "100%";
     }
   }
+  */
+ // für später noch verwendbar, aber erst mal nicht:
 /*
   var Achks: HTMLCollectionOf<HTMLInputElement> = document.getElementsByClassName("chksA") as HTMLCollectionOf<HTMLInputElement>;
   var Bchks: HTMLCollectionOf<HTMLInputElement>;
