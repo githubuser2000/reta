@@ -60,6 +60,7 @@
   }
 
 + Testing und Debugging Notes statt Feature-Ideen
+  + obere html radiobuttons funktionieren manchmal nach mehreren Anclicken falsch, wenn man nicht resettet auf alles anzeigen lassen.
   + üall noch Testen üall in html wo brüche sind: Brucherweiterung von Universum dabei: ja nein, z.B. bei 2:=14/7 oder 7:=21/3
   + ts Problem: bei metakonkret wird die checkbox ausgegraut, wenn eine der beiden spalten ausgegraut wird
   + nachträgliche Zeilenfilterung geht nicht perfekt genug

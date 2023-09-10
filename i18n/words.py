@@ -576,7 +576,7 @@ gebrochenUniGal = {
     "gebrochengalaxie": (_("gebrochen-rational_Galaxie_n/m"), _("gebrochengalaxie")),
     "gebrochenemotion": (_("gebrochen-rational_Gefuehle_n/m"), _("gebrochenemotion")),
     "gebrochengroesse": (
-        _("gebrochen-rational_Strukturgroessee_n/m"),
+        _("gebrochen-rational_Strukturgroesse_n/m"),
         _("gebrochengroesse"),
     ),
 }
