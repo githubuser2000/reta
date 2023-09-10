@@ -338,7 +338,7 @@ class Concat:
                 rowsAsNumbers |= {len(self.relitable[0])}
                 self.tables.generatedSpaltenParameter_Tags[len(rowsAsNumbers) - 1] = (
                     frozenset({ST.sternPolygon, ST.universum})
-                    if rownum == 0
+                    if rownum == 44
                     else frozenset({ST.gleichfoermigesPolygon, ST.universum})
                 )
                 for i, cols in enumerate(

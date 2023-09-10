@@ -542,6 +542,7 @@ window.onload = function () {
             .substr(2)
             .split(","));
         //window.alert(chks2[i]);
+        //console.log(chks2.length);
     }
     var str4 = '<div id="inputZeilen" style="display:none"><table borders="0" id="table2">';
     var str5 = '<tr><td><label>von bis und Einzelnes: </label></td><td><input typ="text" id="zeilenErlaubtText" value="1-10,12"></input></td><td>' +
@@ -846,17 +847,21 @@ function makeMapsOfHeadLCheckB(p1, p2, num, tags) {
     }
     if (typeof mapMapMapTags[p1] === "undefined")
         mapMapMapTags[p1] = [];
-    if (typeof tags !== "Set" && tags != "null")
+    if (typeof mapMapMapTags[p1][p2] === "undefined")
         mapMapMapTags[p1][p2] = new Set();
-    if (typeof tags != "undefined" && tags != "null")
+    if (typeof tags != "undefined" && tags != "null") {
+        //if (mapMapMapTags[p1][p2].size > 0) { console.log(mapMapMapTags[p1][p2]);var bla = true; } else var bla = false;
         mapMapMapTags[p1][p2] = new Set([...mapMapMapTags[p1][p2], ...tags]);
+        //if (bla) console.log(mapMapMapTags[p1][p2]);
+        //if (bla) console.log("2 davor");
+    }
 }
 function disEnAbleChks(Enums1) {
     var Enums = subFkt1_PolyTpes(Enums1);
     subFkt3(Enums, SubFkt3SubFkt1Ptr2, SubFkt3SubFkt2Ptr2, spaltenTags);
     // weg kommentiert, weil die Fkt fehlerhaft funktioniert und das erst mal weniger wichtig is
     // in der Fkt steht, wie der Fehler ist. Es werden oft nicht die richtigen Checkboxen deaktiviert und aktiviert
-    //subFkt3(Enums, SubFkt3SubFkt1Ptr, SubFkt3SubFkt2Ptr, chks2);
+    subFkt3(Enums, SubFkt3SubFkt1Ptr, SubFkt3SubFkt2Ptr, chks2);
     // nein, das geht so nicht:
     /*
     for (var [key, value] of ByChkClassNamesToGetSpaltenNr.entries()) {
@@ -878,54 +883,55 @@ function disEnAbleChks(Enums1) {
     }
     */
     // für später noch verwendbar, aber erst mal nicht:
-    /*
-      var Achks: HTMLCollectionOf<HTMLInputElement> = document.getElementsByClassName("chksA") as HTMLCollectionOf<HTMLInputElement>;
-      var Bchks: HTMLCollectionOf<HTMLInputElement>;
-      for (var i: number = 0; i < Achks.length; i++) {
+    var Achks = document.getElementsByClassName("chksA");
+    var Bchks;
+    for (var i = 0; i < Achks.length; i++) {
         Bchks = Achks[i]
-          .getElementsByTagName("div")[0]
-          .getElementsByTagName("input");
-        var deakAmount: number = 0;
-        for (var k: number = 0; k < Bchks.length; k++) if (Bchks[k].disabled) deakAmount++;
+            .getElementsByTagName("div")[0]
+            .getElementsByTagName("input");
+        var deakAmount = 0;
+        for (var k = 0; k < Bchks.length; k++)
+            if (Bchks[k].disabled)
+                deakAmount++;
         if (deakAmount == Bchks.length && deakAmount != 0) {
-          Achks[i].getElementsByTagName("label")[0].style.fontSize =
-            tdStyleFontSizeKl;
-          Achks[i].getElementsByTagName("label")[0].style.color = tdStyleColorKl;
-          Achks[i].getElementsByTagName("label")[0].style.whiteSpace =
-            tdStyleWhiteSpace;
-        } else {
-          Achks[i].getElementsByTagName("label")[0].style.fontSize =
-            tdStyleFontSize;
-          Achks[i].getElementsByTagName("label")[0].style.color = "";
-          Achks[i].getElementsByTagName("label")[0].style.whiteSpace =
-            tdStyleWhiteSpace;
+            Achks[i].getElementsByTagName("label")[0].style.fontSize =
+                tdStyleFontSizeKl;
+            Achks[i].getElementsByTagName("label")[0].style.color = tdStyleColorKl;
+            Achks[i].getElementsByTagName("label")[0].style.whiteSpace =
+                tdStyleWhiteSpace;
         }
-      }
-      var chksA1label: HTMLCollectionOf<HTMLInputElement> = document.getElementsByClassName("chksA1");
-      for (var i: number = 0; i < chksA1label.length; i++) {
-        var tagsPerA1Label: RegExpMatchArray  = chksA1label[i].className.match(/c1_([\d,]+)/g);
-        if (tagsPerA1Label == null) tagsPerA1Label = [];
+        else {
+            Achks[i].getElementsByTagName("label")[0].style.fontSize =
+                tdStyleFontSize;
+            Achks[i].getElementsByTagName("label")[0].style.color = "";
+            Achks[i].getElementsByTagName("label")[0].style.whiteSpace =
+                tdStyleWhiteSpace;
+        }
+    }
+    var chksA1label = document.getElementsByClassName("chksA1");
+    for (var i = 0; i < chksA1label.length; i++) {
+        var tagsPerA1Label = chksA1label[i].className.match(/c1_([\d,]+)/g);
+        if (tagsPerA1Label == null)
+            tagsPerA1Label = [];
         else
-          var tagsPerA1Label: RegExpMatchArray  = String(chksA1label[i].className.match(/c1_([\d,]+)/g))
-            .substr(3)
-            .split(",");
+            var tagsPerA1Label = String(chksA1label[i].className.match(/c1_([\d,]+)/g))
+                .substr(3)
+                .split(",");
         if (tagsPerA1Label.length != 0) {
-          var enumo: Set<number> = new Set();
-          for (var k: number = 0; k < tagsPerA1Label.length; k++)
-            for (var l:number  = 0; l < Enums.length; l++)
-              if (tagsPerA1Label[k] == Enums[l].toString()) enumo.add(Enums[l]);
-          if (
-            (!enumo.has(0) && !enumo.has(1) && !enumo.has(6)) ||
-            (!enumo.has(3) && !enumo.has(4) && !enumo.has(5)) ||
-            enumo.size == 0
-          ) {
-            chksA1label[i].style.fontSize = tdStyleFontSizeKl;
-            chksA1label[i].style.color = tdStyleColorKl;
-            chksA1label[i].style.whiteSpace = tdStyleWhiteSpace;
-          }
+            var enumo = new Set();
+            for (var k = 0; k < tagsPerA1Label.length; k++)
+                for (var l = 0; l < Enums.length; l++)
+                    if (tagsPerA1Label[k] == Enums[l].toString())
+                        enumo.add(Enums[l]);
+            if ((!enumo.has(0) && !enumo.has(1) && !enumo.has(6)) ||
+                (!enumo.has(3) && !enumo.has(4) && !enumo.has(5)) ||
+                enumo.size == 0) {
+                chksA1label[i].style.fontSize = tdStyleFontSizeKl;
+                chksA1label[i].style.color = tdStyleColorKl;
+                chksA1label[i].style.whiteSpace = tdStyleWhiteSpace;
+            }
         }
-      }
-      */
+    }
 }
 const alleMonde = [
     4, 8, 9, 16, 25, 27, 32, 36, 49, 64, 81, 100, 121, 125, 128, 144, 169, 196,
@@ -984,6 +990,9 @@ function subFkt3(Enums, SubFkt3SubFkt2Var, SubFkt3SubFkt1Var, chks2orSpaltenTags
             // irgendwie zählt immer die letzte Spalte, zum entscheiden, ob die zugehörige Checkbox disabled oder enabled werden soll. Das sollte so nicht sein.
             // chks2orSpaltenTagsOrTRs kann chks2 sein, was fast wie chks1 ist, nur nach c_ gefiltert.
             // c_ enthält danach die kleinen TaggingNummern für die Checkbox
+            // das hier mit c_ muss wohl der Grund sein, warum immer die letzte ausgegraute Spalte für das Ausgrauen der Checkbox sorgt.
+            // Ansonsten kann das auch daran liegen, dass der Enum String Vergleich hier oben falsch stattfindet.
+            // dafür console out, und für c_: schauen wie die matrix mit c_ gebildet wird, und diese Schöpfung inspizieren und ändern.
         }
         enumi2.push(enumi);
         //console.log(i)

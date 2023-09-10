@@ -572,6 +572,7 @@ for (i = 0; i < tdClasses1.length; i++)
         .split(",")
     );
     //window.alert(chks2[i]);
+    //console.log(chks2.length);
   }
 
   var str4: string =
@@ -886,10 +887,15 @@ function makeMapsOfHeadLCheckB(p1: string, p2: string | null, num: string | numb
     mapMapMap[p1][p2].add(num);
   }
   if (typeof mapMapMapTags[p1] === "undefined") mapMapMapTags[p1] = [];
-  if (typeof tags !== "Set" && tags != "null")
+  if (typeof mapMapMapTags[p1][p2] === "undefined")
     mapMapMapTags[p1][p2] = new Set();
-  if (typeof tags != "undefined" && tags != "null")
+  if (typeof tags != "undefined" && tags != "null") {
+    //if (mapMapMapTags[p1][p2].size > 0) { console.log(mapMapMapTags[p1][p2]);var bla = true; } else var bla = false;
     mapMapMapTags[p1][p2] = new Set([...mapMapMapTags[p1][p2], ...tags]);
+    //if (bla) console.log(mapMapMapTags[p1][p2]);
+    //if (bla) console.log("2 davor");
+
+  }
 }
 
 function disEnAbleChks(Enums1: Array<number> | Set<number> | HTMLCollectionOf<any>) {
@@ -897,7 +903,7 @@ function disEnAbleChks(Enums1: Array<number> | Set<number> | HTMLCollectionOf<an
   subFkt3(Enums, SubFkt3SubFkt1Ptr2, SubFkt3SubFkt2Ptr2, spaltenTags)
   // weg kommentiert, weil die Fkt fehlerhaft funktioniert und das erst mal weniger wichtig is
   // in der Fkt steht, wie der Fehler ist. Es werden oft nicht die richtigen Checkboxen deaktiviert und aktiviert
-  //subFkt3(Enums, SubFkt3SubFkt1Ptr, SubFkt3SubFkt2Ptr, chks2);
+  subFkt3(Enums, SubFkt3SubFkt1Ptr, SubFkt3SubFkt2Ptr, chks2);
 
   // nein, das geht so nicht:
   /*
@@ -920,7 +926,7 @@ function disEnAbleChks(Enums1: Array<number> | Set<number> | HTMLCollectionOf<an
   }
   */
  // für später noch verwendbar, aber erst mal nicht:
-/*
+
   var Achks: HTMLCollectionOf<HTMLInputElement> = document.getElementsByClassName("chksA") as HTMLCollectionOf<HTMLInputElement>;
   var Bchks: HTMLCollectionOf<HTMLInputElement>;
   for (var i: number = 0; i < Achks.length; i++) {
@@ -967,7 +973,7 @@ function disEnAbleChks(Enums1: Array<number> | Set<number> | HTMLCollectionOf<an
       }
     }
   }
-  */
+
 }
 const alleMonde: number[] = [
   4, 8, 9, 16, 25, 27, 32, 36, 49, 64, 81, 100, 121, 125, 128, 144, 169, 196,
@@ -1030,6 +1036,9 @@ function subFkt3(Enums: number[], SubFkt3SubFkt2Var: (i3: number, k3?: number) =
         // irgendwie zählt immer die letzte Spalte, zum entscheiden, ob die zugehörige Checkbox disabled oder enabled werden soll. Das sollte so nicht sein.
         // chks2orSpaltenTagsOrTRs kann chks2 sein, was fast wie chks1 ist, nur nach c_ gefiltert.
         // c_ enthält danach die kleinen TaggingNummern für die Checkbox
+        // das hier mit c_ muss wohl der Grund sein, warum immer die letzte ausgegraute Spalte für das Ausgrauen der Checkbox sorgt.
+        // Ansonsten kann das auch daran liegen, dass der Enum String Vergleich hier oben falsch stattfindet.
+        // dafür console out, und für c_: schauen wie die matrix mit c_ gebildet wird, und diese Schöpfung inspizieren und ändern.
     }
     enumi2.push(enumi)
     //console.log(i)
