@@ -42,7 +42,7 @@ function animateAllPolygons() {
     }
 }
 
-async function checksum(object) {
+async function checksum(object: any) {
   // Konvertiert das Objekt in einen String
   const jsonString = JSON.stringify(object);
 
@@ -217,21 +217,31 @@ class StarPolygon {
     }
 }
 
+enum ST {
+  sternPolygon = 0,
+  gleichfoermigesPolygon = 1,
+  keinPolygon = 2,
+  galaxie = 3,
+  universum = 4,
+  keinParaOdMetaP = 5,
+  gebrRat = 6,
+}
+
 function subFkt1_PolyTpes(Enums1: Array<number> | Set<number> | HTMLCollectionOf<any>): number[] {
-  var Enums: Set<number> | Array<number> = new Set(Enums1);
+  var Enums: Set<ST> | Array<ST> = new Set(Enums1);
   var abzug: number[] = [];
-  if (Enums.has(6) && !Enums.has(0)) abzug.push(0);
-  if (Enums.has(6) && !Enums.has(1)) abzug.push(1);
-  if (Enums.has(1) && !Enums.has(0)) abzug.push(0);
-  if (Enums.has(1) && !Enums.has(6)) abzug.push(6);
-  if (Enums.has(0) && !Enums.has(1)) abzug.push(1);
-  if (Enums.has(0) && !Enums.has(6)) abzug.push(6);
-  if (Enums.has(3) && !Enums.has(4)) abzug.push(4);
-  if (Enums.has(3) && !Enums.has(5)) abzug.push(5);
-  if (Enums.has(4) && !Enums.has(3)) abzug.push(3);
-  if (Enums.has(4) && !Enums.has(5)) abzug.push(5);
-  if (Enums.has(5) && !Enums.has(3)) abzug.push(3);
-  if (Enums.has(5) && !Enums.has(4)) abzug.push(4);
+  if (Enums.has(ST.gebrRat) && !Enums.has(ST.sternPolygon)) abzug.push(ST.sternPolygon);
+  if (Enums.has(ST.gebrRat) && !Enums.has(ST.gleichfoermigesPolygon)) abzug.push(ST.gleichfoermigesPolygon);
+  if (Enums.has(ST.gleichfoermigesPolygon) && !Enums.has(ST.sternPolygon)) abzug.push(ST.sternPolygon);
+  if (Enums.has(ST.gleichfoermigesPolygon) && !Enums.has(ST.gebrRat)) abzug.push(ST.gebrRat);
+  if (Enums.has(ST.sternPolygon) && !Enums.has(ST.gleichfoermigesPolygon)) abzug.push(ST.gleichfoermigesPolygon);
+  if (Enums.has(ST.sternPolygon) && !Enums.has(ST.gebrRat)) abzug.push(ST.gebrRat);
+  if (Enums.has(ST.galaxie) && !Enums.has(ST.universum)) abzug.push(ST.universum);
+  if (Enums.has(ST.galaxie) && !Enums.has(ST.keinParaOdMetaP)) abzug.push(ST.keinParaOdMetaP);
+  if (Enums.has(ST.universum) && !Enums.has(ST.galaxie)) abzug.push(ST.galaxie);
+  if (Enums.has(ST.universum) && !Enums.has(ST.keinParaOdMetaP)) abzug.push(ST.keinParaOdMetaP);
+  if (Enums.has(ST.keinParaOdMetaP) && !Enums.has(ST.galaxie)) abzug.push(ST.galaxie);
+  if (Enums.has(ST.keinParaOdMetaP) && !Enums.has(ST.universum)) abzug.push(ST.universum);
   var Enume : Set<number>= new Set([...Enums, ...Enume1]);
   for (var i = 0; i < abzug.length; i++) Enume.delete(abzug[i]);
   Enums  = Array.from(Enume);
@@ -1075,8 +1085,8 @@ function subFkt3(Enums: number[], SubFkt3SubFkt2Var: (i3: number, k3?: number) =
     //console.log(i)
     //console.log(enumi2.length)
     enumi = enumi2[i-beginI];
-    if ((enumi.has(0) || enumi.has(1) || enumi.has(6)) &&
-      (enumi.has(3) || enumi.has(4) || enumi.has(5)) &&
+    if ((enumi.has(ST.sternPolygon) || enumi.has(ST.gleichfoermigesPolygon) || enumi.has(ST.gebrRat)) &&
+      (enumi.has(ST.galaxie) || enumi.has(ST.universum) || enumi.has(5)) &&
       enumi.size != 0) {
       SubFkt3SubFkt2Var(i);
     } else {
