@@ -216,6 +216,27 @@ class StarPolygon {
         return this.canvas.toDataURL();
     }
 }
+function subFkt1_PolyTpes1(Enums1: Array<number> | Set<number> | HTMLCollectionOf<any>): number[] {
+  var Enums: Set<number> | Array<number> = new Set(Enums1);
+  var abzug: number[] = [];
+  if (Enums.has(6) && !Enums.has(0)) abzug.push(0);
+  if (Enums.has(6) && !Enums.has(1)) abzug.push(1);
+  if (Enums.has(1) && !Enums.has(0)) abzug.push(0);
+  if (Enums.has(1) && !Enums.has(6)) abzug.push(6);
+  if (Enums.has(0) && !Enums.has(1)) abzug.push(1);
+  if (Enums.has(0) && !Enums.has(6)) abzug.push(6);
+  if (Enums.has(3) && !Enums.has(4)) abzug.push(4);
+  if (Enums.has(3) && !Enums.has(5)) abzug.push(5);
+  if (Enums.has(4) && !Enums.has(3)) abzug.push(3);
+  if (Enums.has(4) && !Enums.has(5)) abzug.push(5);
+  if (Enums.has(5) && !Enums.has(3)) abzug.push(3);
+  if (Enums.has(5) && !Enums.has(4)) abzug.push(4);
+  var Enume : Set<number>= new Set([...Enums, ...Enume1]);
+  for (var i = 0; i < abzug.length; i++) Enume.delete(abzug[i]);
+  Enums  = Array.from(Enume);
+  return Enums;
+}
+
 
 enum ST {
   sternPolygon = 0,
@@ -227,9 +248,52 @@ enum ST {
   gebrRat = 6,
 }
 
-function subFkt1_PolyTpes(Enums1: Array<number> | Set<number> | HTMLCollectionOf<any>): number[] {
-  var Enums: Set<ST> | Array<ST> = new Set(Enums1);
-  var abzug: number[] = [];
+var merkeEnumTags: Set<ST> = new Set<ST>([ST.sternPolygon, ST.gleichfoermigesPolygon, ST.gebrRat, ST.galaxie, ST.universum, ST.keinParaOdMetaP]);
+var vergangenheitEnumTagsZahlenArt: Set<ST> = new Set<ST>([ST.sternPolygon, ST.gleichfoermigesPolygon, ST.gebrRat]);
+var vergangenheitEnumTagsUniOrGal: Set<ST> = new Set<ST>([ST.galaxie, ST.universum, ST.keinParaOdMetaP]);
+
+function subFkt1_PolyTpes2(Enums1: Array<number> | Set<number> | HTMLCollectionOf<any>): ST[] {
+  var Enums: Set<ST> = new Set<ST>(Enums1);
+  //var abzug: number[] = [];
+  /*
+  if ((Enums.has(ST.sternPolygon) || Enums.has(ST.gleichfoermigesPolygon) || Enums.has(ST.gebrRat)) && merkeEnumTags[0].size > 0) {
+    merkeEnumTags[0] = new Set<ST>();
+
+  } else if ((Enums.has(ST.galaxie) || Enums.has(ST.universum) || Enums.has(ST.keinParaOdMetaP)) && merkeEnumTags[1].size > 0 ) {
+    merkeEnumTags[1] = new Set<ST>();
+  }*/
+  var a: Set<ST> = Enums;
+  var b: Set<ST> = new Set<ST>([ST.sternPolygon, ST.gleichfoermigesPolygon, ST.gebrRat]);
+  var zahlenArt: Set<ST> = new Set([...a].filter(i => b.has(i)));
+  //a = Enums;
+  b = new Set<ST>([ST.galaxie, ST.universum, ST.keinParaOdMetaP]);
+  var uniOrGal: Set<ST> = new Set([...a].filter(i => b.has(i)));
+  if (zahlenArt.size == 0)
+    zahlenArt = vergangenheitEnumTagsZahlenArt;
+  if (uniOrGal.size == 0)
+    uniOrGal = vergangenheitEnumTagsUniOrGal;
+  /*
+  if (Enums.has(ST.sternPolygon) || Enums.has(ST.gleichfoermigesPolygon) || Enums.has(ST.gebrRat)) {
+      Enums.
+  }
+  if (Enums.has(ST.galaxie) || Enums.has(ST.universum) || Enums.has(ST.keinParaOdMetaP)) {
+  }*/
+  //var Enums2: Set<ST> = new Set([...Enums, ...merkeEnumTags);
+  //console.log(Enums);
+  //console.log(merkeEnumTags[0]);
+  //console.log(merkeEnumTags[1]);
+  /*
+  if (Enums.has(ST.sternPolygon) || Enums.has(ST.gleichfoermigesPolygon) || Enums.has(ST.gebrRat)) {
+    merkeEnumTags[0] = Enums;
+    merkeEnumTags[1] = new Set<ST>();
+
+  } else if (Enums.has(ST.galaxie) || Enums.has(ST.universum) || Enums.has(ST.keinParaOdMetaP)) {
+    merkeEnumTags[0] = new Set<ST>();
+    merkeEnumTags[1] = Enums;
+  }*/
+  //console.log(merkeEnumTags);
+  //console.log("letzte 1");
+  /*
   if (Enums.has(ST.gebrRat) && !Enums.has(ST.sternPolygon)) abzug.push(ST.sternPolygon);
   if (Enums.has(ST.gebrRat) && !Enums.has(ST.gleichfoermigesPolygon)) abzug.push(ST.gleichfoermigesPolygon);
   if (Enums.has(ST.gleichfoermigesPolygon) && !Enums.has(ST.sternPolygon)) abzug.push(ST.sternPolygon);
@@ -242,16 +306,22 @@ function subFkt1_PolyTpes(Enums1: Array<number> | Set<number> | HTMLCollectionOf
   if (Enums.has(ST.universum) && !Enums.has(ST.keinParaOdMetaP)) abzug.push(ST.keinParaOdMetaP);
   if (Enums.has(ST.keinParaOdMetaP) && !Enums.has(ST.galaxie)) abzug.push(ST.galaxie);
   if (Enums.has(ST.keinParaOdMetaP) && !Enums.has(ST.universum)) abzug.push(ST.universum);
-  var Enume : Set<number>= new Set([...Enums, ...Enume1]);
+  var Enume : Set<ST>= new Set([...Enums, ...Enume1]);
   for (var i = 0; i < abzug.length; i++) Enume.delete(abzug[i]);
-  Enums  = Array.from(Enume);
-  return Enums;
+  */
+  //console.log(Enums);
+  //console.log(abzug);
+  vergangenheitEnumTagsZahlenArt = zahlenArt;
+  vergangenheitEnumTagsUniOrGal = uniOrGal;
+  //console.log(Enums2);
+  //console.log("letzte 4");
+  return Array.from(new Set([...zahlenArt, ...uniOrGal]));
 }
 
 
 
 function giveSetOfPolyTypes(Enums1: Array<number> | Set<number> | HTMLCollectionOf<any>): void  {
-  var Enums = subFkt1_PolyTpes(Enums1);
+  var Enums = subFkt1_PolyTpes1(Enums1);
   subFkt3(Enums, SubFkt3SubFkt2bPtr, (unimportantVar: number) => {}, TRs);
 }
 
@@ -326,7 +396,7 @@ window.onload = function () {
   let chk_spalten: string =
     '<fieldset><label style="white-space: nowrap;"><input type="radio" id="spaltenWahl" name="spaltOrZeilWahl" onchange="toggleChkSpalten(this);" checked="true">Spalten (Einheiten [9]) wählen</label> <label style="white-space: nowrap;"><input type="radio" id="zeilenWahl" name="spaltOrZeilWahl" onchange="toggleChkSpalten(this);">Zeilen, welche ja nein, (6,13,14,15) (wenig: 7,8,10,12)</label> <label style="white-space: nowrap;"><input type="radio" id="keinsWahl" name="spaltOrZeilWahl" onchange="toggleChkSpalten(this);">frei machen zur Tabellenansicht <!-- | Lädt schneller mit Firefox statt Chrome --> </label></fieldset>';
   let radio_tags: string =
-    '<fieldset><label style="white-space: nowrap;"><input type="radio" id="galaxieuniversum" name="galaxieuniversum" onchange="disEnAbleChks([3,4,5]);" checked="true">alles</label> <label style="white-space: nowrap;"><input type="radio" id="planet" name="galaxieuniversum" onchange="disEnAbleChks([5]);">alles andere als 13,15, ggf. jeweils mit 14</label> <label style="white-space: nowrap;"><input type="radio" id="galaxie" name="galaxieuniversum" onchange="disEnAbleChks([3]);">Himmelskörper um schwarzes Loch (13), z.B. eine Galaxie (14)</label> <label style="white-space: nowrap;"><input type="radio" id="universum" name="galaxieuniversum" onchange="disEnAbleChks([4]);">Universum (15)</label></fieldset><fieldset><label style="white-space: nowrap;"><input type="radio" id="sternpolygongleichfoermigespolygon" name="sternpolygongleichfoermigespolygon" onchange="disEnAbleChks([0,1,6]);" checked="true">Sternpolygon und gleichförmiges Polygon und gebrochen-rational</label> <label style="white-space: nowrap;"><input type="radio" id="sternpolygon" name="sternpolygongleichfoermigespolygon" onchange="disEnAbleChks([0]);">Sternpolygon (n)</label> <label style="white-space: nowrap;"><input type="radio" id="gleichfoermigespolygon" name="sternpolygongleichfoermigespolygon" onchange="disEnAbleChks([1]);">gleichförmiges Polygon (1/n)</label> <label style="white-space: nowrap;"><input type="radio" id="gebrrat" name="sternpolygongleichfoermigespolygon" onchange="disEnAbleChks([6]);">gebrochen-rational (m/n)</label></fieldset>';
+    '<fieldset><label style="white-space: nowrap;"><input type="radio" id="galaxieuniversum" name="galaxieuniversum" onchange="disEnAbleChks([3,4,5]);" checked="true">alle Zahlengrößenordnungen</label> <label style="white-space: nowrap;"><input type="radio" id="planet" name="galaxieuniversum" onchange="disEnAbleChks([5]);">alles andere als 13,15, ggf. jeweils mit 14</label> <label style="white-space: nowrap;"><input type="radio" id="galaxie" name="galaxieuniversum" onchange="disEnAbleChks([3]);">Himmelskörper um schwarzes Loch (13), z.B. eine Galaxie (14)</label> <label style="white-space: nowrap;"><input type="radio" id="universum" name="galaxieuniversum" onchange="disEnAbleChks([4]);">Universum (15)</label></fieldset><fieldset><label style="white-space: nowrap;"><input type="radio" id="sternpolygongleichfoermigespolygon" name="sternpolygongleichfoermigespolygon" onchange="disEnAbleChks([0,1,6]);" checked="true">Sternpolygon und gleichförmiges Polygon und gebrochen-rational</label> <label style="white-space: nowrap;"><input type="radio" id="sternpolygon" name="sternpolygongleichfoermigespolygon" onchange="disEnAbleChks([0]);">Sternpolygon (n)</label> <label style="white-space: nowrap;"><input type="radio" id="gleichfoermigespolygon" name="sternpolygongleichfoermigespolygon" onchange="disEnAbleChks([1]);">gleichförmiges Polygon (1/n)</label> <label style="white-space: nowrap;"><input type="radio" id="gebrrat" name="sternpolygongleichfoermigespolygon" onchange="disEnAbleChks([6]);">gebrochen-rational (m/n)</label></fieldset>';
   div.innerHTML = chk_spalten;
   /*tdClasses = []
 for (i = 0; i < tdClasses1.length; i++)
@@ -909,10 +979,11 @@ function makeMapsOfHeadLCheckB(p1: string, p2: string | null, num: string | numb
 }
 
 function disEnAbleChks(Enums1: Array<number> | Set<number> | HTMLCollectionOf<any>) {
-  var Enums = subFkt1_PolyTpes(Enums1);
+  var Enums: number[] = subFkt1_PolyTpes1(Enums1);
   subFkt3(Enums, SubFkt3SubFkt1Ptr2, SubFkt3SubFkt2Ptr2, spaltenTags)
   // weg kommentiert, weil die Fkt fehlerhaft funktioniert und das erst mal weniger wichtig is
   // in der Fkt steht, wie der Fehler ist. Es werden oft nicht die richtigen Checkboxen deaktiviert und aktiviert
+  Enums = subFkt1_PolyTpes2(Enums1);
   subFkt3(Enums, SubFkt3SubFkt1Ptr, SubFkt3SubFkt2Ptr, chks2);
 
   // nein, das geht so nicht:
@@ -1086,7 +1157,7 @@ function subFkt3(Enums: number[], SubFkt3SubFkt2Var: (i3: number, k3?: number) =
     //console.log(enumi2.length)
     enumi = enumi2[i-beginI];
     if ((enumi.has(ST.sternPolygon) || enumi.has(ST.gleichfoermigesPolygon) || enumi.has(ST.gebrRat)) &&
-      (enumi.has(ST.galaxie) || enumi.has(ST.universum) || enumi.has(5)) &&
+      (enumi.has(ST.galaxie) || enumi.has(ST.universum) || enumi.has(ST.keinParaOdMetaP)) &&
       enumi.size != 0) {
       SubFkt3SubFkt2Var(i);
     } else {
