@@ -15,7 +15,7 @@ var Enume1 : Set<number> = new Set([0, 1, 3, 4, 5, 6]);
 var mapMapMapTags: Map<number, string[]> = new Map<number, string[]>();
 var chks1: HTMLCollectionOf<HTMLInputElement>;
 var chks2: string[][];
-var spaltenTags: Array<Array<any>>;
+var spaltenTags: Array<Array<number>>;
 var spalten4spaltenTags: Map<number, HTMLTableCellElement[]>;
 var Achks: HTMLCollectionOf<HTMLInputElement>;
 let tdClasses: HTMLCollectionOf<HTMLTableCellElement> = document.getElementsByClassName("z_0") as HTMLCollectionOf<HTMLTableCellElement>;
@@ -216,27 +216,27 @@ class StarPolygon {
         return this.canvas.toDataURL();
     }
 }
-function subFkt1_PolyTpes1(Enums1: Array<number> | Set<number> | HTMLCollectionOf<any>): number[] {
-  var Enums: Set<number> | Array<number> = new Set(Enums1);
+/*
+function subFkt1_PolyTpes_oldAndToReplaceThisFkt(Enums1: Array<number> | Set<number> | HTMLCollectionOf<any>): number[] {
+  var Enums: Set<ST> | Array<number> = new Set(Enums1);
   var abzug: number[] = [];
-  if (Enums.has(6) && !Enums.has(0)) abzug.push(0);
-  if (Enums.has(6) && !Enums.has(1)) abzug.push(1);
-  if (Enums.has(1) && !Enums.has(0)) abzug.push(0);
-  if (Enums.has(1) && !Enums.has(6)) abzug.push(6);
-  if (Enums.has(0) && !Enums.has(1)) abzug.push(1);
-  if (Enums.has(0) && !Enums.has(6)) abzug.push(6);
-  if (Enums.has(3) && !Enums.has(4)) abzug.push(4);
-  if (Enums.has(3) && !Enums.has(5)) abzug.push(5);
-  if (Enums.has(4) && !Enums.has(3)) abzug.push(3);
-  if (Enums.has(4) && !Enums.has(5)) abzug.push(5);
-  if (Enums.has(5) && !Enums.has(3)) abzug.push(3);
-  if (Enums.has(5) && !Enums.has(4)) abzug.push(4);
+  if (Enums.has(ST.gebrRat) && !Enums.has(ST.sternPolygon)) abzug.push(ST.sternPolygon);
+  if (Enums.has(ST.gebrRat) && !Enums.has(ST.gleichfoermigesPolygon)) abzug.push(ST.gleichfoermigesPolygon);
+  if (Enums.has(ST.gleichfoermigesPolygon) && !Enums.has(ST.sternPolygon)) abzug.push(ST.sternPolygon);
+  if (Enums.has(ST.gleichfoermigesPolygon) && !Enums.has(ST.gebrRat)) abzug.push(ST.gebrRat);
+  if (Enums.has(ST.sternPolygon) && !Enums.has(ST.gleichfoermigesPolygon)) abzug.push(ST.gleichfoermigesPolygon);
+  if (Enums.has(ST.sternPolygon) && !Enums.has(ST.gebrRat)) abzug.push(ST.gebrRat);
+  if (Enums.has(ST.galaxie) && !Enums.has(ST.universum)) abzug.push(ST.universum);
+  if (Enums.has(ST.galaxie) && !Enums.has(ST.keinParaOdMetaP)) abzug.push(ST.keinParaOdMetaP);
+  if (Enums.has(ST.universum) && !Enums.has(ST.galaxie)) abzug.push(ST.galaxie);
+  if (Enums.has(ST.universum) && !Enums.has(ST.keinParaOdMetaP)) abzug.push(ST.keinParaOdMetaP);
+  if (Enums.has(ST.keinParaOdMetaP) && !Enums.has(ST.galaxie)) abzug.push(ST.galaxie);
+  if (Enums.has(ST.keinParaOdMetaP) && !Enums.has(ST.universum)) abzug.push(ST.universum);
   var Enume : Set<number>= new Set([...Enums, ...Enume1]);
   for (var i = 0; i < abzug.length; i++) Enume.delete(abzug[i]);
-  Enums  = Array.from(Enume);
-  return Enums;
+  return Array.from(Enume);
 }
-
+*/
 
 enum ST {
   sternPolygon = 0,
@@ -253,6 +253,7 @@ var vergangenheitEnumTagsZahlenArt: Set<ST> = new Set<ST>([ST.sternPolygon, ST.g
 var vergangenheitEnumTagsUniOrGal: Set<ST> = new Set<ST>([ST.galaxie, ST.universum, ST.keinParaOdMetaP]);
 
 function subFkt1_PolyTpes2(Enums1: Array<number> | Set<number> | HTMLCollectionOf<any>): ST[] {
+  // WICHTIG: eigentlich müsste man aus Typ ST[][]  Typ TS[][][] machen, wo noch mal für jede Spalte einzeln unterschieden wird: Denn dann kann richtiger für die eine Checkbox dieser Spalten bestimmt werden, ob wann diese ausgegraut werden soll, wann dessen Spalten ausgegraut sind. So ist es wie jetzt mehr falsch, aber es ist okay, weil es auch eine eigene Art von Richtigkeit dabei besitzt, weshalb ich das mal so toleriere, denn das hat eine abstraktere Richtigkeit, die okay sein kann!
   var Enums: Set<ST> = new Set<ST>(Enums1);
   //var abzug: number[] = [];
   /*
@@ -321,7 +322,8 @@ function subFkt1_PolyTpes2(Enums1: Array<number> | Set<number> | HTMLCollectionO
 
 
 function giveSetOfPolyTypes(Enums1: Array<number> | Set<number> | HTMLCollectionOf<any>): void  {
-  var Enums = subFkt1_PolyTpes1(Enums1);
+  //var Enums = subFkt1_PolyTpes1(Enums1);
+  var Enums = subFkt1_PolyTpes2(Enums1);
   subFkt3(Enums, SubFkt3SubFkt2bPtr, (unimportantVar: number) => {}, TRs);
 }
 
@@ -330,7 +332,7 @@ var SubFkt3SubFkt2bPtr: (i: number, k?: number) => void | Set<number> = function
         if (i>4 && i<21) {
             //for (var m: number = 0; m < spalten4spaltenTags[k].length; m++) {
             for (var m: number = 0; m < TDs.length; m++) {
-                if (spaltenTags[m].includes('0') || !spaltenTags[m].includes('1')) {
+                if (spaltenTags[m].includes(0) || !spaltenTags[m].includes(1)) {
                     //window.alert("yes2");
                     //TDs[m].style.backgroundImage = 'url(' + polyg1 + ')';
                     spalten4spaltenTags[m][i].style.backgroundImage = 'url(' + polyg1 + ')';
@@ -338,7 +340,7 @@ var SubFkt3SubFkt2bPtr: (i: number, k?: number) => void | Set<number> = function
                     //TDs[m].style.backgroundPosition = 'center';
                     spalten4spaltenTags[m][i].style.backgroundPosition = 'center';
                 }
-                if (spaltenTags[m].includes('1') && !spaltenTags[m].includes('0')) {
+                if (spaltenTags[m].includes(1) && !spaltenTags[m].includes(0)) {
                     //window.alert("yes2");
                     spalten4spaltenTags[m][i].style.backgroundImage = 'url(' + polyg2 + ')';
                     //TDs[m].style.backgroundRepeat = 'no-repeat';
@@ -430,13 +432,14 @@ for (i = 0; i < tdClasses1.length; i++)
   })();*/
 
   spaltenTags = []
+  var tags: number[];
   for (var i: number = 0; i < tdClasses.length; i++) {
     var name: string = tdClasses[i].className;
     var num1: RegExpMatchArray | null   = name.match(/r_(\d+)/);
 
     var tags1: RegExpMatchArray | null = name.match(/p4_([\d,]+)/g);
-    if (tags1 === null) var tags: string[] = [];
-    else var tags: string[] = String(tags1).substr(3).split(",");
+    if (tags1 === null) tags = [];
+    else tags = String(tags1).substr(3).split(",").map((str) => parseInt(str, 10));;
     spaltenTags.push(tags);
 
       /*(async () => {
@@ -979,11 +982,12 @@ function makeMapsOfHeadLCheckB(p1: string, p2: string | null, num: string | numb
 }
 
 function disEnAbleChks(Enums1: Array<number> | Set<number> | HTMLCollectionOf<any>) {
-  var Enums: number[] = subFkt1_PolyTpes1(Enums1);
+  //var Enums: number[] = subFkt1_PolyTpes1(Enums1);
+  var Enums: number[] = subFkt1_PolyTpes2(Enums1);
   subFkt3(Enums, SubFkt3SubFkt1Ptr2, SubFkt3SubFkt2Ptr2, spaltenTags)
   // weg kommentiert, weil die Fkt fehlerhaft funktioniert und das erst mal weniger wichtig is
   // in der Fkt steht, wie der Fehler ist. Es werden oft nicht die richtigen Checkboxen deaktiviert und aktiviert
-  Enums = subFkt1_PolyTpes2(Enums1);
+  //Enums = subFkt1_PolyTpes2(Enums1);
   subFkt3(Enums, SubFkt3SubFkt1Ptr, SubFkt3SubFkt2Ptr, chks2);
 
   // nein, das geht so nicht:
@@ -1098,18 +1102,24 @@ function subFkt3(Enums: number[], SubFkt3SubFkt2Var: (i3: number, k3?: number) =
   // i sind Spalten oder die checkboxnummer und k sind deren Zeilen
   var enumi2: Array<Set<number>> =new Array();
   var beginI: number = ((chks2orSpaltenTagsOrTRs === spaltenTags) ? 2 : 0);
+  var Enum2: ST;
   for (var i: number = beginI; i < chks2orSpaltenTagsOrTRs.length; i++) {
     enumi = new Set();
     for (var k: number = 0; k < ((TRs === chks2orSpaltenTagsOrTRs) ? chks2orSpaltenTagsOrTRs[i].cells.length : chks2orSpaltenTagsOrTRs[i].length); k++) {
       if (chks2orSpaltenTagsOrTRs === TRs) {
-        for (var l: number = 0; l < Enums.length; l++)
-          if (spaltenTags[i][k] == Enums[l].toString())
+        for (var l: number = 0; l < Enums.length; l++) {
+          // WICHTIG: eigentlich müsste man aus Typ ST[][]  Typ TS[][][] machen, wo noch mal für jede Spalte einzeln unterschieden wird: Denn dann kann richtiger für die eine Checkbox dieser Spalten bestimmt werden, ob wann diese ausgegraut werden soll, wann dessen Spalten ausgegraut sind. So ist es wie jetzt mehr falsch, aber es ist okay, weil es auch eine eigene Art von Richtigkeit dabei besitzt, weshalb ich das mal so toleriere, denn das hat eine abstraktere Richtigkeit, die okay sein kann!
+          Enum2 = spaltenTags[i][k];
+          if (Enum2 == Enums[l])
             enumi.add(Enums[l]);
-
+        }
       } else
-        for (var l: number = 0; l < Enums.length; l++)
-          if (chks2orSpaltenTagsOrTRs[i][k] == Enums[l].toString())
+        for (var l: number = 0; l < Enums.length; l++) {
+          // WICHTIG: eigentlich müsste man aus Typ ST[][]  Typ TS[][][] machen, wo noch mal für jede Spalte einzeln unterschieden wird: Denn dann kann richtiger für die eine Checkbox dieser Spalten bestimmt werden, ob wann diese ausgegraut werden soll, wann dessen Spalten ausgegraut sind. So ist es wie jetzt mehr falsch, aber es ist okay, weil es auch eine eigene Art von Richtigkeit dabei besitzt, weshalb ich das mal so toleriere, denn das hat eine abstraktere Richtigkeit, die okay sein kann!
+          Enum2 = chks2orSpaltenTagsOrTRs[i][k] as ST;
+          if (Enum2 == Enums[l])
             enumi.add(Enums[l]);
+        }
 
         // spaltenTags ist für die Filterung nach Spalten statt Checkboxen
         // spaltenTags und chks2orSpaltenTagsOrTRs haben als Paramter erst Spalten dann Zeilen

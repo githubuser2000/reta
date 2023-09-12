@@ -191,38 +191,37 @@ class StarPolygon {
         return this.canvas.toDataURL();
     }
 }
-function subFkt1_PolyTpes1(Enums1) {
+function subFkt1_PolyTpes_oldAndToReplaceThisFkt(Enums1) {
     var Enums = new Set(Enums1);
     var abzug = [];
-    if (Enums.has(6) && !Enums.has(0))
-        abzug.push(0);
-    if (Enums.has(6) && !Enums.has(1))
-        abzug.push(1);
-    if (Enums.has(1) && !Enums.has(0))
-        abzug.push(0);
-    if (Enums.has(1) && !Enums.has(6))
-        abzug.push(6);
-    if (Enums.has(0) && !Enums.has(1))
-        abzug.push(1);
-    if (Enums.has(0) && !Enums.has(6))
-        abzug.push(6);
-    if (Enums.has(3) && !Enums.has(4))
-        abzug.push(4);
-    if (Enums.has(3) && !Enums.has(5))
-        abzug.push(5);
-    if (Enums.has(4) && !Enums.has(3))
-        abzug.push(3);
-    if (Enums.has(4) && !Enums.has(5))
-        abzug.push(5);
-    if (Enums.has(5) && !Enums.has(3))
-        abzug.push(3);
-    if (Enums.has(5) && !Enums.has(4))
-        abzug.push(4);
+    if (Enums.has(ST.gebrRat) && !Enums.has(ST.sternPolygon))
+        abzug.push(ST.sternPolygon);
+    if (Enums.has(ST.gebrRat) && !Enums.has(ST.gleichfoermigesPolygon))
+        abzug.push(ST.gleichfoermigesPolygon);
+    if (Enums.has(ST.gleichfoermigesPolygon) && !Enums.has(ST.sternPolygon))
+        abzug.push(ST.sternPolygon);
+    if (Enums.has(ST.gleichfoermigesPolygon) && !Enums.has(ST.gebrRat))
+        abzug.push(ST.gebrRat);
+    if (Enums.has(ST.sternPolygon) && !Enums.has(ST.gleichfoermigesPolygon))
+        abzug.push(ST.gleichfoermigesPolygon);
+    if (Enums.has(ST.sternPolygon) && !Enums.has(ST.gebrRat))
+        abzug.push(ST.gebrRat);
+    if (Enums.has(ST.galaxie) && !Enums.has(ST.universum))
+        abzug.push(ST.universum);
+    if (Enums.has(ST.galaxie) && !Enums.has(ST.keinParaOdMetaP))
+        abzug.push(ST.keinParaOdMetaP);
+    if (Enums.has(ST.universum) && !Enums.has(ST.galaxie))
+        abzug.push(ST.galaxie);
+    if (Enums.has(ST.universum) && !Enums.has(ST.keinParaOdMetaP))
+        abzug.push(ST.keinParaOdMetaP);
+    if (Enums.has(ST.keinParaOdMetaP) && !Enums.has(ST.galaxie))
+        abzug.push(ST.galaxie);
+    if (Enums.has(ST.keinParaOdMetaP) && !Enums.has(ST.universum))
+        abzug.push(ST.universum);
     var Enume = new Set([...Enums, ...Enume1]);
     for (var i = 0; i < abzug.length; i++)
         Enume.delete(abzug[i]);
-    Enums = Array.from(Enume);
-    return Enums;
+    return Array.from(Enume);
 }
 var ST;
 (function (ST) {
@@ -303,7 +302,8 @@ function subFkt1_PolyTpes2(Enums1) {
     return Array.from(new Set([...zahlenArt, ...uniOrGal]));
 }
 function giveSetOfPolyTypes(Enums1) {
-    var Enums = subFkt1_PolyTpes1(Enums1);
+    //var Enums = subFkt1_PolyTpes1(Enums1);
+    var Enums = subFkt1_PolyTpes2(Enums1);
     subFkt3(Enums, SubFkt3SubFkt2bPtr, (unimportantVar) => { }, TRs);
 }
 var SubFkt3SubFkt2bPtr = function SubFkt3SubFkt2b(i, k = 0) {
@@ -311,7 +311,7 @@ var SubFkt3SubFkt2bPtr = function SubFkt3SubFkt2b(i, k = 0) {
         if (i > 4 && i < 21) {
             //for (var m: number = 0; m < spalten4spaltenTags[k].length; m++) {
             for (var m = 0; m < TDs.length; m++) {
-                if (spaltenTags[m].includes('0') || !spaltenTags[m].includes('1')) {
+                if (spaltenTags[m].includes(0) || !spaltenTags[m].includes(1)) {
                     //window.alert("yes2");
                     //TDs[m].style.backgroundImage = 'url(' + polyg1 + ')';
                     spalten4spaltenTags[m][i].style.backgroundImage = 'url(' + polyg1 + ')';
@@ -319,7 +319,7 @@ var SubFkt3SubFkt2bPtr = function SubFkt3SubFkt2b(i, k = 0) {
                     //TDs[m].style.backgroundPosition = 'center';
                     spalten4spaltenTags[m][i].style.backgroundPosition = 'center';
                 }
-                if (spaltenTags[m].includes('1') && !spaltenTags[m].includes('0')) {
+                if (spaltenTags[m].includes(1) && !spaltenTags[m].includes(0)) {
                     //window.alert("yes2");
                     spalten4spaltenTags[m][i].style.backgroundImage = 'url(' + polyg2 + ')';
                     //TDs[m].style.backgroundRepeat = 'no-repeat';
@@ -400,14 +400,16 @@ window.onload = function () {
     console.log("Checksum:", result);
     })();*/
     spaltenTags = [];
+    var tags;
     for (var i = 0; i < tdClasses.length; i++) {
         var name = tdClasses[i].className;
         var num1 = name.match(/r_(\d+)/);
         var tags1 = name.match(/p4_([\d,]+)/g);
         if (tags1 === null)
-            var tags = [];
+            tags = [];
         else
-            var tags = String(tags1).substr(3).split(",");
+            tags = String(tags1).substr(3).split(",").map((str) => parseInt(str, 10));
+        ;
         spaltenTags.push(tags);
         /*(async () => {
         const result = await checksum(spaltenTags);
@@ -935,11 +937,12 @@ function makeMapsOfHeadLCheckB(p1, p2, num, tags) {
     }
 }
 function disEnAbleChks(Enums1) {
-    var Enums = subFkt1_PolyTpes1(Enums1);
+    //var Enums: number[] = subFkt1_PolyTpes1(Enums1);
+    var Enums = subFkt1_PolyTpes2(Enums1);
     subFkt3(Enums, SubFkt3SubFkt1Ptr2, SubFkt3SubFkt2Ptr2, spaltenTags);
     // weg kommentiert, weil die Fkt fehlerhaft funktioniert und das erst mal weniger wichtig is
     // in der Fkt steht, wie der Fehler ist. Es werden oft nicht die richtigen Checkboxen deaktiviert und aktiviert
-    var Enums = subFkt1_PolyTpes2(Enums1);
+    //Enums = subFkt1_PolyTpes2(Enums1);
     subFkt3(Enums, SubFkt3SubFkt1Ptr, SubFkt3SubFkt2Ptr, chks2);
     // nein, das geht so nicht:
     /*
@@ -1051,18 +1054,23 @@ function subFkt3(Enums, SubFkt3SubFkt2Var, SubFkt3SubFkt1Var, chks2orSpaltenTags
     // i sind Spalten oder die checkboxnummer und k sind deren Zeilen
     var enumi2 = new Array();
     var beginI = ((chks2orSpaltenTagsOrTRs === spaltenTags) ? 2 : 0);
+    var Enum2;
     for (var i = beginI; i < chks2orSpaltenTagsOrTRs.length; i++) {
         enumi = new Set();
         for (var k = 0; k < ((TRs === chks2orSpaltenTagsOrTRs) ? chks2orSpaltenTagsOrTRs[i].cells.length : chks2orSpaltenTagsOrTRs[i].length); k++) {
             if (chks2orSpaltenTagsOrTRs === TRs) {
-                for (var l = 0; l < Enums.length; l++)
-                    if (spaltenTags[i][k] == Enums[l].toString())
+                for (var l = 0; l < Enums.length; l++) {
+                    Enum2 = spaltenTags[i][k];
+                    if (Enum2 == Enums[l])
                         enumi.add(Enums[l]);
+                }
             }
             else
-                for (var l = 0; l < Enums.length; l++)
-                    if (chks2orSpaltenTagsOrTRs[i][k] == Enums[l].toString())
+                for (var l = 0; l < Enums.length; l++) {
+                    Enum2 = chks2orSpaltenTagsOrTRs[i][k];
+                    if (Enum2 == Enums[l])
                         enumi.add(Enums[l]);
+                }
             // spaltenTags ist für die Filterung nach Spalten statt Checkboxen
             // spaltenTags und chks2orSpaltenTagsOrTRs haben als Paramter erst Spalten dann Zeilen
             // ich brauche ein map dict, dass abbildet, welche spalten zu welchen checkboxen gehören

@@ -248,7 +248,6 @@ tableTags = {
         49,
         50,
         51,
-        55,
         56,
         57,
         59,
@@ -381,6 +380,7 @@ tableTags = {
         27,
         69,
         70,
+        55,
     },
     frozenset({ST.galaxie, ST.gleichfoermigesPolygon}): {
         16,
