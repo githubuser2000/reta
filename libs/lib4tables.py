@@ -24,6 +24,23 @@ from center import (
 i18n = i18n.lib4tables
 
 
+class NichtsSyntax:
+    def coloredBeginCol(self, num: int, rest: bool = False):
+        return ""
+
+    def generateCell(
+        self, num: int, dataDict: dict, content=None, zeile=None, tables=None
+    ) -> str:
+        return ""
+
+    beginTable = ""
+    endTable = ""
+    beginCell = ""
+    endCell = ""
+    beginZeile = ""
+    endZeile = ""
+
+
 class OutputSyntax:
     def coloredBeginCol(self, num: int, rest: bool = False):
         return self.beginZeile

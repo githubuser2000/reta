@@ -30,6 +30,7 @@ from tableHandling import (
     Iterable,
     Multiplikationen,
     OutputSyntax,
+    NichtsSyntax,
     Tables,
     Union,
     alxp,
@@ -1106,6 +1107,8 @@ class Program:
                         outputtype = arg[(arg.find("=") + 1) :]
                         if outputtype == i18n.ausgabeArt["shell"]:
                             self.tables.outType = OutputSyntax()
+                        elif outputtype == i18n.ausgabeArt["nichts"]:
+                            self.tables.outType = NichtsSyntax()
                         elif outputtype == i18n.ausgabeArt["csv"]:
                             self.tables.outType = csvSyntax()
                             self.tables.getOut.oneTable = True
@@ -1682,9 +1685,12 @@ class Program:
         if platform.system() == "Windows":
             self.tables.getOut.color = False
 
-        self.workflowEverything(argv)
+        self.__resultingTable = self.workflowEverything(argv)
 
-    def workflowEverything(self, argv):
+    def resultingTable(self) -> list:
+        return self.__resultingTable
+
+    def workflowEverything(self, argv) -> list:
         global infoLog
         (
             self.RowsLen,
@@ -1752,7 +1758,9 @@ class Program:
         self.rowsRange = rowsRange
         self.numlen = numlen
 
-        self.tables.getOut.cliOut(finallyDisplayLines, newTable, numlen, rowsRange)
+        return self.tables.getOut.cliOut(
+            finallyDisplayLines, newTable, numlen, rowsRange
+        )
 
     def combiTableWorkflow(
         self,

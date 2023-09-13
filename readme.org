@@ -47,11 +47,14 @@
 ***** unwichtiges
 + Ich könnte erweitern aus welchen Dingen ich noch bestehe, der höheren Art, wie höhere Gefühle und Impulse, etc. Denn das gabs vorher nicht.
 *** 2. Feature Ideen
++ kein Feature
+  + Es funktioniert nun, dass bei neuer Option "nichts" zwar einerseits nichts ausgegeben wird, aber für z.B. Unit Tests alles in eine Matrix geschrieben wird.
 + Ich sollte mal überlegen, nur mal überlegen, wie ich alles vollkommen anders architektonisch designen würde, wenn ich noch mal von vorn beginnen würde: Denn das alles ist im Verlauf entstanden, wo vorher noch nicht bekannt war, was für Inhalte in welcher Struktur kommen werden! Also noch mal alles neu denken! Das dann aber nutzen, um nicht alles anders zu machen, sondern für feine kleinere Designänderungen und ggf. Architekturänderungen und ggf. Refactoring.
-+ ts index signaturen gehen so:
-  interface dict {
-    [key: string]: string;
-  }
++ kein Feature, sondern nur für mich kurzfristig wichtig:
+  + ts index signaturen gehen so:
+    interface dict {
+        [key: string]: string;
+    }
   + also für Klassen und Objekte und Maps sind Objekte: also das interace als Typ angeben
   + oder sowas
   interface Options {
@@ -60,11 +63,9 @@
   }
 
 + Testing und Debugging Notes statt Feature-Ideen
-  + obere html radiobuttons funktionieren manchmal nach mehreren Anclicken falsch, wenn man nicht resettet auf alles anzeigen lassen.
   + üall noch Testen üall in html wo brüche sind: Brucherweiterung von Universum dabei: ja nein, z.B. bei 2:=14/7 oder 7:=21/3
   + ts Problem: bei metakonkret wird die checkbox ausgegraut, wenn eine der beiden spalten ausgegraut wird
   + nachträgliche Zeilenfilterung geht nicht perfekt genug
-  + Stimmungen Kombinationen sollte nicht später ausgegraut bleiben
   + Zeile 1 nach überschrift, Probleme:
     + mögliche wahrscheinliche Fehler nur bei vielen n/m Sachen
     + +all schauen
@@ -72,11 +73,6 @@
       + bei u und a und u 1/n und a 1/n
       + bei multiplik
       + bei den 4 gebr rat
-+ refactoring: viel zu ändern, aber geht schnell: bei rp: statt viele if's für einzelne Befehle: merge der dicts und sets mit schnittmenge der befehle bilden, wo dicts auf funktionen oder so zeigen, und dann diese funktionen zu einer sogenannten komposition bauen bla1().bla2().bla3() und diese komposition dann ausführen: elegantere feinere Lösung, die auch schneller läuft
-  aber eigentlich nicht so wichtig
-+ Ich sollte in die endgültige cliout die Möglichkeit einbauen, dass man stattdessen in eine Datenstruktur speichern möchte.
-  + Damit könnte man anderweitig mit fremden Python Code mit der Ergebnis-Tabelle weiter-arbeiten.
-  + Für Unit Tests hilfreich
 + Weitere Farbschemen, wenigstens konzeptionalisieren: Aber eigentlich dürfte das Einprogrammieren nicht so das große Ding sein.
 + Dass man in der html per Parameter Spalten über Checkboxen vorselektieren kann.
 + " * " mit "?" oder regex überall auch, z.B. bei 15_*_10 oder bei Zahlenbereichen oder bei spalten.

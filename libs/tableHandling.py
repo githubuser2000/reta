@@ -31,6 +31,7 @@ from center import (
 )
 from lib4tables import (
     OutputSyntax,
+    NichtsSyntax,
     bbCodeSyntax,
     couldBePrimeNumberPrimzahlkreuz,
     csvSyntax,
@@ -56,6 +57,10 @@ class BreakoutException(Exception):
 
 
 class Tables:
+    @property
+    def NichtsOutputYes(self) -> bool:
+        return type(self.getOut.outType) is NichtsSyntax
+
     @property
     def markdownOutputYes(self) -> bool:
         return type(self.getOut.outType) is markdownSyntax
@@ -232,6 +237,7 @@ class Tables:
             self.__color = True
             self.__outType: OutputSyntax = OutputSyntax()
             self.Txt = Txt
+            self.resultingTable = []
 
         @property
         def outType(self) -> OutputSyntax:
@@ -828,22 +834,26 @@ class Tables:
                     )
                 if self.__oneTable:
                     break
+            return self.resultingTable
 
         def cliout2(self, text):
             janee: tuple[bool, str] = (
-                (True, i18n.ausgabeArt["bbcode"])
+                (True, "bbcode")
                 if self.tables.bbcodeOutputYes
-                else (True, i18n.ausgabeArt["html"])
+                else (True, "html")
                 if self.tables.htmlOutputYes
-                else (True, i18n.ausgabeArt["markdown"])
+                else (True, "markdown")
                 if type(self.__outType) is emacsSyntax
-                else (True, i18n.ausgabeArt["markdown"])
+                else (True, "markdown")
                 if type(self.__outType) is csvSyntax
-                else (True, i18n.ausgabeArt["markdown"])
+                else (True, "markdown")
                 if self.tables.markdownOutputYes
                 else (False, "")
             )
-            cliout(text, self.color and janee[0], janee[1])
+            if self.tables.NichtsOutputYes:
+                self.resultingTable += [text]
+            else:
+                cliout(text, self.color and janee[0], janee[1])
 
         def colorize(self, text, num: int, rest=False) -> str:
             """Die Ausagabe der Tabelle wird coloriert

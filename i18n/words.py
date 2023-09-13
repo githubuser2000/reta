@@ -215,7 +215,10 @@ ausgabeArt: dict = {
     "shell": _("shell"),
     "markdown": _("markdown"),
     "emacs": _("emacs"),
+    "nichts": _("nichts"),
 }
+# ausgabeArt2 = {value: key for key, value in ausgabeArt}
+
 wahl16Words: dict = {
     "Multiversalien_(16)": _("Multiversalien_(16)"),
     "Meta-Physik-Teilchen_(1)": _("Meta-Physik-Teilchen_(1)"),
