@@ -850,9 +850,8 @@ class Tables:
                 if self.tables.markdownOutputYes
                 else (False, "")
             )
-            if self.tables.NichtsOutputYes:
-                self.resultingTable += [text]
-            else:
+            self.resultingTable += [text]
+            if not self.tables.NichtsOutputYes:
                 cliout(text, self.color and janee[0], janee[1])
 
         def colorize(self, text, num: int, rest=False) -> str:
