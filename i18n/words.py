@@ -2577,7 +2577,7 @@ paraNdataMatrix: list = [
             _("bedürfnisse"),
             _("werte"),
         ),
-        {254, 396, 397},
+        {254, 392, 396, 397},
     ),
     (
         ParametersMain.grundstrukturen,

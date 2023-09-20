@@ -499,7 +499,7 @@ class Program:
             return True
         return False
 
-    def storeParamtersForColumns(self):
+    def storeParamtersForColumns(self, runAlles=True):
         # global puniverseprims
         def intoParameterDatatype(
             parameterMainNames: tuple, parameterNames: tuple, datas: tuple
@@ -752,6 +752,12 @@ class Program:
                     print(commandValue)
                     raise ValueError
                     exit()
+
+        self.AllSimpleCommandSpalten = set(allValues[0])
+        if not runAlles:
+            allValues[0] = set(range(max(allValues[0]))) - set(allValues[0])
+            for zahl in range(1, 11):
+                allValues[zahl] = set()
         # x("allV1", allValues)
         # x("allValues 4b", allValues[4])
         # x("allValues 11 B", allValues[11])
@@ -1190,7 +1196,7 @@ class Program:
         global folder
         retaHilfe()
 
-    def bringAllImportantBeginThings(self, argv) -> tuple:
+    def bringAllImportantBeginThings(self, argv, runAlles=True) -> tuple:
         """Einlesen der ersten Tabelle "religion.csv" zu self.relitable
         aller anderen csv dateien
         Parameter werden in Befehle und Nummernlisten gewandelt
@@ -1343,7 +1349,7 @@ class Program:
         #    "NEIN_X1",
         #    self.spaltenArtenKey_SpaltennummernValue[self.spaltenTypeNaming.gebrGal1],
         # )
-        self.storeParamtersForColumns()
+        self.storeParamtersForColumns(runAlles)
         # x(
         #    "onlyGeneratedB",
         #    self.spaltenArtenKey_SpaltennummernValue[
@@ -1673,7 +1679,11 @@ class Program:
         infoLog = value
 
     def __init__(
-        self, argv=[], alternativeShellRowsAmount: Optional[int] = None, Txt=None
+        self,
+        argv=[],
+        alternativeShellRowsAmount: Optional[int] = None,
+        Txt=None,
+        runAlles=True,
     ):
         global Tables, infoLog
         self.argv = [a.strip() for a in argv]
@@ -1685,12 +1695,13 @@ class Program:
         if platform.system() == "Windows":
             self.tables.getOut.color = False
 
-        self.__resultingTable = self.workflowEverything(argv)
+        self.__resultingTable = self.workflowEverything(argv, runAlles)
 
+    @property
     def resultingTable(self) -> list:
         return self.__resultingTable
 
-    def workflowEverything(self, argv) -> list:
+    def workflowEverything(self, argv, runAlles=True) -> list:
         global infoLog
         (
             self.RowsLen,
@@ -1708,7 +1719,7 @@ class Program:
             animalsProfessionsTable2,
             kombiTable_Kombis2,
             maintable2subtable_Relation2,
-        ) = self.bringAllImportantBeginThings(argv)
+        ) = self.bringAllImportantBeginThings(argv, runAlles)
 
         # x("gebr", gebr)
         (
