@@ -205,6 +205,7 @@ hauptForNeben: dict = {
     "h": _("h"),
     "help": _("help"),
     "debug": _("debug"),
+    "nichts": _("nichts"),
 }
 
 
@@ -2200,6 +2201,7 @@ paraNdataMatrix: list = [
             334,
             335,
             338,
+            416,
         },
     ),
     (
@@ -4416,6 +4418,7 @@ mainParaCmds: dict = {
     "debug": _("debug"),
     "h": _("h"),
     "help": _("help"),
+    "nichts": _("nichts"),
 }
 
 

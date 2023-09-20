@@ -91,6 +91,7 @@ tableTags = {
         401,
         326,
         327,
+        416,
     },
     frozenset({ST.gleichfoermigesPolygon, ST.keinParaOdMetaP, ST.universum}): {
         205,
@@ -202,7 +203,6 @@ tableTags = {
         413,
         414,
         415,
-        416,
         338,
         281,
         377,
