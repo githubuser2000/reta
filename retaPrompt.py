@@ -32,6 +32,7 @@ from center import (
     teiler,
     textHatZiffer,
     x,
+    multiples,
 )
 from LibRetaPrompt import (
     BereichToNumbers2,
@@ -72,7 +73,7 @@ from prompt_toolkit.history import FileHistory, InMemoryHistory
 from prompt_toolkit.styles import Style
 from word_completerAlx import WordCompleter
 
-from multis import mult
+from multis import mult2
 from multis3 import mult3
 
 i18nRP = i18n.retaPrompt
@@ -1778,16 +1779,22 @@ def PromptGrosseAusgabe(
             except TypeError:
                 grGv = 1
 
-            print(
-                i18n.gemeinsamkeitenWort
-                + ": {} := {}".format(grGv, gemeinsamePrimzahlenStr)
-            )
-            for zahl, hierUnwichtig in bereiche.items():
-                dazu = " * ".join([str(p) for p in primfaktoren(round(zahl / grGv))])
+            if len(bereiche) > 1 or not (
+                Txt.hasWithoutABC({i18n.befehle2["p"]})
+                or Txt.hasWithoutABC({i18n.befehle2["mulpri"]})
+            ):
                 print(
-                    f"{round(zahl / grGv):<5} := {zahl:<5} / {grGv:<5} -> "
-                    + (dazu if len(dazu.strip()) > 0 else "1")
+                    i18n.gemeinsamkeitenWort
+                    + ": {} := {}".format(grGv, gemeinsamePrimzahlenStr)
                 )
+                for zahl, hierUnwichtig in bereiche.items():
+                    dazu = " * ".join(
+                        [str(p) for p in primfaktoren(round(zahl / grGv))]
+                    )
+                    print(
+                        f"{round(zahl / grGv):<5} := {zahl:<5} / {grGv:<5} -> "
+                        + (dazu if len(dazu.strip()) > 0 else "1")
+                    )
             # print("Unterschiede: {}".format(d))
 
         if Txt.hasWithoutABC({"prim", "primfaktorzerlegung"}):
@@ -1811,7 +1818,11 @@ def PromptGrosseAusgabe(
             cmd_gave_output = True
 
             listeStrWerte = BereichToNumbers2(zahlenReiheKeineWteiler, False, 0)
-            mult(listeStrWerte)
+            multiplesTexts, multiis = mult2(listeStrWerte)
+            mulpriInfo = not (Txt.hasWithoutABC({"mulpri"}) or Txt.hasWithoutABC({"p"}))
+            for texxt, multii in zip(multiplesTexts, multiis):
+                if len(multii) > 0 or mulpriInfo:
+                    print(texxt)
 
             # externCommand(i18n.befehle2["prim"], c)
 

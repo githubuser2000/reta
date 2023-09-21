@@ -14,5 +14,21 @@ def mult(liste: list):
             print(str(arg) + ": " + str(multiples(int(arg))))
 
 
+def mult2(liste: list):
+    ergebnis1: list = []
+    ergebnis2: list = []
+    for arg in liste:
+        if type(arg) is int or arg.isdecimal():
+            couples = [
+                couple
+                for couple in multiples(int(arg))
+                if couple[0] != 1 and couple[1] != 1
+            ]
+
+            ergebnis1 += [str(arg) + ": " + str(couples)]
+            ergebnis2 += [couples]
+    return ergebnis1, ergebnis2
+
+
 if __name__ == "__main__":
     mult(argv[1:])

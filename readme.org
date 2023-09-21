@@ -47,6 +47,9 @@
 ***** unwichtiges
 + Ich könnte erweitern aus welchen Dingen ich noch bestehe, der höheren Art, wie höhere Gefühle und Impulse, etc. Denn das gabs vorher nicht.
 *** 2. Feature Ideen
++ Testen: jeder Spaltenbefehl
++ Dass man für Zeilenangaben die eigenen reta Python Funktionen aus den zentralen libs verwenden darf.
+  Aber nur bei mulpri bzw. p
 + kein Feature
   + Es funktioniert nun, dass bei neuer Option "nichts" zwar einerseits nichts ausgegeben wird, aber für z.B. Unit Tests alles in eine Matrix geschrieben wird.
 + Ich sollte mal überlegen, nur mal überlegen, wie ich alles vollkommen anders architektonisch designen würde, wenn ich noch mal von vorn beginnen würde: Denn das alles ist im Verlauf entstanden, wo vorher noch nicht bekannt war, was für Inhalte in welcher Struktur kommen werden! Also noch mal alles neu denken! Das dann aber nutzen, um nicht alles anders zu machen, sondern für feine kleinere Designänderungen und ggf. Architekturänderungen und ggf. Refactoring.

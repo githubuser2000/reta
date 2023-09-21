@@ -755,7 +755,12 @@ class Program:
 
         self.AllSimpleCommandSpalten = set(allValues[0])
         if self.__invertAlles:
-            allValues[0] = set(range(max(allValues[0]))) - set(allValues[0])
+            allValues[0] = (
+                set(range(max(allValues[0])))
+                - set(allValues[0])
+                - {a[0] for a in allValues[1]}
+                - {a[1] for a in allValues[1]}
+            )
         # x("allV1", allValues)
         # x("allValues 4b", allValues[4])
         # x("allValues 11 B", allValues[11])
