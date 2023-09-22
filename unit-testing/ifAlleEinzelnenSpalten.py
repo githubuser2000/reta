@@ -8,9 +8,10 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 import reta
 import LibRetaPrompt
 
-LibRetaPrompt.spaltenDict = {"konzept": ["Selbstlosigkeit_Ichlosigkeit_etc"]}
+# LibRetaPrompt.spaltenDict = {"konzept": ["Selbstlosigkeit_Ichlosigkeit_etc"]}
 
 zeile: int = 10
+beginVonVorn = False
 
 
 def printResult(table: list):
@@ -34,33 +35,59 @@ def printResult(table: list):
         exit()
 
 
-for spaltenOberkategorie, spaltenListe in LibRetaPrompt.spaltenDict.items():
+weiter = beginVonVorn
+gabEsSchonMal: set = set()
+
+# alleSpaltenParamter: dict = {
+#    tuple(value): key for key, value in LibRetaPrompt.spaltenDict.items()
+# }
+# alleSpaltenParamter = {value: key for key, value in alleSpaltenParamter.items()}
+alleSpaltenParamter = LibRetaPrompt.spaltenDict
+for spaltenOberkategorie, spaltenListe in alleSpaltenParamter.items():
+    import reta
+    import LibRetaPrompt
+
+    befehle = []
     if len(spaltenListe) == 0:
-        prog = reta.Program(
-            [
-                "reta",
-                "-zeilen",
-                "--vorhervonausschnitt=" + str(zeile),
-                "-spalten",
-                "--" + spaltenOberkategorie,
-                "-ausgabe",
-                "--breite=0",
-                "--onetable",
-            ]
-        )
-        printResult(prog.resultingTable)
-    else:
-        for einigeSpalten in spaltenListe:
-            prog = reta.Program(
+        if weiter:
+            befehle += [
                 [
                     "reta",
                     "-zeilen",
                     "--vorhervonausschnitt=" + str(zeile),
                     "-spalten",
-                    "".join(("--", spaltenOberkategorie, "=", einigeSpalten)),
+                    "--" + spaltenOberkategorie,
                     "-ausgabe",
                     "--breite=0",
                     "--onetable",
                 ]
-            )
-            printResult(prog.resultingTable)
+            ]
+    else:
+        for einigeSpalten in spaltenListe:
+            if not weiter and not beginVonVorn:
+                if (
+                    len({"grundstrukturen"} & {spaltenOberkategorie}) > 0
+                    and len({"paradigmen"} & {einigeSpalten}) > 0
+                ):
+                    weiter = True
+                    print(spaltenListe)
+            lenA = len(gabEsSchonMal)
+            gabEsSchonMal |= {einigeSpalten}
+            lenB = len(gabEsSchonMal)
+            if weiter and lenA != lenB:
+                befehle += [
+                    [
+                        "reta",
+                        "-zeilen",
+                        "--vorhervonausschnitt=" + str(zeile),
+                        "-spalten",
+                        "".join(("--", spaltenOberkategorie, "=", einigeSpalten)),
+                        "-ausgabe",
+                        "--breite=0",
+                        "--onetable",
+                    ]
+                ]
+                for befehl in befehle:
+                    print(" ".join(befehl))
+                    prog = reta.Program(befehl)
+                    printResult(prog.resultingTable)

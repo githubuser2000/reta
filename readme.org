@@ -47,6 +47,7 @@
 ***** unwichtiges
 + Ich könnte erweitern aus welchen Dingen ich noch bestehe, der höheren Art, wie höhere Gefühle und Impulse, etc. Denn das gabs vorher nicht.
 *** 2. Feature Ideen
++ in reta.py, dass einige Komponenten nicht mehrfach gebaut werden, bei mehrfachem reta aufruf programmieren
 + Testen: jeder Spaltenbefehl
 + Dass man für Zeilenangaben die eigenen reta Python Funktionen aus den zentralen libs verwenden darf.
   Aber nur bei mulpri bzw. p
