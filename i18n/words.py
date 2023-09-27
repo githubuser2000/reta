@@ -701,6 +701,7 @@ ParametersMain: NamedTuple = ParametersMain(
 
 # x("ParametersMain", ParametersMain)
 
+organisationWort = _("organisation")
 thomasWort = _("thomas")
 motivationWort = _("motivation")
 komplexWort = _("komplex")
@@ -1219,7 +1220,7 @@ paraNdataMatrix: list = [
         (
             _("Organisationen"),
             _("organisationen"),
-            _("organisation"),
+            organisationWort,
         ),
         {30, 82},
     ),

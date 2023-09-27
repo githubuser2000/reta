@@ -76,8 +76,8 @@ try:
             for einigeSpalten in spaltenListe:
                 if not weiter and not beginVonVorn:
                     if (
-                        len({"galaxie"} & {spaltenOberkategorie}) > 0
-                        and len({"johannes"} & {einigeSpalten}) > 0
+                        len({"Grundstrukturen"} & {spaltenOberkategorie}) > 0
+                        and len({"universellerkomperativ"} & {einigeSpalten}) > 0
                     ):
                         weiter = True
                         print(spaltenListe)

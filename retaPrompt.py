@@ -1288,6 +1288,34 @@ def PromptGrosseAusgabe(
                         "--",
                         i18n.ParametersMain.strukturgroesse[0],
                         "=",
+                        i18n.organisationWort,
+                    )
+                )
+            ],
+            None,
+            ("2", "99"),
+            Txt,
+            bruch_GanzZahlReziproke,
+            zahlenBereichC,
+            ketten,
+            cmd_gave_output,
+            zeiln1,
+            zeiln2,
+            zeiln3,
+            zeiln4,
+        )
+        was_n_1proN_cmd, cmd_gave_output = retaCmdAbstraction_n_and_1pron(
+            Txt.hasWithoutABC(
+                {
+                    i18n.befehle2["groesse"],
+                }
+            ),
+            [
+                "".join(
+                    (
+                        "--",
+                        i18n.ParametersMain.strukturgroesse[0],
+                        "=",
                         i18n.ParametersMain.strukturgroesse[0],
                     )
                 )
