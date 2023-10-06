@@ -40,13 +40,14 @@ def printResult(table: list, befehl: list):
     if not any((t[0].strip() == str(zeile) for t in tableGestreift)):
         merke += ["leer2, exit"]
         ifExit = True
-    # if ifExit:
-    #    onExit()
+    if ifExit:
+        onExit()
 
 
 weiter = beginVonVorn
 gabEsSchonMal: set = set()
 
+prog: reta.Program = reta.Program(["reta", "-nichts"])
 # alleSpaltenParamter: dict = {
 #    tuple(value): key for key, value in LibRetaPrompt.spaltenDict.items()
 # }
@@ -54,9 +55,6 @@ gabEsSchonMal: set = set()
 try:
     alleSpaltenParamter = LibRetaPrompt.spaltenDict
     for spaltenOberkategorie, spaltenListe in alleSpaltenParamter.items():
-        import reta
-        import LibRetaPrompt
-
         befehle = []
         if len(spaltenListe) == 0:
             if weiter:
@@ -77,7 +75,7 @@ try:
                 if not weiter and not beginVonVorn:
                     if (
                         len({"Grundstrukturen"} & {spaltenOberkategorie}) > 0
-                        and len({"universellerkomperativ"} & {einigeSpalten}) > 0
+                        and len({"filter"} & {einigeSpalten}) > 0
                     ):
                         weiter = True
                         print(spaltenListe)
@@ -99,6 +97,7 @@ try:
                     ]
                     for befehl in befehle:
                         print(" ".join(befehl))
+                        del prog
                         prog = reta.Program(befehl)
                         printResult(prog.resultingTable, befehl)
 except KeyboardInterrupt:
