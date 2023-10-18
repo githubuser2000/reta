@@ -1164,12 +1164,12 @@ class Concat:
                 into_Str1[num] = (
                     i18n.hineinversetzen[" Darin kann sich die "],
                     str(num),
-                    i18n.hineinversetzen[" am Besten hineinversetzten."],
+                    i18n.hineinversetzen[" am Besten hineinversetzen."],
                 )
                 into_Str2[num] = (
                     i18n.hineinversetzen[" Darin kann sich die "],
                     str(num),
-                    i18n.hineinversetzen[" am Besten hineinversetzten."],
+                    i18n.hineinversetzen[" am Besten hineinversetzen."],
                 )
 
                 if num != 0:

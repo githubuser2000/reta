@@ -1418,6 +1418,34 @@ def PromptGrosseAusgabe(
         was_n_1proN_cmd, cmd_gave_output = retaCmdAbstraction_n_and_1pron(
             Txt.hasWithoutABC(
                 {
+                    i18n.befehle2["netzwerk"],
+                }
+            ),
+            [
+                "".join(
+                    (
+                        "--",
+                        i18n.ParametersMain.universum[0],
+                        "=",
+                        i18n.netzwerkWort,
+                    )
+                )
+            ],
+            None,
+            ("1-3", "99"),
+            Txt,
+            bruch_GanzZahlReziproke,
+            zahlenBereichC,
+            ketten,
+            cmd_gave_output,
+            zeiln1,
+            zeiln2,
+            zeiln3,
+            zeiln4,
+        )
+        was_n_1proN_cmd, cmd_gave_output = retaCmdAbstraction_n_and_1pron(
+            Txt.hasWithoutABC(
+                {
                     i18n.befehle2["komplex"],
                 }
             ),
@@ -1628,6 +1656,8 @@ def PromptGrosseAusgabe(
                                 "keineEinZeichenZeilenPlusKeineAusgabeWelcherBefehlEsWar"
                             ],
                             i18n.befehle2["e"],
+                            i18n.befehle2["ee"],
+                            "--" + i18n.ausgabeParas["keineueberschriften"],
                         }
                     )
                     else ""
@@ -1642,6 +1672,8 @@ def PromptGrosseAusgabe(
                                 "keineEinZeichenZeilenPlusKeineAusgabeWelcherBefehlEsWar"
                             ],
                             i18n.befehle2["e"],
+                            i18n.befehle2["ee"],
+                            "--" + i18n.ausgabeParas["keineueberschriften"],
                         }
                     )
                     else ""
@@ -1659,6 +1691,8 @@ def PromptGrosseAusgabe(
         )
         if was_n_1proN_cmd:
             nennerZaehlerGleich = []
+            # nennerZaehlerMakesWholeNum = []
+            # nennerZaehlerMakesWholeNumReziproke = []
             if len(rangesBruecheDict) > 0:
                 cmd_gave_output = True
                 for nenner, zaehler in rangesBruecheDict.items():
@@ -1684,6 +1718,16 @@ def PromptGrosseAusgabe(
                     nennerZaehlerGleich += findEqualNennerZaehler(
                         hierBereich, nenner, nennerZaehlerGleich
                     )
+                    # nennerZaehlerMakesWholeNumS = findNennerZaehlerMakesWholeNum(
+                    #    hierBereich,
+                    #    nenner,
+                    #    nennerZaehlerMakesWholeNum,
+                    #    nennerZaehlerMakesWholeNumReziproke,
+                    # )
+                    # nennerZaehlerMakesWholeNum += nennerZaehlerMakesWholeNumS[0]
+                    # nennerZaehlerMakesWholeNumReziproke += nennerZaehlerMakesWholeNumS[
+                    #    1
+                    # ]
 
             elif len(rangesBruecheDictReverse) > 0:
                 cmd_gave_output = True
@@ -1710,6 +1754,16 @@ def PromptGrosseAusgabe(
                     nennerZaehlerGleich += findEqualNennerZaehler(
                         hierBereich, nenner, nennerZaehlerGleich
                     )
+                    # nennerZaehlerMakesWholeNumS = findNennerZaehlerMakesWholeNum(
+                    #    nenner,
+                    #    hierBereich,
+                    #    nennerZaehlerMakesWholeNum,
+                    #    nennerZaehlerMakesWholeNumReziproke,
+                    # )
+                    # nennerZaehlerMakesWholeNum += nennerZaehlerMakesWholeNumS[0]
+                    # nennerZaehlerMakesWholeNumReziproke += nennerZaehlerMakesWholeNumS[
+                    #    1
+                    # ]
             if len(nennerZaehlerGleich) != 0:
                 cmd_gave_output = True
                 nennerZaehlerGleich = set(nennerZaehlerGleich)
@@ -1730,6 +1784,56 @@ def PromptGrosseAusgabe(
                         )
                     ],
                     "1",
+                    Txt,
+                )
+            if False and len(nennerZaehlerMakesWholeNum) != 0:
+                cmd_gave_output = True
+                nennerZaehlerMakesWholeNum = set(nennerZaehlerMakesWholeNum)
+                nennerZaehlerMakesWholeNum = ",".join(nennerZaehlerMakesWholeNum)
+                retaExecuteNprint(
+                    ketten,
+                    Txt.listeE,
+                    vorherVonAusschnittOderZaehlung(Txt, nennerZaehlerMakesWholeNum),
+                    "",
+                    [
+                        "".join(
+                            (
+                                "--",
+                                i18n.ParametersMain.universum[0],
+                                "=",
+                                i18n.transzendentalienWort,
+                            )
+                        )
+                    ],
+                    "4",
+                    Txt,
+                )
+            if False and len(nennerZaehlerMakesWholeNumReziproke) != 0:
+                cmd_gave_output = True
+                nennerZaehlerMakesWholeNumReziproke = set(
+                    nennerZaehlerMakesWholeNumReziproke
+                )
+                nennerZaehlerMakesWholeNumReziproke = ",".join(
+                    nennerZaehlerMakesWholeNumReziproke
+                )
+                retaExecuteNprint(
+                    ketten,
+                    Txt.listeE,
+                    vorherVonAusschnittOderZaehlung(
+                        Txt, nennerZaehlerMakesWholeNumReziproke
+                    ),
+                    "",
+                    [
+                        "".join(
+                            (
+                                "--",
+                                i18n.ParametersMain.universum[0],
+                                "=",
+                                i18n.transzendentaliereziprokeWort,
+                            )
+                        )
+                    ],
+                    "2",
                     Txt,
                 )
     if bedingungZahl:
@@ -2249,6 +2353,22 @@ def findEqualNennerZaehler(hierBereich, nenner, nennerZaehlerGleich):
             if nn3 == hB3 and nn3 not in [0, 1]:
                 nennerZaehlerGleich += [str(nn3)]
     return nennerZaehlerGleich
+
+
+def findNennerZaehlerMakesWholeNum(
+    zaehler, nenner, wholeNumList, wholeNumListReziproke
+):
+    zaehler2 = BereichToNumbers2(str(zaehler))
+    nenner2 = BereichToNumbers2(str(nenner))
+    for nn3 in nenner2:
+        for zz3 in zaehler2:
+            ratNumRez: Fraction = Fraction(zz3, nn3)
+            ratNum: Fraction = Fraction(nn3, zz3)
+            if int(ratNum) == ratNum:
+                wholeNumList += [str(int(ratNum))]
+            if int(ratNumRez) == ratNumRez:
+                wholeNumListReziproke += [str(int(ratNumRez))]
+    return wholeNumList, wholeNumListReziproke
 
 
 def bruchBereichsManagementAndWbefehl(zahlenBereichC, stext, zahlenAngaben_):

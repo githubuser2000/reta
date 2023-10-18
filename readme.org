@@ -48,14 +48,10 @@
 + Ich könnte erweitern aus welchen Dingen ich noch bestehe, der höheren Art, wie höhere Gefühle und Impulse, etc. Denn das gabs vorher nicht.
 *** 2. Feature Ideen
 + mehrere Befehle hintereinander ermöglichen durch Semikolon getrennt, wie in der Schnell: in rp und bei AutoComplete
-+ Shell-Möglichkeiten, wie Pipelining und dann mit Shellbefehl abfangen
-+ u Brucherweiterung geht bei u, aber nicht wenn man n/m macht - geht schnell zu korrigieren
++ Shell-Möglichkeiten, wie Pipelining und dann mit Shellbefehl abfangen, mit dem Befehl shell und dann gute Syntax ...
 + in reta.py, dass einige Komponenten nicht mehrfach gebaut werden, bei mehrfachem reta aufruf programmieren
-+ Testen: jeder Spaltenbefehl
 + Dass man für Zeilenangaben die eigenen reta Python Funktionen aus den zentralen libs verwenden darf.
   Aber nur bei mulpri bzw. p
-+ kein Feature
-  + Es funktioniert nun, dass bei neuer Option "nichts" zwar einerseits nichts ausgegeben wird, aber für z.B. Unit Tests alles in eine Matrix geschrieben wird.
 + Ich sollte mal überlegen, nur mal überlegen, wie ich alles vollkommen anders architektonisch designen würde, wenn ich noch mal von vorn beginnen würde: Denn das alles ist im Verlauf entstanden, wo vorher noch nicht bekannt war, was für Inhalte in welcher Struktur kommen werden! Also noch mal alles neu denken! Das dann aber nutzen, um nicht alles anders zu machen, sondern für feine kleinere Designänderungen und ggf. Architekturänderungen und ggf. Refactoring.
 + kein Feature, sondern nur für mich kurzfristig wichtig:
   + ts index signaturen gehen so:
@@ -71,38 +67,31 @@
 
 + Testing und Debugging Notes statt Feature-Ideen
   + üall noch Testen üall in html wo brüche sind: Brucherweiterung von Universum dabei: ja nein, z.B. bei 2:=14/7 oder 7:=21/3
-  + ts Problem: bei metakonkret wird die checkbox ausgegraut, wenn eine der beiden spalten ausgegraut wird
-  + nachträgliche Zeilenfilterung geht nicht perfekt genug
-  + Zeile 1 nach überschrift, Probleme:
-    + mögliche wahrscheinliche Fehler nur bei vielen n/m Sachen
-    + +all schauen
-      + bei meta konkret,
-      + bei u und a und u 1/n und a 1/n
-      + bei multiplik
-      + bei den 4 gebr rat
 + Weitere Farbschemen, wenigstens konzeptionalisieren: Aber eigentlich dürfte das Einprogrammieren nicht so das große Ding sein.
 + Dass man in der html per Parameter Spalten über Checkboxen vorselektieren kann.
-+ " * " mit "?" oder regex überall auch, z.B. bei 15_*_10 oder bei Zahlenbereichen oder bei spalten.
++ " * " mit "?" Symbolen wie bei Dateiselektierung oder regex überall auch, z.B. bei 15_*_10 oder bei Zahlenbereichen oder bei spalten.
   + Ich könnte direkt die Python Regexe dafür verwenden, das also weiterleiten.
-+ Alles in Klammern ermöglichen und nicht nur Generatoren aus Python. Außerdem Formeln erlauben, wo jetzt schon Generatoren funktionieren.
 + Reziproke und n/m für w Befehl ermöglichen
-+ andere Primzahlbedeutungen, außer 28 bis 32, der anderen Reihen auch hinzufügen
++ andere Primzahlbedeutungen, außer 28 bis 32 (=Art des Geites, z.B. Gefühl oder Energie), der anderen Reihen auch hinzufügen
+  + z.B. 17 bis 25, dass alle Pro-Innen-Primzahl-Organisationen immer auch so etwas wie einerseits ein Innenministerium sind, als auch eine Organisation des Verdeckten
 + Filtern wie die HTML: Dafür ein System ausdenken: Refactoring und Neuprogrammierung des ganzen Systems zur Filterung von Zeilen
-+ Feature Primfaktorzerlegungsvergleich: alles - das dazu ausgegeben werden sollte.
-+ alle Zeilen-Filterungen von der html
 + SQL like Relationen, z.B. 2:1, d.h. 3 Spalten, und auch alles wie bei SQL, d.h. z.B. n Spalten nach oben/unten: bei z.B. Abstand 1: Gegenspieler. Warum nicht gleich eine SQL (like) Sprache übernehmen, statt das Rad neu zu erfinden!
 + alle Features von retaPrompt und der von reta ausgegebenen html bei beiden haben, weil nicht ganz beide ganz alles von beiden können, sondern nur fast: was fehlt da eigentlich noch? Aufgabe: herausfinden, was noch ungleich ist: detailliert austesten
-+ Nein: Syntax highlighting: hä?
++ Nein: Syntax highlighting: hä? Kann das eigentlich die Lib für AutoComplete ? Müssten doch nur Shell Sonderzeichen sein...
 + Was denn nun?: dinge bei zsh abschauen: was kann zsh alles?
-+ schöneres UTF: Ideen? Keine!
++ schöneres UTF: Ideen? Keine! Smilies, Symbole für irgendwas, mhhh....
 + Kurzform für Zeile und Spalte einführen, statt die langen Befehlsketten immer.
-+ Die Spaltennummer direkt als Zahl wählen können.
++ Kurzform 1|2|3 für Kombinationen, aber:
+  + dafür muss das reta überhaupt erstmal als Feature beherrschen
+  + dafür sollte ich den Code vorher besser so haben, dass ich lieber Numpy Matritzen verwenden
+    + denn sonst baut das auf altem Code auf und wann verwende ich endlich das schnellere Numpy für alle Matritzen?
++ Die Spaltennummer direkt als Zahl wählen können. (ist das so eine gute Idee?)
 + neues Farbschema: für html aber besser nur: primzahlen pro außen und pro innen und ggf. dessen vielfacher; Farbschema mit durch 3 teilbarem außerdem
   + Farbschema der Helligkeiten aus welchen Primzahlen welche Zahl besteht
   + Um bessere Farben für die html zu finden, sollte ich einen screenshot davon machen und diesen mit gimp so bearbeiten, dass ich exakt eine Farbe in eine andere ändere. In Gimp kann ich viele Farben ausprobieren.
 + retaPrompt skriptingfähig machen: nein, das muss nicht bald sein
 **** 2.1. Multilingual: fast bereits erledigt
-+ ts multilingual
++ ts multilingual: ach, ich muss doch einfach nur zentral alle Text-Zeichenketten haushalten: das geht schnell zu programmieren! Dann mache ich das damit allen Übersetzern damit am einfachsten! Mehr muss nicht sein.
 + mit AI csvs übersetzen
 + "Mache mir eine Datenstruktur, in der nur alle diese strings drin auf die Art gespeichert sind, dass man mit dem python tool babel diese strings auch mit anderen strings für andere sprachen befüllen kann und programmiere mir, dass diese Datenstruktur aus nur diesen strings, die strings der einen großen Datenstruktur befüllt, sodass sie im einfachen Fall letztlich die gleiche Datenstruktur sein wird, nachdem sie wieder mit den strings befüllt wurde, die sie eigentlich ursprünglich hatte."
 ****  2.2. minder wichtig, aber geht schnell:
@@ -141,6 +130,38 @@
 + auf Basis des Bereich-Regex generieren lassen: AutoComplete für alle ZahlenBereiche für mindestens immer stückweise 2 felder (was dann komisch aussieht, weils nicht das Ganze ist), wodurch bei Zahlen 0-9 bereits 100 und dann mehr ZeichenKombis möglich sind, aber was solls: Könnte machbar sein. Wird aber ein wenig umständliches hin und her: Aber nicht so super viele Codezeilen: vielleicht schaffbar an 3 Tagen. Der schaut dann immer in die Zukunft im ganzen langen Zahlenbereich von nur 1+1 Zeichen. Sieht dann merkwürdig aus, aber das könnte gehen. Der Regex generiert das dann, dadurch dass ich einen Brutforce mit begrenzten Zeichen auf ihn werfe. Ansich eigentlich eine coole Idee finde ich, das so zu lösen.
   + ist ein wenig schwieriger, aber nicht super viel Code - machbar
 *** 3. Feature - Geschwindigkeit
++ numpy:
+  + machen dass b-baum oder hashtabelle von numpy verwendet werden: testen welche Lösung schneller ist
+    + b-baum ist besser für umfangreiche operationen - hastabelle ist besser für suchen und selektiven datenzugriff
+  + mit del alte matritzen in python besser löschen, um ram zu sparen
+  + zwar sind matritzen mit gleicher textlänge schneller, aber RAM zu verschleudern muss nicht sein
+    + Später kann ich immer noch die Matrix umbauen, dass sie keinen variblen Text oder bei mehr Dimensionen teilweise gleich langen text annimmt
+  + pandas für numpy matritzen verwenden: numpy ist bei Gigabyte Daten 10 mal schneller für Text
+  + Eigentlich ist es am Einfachsten, wenn ich mit Python einlese und dann zu Pandas rüber reiche, aber nein: einfach KI fragen! einfach!
+  + Programmiertes Slicing, das keines deshalb ist, meines Codes durch Numpy Slicing ersetzen, da das dann ja auch schneller funktioniert damit
+  + Syntax von Numpy vs. Python Matritzen ist fast gleich und wenn nicht kann mich die KI gut unterstützen
+    + numpy slicing und indexing möglichkeiten sind enorm
+    + numpy unterstützt broadcasts, was eigentlich einfach die numerischen Tabellenoperationen auf normalerweise Zahlen wären: alles geht viel schneller
+    + mit numpy kann man super einfach spalten zugreifen und ich brauchte da nicht meinen schwierigen umsortier algo um so darauf zuzugreifen
+  + wie kann das sein, dass pandas doppelt oder dreifach so lange braucht, wenn pandas doch etwa die gleichen numpy matritzen von numpy verwendet? Dann müsste doch beides etwa gleich schnell sein
+    + Pandas verwendet zwar NumPy-Arrays als Grundlage, aber es fügt eine Reihe von zusätzlichen Funktionen und Datenstrukturen hinzu, die die Leistung beeinträchtigen können
+    + Indexierung, Datentypen,
+    + In den von dir durchgeführten Benchmarks wurde eine Pandas-Datenframe mit 10.000 Spalten und 10.000 Zeilen verwendet. In diesem Fall ist der Geschwindigkeitsunterschied zwischen Pandas und NumPy besonders groß, da das Indexieren und das Umwandeln von Datentypen einen großen Teil der Gesamtzeit ausmachen.
+    + Wenn du die Leistung von Pandas verbessern möchtest, kannst du folgende Maßnahmen ergreifen:
+      + Verwende eine kleinere Datenmenge: Je größer die Datenmenge, desto größer ist der Geschwindigkeitsunterschied zwischen Pandas und NumPy.
+      + Verwende einen einzelnen Datentyp: Wenn deine Daten nur einen Datentyp enthalten, kannst du das Umwandeln von Datentypen vermeiden.
+      + Verwende die richtigen Funktionen und Datenstrukturen: Pandas bietet eine Reihe von Funktionen und Datenstrukturen, die für bestimmte Aufgaben optimiert sind.
+  + Numpy ist 10 mal schneller für meine aufgabe aus 600x200x10x100 Buchstaben und pandas 3 mal schneller ungefähr
+    + Eine pessimistische Schätzung der Geschwindigkeitssteigerung für reta ist 20% insgesamt
+  + Gründe für die Implementierung
+    + ... Geschwindigkeitssteigerung - klar
+    + pandas kann verwendet werden, wenn ich als Feature solche Operationen wie mit SQL einbauen möchte, z.B. wenn ich Zahlenabstände einbeziehen möchte in Operationen
+    + die schön in Klartext lesbaren csv Dateien lägen mit pandas in performanter lesbarer form vor und speicherplatzschonender
+    + darauf basierende Implementierungen müsste ich nicht mehrfach programmieren, wenn der Unterbau durch Pandas und Numpy geändert wird. Darauf basiert:
+      + diese SQL-ähnlichen Relationen Operationen - wie beschrieben
+      + reta Feature für selektiveres Wählen von Kombinierten Dingen - das ich vor 2 Jahren plante, aber nie implementierte
+      + neue Programmierung der Methode zum CLI-Text-Ausgeben von allem: der Code soll aus Parametern jedes mal gebaut werden und dann als neu zusammen gestellter Code ausgeführt werden, anstelle dass alles so super kompliziert ist und damit langsam ausgeführt wird, aufgrund ständiger if und etc. abfragen in vielen schleifen. Die würden weg fallen, wenn die Ausgabefunktion zu Code erstmal immer jeweils gebaut werden würde.
+
 +  Wo ist Verbesserung der Geschwindigkeit möglich:
 + bei der Ausgabe
 + Parallelisierung

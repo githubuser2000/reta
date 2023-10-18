@@ -106,6 +106,8 @@ LibRetaPrompt: größten Teil entnommen
 
 ES FEHLEN NOCH ALLE ''
 """
+
+netzwerkWort = _("netzwerk")
 Primzahlkreuz_pro_contra_strs: tuple = (
     "Primzahlkreuz_pro_contra",
     "nachvollziehen_emotional_oder_geistig_durch_Primzahl-Kreuz-Algorithmus_(15)",
@@ -387,6 +389,7 @@ befehle2.update({"16_15_" + a: "16_15_" + a for a in wahl15.keys() if a != "15"}
 befehle2.update({"16_" + a: "16_" + a for a in wahl16.keys()})
 befehle2.update(
     {
+        "netzwerk": netzwerkWort,
         "komplex": _("komplex"),
         "ee": _("ee"),
         "groesse": _("groesse"),
@@ -1677,7 +1680,7 @@ paraNdataMatrix: list = [
     ),
     (
         ParametersMain.universum,
-        (_("Netzwerk"), _("netzwerk")),
+        (_("Netzwerk"), netzwerkWort),
         {25, 55, 386, 390},
     ),
     (
@@ -4077,7 +4080,7 @@ class concat:
     pro = {"pro ": _("pro ")}
     hineinversetzen = {
         " Darin kann sich die ": _(" Darin kann sich die "),
-        " am Besten hineinversetzten.": _(" am Besten hineinversetzten."),
+        " am Besten hineinversetzen.": _(" am Besten hineinversetzen."),
     }
     proIst = {
         "pro dieser Zahl sind: ": _("pro dieser Zahl sind: "),
