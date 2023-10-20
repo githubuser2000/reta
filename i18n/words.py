@@ -224,7 +224,7 @@ ausgabeArt: dict = {
 
 wahl16Words: dict = {
     "Multiversalien_(16)": _("Multiversalien_(16)"),
-    "Meta-Physik-Teilchen_(1)": _("Meta-Physik-Teilchen_(1)"),
+    # "Meta-Physik-Teilchen_(1)": _("Meta-Physik-Teilchen_(1)"),
 }
 
 wahl15Words: dict = {
@@ -372,6 +372,8 @@ wahl15: dict = {
     "39": _("Maßnahmen_(39)"),
     "1pro6": _("innere_Werte_1/6_der_Reinigung_und_Klarheit"),
     "28": _("Lebensbereiche_Problemklassen_(28)"),
+    "24": _("Netzwerk"),
+    "32": _("mathematisches_Design_(32)"),
 }
 
 wahl16 = {
@@ -756,7 +758,7 @@ paraNdataMatrix: list = [
             _("wirklichkeit"),
             _("wirklichkeiten"),
         ),
-        {233, 265, 268, 322},
+        {233, 265, 268, 322, 420},
     ),
     (
         ParametersMain.planet,
@@ -1028,13 +1030,18 @@ paraNdataMatrix: list = [
     ),
     (
         ParametersMain.teilchen,
+        (_("Wirklichkeiten_(10)"), _("wirklichkeit"), _("wirklichkeiten")),
+        {420},
+    ),
+    (
+        ParametersMain.teilchen,
         (_("das_Glaktische_(14)"),),
         {406},
     ),
     (
         ParametersMain.teilchen,
         (_("das_Multiverselle_(16)"),),
-        {388},
+        {388, 418},
     ),
     (
         ParametersMain.teilchen,
@@ -1122,6 +1129,22 @@ paraNdataMatrix: list = [
         ParametersMain.galaxie,
         (_("Thomasevangelium"), _("thomasevangelium"), thomasWort),
         {0, 3, 303},
+    ),
+    (
+        ParametersMain.grundstrukturen,
+        (
+            _("Netzwerk"),
+            _("netzwerk"),
+        ),
+        {417},
+    ),
+    (
+        ParametersMain.grundstrukturen,
+        (
+            _("mathematisches_Design_(32)"),
+            _("mathematischesdesign"),
+        ),
+        {419},
     ),
     (
         ParametersMain.grundstrukturen,
@@ -2520,7 +2543,7 @@ paraNdataMatrix: list = [
             _("vorstellung"),
             _("funktionen"),
         ),
-        {345, 264, 388},
+        {345, 264, 388, 418},
     ),
     (
         ParametersMain.grundstrukturen,

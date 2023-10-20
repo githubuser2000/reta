@@ -161,6 +161,7 @@
       + diese SQL-ähnlichen Relationen Operationen - wie beschrieben
       + reta Feature für selektiveres Wählen von Kombinierten Dingen - das ich vor 2 Jahren plante, aber nie implementierte
       + neue Programmierung der Methode zum CLI-Text-Ausgeben von allem: der Code soll aus Parametern jedes mal gebaut werden und dann als neu zusammen gestellter Code ausgeführt werden, anstelle dass alles so super kompliziert ist und damit langsam ausgeführt wird, aufgrund ständiger if und etc. abfragen in vielen schleifen. Die würden weg fallen, wenn die Ausgabefunktion zu Code erstmal immer jeweils gebaut werden würde.
+  + Ich kann die Verwendung von Pandas in der angefangenen Programmierung von vor 2 Jahren behalten, wenn ich die Matrix bzw. den Tensor zwischen pypy3 und python mit pipes in sekundenbruchteilen hin und her verschiebe. (pypy3 kann numpy, aber nicht pandas)
 
 +  Wo ist Verbesserung der Geschwindigkeit möglich:
 + bei der Ausgabe
