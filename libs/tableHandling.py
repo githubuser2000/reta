@@ -198,7 +198,7 @@ class Tables:
 
     def __init__(self, hoechstZeil, Txt):
         if hoechstZeil is None:
-            self.__hoechsteZeile = {1024: 1024, 114: 120}
+            self.__hoechsteZeile = {1024: 1024, 114: 163}
         else:
             self.__hoechsteZeile = {1024: hoechstZeil, 114: hoechstZeil}
 
