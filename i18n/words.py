@@ -2428,7 +2428,7 @@ paraNdataMatrix: list = [
             _("kombination"),
             _("kombinationen"),
         ),
-        {290, 296, 325, 326, 327, 402, 403, 406, 407, 408},
+        {33, 290, 296, 325, 326, 327, 402, 403, 406, 407, 408},
     ),
     (
         ParametersMain.grundstrukturen,
@@ -2500,7 +2500,7 @@ paraNdataMatrix: list = [
             emotionWort,
             _("gefühle"),
         ),
-        {243, 283, 284, 285, 286, 305},
+        {29, 243, 283, 284, 285, 286, 305},
     ),
     (
         ParametersMain.grundstrukturen,
