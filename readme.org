@@ -47,6 +47,9 @@
 ***** unwichtiges
 + Ich könnte erweitern aus welchen Dingen ich noch bestehe, der höheren Art, wie höhere Gefühle und Impulse, etc. Denn das gabs vorher nicht.
 *** 2. Feature Ideen
++ zeilen sozusagen invertieren, d.h. nur die nachbarn, oder nur nachbarn, überlappend oder nicht bei bereits angezeigten benachbarten Zeilen für dessen Nachbarn.
+  + praktisch, z.B. wenn man alle Spezialbösartigkeiten zeigen möchte
+  + besser auch als Kurzbefehl bauen - nicht super aufwändig
 + mehrere Befehle hintereinander ermöglichen durch Semikolon getrennt, wie in der Schnell: in rp und bei AutoComplete
 + Shell-Möglichkeiten, wie Pipelining und dann mit Shellbefehl abfangen, mit dem Befehl shell und dann gute Syntax ...
 + in reta.py, dass einige Komponenten nicht mehrfach gebaut werden, bei mehrfachem reta aufruf programmieren
