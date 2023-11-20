@@ -1066,7 +1066,7 @@ def PromptGrosseAusgabe(
                 )
             ],
             None,
-            ("1,2", "3,4"),
+            ("2,3", "4,5"),
             Txt,
             bruch_GanzZahlReziproke,
             zahlenBereichC,
@@ -1193,7 +1193,7 @@ def PromptGrosseAusgabe(
                 )
             ],
             None,
-            ("1,4", "3"),
+            ("2,5", "4"),
             Txt,
             bruch_GanzZahlReziproke,
             zahlenBereichC,
@@ -1949,12 +1949,15 @@ def PromptGrosseAusgabe(
         if Txt.hasWithoutABC({"multis"}) > 0:
             cmd_gave_output = True
 
-            listeStrWerte = BereichToNumbers2(zahlenReiheKeineWteiler, False, 0)
+            listeStrWerte = list(BereichToNumbers2(zahlenReiheKeineWteiler, False, 0))
             multiplesTexts, multiis = mult2(listeStrWerte)
             mulpriInfo = not (Txt.hasWithoutABC({"mulpri"}) or Txt.hasWithoutABC({"p"}))
-            for texxt, multii in zip(multiplesTexts, multiis):
+            for i, (texxt, multii) in enumerate(zip(multiplesTexts, multiis)):
                 if len(multii) > 0 or mulpriInfo:
                     print(texxt)
+                else:
+                    StrZahl = str(listeStrWerte[i])
+                    print("".join((StrZahl,": ", StrZahl, " (", i18n.primzahlWort, ")")))
 
             # externCommand(i18n.befehle2["prim"], c)
 

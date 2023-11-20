@@ -47,6 +47,8 @@
 ***** unwichtiges
 + Ich könnte erweitern aus welchen Dingen ich noch bestehe, der höheren Art, wie höhere Gefühle und Impulse, etc. Denn das gabs vorher nicht.
 *** 2. Feature Ideen
++ bei multis, dass Primzahlen extra angezeigt werden, damit sie nicht gar nicht angezeigt werden
++ dass man in allen Zahlenbereichen in rp Kommas am Ende und Anfang weg machen kann, sodass falsches Tippen nicht so schlimm ist. Ggf. auch in reta.
 + zeilen sozusagen invertieren, d.h. nur die nachbarn, oder nur nachbarn, überlappend oder nicht bei bereits angezeigten benachbarten Zeilen für dessen Nachbarn.
   + praktisch, z.B. wenn man alle Spezialbösartigkeiten zeigen möchte
   + besser auch als Kurzbefehl bauen - nicht super aufwändig

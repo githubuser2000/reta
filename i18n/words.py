@@ -131,6 +131,8 @@ gebrochenSpaltenMaximumPlus1: int = 24  # Das ist nicht die Spaltenbreite, sonde
 #    "keinenummerierung": _("keinenummerierung"),
 # }
 
+primzahlWort = _("Primzahl")
+
 geistWort = _("geist")
 emotionWort = _("emotion")
 ausgabeParas: dict = {
@@ -374,6 +376,7 @@ wahl15: dict = {
     "28": _("Lebensbereiche_Problemklassen_(28)"),
     "24": _("Netzwerk"),
     "32": _("mathematisches_Design_(32)"),
+    "gegen5": _("gegen_5"),
 }
 
 wahl16 = {
@@ -2593,8 +2596,13 @@ paraNdataMatrix: list = [
     ),
     (
         ParametersMain.grundstrukturen,
+        (_("gegen_5"),),
+        {24},
+    ),
+    (
+        ParametersMain.grundstrukturen,
         (_("Impulse_(5)"), _("impulse")),
-        {251, 253, 257, 341},
+        {24, 251, 253, 257, 341},
     ),
     (
         ParametersMain.grundstrukturen,
