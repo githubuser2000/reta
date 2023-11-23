@@ -53,6 +53,8 @@ Secondary parameters start with 2 minus --.
         * 2,3
     * --uppermaximum
         * 2000,1500
+    * --invert
+        * chooses neighbors
 
 ## --columns
 
@@ -84,11 +86,11 @@ Secondary parameters start with 2 minus --.
     * --universe= 
         * artificiallife,strategy,ratioSameNumber,law,combineetc,breedingup,particle-meta-physics,metaparadigmreligion,spherescircles,analyticontology,countertranscendentals,systemthings,transcendentals,transcendentalreciprocal,network,whytranscendentalstructuralsizeandcharacter,category,space,programmingparadigms,mind,whyTranscendentalEqualsComplexity,modelofhierarchicalcomplexity
     * --particles= 
-        * universal_(16),galactic_(14),multiverse_(16),non_value_virtue_sorting_(13_with_14),galaxy_sub_areas_(13),goodness_and_direction_(7),space_and_dimension_(8)
+        * universal_(16),truthRealities,galactic_(14),multiverse_(16),non_value_virtue_sorting_(13_with_14),galaxy_sub_areas_(13),goodness_and_direction_(7),space_and_dimension_(8)
     * --multiverse= 
         * multiversalias,particles
     * --basic_structures= 
-        * analyticontology,modelofhierarchicalcomplexity,transcendentals,condition,areas_of_life,measures,relativereciprocal,universalcomparative,existentials,extremalia,expectations,passion,relativetimeamount,numericalcomparison,aspiration,principles,attractions,optimization,topics,meaning,reciprocal,attention,time,intention16,intention17,intention6,intention7,awareness,behavior,energy,sheafs,comprehend,empathy,intention1/6,innervalues,intention10,mind,reflex,lust,paradigms,truthRealities,calculate,mood,class,order,metasystems,intention1pro8,goals,concreta,emotions,dependence,map,foundation,positions,imaginations,shall,views,affiliations,intention13,love,coalitions,impulses,drive,reflection,states
+        * network,mathematicaldesign,analyticontology,modelofhierarchicalcomplexity,transcendentals,condition,areas_of_life,measures,relativereciprocal,universalcomparative,existentials,extremalia,expectations,passion,relativetimeamount,numericalcomparison,aspiration,principles,attractions,optimization,topics,meaning,reciprocal,attention,time,intention16,intention17,intention6,intention7,awareness,behavior,energy,sheafs,comprehend,empathy,intention1/6,innervalues,intention10,mind,reflex,lust,paradigms,truthRealities,calculate,mood,class,order,metasystems,intention1pro8,goals,concreta,emotions,dependence,map,foundation,positions,imaginations,shall,views,affiliations,intention13,love,coalitions,against_5,impulses,drive,reflection,states
     * --scale= 
         * light,scale,organizations,politicalsystems
     * --universeMetaConcrete= 
@@ -96,20 +98,20 @@ Secondary parameters start with 2 minus --.
     * --primeeffect= 
         * universe,directiondirection,intentionGalaxy,intentGalaxyReciprocal,universeReciprocal,against-against-transcendentalism,neutral_against_transcendentalism
     * --economy= 
-        * specialties,plants,machines,typeoforganization,system,works,explanation,businessadministration
+        * specialties,plants,machines,typeoforganization,system,explanation,businessadministration
     * --procontra= 
         * resultsSense,change,tamecontrol,unity,advantages,opponent,annoying,probenefit,counterposition,helpreceive,help,pro,notGettingAlong,notAgainst,noopposite,notfor,helpnotneed,cannothelp,notdisposed,unmotivated,against,opposite,harmony,primecross
     * --light 
     * --meaning= 
         * primecross,inreta,signbefore,primenumbers,applicationofsunsandmoons,ranges,law,perfection,spaceObject,subjunctive,mechanisms
     * --gebrochengalaxie_fractionalgalaxy= 
-        * 8,13,15,3,10,9,11,14,5,6,4,12,7,18,2,19,21,17,22,16,20,23
+        * 10,7,8,16,20,5,15,11,19,3,17,6,12,23,2,21,22,13,18,4,9,14
     * --gebrochenuniversum_fractionaluniverse= 
-        * 8,13,15,3,10,9,11,14,5,6,4,12,7,18,2,19,21,17,22,16,20,23
+        * 10,7,8,16,20,5,15,11,19,3,17,6,12,23,2,21,22,13,18,4,9,14
     * --fractionedemotion= 
-        * 8,13,15,3,10,9,11,14,5,6,4,12,7,18,2,19,21,17,22,16,20,23
+        * 10,7,8,16,20,5,15,11,19,3,17,6,12,23,2,21,22,13,18,4,9,14
     * --fractionalnumberedstructuresize= 
-        * 8,13,15,3,10,9,11,14,5,6,4,12,7,18,2,19,21,17,22,16,20,23
+        * 10,7,8,16,20,5,15,11,19,3,17,6,12,23,2,21,22,13,18,4,9,14
     * --symbols 
     * --properties= 
         * wisdom,rights,inferior,dispute,latchOn,familyneeds,humble,selfishness,science,asshole,love,selfless,monotonous,averse,honest,scope,worthless,familial,soft,uniteConnect,similar,good,senseAndMeaning,time,egalitarianAuthoritarian,opinions,opinionintelligence,morality,leadership,X-ray,encourage,arrogant,polarityOfLove,egoism,cachetPrestigeValidity,equal,survive

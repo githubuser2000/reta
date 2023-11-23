@@ -169,6 +169,7 @@ zeilenParas = [
     "--" + i18n.zeilenParas["vielfachevonzahlen"] + "=",
     "--" + i18n.zeilenParas["oberesmaximum"] + "=",
     "--" + i18n.zeilenParas["primzahlen"] + "=",
+    "--" + i18n.zeilenParas["invertieren"],
 ]
 hauptForNeben = ["-" + s for s in set(i18n.hauptForNeben.values()) - {"debug"}]
 # hauptForNeben = ("-zeilen", "-spalten", "-kombination", "-ausgabe", "-h", "-help")
@@ -367,6 +368,7 @@ def stextFromKleinKleinKleinBefehl(promptMode2, stext, textDazu):
     stext3 = []
     del xtext
     for kkk, s_ in enumerate(tuple(deepcopy(stext2))):
+        s_ = s_.strip(",")
         s_m = s_
         textDazu = []
         if not is15or16command(s_) and s_ not in befehle and stext[0] != "reta":

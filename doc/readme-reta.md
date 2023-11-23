@@ -55,6 +55,8 @@ Besser die Readme aus Markdown mit einem Markdown-Leseprogramm lesen!
         * 2,3
     * --oberesmaximum=
         * 2000,1500
+    * --invertieren
+        * zeigt die Nachbarn
 
 ## -spalten
 
@@ -84,11 +86,11 @@ Besser die Readme aus Markdown mit einem Markdown-Leseprogramm lesen!
     * --universum= 
         * künstlichesleben,strategie,verhaeltnisgleicherzahl,recht,kombinierenetc,hochzüchten,Teilchen-Meta-Physik,metaparadigmareligion,kugelnkreise,analytischeontologie,gegentranszendentalien,systemsachen,transzendentalien,transzendentalienreziproke,netzwerk,warumtranszendentaliezustrukturgroesseundcharakter,kategorie,weltall,programmierparadigmen,geist,warumtranszendentaliegleichkomplexitaet,modelofhierarchicalcomplexity
     * --teilchen= 
-        * das_Universelle_(15),das_Glaktische_(14),das_Multiverselle_(16),die_Tugendsortierung_(13_mit_14),die_Galaxie_Unterbereiche_(13),das_Gute_die_Richtung_(7),Raum_und_Dimensionen_(8)
+        * das_Universelle_(15),wirklichkeit,das_Glaktische_(14),das_Multiverselle_(16),die_Tugendsortierung_(13_mit_14),die_Galaxie_Unterbereiche_(13),das_Gute_die_Richtung_(7),Raum_und_Dimensionen_(8)
     * --multiversum= 
         * multiversalien,teilchen
     * --grundstrukturen= 
-        * analytischeontologie,modelofhierarchicalcomplexity,Transzendentalien,bedingung,lebensbereiche,massnahmen,relativreziprokuniversell,universellerkomperativ,existenzialien,extremalien,erwartungen,leidenschaft,relativerzeitbetrag,zahlenvergleich,bestrebung,prinzipien,attraktionen,optimierung,themen,bedeutung,reziproke,achtung,zeit,absicht16,absicht17,absicht6,absicht7,bewusstheit,verhalten,energie,garben,nachvollziehen,empathie,absicht1/6,innerewerte,absicht10,geist,reflex,lust,paradigmen,wirklichkeit,rechnen,stimmung,klasse,ordnen,metasysteme,absicht1pro8,ziele,konkreta,gefuehle,abhaengigkeit,karte,fundament,positionen,vorstellungen,sollen,ansichten,verbundenheiten,absicht13,liebe,koalitionen,impulse,trieb,reflektion,zustaende
+        * netzwerk,mathematischesdesign,analytischeontologie,modelofhierarchicalcomplexity,Transzendentalien,bedingung,lebensbereiche,massnahmen,relativreziprokuniversell,universellerkomperativ,existenzialien,extremalien,erwartungen,leidenschaft,relativerzeitbetrag,zahlenvergleich,bestrebung,prinzipien,attraktionen,optimierung,themen,bedeutung,reziproke,achtung,zeit,absicht16,absicht17,absicht6,absicht7,bewusstheit,verhalten,energie,garben,nachvollziehen,empathie,absicht1/6,innerewerte,absicht10,geist,reflex,lust,paradigmen,wirklichkeit,rechnen,stimmung,klasse,ordnen,metasysteme,absicht1pro8,ziele,konkreta,gefuehle,abhaengigkeit,karte,fundament,positionen,vorstellungen,sollen,ansichten,verbundenheiten,absicht13,liebe,koalitionen,gegen_5,impulse,trieb,reflektion,zustaende
     * --groessenordnung= 
         * licht,Größenordnung,organisationen,politischesysteme
     * --universummetakonkret= 
@@ -96,20 +98,20 @@ Besser die Readme aus Markdown mit einem Markdown-Leseprogramm lesen!
     * --primzahlwirkung= 
         * universum,richtungrichtung,absichtgalaxie,absichtgalaxiereziproke,universumreziproke,dagegengegentranszendentalie,neutralegegentranszendentalie
     * --wirtschaft= 
-        * fachgebiete,pflanzen,maschinen,organisationsform,system,funktioniert,erklärung,bwl
+        * fachgebiete,pflanzen,maschinen,organisationsform,system,erklärung,bwl
     * --procontra= 
         * ergibtsinn,veraenderung,baendigenkontrollieren,einheit,vorteile,gegenspieler,nervig,pronutzen,gegenposition,hilfeerhalten,helfen,pro,nichtauskommen,nichtdagegen,keingegenteil,nichtdafuer,hilfenichtgebrauchen,nichthelfenkoennen,nichtabgeneigt,unmotivierbar,dagegen,gegenteil,harmonie,primzahlkreuz
     * --licht 
     * --bedeutung= 
         * primzahlkreuz,inreta,vorzeichen,primzahlen,anwendungdersonnenundmonde,zählungen,jura,vollkommenheit,gestirn,konjunktiv,mechanismen
     * --gebrochengalaxie= 
-        * 22,18,20,5,8,3,6,17,16,19,9,21,10,12,11,15,14,2,23,4,13,7
+        * 22,23,7,3,12,15,4,8,21,9,20,13,18,11,10,16,6,2,14,17,5,19
     * --gebrochenuniversum= 
-        * 22,18,20,5,8,3,6,17,16,19,9,21,10,12,11,15,14,2,23,4,13,7
+        * 22,23,7,3,12,15,4,8,21,9,20,13,18,11,10,16,6,2,14,17,5,19
     * --gebrochenemotion= 
-        * 22,18,20,5,8,3,6,17,16,19,9,21,10,12,11,15,14,2,23,4,13,7
+        * 22,23,7,3,12,15,4,8,21,9,20,13,18,11,10,16,6,2,14,17,5,19
     * --gebrochengroesse= 
-        * 22,18,20,5,8,3,6,17,16,19,9,21,10,12,11,15,14,2,23,4,13,7
+        * 22,23,7,3,12,15,4,8,21,9,20,13,18,11,10,16,6,2,14,17,5,19
     * --symbole 
     * --eigenschaften= 
         * weisheit,rechte,unterlegen,streit,einklinken,familiebrauchen,bescheiden,selbstsucht,wissenschaft,arschloch,liebe,selbstlos,eintönig,abgeneigt,ehrlich,tragweite,wertlos,familiaer,sanft,vereinenverbinden,aehnlich,gut,sinn,zeit,egalitaerautoritaer,meinungen,meinungsintelligenz,sittlichkeit,führung,durchleuchten,foerdern,überheblich,liebepolung,egoismus,geltung,gleich,ueberleben

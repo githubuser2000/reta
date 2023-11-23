@@ -83,6 +83,8 @@ Secondary parameters start with 2 minus --.
         * 2,3
     * --uppermaximum
         * 2000,1500
+    * --invert
+        * chooses neighbors
 
 ## --columns
 
@@ -153,6 +155,8 @@ Besser die Readme aus Markdown mit einem Markdown-Leseprogramm lesen!
         * 2,3
     * --oberesmaximum=
         * 2000,1500
+    * --invertieren
+        * zeigt die Nachbarn
 
 ## -spalten
 

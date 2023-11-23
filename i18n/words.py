@@ -197,6 +197,7 @@ zeilenParas: dict = {
     "innenerste": _("innenerste"),
     "aussenalle": _("aussenalle"),
     "innenalle": _("innenalle"),
+    "invertieren": _("invertieren")
 }
 
 zeilenParasLen = {key: len(value) for (key, value) in zeilenParas.items()}
@@ -394,6 +395,7 @@ befehle2.update({"16_15_" + a: "16_15_" + a for a in wahl15.keys() if a != "15"}
 befehle2.update({"16_" + a: "16_" + a for a in wahl16.keys()})
 befehle2.update(
     {
+        "invertieren" : _("invertieren"),
         "netzwerk": netzwerkWort,
         "komplex": _("komplex"),
         "ee": _("ee"),

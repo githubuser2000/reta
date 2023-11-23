@@ -693,7 +693,19 @@ class Prepare:
                 n > self.tables.hoechsteZeile[114]
             ):
                 numRange.remove(n)
-
+        invertieren = False
+        for condition in paramLines:
+            if condition[:3] == "_i_":
+                invertieren = True
+        if invertieren:
+            numRangeList = list(numRange)
+            numRangeList.sort()
+            h = self.tables.hoechsteZeile[1024]
+            numRange2Set = set()
+            for i in range(1, h+1):
+                if (i+1 in numRange or i-1 in numRange) and not i in numRange:
+                    numRange2Set |= {i}
+            numRange = set(numRange2Set)
         numRangeList = list(numRange)
         numRangeList.sort()
         numRange2Map = {i + 1: a for i, a in enumerate(numRangeList)}

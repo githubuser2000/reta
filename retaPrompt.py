@@ -2309,6 +2309,7 @@ def retaExecuteNprint(
         "".join(("-", i18n.hauptForNeben["zeilen"])),
         zeiln1,
         zeiln2,
+        ("--"+i18n.zeilenParas["invertieren"] if i18n.befehle2["invertieren"] in stextE else ""),
         "".join(("-", i18n.hauptForNeben["spalten"])),
         "".join(welcheSpalten),
         "".join(("--", i18n.ausgabeParas["breite"], "=0")),

@@ -993,6 +993,17 @@ class Program:
                     elif self.oberesMaximum(arg):
                         pass
                     elif (
+                        arg[2 : 2 + i18n.zeilenParasLen["invertieren"]]
+                        == i18n.zeilenParas["invertieren"]
+                    ):
+                        self.obZeilenBereicheAngegeben = True
+                        if neg == "":
+                            paramLines |= (
+                                self.tables.getPrepare.parametersCmdWithSomeBereich(
+                                    "1", "i", neg, keineNegBeruecksichtigung=True
+                                )
+                            )
+                    elif (
                         arg[2 : 2 + i18n.zeilenParasLen["vorhervonausschnittteiler"]]
                         == i18n.zeilenParas["vorhervonausschnittteiler"]
                     ):
