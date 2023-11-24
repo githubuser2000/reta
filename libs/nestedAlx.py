@@ -53,7 +53,7 @@ ifRetaAnfang = False
 
 
 def sort_key(key):
-    if not key.startswith("1") and not key[:3] == "EIG":
+    if not key.startswith("1") and not key[:3] == [a[:3] for a in i18n.EIGS_N_R]:
         if key in (
             i18n.befehle2["absicht"],
             i18n.befehle2["hilfe"],
@@ -95,15 +95,20 @@ def sort_key(key):
         elif key[:3] == "16_" or key == "16":
             return (9, key)
         elif key.startswith("1") and len(key) != 1:
-            return (10, key)
-        elif key[:3] == "EIG":
-            return (11, key)
-        else:
+            if key.startswith("15"):
+                return (10, key)
+            elif key.startswith("16"):
+                return (11, key)
+            else:
+                return (11, key)
+        elif key[:3] == [a[:3] for a in i18n.EIGS_N_R]:
             return (12, key)
-    elif key[:3] == "EIG":
-        return (14, key)
+        else:
+            return (13, key)
+    elif key[:3] in [a[:3] for a in i18n.EIGS_N_R]:
+        return (15, key)
     else:
-        return (13, key)
+        return (14, key)
 
 
 befehle2 = set(sorted(befehle2, key=lambda item: sort_key(item)))

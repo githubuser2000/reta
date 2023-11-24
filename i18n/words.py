@@ -2604,7 +2604,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.grundstrukturen,
         (_("Impulse_(5)"), _("impulse")),
-        {24, 251, 253, 257, 341},
+        {251, 253, 257, 341},
     ),
     (
         ParametersMain.grundstrukturen,

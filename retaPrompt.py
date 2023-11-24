@@ -1193,7 +1193,7 @@ def PromptGrosseAusgabe(
                 )
             ],
             None,
-            ("2,5", "4"),
+            ("1,4", "3"),
             Txt,
             bruch_GanzZahlReziproke,
             zahlenBereichC,
