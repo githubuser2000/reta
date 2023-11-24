@@ -20,6 +20,8 @@ from center import (
     teiler,
     x,
     primRepeat,
+    primfaktoren,
+    primRepeat2
 )
 from lib4tables import isPrimMultiple, moonNumber, primFak
 from lib4tables_Enum import ST
@@ -612,6 +614,13 @@ class Prepare:
                 ifTypAtAll = True
                 for n in numRange:
                     if n % 2 == 0:
+                        numRangeYesZ.add(n)
+            elif "SonneMitMondanteil" in condition:
+                ifTypAtAll = True
+                for n in numRange:
+                    booleans = {Faktor == 1 for primZahl, Faktor in primRepeat2(primfaktoren(n))}
+                    # print(list(booleans))
+                    if len({True, False} & booleans) > 1:
                         numRangeYesZ.add(n)
 
         numRange = cutset(ifTypAtAll, numRange, numRangeYesZ)

@@ -935,6 +935,8 @@ class Program:
                                 paramLines.add("planet")
                             elif word == neg + i18n.zeilenParas["mond"]:
                                 paramLines.add("mond")
+                            elif word == neg + i18n.zeilenParas["SonneMitMondanteil"]:
+                                paramLines.add("SonneMitMondanteil")
                     elif (
                         arg[2 : 3 + i18n.zeilenParasLen["primzahlen"]]
                         == i18n.zeilenParas["primzahlen"] + "="

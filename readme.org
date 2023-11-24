@@ -37,7 +37,6 @@
 + a und u n/m sollte ich noch mal anschauen: nicht höheres neues, nur das alte wieder überprüfen
 + Gefühle n/m
 + Alle Brucherweiterungen, überall, also nicht nur bei n/m, sondern auch bei n und 1/n bei allen Grundstrukturen
-  *** 4. ReTa content
 + Ich müsste mal die gebrochen-rationalen Gefühle probieren zu machen.
   Das würde mir gut woanders weiterhelfen.
 ***** noch mal überprüfen (weniger wichtig)
@@ -47,6 +46,9 @@
 ***** unwichtiges
 + Ich könnte erweitern aus welchen Dingen ich noch bestehe, der höheren Art, wie höhere Gefühle und Impulse, etc. Denn das gabs vorher nicht.
 *** 2. Feature Ideen
++ automatische Generierung meiner merkwürdigen Versionsnummern-Vergabe
++ rp könnte VariablenVergabe unterstützen für ZahlenBereiche und Zeichenketten
+  (habe dazu aber eher nicht so den Bedarf)
 + mehrere Befehle hintereinander ermöglichen durch Semikolon getrennt, wie in der Schnell: in rp und bei AutoComplete
 + Shell-Möglichkeiten, wie Pipelining und dann mit Shellbefehl abfangen, mit dem Befehl shell und dann gute Syntax ...
 + in reta.py, dass einige Komponenten nicht mehrfach gebaut werden, bei mehrfachem reta aufruf programmieren
@@ -71,11 +73,16 @@
 + Dass man in der html per Parameter Spalten über Checkboxen vorselektieren kann.
 + " * " mit "?" Symbolen wie bei Dateiselektierung oder regex überall auch, z.B. bei 15_*_10 oder bei Zahlenbereichen oder bei spalten.
   + Ich könnte direkt die Python Regexe dafür verwenden, das also weiterleiten.
+  (habe dazu aber eher nicht so den Bedarf)
 + Reziproke und n/m für w Befehl ermöglichen
+  (habe dazu aber eher nicht so den Bedarf)
 + andere Primzahlbedeutungen, außer 28 bis 32 (=Art des Geites, z.B. Gefühl oder Energie), der anderen Reihen auch hinzufügen
   + z.B. 17 bis 25, dass alle Pro-Innen-Primzahl-Organisationen immer auch so etwas wie einerseits ein Innenministerium sind, als auch eine Organisation des Verdeckten
 + Filtern wie die HTML: Dafür ein System ausdenken: Refactoring und Neuprogrammierung des ganzen Systems zur Filterung von Zeilen
+  (Obwohl es so wie es ist IMHO genügend ist.)
 + SQL like Relationen, z.B. 2:1, d.h. 3 Spalten, und auch alles wie bei SQL, d.h. z.B. n Spalten nach oben/unten: bei z.B. Abstand 1: Gegenspieler. Warum nicht gleich eine SQL (like) Sprache übernehmen, statt das Rad neu zu erfinden!
+  + rp Syntax "u6|7" z.B. für kombiniertes mathematisches Objekt der Vektor
+  (habe dazu aber eher nicht so den Bedarf)
 + alle Features von retaPrompt und der von reta ausgegebenen html bei beiden haben, weil nicht ganz beide ganz alles von beiden können, sondern nur fast: was fehlt da eigentlich noch? Aufgabe: herausfinden, was noch ungleich ist: detailliert austesten
 + Nein: Syntax highlighting: hä? Kann das eigentlich die Lib für AutoComplete ? Müssten doch nur Shell Sonderzeichen sein...
 + Was denn nun?: dinge bei zsh abschauen: was kann zsh alles?
@@ -85,16 +92,19 @@
   + dafür muss das reta überhaupt erstmal als Feature beherrschen
   + dafür sollte ich den Code vorher besser so haben, dass ich lieber Numpy Matritzen verwenden
     + denn sonst baut das auf altem Code auf und wann verwende ich endlich das schnellere Numpy für alle Matritzen?
+  (habe dazu aber eher nicht so den Bedarf)
 + Die Spaltennummer direkt als Zahl wählen können. (ist das so eine gute Idee?)
 + neues Farbschema: für html aber besser nur: primzahlen pro außen und pro innen und ggf. dessen vielfacher; Farbschema mit durch 3 teilbarem außerdem
   + Farbschema der Helligkeiten aus welchen Primzahlen welche Zahl besteht
   + Um bessere Farben für die html zu finden, sollte ich einen screenshot davon machen und diesen mit gimp so bearbeiten, dass ich exakt eine Farbe in eine andere ändere. In Gimp kann ich viele Farben ausprobieren.
 + retaPrompt skriptingfähig machen: nein, das muss nicht bald sein
+  (Nein, das ist Unsinn, das rp bereits geskriptet ist und damit in anderes Python eingebunden werden kann. Das bedeutet, rp ist bereits skriptingfähig.)
 **** 2.1. Multilingual: fast bereits erledigt
 + ts multilingual: ach, ich muss doch einfach nur zentral alle Text-Zeichenketten haushalten: das geht schnell zu programmieren! Dann mache ich das damit allen Übersetzern damit am einfachsten! Mehr muss nicht sein.
 + mit AI csvs übersetzen
 + "Mache mir eine Datenstruktur, in der nur alle diese strings drin auf die Art gespeichert sind, dass man mit dem python tool babel diese strings auch mit anderen strings für andere sprachen befüllen kann und programmiere mir, dass diese Datenstruktur aus nur diesen strings, die strings der einen großen Datenstruktur befüllt, sodass sie im einfachen Fall letztlich die gleiche Datenstruktur sein wird, nachdem sie wieder mit den strings befüllt wurde, die sie eigentlich ursprünglich hatte."
 ****  2.2. minder wichtig, aber geht schnell:
++ Halb-Mond-Halb-Sonne Zahlen, wie 12 und 18 markieren: Für die Zeilenfilterung
 + refactoring: viel zu ändern, aber geht schnell: bei rp: statt viele if's für einzelne Befehle: merge der dicts und sets mit schnittmenge der befehle bilden, wo dicts auf funktionen oder so zeigen, und dann diese funktionen zu einer sogenannten komposition bauen bla1().bla2().bla3() und diese komposition dann ausführen: elegantere feinere Lösung, die auch schneller läuft
   aber eigentlich nicht so wichtig
   + Weitere Farbschemen, wenigstens konzeptionalisieren: Aber eigentlich dürfte das Einprogrammieren nicht so das große Ding sein.
@@ -103,13 +113,12 @@
     1. Weil das so sehr viel besser geht,
     2. weil es anders nur ein Verschieben von Problemen ist und
     3. weil grundsätzliches Neudesign auch wichtiger ist und eigentlich nicht ewig Zeit beanspruchen dürfte: Es ist nicht hochkomplex.
-  + html zstd pro Spalte: sukkzessiv mit zentraler lib aber dennoch pro zelle komprimiert: so wie mehrere dateien auch zusammen verschlüsselt werden können, ohne dass die Kompression wieder von vorn beginnen muss: spart platz insgesamt.
+  + +html zstd pro Spalte: sukkzessiv mit zentraler lib aber dennoch pro zelle komprimiert: so wie mehrere dateien auch zusammen verschlüsselt werden können, ohne dass die Kompression wieder von vorn beginnen muss: spart platz insgesamt.+
   + --nocolor auch für html und bbcode für deren Tag als option umsetzen
   + --parameter=* könnte alle Unter-Parameter meinen, als Kommandozeilenargument. Dürfte nicht so lange dauern einprogrammiert zu werden
     besser gleich: regexen von allen, das man alles regexn könnte
   + Dass man bei Kombinationen filtern kann nach nur bestimmten Zahlen, dazu und hinweg - am Besten mit den bisherigeen allen Filtermethoden, den Bereichsangaben, aber auch für Brüche dann ja wohl - das aber vorher detailliert und umfangreich und lang genug vorher planen!
-  + KI die höheren antik griechischen Symbolnamen fortsetzen lassen: also nur content
-  + Halb-Mond-Halb-Sonne Zahlen, wie 12 und 18 markieren: Für die Zeilenfilterung
+  + KI die höheren antik griechischen Symbolnamen fortsetzen lassen und dann in die csv rein schreiben: also nur content
 **** 2.3. aus reta.py
 + kombinationen sortiert ausgeben und als Hierarchiebaum den Zahlenkombinationen entlang
 + kombinationen filterbar machen, dass nicht alle kombinationen bei einer Zahl immer angezeigt werden

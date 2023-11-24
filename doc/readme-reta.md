@@ -31,8 +31,8 @@ Besser die Readme aus Markdown mit einem Markdown-Leseprogramm lesen!
     * --zaehlung=
         * 1,2,3,4,5,...
     * --typ=
-        * sonne,mond,planet,schwarzesonne
-        * -sonne,-mond,-planet,-schwarzesonne
+        * sonne,mond,planet,schwarzesonne,SonneMitMondanteil
+        * -sonne,-mond,-planet,-schwarzesonne,-SonneMitMondanteil
     * --primzahlen=
         * aussenalle,innenalle,aussenerste,innenerste
         * -aussenalle,-innenalle,-aussenerste,-innenerste
@@ -105,13 +105,13 @@ Besser die Readme aus Markdown mit einem Markdown-Leseprogramm lesen!
     * --bedeutung= 
         * primzahlkreuz,inreta,vorzeichen,primzahlen,anwendungdersonnenundmonde,zählungen,jura,vollkommenheit,gestirn,konjunktiv,mechanismen
     * --gebrochengalaxie= 
-        * 22,23,7,3,12,15,4,8,21,9,20,13,18,11,10,16,6,2,14,17,5,19
+        * 17,3,8,15,12,5,4,9,23,22,13,16,18,20,7,6,14,11,2,10,21,19
     * --gebrochenuniversum= 
-        * 22,23,7,3,12,15,4,8,21,9,20,13,18,11,10,16,6,2,14,17,5,19
+        * 17,3,8,15,12,5,4,9,23,22,13,16,18,20,7,6,14,11,2,10,21,19
     * --gebrochenemotion= 
-        * 22,23,7,3,12,15,4,8,21,9,20,13,18,11,10,16,6,2,14,17,5,19
+        * 17,3,8,15,12,5,4,9,23,22,13,16,18,20,7,6,14,11,2,10,21,19
     * --gebrochengroesse= 
-        * 22,23,7,3,12,15,4,8,21,9,20,13,18,11,10,16,6,2,14,17,5,19
+        * 17,3,8,15,12,5,4,9,23,22,13,16,18,20,7,6,14,11,2,10,21,19
     * --symbole 
     * --eigenschaften= 
         * weisheit,rechte,unterlegen,streit,einklinken,familiebrauchen,bescheiden,selbstsucht,wissenschaft,arschloch,liebe,selbstlos,eintönig,abgeneigt,ehrlich,tragweite,wertlos,familiaer,sanft,vereinenverbinden,aehnlich,gut,sinn,zeit,egalitaerautoritaer,meinungen,meinungsintelligenz,sittlichkeit,führung,durchleuchten,foerdern,überheblich,liebepolung,egoismus,geltung,gleich,ueberleben

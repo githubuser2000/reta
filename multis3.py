@@ -26,7 +26,8 @@ def mult3(liste: list):
                     o3 |= {tuple(v)}
                 o6 = [o5 for o5 in set(o3) if 1 not in o5]
                 m3 |= set(o6)
-            print(str(arg) + ": " + str(list(m3)))
+            return arg, m3
+            # print(str(arg) + ": " + str(list(m3)))
 
 
 if __name__ == "__main__":

@@ -1944,7 +1944,8 @@ def PromptGrosseAusgabe(
             cmd_gave_output = True
 
             listeStrWerte = BereichToNumbers2(zahlenReiheKeineWteiler, False, 0)
-            mult3(listeStrWerte)
+            mult3arg, mult3m3 = mult3(listeStrWerte)
+            print(str(mult3arg) + ": " + str(list(mult3m3)))
 
         if Txt.hasWithoutABC({"multis"}) > 0:
             cmd_gave_output = True

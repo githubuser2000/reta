@@ -29,8 +29,8 @@ Secondary parameters start with 2 minus --.
     * --counting=
         * 1,2,3,4,5,...
     * -type=
-        * sun,moon,planet,black_sun
-        * -sun,-moon,-planet,-black_sun
+        * sun,moon,planet,black_sun,sunWithMoonParts
+        * -sun,-moon,-planet,-black_sun,-sunWithMoonParts
     * --primenumbers=
         * insidefirst,insideall,outsidefirst,outsideall
         * -insidefirst,-insideall,-outsidefirst,-outsideall
@@ -105,13 +105,13 @@ Secondary parameters start with 2 minus --.
     * --meaning= 
         * primecross,inreta,signbefore,primenumbers,applicationofsunsandmoons,ranges,law,perfection,spaceObject,subjunctive,mechanisms
     * --gebrochengalaxie_fractionalgalaxy= 
-        * 10,7,8,16,20,5,15,11,19,3,17,6,12,23,2,21,22,13,18,4,9,14
+        * 18,15,13,21,3,9,19,2,5,12,8,20,11,22,6,4,16,17,23,7,10,14
     * --gebrochenuniversum_fractionaluniverse= 
-        * 10,7,8,16,20,5,15,11,19,3,17,6,12,23,2,21,22,13,18,4,9,14
+        * 18,15,13,21,3,9,19,2,5,12,8,20,11,22,6,4,16,17,23,7,10,14
     * --fractionedemotion= 
-        * 10,7,8,16,20,5,15,11,19,3,17,6,12,23,2,21,22,13,18,4,9,14
+        * 18,15,13,21,3,9,19,2,5,12,8,20,11,22,6,4,16,17,23,7,10,14
     * --fractionalnumberedstructuresize= 
-        * 10,7,8,16,20,5,15,11,19,3,17,6,12,23,2,21,22,13,18,4,9,14
+        * 18,15,13,21,3,9,19,2,5,12,8,20,11,22,6,4,16,17,23,7,10,14
     * --symbols 
     * --properties= 
         * wisdom,rights,inferior,dispute,latchOn,familyneeds,humble,selfishness,science,asshole,love,selfless,monotonous,averse,honest,scope,worthless,familial,soft,uniteConnect,similar,good,senseAndMeaning,time,egalitarianAuthoritarian,opinions,opinionintelligence,morality,leadership,X-ray,encourage,arrogant,polarityOfLove,egoism,cachetPrestigeValidity,equal,survive

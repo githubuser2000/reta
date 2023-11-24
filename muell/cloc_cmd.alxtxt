@@ -1,3 +1,4 @@
 cloc --exclude-dir=inspiration,.git,unit-testing,include,bin,build,__pycache_,reta.egg-info,lib --exclude-lang='PO File',CSV,JSON,Markdown .
 cloc *.{js,py,sh} i18n/words.py
 cloc --exclude-dir=inspiration,.git,include,bin,build,__pycache_,reta.egg-info,lib --exclude-lang='PO File',CSV,JSON,Markdown .
+cloc --exclude-dir=inspiration,.git,bin,build,__pycache_,reta.egg-info,lib --exclude-lang='PO File',CSV,JSON,Markdown,JavaScript

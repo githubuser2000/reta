@@ -117,6 +117,7 @@ zeilenTypen = [
     i18n.zeilenParas["mond"],
     i18n.zeilenParas["planet"],
     i18n.zeilenParas["schwarzesonne"],
+    i18n.zeilenParas["SonneMitMondanteil"],
 ]
 zeilenZeit = [
     i18n.zeilenParas["heute"],

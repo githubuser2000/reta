@@ -713,6 +713,31 @@ def primRepeat(n):
 
     return f
 
+def primRepeat2(n):
+    n.reverse()
+    c = 1
+    b = None
+    d = []
+    for a in n:
+        if b == a:
+            c += 1
+        else:
+            c = 1
+        d += [[a, c]]
+        b = a
+    d.reverse()
+    b = None
+    f = []
+    for e, g in d:
+        if b != e:
+            if g == 1:
+                f += [(int(e), 1)]
+            else:
+                f += [(int(e), int(g))]
+        b = e
+
+    return f
+
 
 classify = i18n.classify
 

@@ -197,7 +197,8 @@ zeilenParas: dict = {
     "innenerste": _("innenerste"),
     "aussenalle": _("aussenalle"),
     "innenalle": _("innenalle"),
-    "invertieren": _("invertieren")
+    "invertieren": _("invertieren"),
+    "SonneMitMondanteil": _("SonneMitMondanteil"),
 }
 
 zeilenParasLen = {key: len(value) for (key, value) in zeilenParas.items()}
