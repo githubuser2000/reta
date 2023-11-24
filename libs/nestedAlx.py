@@ -53,19 +53,19 @@ ifRetaAnfang = False
 
 
 def sort_key(key):
-    if not key.startswith("1"):
+    if not key.startswith("1") and not key[:3] == "EIG":
         if key in (
             i18n.befehle2["absicht"],
             i18n.befehle2["hilfe"],
             i18n.befehle2["kurzbefehle"],
-        ):
+        ) and len(key) != 1:
             return (0, key)
         elif key in (
             i18n.befehle2["universum"],
             i18n.befehle2["thomas"],
             i18n.befehle2["befehle"],
             i18n.befehle2["groesse"],
-        ):
+        ) and len(key) != 1:
             return (1, key)
         elif key in (
             i18n.befehle2["reta"],
@@ -73,19 +73,37 @@ def sort_key(key):
             i18n.befehle2["geist"],
             i18n.befehle2["emotion"],
             i18n.befehle2["impulse"],
-        ):
+        ) and len(key) != 1:
             return (2, key)
         elif key in (
             i18n.befehle2["loggen"],
             i18n.befehle2["nichtloggen"],
             i18n.befehle2["exit"],
             i18n.befehle2["quit"],
-        ):
+        ) and len(key) != 1:
             return (3, key)
-        else:
+        elif len({key} & set(i18n.befehle2.values())) > 0 and not (key[:3] not in ("15_","16_","EIG")) and len(key) != 1:
             return (4, key)
+        elif key in i18n.befehle and len(key) != 1:
+            return (5, key)
+        elif not key.startswith("1") and len(key) != 1:
+            return (6, key)
+        elif len(key.strip()) == 1:
+            return (7, key)
+        elif key[:3] == "15_" or key == "15":
+            return (8, key)
+        elif key[:3] == "16_" or key == "16":
+            return (9, key)
+        elif key.startswith("1") and len(key) != 1:
+            return (10, key)
+        elif key[:3] == "EIG":
+            return (11, key)
+        else:
+            return (12, key)
+    elif key[:3] == "EIG":
+        return (14, key)
     else:
-        return (5, key)
+        return (13, key)
 
 
 befehle2 = set(sorted(befehle2, key=lambda item: sort_key(item)))

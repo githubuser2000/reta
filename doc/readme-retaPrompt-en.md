@@ -101,6 +101,7 @@ Line specifications or number ranges for other specifications can be (without qu
 
 -   The commands beginning with 15\_ together form a tree structure and are output commands of the basic structures and mind (15), as "u" or "i" are output commands. A line specification is needed. Then something can be output.
 -   The commands that start with EIG ... act together with a line specification concern the properties of star polygons and uniform polygons.
+-   "invert" choses neighbor lines
 
 ### other commands {#other-commands}
 
