@@ -214,7 +214,6 @@ hauptForNeben: dict = {
     "nichts": _("nichts"),
 }
 
-
 ausgabeArt: dict = {
     "bbcode": _("bbcode"),
     "html": _("html"),
@@ -582,6 +581,7 @@ ParametersMain: NamedTuple = namedtuple(
     "ParametersMain",
     "wichtigste wichtigste2 religionen galaxie strukturgroesse universum multiversum wirtschaft menschliches procontra licht bedeutung symbole Multiplikationen konzept konzept2 inkrementieren operationen universummetakonkret primzahlwirkung gebrochenuniversum gebrochengalaxie gebrochenemotion gebrochengroesse primvielfache planet strukturenkleinere grundstrukturen teilchen alles",
 )
+
 konzeptE = {"konzept": _("konzept"), "konzept2": _("konzept2")}
 gebrochenUniGal = {
     "gebrochenuniversum": (
@@ -709,6 +709,18 @@ ParametersMain: NamedTuple = ParametersMain(
     (_("Teilchen-Meta-Physik"), _("teilchen")),
     (_("alles"),),
 )
+
+haupt2neben = {hauptForNeben["zeilen"]: zeilenParas,
+               hauptForNeben["ausgabe"]: ausgabeParas,
+               hauptForNeben["h"]: [],
+               hauptForNeben["help"]: [],
+               hauptForNeben["nichts"]: [],
+               hauptForNeben["debug"]: [],
+               hauptForNeben["spalten"]: [b for a in ParametersMain for b in a],
+               hauptForNeben["kombination"]: kombiMainParas}
+
+#haupt2nebenSpalten = {}
+
 
 # x("ParametersMain", ParametersMain)
 
@@ -4445,20 +4457,19 @@ class retaPrompt:
         'Wenn im Zähler oder Nenner eine 1 ist, so werden davon oft (nicht immer) keine Vielfacher gebildet.\nFür Brüche "n/1=ganze Zahl" gibt es die gewöhnlichen Befehle für ganze Zahlen.\nDas ist eine Design-Entscheidung, die getroffen worden ist.'
     )
 
-
-mainParaCmds: dict = {
+hauptForNeben: dict = {
     "zeilen": _("zeilen"),
     "spalten": _("spalten"),
-    tuple(tableHandling.parameterName.keys())[0]: tuple(
-        tableHandling.parameterName.values()
-    )[0],
+    "kombination": _("kombination"),
     "ausgabe": _("ausgabe"),
-    "debug": _("debug"),
     "h": _("h"),
     "help": _("help"),
+    "debug": _("debug"),
     "nichts": _("nichts"),
 }
 
+
+mainParaCmds: dict = hauptForNeben
 
 # @dataclass
 class csvFileNames:

@@ -1,4 +1,4 @@
-#!/usr/bin/env pypy3
+#!/usr/bin/env pypye
 # -*- coding: utf-8 -*-
 import os
 import sys
@@ -2892,6 +2892,91 @@ def verdreheWoReTaBefehl(text1: str, text2: str, text3: str, PromptMode: PromptM
         return text2, text1, custom_split(text2)
     return text1, text2, text3
 
+def regExReplace(Txt) -> list:
+    ifReta: bool = True if Txt.liste[:1] == "reta" else False
+    listenListe: list = []
+    foundParas4value: list = []
+    #print({liste3[0]: liste3[1] for liste1 in retaProgram.dataDict[0].values() for liste2 in liste1 for liste3 in liste2})
+    #print(retaProgram.dataDict[0].values())
+    def findregEx(regex, i = 0) -> list:
+        def lastRetaHauptPara() -> str:
+            for el in reversed(listenListe):
+                if el[:1] == "-" and el[:2] != "--":
+                    try:
+                        return i18n.hauptForNeben[el[1:]]
+                    except:
+                        return ""
+            return ""
+
+        allResultTokens: list = []
+        newTokens: list = []
+        if ifReta:
+            hauptCmd = lastRetaHauptPara()
+            if listenListe[-1][:1] == "-" and listenListe[-1][:2] != "--":
+                for el in i18n.hauptForNeben.values():
+                    if re.match(regex, el):
+                        newTokens += [el]
+
+            elif hauptCmd == "":
+                for el in i18n.hauptForNeben.values():
+                    if re.match(regex, el):
+                        newTokens += [el]
+            elif len(listenListe) > 0: #and listenListe[-1][:2] == "--":
+                try:
+                    if i != 0 and hauptCmd == i18n.hauptForNeben["spalten"]:
+                        spaltenParaNvalue: dict = {}
+                        for liste1 in retaProgram.dataDict[0].values():
+                            for liste2 in liste1:
+                                for liste3 in liste2:
+                                    try:
+                                        spaltenParaNvalue[liste3[0]] |= {liste3[1]}
+                                    except KeyError:
+                                        spaltenParaNvalue[liste3[0]] = {liste3[1]}
+
+                        if i == 1:
+                            foundParas4value = []
+                            for para4value in spaltenParaNvalue.keys():
+                                if re.match(regex, para4value):
+                                    foundParas4value += [para4value]
+                        elif i == 2:
+                            for para4value in foundParas4value:
+                                if len(spaltenParaNvalue[para4value]) == 0:
+                                    newTokens += [para4value]
+                                else:
+                                    for values4para in spaltenParaNvalue[para4value]:
+                                        for value in values4para:
+                                            if re.match(regex, value):
+                                                newTokens += ["".join((para4value, "=", value))]
+                    else:
+                        for haupt in list(i18n.haupt2neben.keys()) + list(i18n.hauptForNeben.values()):
+                            if re.match(regex, haupt[hauptCmd]):
+                                newTokens += [el]
+                except KeyError:
+                    return []
+            else:
+                return []
+
+
+        else:
+            for el in i18n.befehle2.values():
+                if re.match(regex, el):
+                    newTokens += [el]
+        return newTokens
+
+    for listenToken in Txt.liste:
+        if "=" in listenToken:
+            eqThings = []
+            for i, eqThing in enumerate(listenToken.split("=")):
+                if listenToken[:2] == "r\"" and listenToken[-1] == "\"":
+                    eqThings += [findregEx(eqThing, i+1)]
+                else:
+                    eqThings += [eqThing]
+            listenListe += [eqThings]
+        elif listenToken[:2] == "r\"" and listenToken[-1] == "\"":
+            listenListe += [[findregEx(listenToken)]]
+        else:
+            listenListe += [[listenToken]]
+    return [liste[0] if len(liste) == 1 else "".join((liste[0], "=", liste[1])) for liste in listenListe]
 
 def promptVorbereitungGrosseAusgabe(
     platzhalter, promptMode, promptMode2, promptModeLast, text, textDazu0
@@ -3022,6 +3107,7 @@ def promptVorbereitungGrosseAusgabe(
         Txt.liste = listeNeu
     if Txt.liste[:1] != ["reta"]:
         Txt.liste = list(Txt.menge)
+    Txt.liste = regExReplace(Txt)
     return (
         IsPureOnlyReTaCmd,
         brueche,
