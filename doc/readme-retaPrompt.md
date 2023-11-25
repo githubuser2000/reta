@@ -64,6 +64,7 @@ Besser die Readme Markdown mit einem Markdown-Leseprogramm lesen!
 -   Kurzbefehl "e" macht, dass Zeilen mit fast keiner Information nicht angezeigt werden, also Zeilen mit nur einem Minus oder Fragezeichen
 -   Der Befehl "abstand", zusammen 2 weiteren Angaben durch Leerzeichen getrennt, einer Zahl und zwei Zahlen zwischen denen unmittelbar ein Bindestrich steht, z.B. "abstand 7 17-25": berechnet einfach die Subtraktion zwischen der Zahl 7 und dem Zahlenbereich 17 bis 25.
 -   der Befehl "leeren" macht den Bildschirm frei
+-   Man kann auch Python Regexe verwenden: Befehl '2 _"absi"' ergibt zusammmen': '2 absichten absicht'. Sehr viel komplizierte Dinge sind möglich! (Python verwendet r"" statt _"")
 
 ### mathematisch Ausgabe-Befehle {#mathematisch-ausgabe-befehle}
 
