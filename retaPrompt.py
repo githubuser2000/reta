@@ -596,7 +596,6 @@ def speichern(ketten, platzhalter, text):
 
     # textDazu0 = platzhalter.split()
     textDazu0 = stextX
-
     return ketten, Txt
 
 
@@ -2215,7 +2214,6 @@ def zeiln1234create(
     maxNum,
     zahlenReiheKeineWteiler,
 ):
-    # alxp(zahlenBereichC)
     if len(bruch_GanzZahlReziproke) > 0 and textHatZiffer(bruch_GanzZahlReziproke):
         zeiln3 = vorherVonAusschnittOderZaehlung(Txt, bruch_GanzZahlReziproke)
         zeiln4 = ""
@@ -2291,6 +2289,7 @@ def zeiln1234create(
     else:
         zeiln1 = ""
         zeiln2 = ""
+
     return zeiln1, zeiln2, zeiln3, zeiln4
 
 
@@ -2333,6 +2332,14 @@ def retaExecuteNprint(
         ],
     ] + returnOnlyParasAsList(stextE)
     kette += ketten
+    for el in kette:
+        vorhervonaus: set = set()
+        if i18n.zeilenParas["vorhervonausschnitt"]+"=" in el:
+            vorhervonaus |= {el}
+    if len(vorhervonaus) > 1:
+        kette.remove(i18n.zeilenParas["vorhervonausschnitt"]+"=0")
+
+
     if (
         i18n.befehle2["keineEinZeichenZeilenPlusKeineAusgabeWelcherBefehlEsWar"]
         not in stextE

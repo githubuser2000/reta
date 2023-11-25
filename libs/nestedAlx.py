@@ -53,7 +53,7 @@ ifRetaAnfang = False
 
 
 def sort_key(key):
-    if not key.startswith("1") and not key[:3] == [a[:3] for a in i18n.EIGS_N_R]:
+    if not key.startswith("1") and not any((key[:3] == a[:3] for a in i18n.EIGS_N_R)):
         if key in (
             i18n.befehle2["absicht"],
             i18n.befehle2["hilfe"],
@@ -82,7 +82,7 @@ def sort_key(key):
             i18n.befehle2["quit"],
         ) and len(key) != 1:
             return (3, key)
-        elif len({key} & set(i18n.befehle2.values())) > 0 and not (key[:3] not in ("15_","16_","EIG")) and len(key) != 1:
+        elif len({key} & set(i18n.befehle2.values())) > 0 and not (key[:3] not in ("15_","16_",i18n.EIGS_N_R[1][:3]),i18n.EIGS_N_R[0][:3]) and len(key) != 1:
             return (4, key)
         elif key in i18n.befehle and len(key) != 1:
             return (5, key)
@@ -101,12 +101,12 @@ def sort_key(key):
                 return (11, key)
             else:
                 return (11, key)
-        elif key[:3] == [a[:3] for a in i18n.EIGS_N_R]:
-            return (12, key)
+        elif any((key[:3] == a[:3] for a in i18n.EIGS_N_R)):
+            return (19, key)
         else:
             return (13, key)
-    elif key[:3] in [a[:3] for a in i18n.EIGS_N_R]:
-        return (15, key)
+    elif any((key[:3] == a[:3] for a in i18n.EIGS_N_R)):
+        return (19, key)
     else:
         return (14, key)
 

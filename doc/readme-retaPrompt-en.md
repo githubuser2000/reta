@@ -63,7 +63,7 @@ weight = -7
 -   Short command "e" makes that lines with almost no information are not displayed, i.e. lines with only a minus or question mark.
 -   The command "distance", together 2 other information separated by spaces, a number and two numbers between which there is immediately a hyphen, e.g. "distance 7 17-25": simply calculates the subtraction between the number 7 and the number range 17 to 25.
 -   Command "clear" clears screen.
--   You could also use Python regexes: command '2 _"intent"' results into': '1 intent intentions'. Much more complicated stuff is possible! (Python uses r"" instead _"")
+-   You could also use Python regexes: command '2 _"inten"' results into': '1 intent intentions'. Much more complicated stuff is possible! (Python uses r"" instead _""). This regex syntax is also possible before and after an equal sign, so paramater and its value.
 
 ###mathematical-output-commands {#mathematical-output-commands}
 
