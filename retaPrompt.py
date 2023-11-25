@@ -2905,6 +2905,7 @@ def regExReplace(Txt) -> list:
     ifReta: bool = True if Txt.liste[:1] == ["reta"] else False
     neueListe: list = []
     foundParas4value: list = []
+    i: int = -1
     def lastRetaHauptPara() -> str:
         for el in reversed(neueListe):
             if el[:1] == "-" and el[:2] != "--":
@@ -2913,64 +2914,75 @@ def regExReplace(Txt) -> list:
                 except:
                     return ""
         return ""
-    def findregEx(regex, i:int = 0, foundParas4value: list = []) -> list:
-        regex = r""+regex[2:-1]
+    def allEqSignAbarbeitung(foundParas4value, newTokens, hauptCmd,onlyGen = False):
+        spaltenParaNvalue: dict = {}
+        if hauptCmd == i18n.hauptForNeben["spalten"]:
+            if len(spaltenParaNvalueS["spalten"]) == 0:
+                for liste1 in retaProgram.dataDict[0].values():
+                    for liste2 in liste1:
+                        for liste3 in liste2:
+                            try:
+                                spaltenParaNvalue[liste3[0]] |= {liste3[1]}
+                            except KeyError:
+                                spaltenParaNvalue[liste3[0]] = {liste3[1]}
+                spaltenParaNvalueS["spalten"] = spaltenParaNvalue
+            else:
+                spaltenParaNvalue = spaltenParaNvalueS["spalten"]
+        elif hauptCmd == i18n.hauptForNeben["zeilen"]:
+            if len(spaltenParaNvalueS["zeilen"]) == 0:
+                spaltenParaNvalue = {zeilenPara: {''} for zeilenPara in i18n.haupt2neben[i18n.hauptForNeben["zeilen"]]}
+                spaltenParaNvalueS["zeilen"] = spaltenParaNvalue
+            else:
+                spaltenParaNvalue = spaltenParaNvalueS["zeilen"]
+        elif hauptCmd == i18n.hauptForNeben["kombination"]:
+            if len(spaltenParaNvalueS["kombination"]) == 0:
+                spaltenParaNvalue = {i18n.kombiMainParas["galaxie"]: {text for tupel in i18n.kombiParaNdataMatrix.values() for text in tupel}, i18n.kombiMainParas["universum"]: {text for tupel in i18n.kombiParaNdataMatrix2.values() for text in tupel}}
+                spaltenParaNvalueS["kombination"] = spaltenParaNvalue
+            else:
+                spaltenParaNvalue = spaltenParaNvalueS["kombination"]
+        elif hauptCmd == i18n.hauptForNeben["ausgabe"]:
+            if len(spaltenParaNvalueS["ausgabe"]) == 0:
+                spaltenParaNvalue = {ausgabePara: {''} for ausgabePara in i18n.haupt2neben[i18n.hauptForNeben["ausgabe"]]}
+                eqAusgabeParas = i18n.nested.artWort
+                spaltenParaNvalue[i18n.ausgabeParas["art"]] = set(i18n.ausgabeArt.keys())
+                #spaltenParaNvalue[ausgabeParas["zeit"]] = set(i18n.)
+                #spaltenParaNvalue[ausgabeParas["typ"]] = set(i18n.)
+                spaltenParaNvalueS["ausgabe"] = spaltenParaNvalue
+            else:
+                spaltenParaNvalue = spaltenParaNvalueS["ausgabe"]
+        if onlyGen:
+            return
+        if i == 0:
+            for para4value in spaltenParaNvalue.keys():
+                if any(re.findall(regex, para4value)) or any(re.findall(regex, para4value+"=")):
+                    try:
+                        foundParas4value += [para4value]
+                    except NameError:
+                        foundParas4value: list = [para4value]
+        elif i == 1:
+            for para4value in foundParas4value:
+                if spaltenParaNvalue[para4value] == {''}:
+                    # newTokens += ["--"+para4value]
+                    pass
+                else:
+                    for values4para in spaltenParaNvalue[para4value]:
+                        if any(re.findall(regex, values4para)) or any(re.findall(regex, "="+values4para)):
+                            newTokens += ["--"+("".join((para4value, "=", values4para)))]
+            foundParas4value = []
+        elif i == -1:
+            for para4value in [para4value for para4value, value in spaltenParaNvalue.items() if value == {''}]:
+                if any(re.findall(regex, para4value)) or any(re.findall(regex, "--"+para4value)):
+                    newTokens += ["--"+para4value]
+            for haupt in i18n.hauptForNeben.values():
+                if any(re.findall(r""+regex, haupt)) or any(re.findall(r""+regex, "-"+haupt)):
+                    newTokens += ["-"+haupt]
+        #print(newTokens)
+        #print("A")
+    def findregEx(regex, foundParas4value: list = []) -> list:
         def immerHauptParaAbarbeitung(newTokens):
             for haupt in i18n.hauptForNeben.values():
                 if any(re.findall(r""+regex, haupt)) or any(re.findall(r""+regex, "-"+haupt)):
                     newTokens += ["-"+haupt]
-        def allEqSignAbarbeitung(foundParas4value, newTokens, hauptCmd):
-            spaltenParaNvalue: dict = {}
-            if hauptCmd == i18n.hauptForNeben["spalten"]:
-                if len(spaltenParaNvalueS["spalten"]) == 0:
-                    for liste1 in retaProgram.dataDict[0].values():
-                        for liste2 in liste1:
-                            for liste3 in liste2:
-                                try:
-                                    spaltenParaNvalue[liste3[0]] |= {liste3[1]}
-                                except KeyError:
-                                    spaltenParaNvalue[liste3[0]] = {liste3[1]}
-                    spaltenParaNvalueS["spalten"] = spaltenParaNvalue
-                else:
-                    spaltenParaNvalue = spaltenParaNvalueS["spalten"]
-            elif hauptCmd == i18n.hauptForNeben["zeilen"]:
-                if len(spaltenParaNvalueS["zeilen"]) == 0:
-                    spaltenParaNvalue = {zeilenPara: {''} for zeilenPara in i18n.haupt2neben[i18n.hauptForNeben["zeilen"]]}
-                    spaltenParaNvalueS["zeilen"] = spaltenParaNvalue
-                else:
-                    spaltenParaNvalue = spaltenParaNvalueS["zeilen"]
-            elif hauptCmd == i18n.hauptForNeben["ausgabe"]:
-                if len(spaltenParaNvalueS["ausgabe"]) == 0:
-                    spaltenParaNvalue = {ausgabePara: {''} for ausgabePara in i18n.haupt2neben[i18n.hauptForNeben["ausgabe"]]}
-                    eqAusgabeParas = i18n.nested.artWort
-                    spaltenParaNvalue[i18n.ausgabeParas["art"]] = set(i18n.ausgabeArt.keys())
-                    #spaltenParaNvalue[ausgabeParas["zeit"]] = set(i18n.)
-                    #spaltenParaNvalue[ausgabeParas["typ"]] = set(i18n.)
-                else:
-                    spaltenParaNvalue = spaltenParaNvalueS["ausgabe"]
-            if i == 1:
-                for para4value in spaltenParaNvalue.keys():
-                    if any(re.findall(regex, para4value)) or any(re.findall(regex, para4value+"=")):
-                        try:
-                            foundParas4value += [para4value]
-                        except NameError:
-                            foundParas4value: list = [para4value]
-            elif i == 2:
-                for para4value in foundParas4value:
-                    if spaltenParaNvalue[para4value] == {''}:
-                        newTokens += [para4value]
-                    else:
-                        for values4para in spaltenParaNvalue[para4value]:
-                            if any(re.findall(regex, values4para)) or any(re.findall(regex, "="+values4para)):
-                                newTokens += ["--"+("".join((para4value, "=", values4para)))]
-                foundParas4value = []
-            elif i == 0:
-                for para4value in [para4value for para4value, value in spaltenParaNvalue.items() if value == {''}]:
-                    if any(re.findall(regex, para4value)) or any(re.findall(regex, "--"+para4value)):
-                        newTokens += ["--"+para4value]
-                for haupt in i18n.hauptForNeben.values():
-                    if any(re.findall(r""+regex, haupt)) or any(re.findall(r""+regex, "-"+haupt)):
-                        newTokens += ["-"+haupt]
 
         allResultTokens: list = []
         newTokens: list = []
@@ -2980,16 +2992,13 @@ def regExReplace(Txt) -> list:
             if len(neueListe) > 0:
                 if True:
                 #try:
-                    if hauptCmd == i18n.hauptForNeben["spalten"]:
-                        allEqSignAbarbeitung(foundParas4value, newTokens, hauptCmd)
-                    elif hauptCmd == i18n.hauptForNeben["ausgabe"]:
-                        allEqSignAbarbeitung(foundParas4value, newTokens, hauptCmd)
-                    elif hauptCmd == i18n.hauptForNeben["zeilen"]:
+                    if hauptCmd in (i18n.hauptForNeben["kombination"],i18n.hauptForNeben["zeilen"], i18n.hauptForNeben["spalten"], i18n.hauptForNeben["ausgabe"]):
                         allEqSignAbarbeitung(foundParas4value, newTokens, hauptCmd)
                         #for haupt in i18n.haupt2neben[i18n.hauptForNeben["zeilen"]]:
                         #    if any(re.findall(r""+regex, haupt)) or any(re.findall(r""+regex, "-"+haupt)):
                         #        newTokens += ["-"+haupt]
-                    immerHauptParaAbarbeitung(newTokens)
+                    if len(foundParas4value) == 0:
+                        immerHauptParaAbarbeitung(newTokens)
             else:
                 return []
         else:
@@ -3002,27 +3011,73 @@ def regExReplace(Txt) -> list:
         eqThings2 = listenToken.split("=")
         hauptCmd = lastRetaHauptPara()
         if len(eqThings2) > 1:
-            eqThings: list = []
+            eqThings: list = [""]
             flag = False
+            flag2 = False
             for i, eqThing in enumerate(eqThings2):
-                if len(eqThings) > 0:
-                    eqThings[-1] += "="
                 if eqThing[:2] == "_\"" and eqThing[-1] == "\"":
-                    eqThings += findregEx(eqThing, i+1, foundParas4value)
-                else:
-                    if len(eqThings) > 0:
-                        eqThings[-1] += eqThing
+                    regex = r""+eqThing[2:-1]
+                    if flag2 and False:
+                        allEqSignAbarbeitung(None, None, None, onlyGen=True)
+                        if hauptCmd == i18n.hauptForNeben["spalten"]:
+                            found2 = []
+                            eqThings3 = findregEx(regex, foundParas4value)
+                            #print(eqThings3)
+                            for firstGefunden in eqThings:
+                                passend = list(set(spaltenParaNvalueS["spalten"][firstGefunden]) | set(eqThings3))
+                                if len(passend) > 0:
+                                    found2 += passend
+                            #print(found2)
+                        elif hauptCmd == i18n.hauptForNeben["kombination"]:
+                            found2 = []
+                            eqThings3 = findregEx(regex, foundParas4value)
+                            for firstGefunden in eqThings:
+                                passend = list(set(spaltenParaNvalueS["kombination"][firstGefunden]) | set(eqThings3))
+                                if len(passend) > 0:
+                                    found2 += passend
+                        for found in eqThings:
+                            for found3 in found2:
+                                eqThings += ["".join(("--",found, found3))]
                     else:
-                        eqThings += [eqThing]
-                    foundParas4value += [eqThing[2:]]
+                        eqThings = findregEx(regex, foundParas4value)
+                    #print(eqThings)
+                    flag = True
+                else:
+                    if flag:
+                        allEqSignAbarbeitung(None, None , None, onlyGen = True)
+                        if hauptCmd == i18n.hauptForNeben["spalten"]:
+                            found2: dict = {}
+                            for found in foundParas4value:
+                                passend = [a for a in list(set(spaltenParaNvalueS["spalten"][found]) | set(eqThing)) if len(a) > 1]
+                                if len(passend) > 0:
+                                    found2[found] = passend
+                            for key, values in found2.items():
+                                if eqThing in spaltenParaNvalueS["spalten"][key]:
+                                    eqThings += ["".join(("--",key, "=", eqThing))]
+                        else:
+                            eqThing4 = []
+                            for i, Eq in enumerate(eqThings):
+                                 eqThing4 += [Eq+eqThing]
+                            eqThings = eqThing4
+
+                    else:
+                        if "=" not in eqThings[-1]:
+                            eqThings[-1] += eqThing + "="
+                        else:
+                            eqThings[-1] += eqThing
+                        foundParas4value += [eqThing[2:]]
+                flag2 = True
 
             foundParas4value = []
             neueListe += [" ".join(eqThings)]
         elif listenToken[:2] == "_\"" and listenToken[-1] == "\"":
-            neueListe += findregEx(listenToken)
+            regex = r""+listenToken[2:-1]
+            i = -1
+            neueListe += findregEx(regex)
         else:
             neueListe += [listenToken]
-    # print(" ".join(neueListe))
+    #print(" ".join(neueListe))
+    #exit()
     return neueListe
 
 def promptVorbereitungGrosseAusgabe(
