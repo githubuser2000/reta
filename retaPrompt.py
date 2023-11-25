@@ -2914,7 +2914,6 @@ def regExReplace(Txt) -> list:
                     newTokens += ["-"+haupt]
         def allEqSignAbarbeitung(foundParas4value, newTokens, hauptCmd):
             spaltenParaNvalue: dict = {}
-            print(hauptCmd)
             if hauptCmd == i18n.hauptForNeben["spalten"]:
                 if len(spaltenParaNvalueS["spalten"]) == 0:
                     for liste1 in retaProgram.dataDict[0].values():
@@ -2940,11 +2939,8 @@ def regExReplace(Txt) -> list:
                     spaltenParaNvalue[i18n.ausgabeParas["art"]] = set(i18n.ausgabeArt.keys())
                     #spaltenParaNvalue[ausgabeParas["zeit"]] = set(i18n.)
                     #spaltenParaNvalue[ausgabeParas["typ"]] = set(i18n.)
-                    #print("XXXXX")
-                    #print(spaltenParaNvalue)
                 else:
                     spaltenParaNvalue = spaltenParaNvalueS["ausgabe"]
-                    #print(spaltenParaNvalue)
             if i == 1:
                 for para4value in spaltenParaNvalue.keys():
                     if any(re.findall(regex, para4value)) or any(re.findall(regex, para4value+"=")):
@@ -2954,10 +2950,7 @@ def regExReplace(Txt) -> list:
                             foundParas4value: list = [para4value]
             elif i == 2:
                 for para4value in foundParas4value:
-                    print(spaltenParaNvalue)
-                    print(hauptCmd)
                     if spaltenParaNvalue[para4value] == {''}:
-                        print("A")
                         newTokens += [para4value]
                     else:
                         for values4para in spaltenParaNvalue[para4value]:
@@ -2980,11 +2973,9 @@ def regExReplace(Txt) -> list:
             if len(neueListe) > 0:
                 if True:
                 #try:
-                    print(hauptCmd)
                     if hauptCmd == i18n.hauptForNeben["spalten"]:
                         allEqSignAbarbeitung(foundParas4value, newTokens, hauptCmd)
                     elif hauptCmd == i18n.hauptForNeben["ausgabe"]:
-                        print("bla")
                         allEqSignAbarbeitung(foundParas4value, newTokens, hauptCmd)
                     elif hauptCmd == i18n.hauptForNeben["zeilen"]:
                         allEqSignAbarbeitung(foundParas4value, newTokens, hauptCmd)
@@ -3003,36 +2994,28 @@ def regExReplace(Txt) -> list:
     for listenToken in Txt.liste:
         eqThings2 = listenToken.split("=")
         hauptCmd = lastRetaHauptPara()
-        print(hauptCmd)
         if len(eqThings2) > 1:
             eqThings: list = []
             flag = False
-            print(eqThings2)
             for i, eqThing in enumerate(eqThings2):
                 if len(eqThings) > 0:
                     eqThings[-1] += "="
                 if eqThing[:2] == "_\"" and eqThing[-1] == "\"":
-                    print("SDF")
-                    #print(listenToken)
                     eqThings += findregEx(eqThing, i+1, foundParas4value)
-                    print("JAAA")
                 else:
                     if len(eqThings) > 0:
                         eqThings[-1] += eqThing
                     else:
                         eqThings += [eqThing]
+                    foundParas4value += [eqThing[2:]]
 
             foundParas4value = []
             neueListe += [" ".join(eqThings)]
         elif listenToken[:2] == "_\"" and listenToken[-1] == "\"":
-            #print("S2DFi2")
-            #print(listenToken)
             neueListe += findregEx(listenToken)
         else:
             neueListe += [listenToken]
-            #print(neueListe)
-        #print(neueListe)
-    print(" ".join(neueListe))
+    # print(" ".join(neueListe))
     return neueListe
 
 def promptVorbereitungGrosseAusgabe(
