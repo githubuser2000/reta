@@ -556,9 +556,9 @@ def speichern(ketten, platzhalter, text):
                 replacements = i18nRP.replacements
                 if len(textUndPlatzHalterNeu) > 0 and Txt2.liste[0] not in [
                     "reta",
-                    "shell",
-                    "python",
-                    "abstand",
+                    i18n.befehle2["shell"],
+                    i18n.befehle2["python"],
+                    i18n.befehle2["abstand"],
                 ]:
                     listeNeu: list = []
                     for token in Txt2.liste:
@@ -797,7 +797,7 @@ def PromptScope():
 
 
 def vorherVonAusschnittOderZaehlung(Txt: TXT, bereichsAngabe: str) -> str:
-    if Txt.hasWithoutABC({"range", "R"}):
+    if Txt.hasWithoutABC({i18n.befehle2["range"], i18n.befehle2["R"]}):
         return "".join(("--", i18n.zeilenParas["zaehlung"], "=", bereichsAngabe))
     else:
         return "".join(
@@ -852,7 +852,7 @@ def PromptGrosseAusgabe(
         if "--" + i18n.ausgabeParas["nocolor"] in Txt.listeE:
             print("[code]" + Txt.text + "[/code]")
         else:
-            cliout("[code]" + Txt.text + "[/code]", True, "bbcode")
+            cliout("[code]" + Txt.text + "[/code]", True, i18n.ausgabeArt["bbcode"])
     if (
         ifKurzKurz
         and i18n.befehle2["keineEinZeichenZeilenPlusKeineAusgabeWelcherBefehlEsWar"]
@@ -1929,7 +1929,7 @@ def PromptGrosseAusgabe(
                     )
             # print("Unterschiede: {}".format(d))
 
-        if Txt.hasWithoutABC({"prim", "primfaktorzerlegung"}):
+        if Txt.hasWithoutABC({i18n.befehle2["prim"], i18n.befehle2["primfaktorzerlegung"]}):
             for arg in BereichToNumbers2(zahlenReiheKeineWteiler, False, 0):
                 cmd_gave_output = True
                 print(
@@ -1940,19 +1940,19 @@ def PromptGrosseAusgabe(
                     .replace(", ", " ")
                 )
 
-        if Txt.hasWithoutABC({"multis3"}) > 0:
+        if Txt.hasWithoutABC({i18n.befehle2["multis3"]}) > 0:
             cmd_gave_output = True
 
             listeStrWerte = BereichToNumbers2(zahlenReiheKeineWteiler, False, 0)
             mult3arg, mult3m3 = mult3(listeStrWerte)
             print(str(mult3arg) + ": " + str(list(mult3m3)))
 
-        if Txt.hasWithoutABC({"multis"}) > 0:
+        if Txt.hasWithoutABC({i18n.befehle2["multis"]}) > 0:
             cmd_gave_output = True
 
             listeStrWerte = list(BereichToNumbers2(zahlenReiheKeineWteiler, False, 0))
             multiplesTexts, multiis = mult2(listeStrWerte)
-            mulpriInfo = not (Txt.hasWithoutABC({"mulpri"}) or Txt.hasWithoutABC({"p"}))
+            mulpriInfo = not (Txt.hasWithoutABC({i18n.befehle2["mulpri"]}) or Txt.hasWithoutABC({i18n.befehle2["p"]}))
             for i, (texxt, multii) in enumerate(zip(multiplesTexts, multiis)):
                 if len(multii) > 0 or mulpriInfo:
                     print(texxt)
@@ -2341,7 +2341,7 @@ def retaExecuteNprint(
             if "--" + i18n.ausgabeParas["nocolor"] in stextE:
                 print("[code]" + (" ".join(kette)) + "[/code]")
             else:
-                cliout("[code]" + (" ".join(kette)) + "[/code]", True, "bbcode")
+                cliout("[code]" + (" ".join(kette)) + "[/code]", True, i18n.ausgabeArt["bbcode"])
         else:
             if "--" + i18n.ausgabeParas["nocolor"] in stextE:
                 print(" ".join(kette))
@@ -2400,11 +2400,9 @@ def bruchBereichsManagementAndWbefehl(zahlenBereichC, stext, zahlenAngaben_):
         abzug = False
         if a[:1] != "-":
             for etwaBruch in custom_split2(a, ","):
-                # x("etwaBruch", etwaBruch)
                 bruchRange, bruchBereichsAngabe = createRangesForBruchLists(
                     bruchSpalt(etwaBruch)
                 )
-                # x("L", zahlenAngaben_)
                 (
                     bruchAndGanzZahlEtwaKorrekterBereich,
                     bruchBereichsAngaben,
@@ -2420,7 +2418,6 @@ def bruchBereichsManagementAndWbefehl(zahlenBereichC, stext, zahlenAngaben_):
                     etwaBruch,
                     zahlenAngaben_,
                 )
-                # x("W", zahlenAngaben_)
                 if etwaAllTrue:
                     fullBlockIsZahlenbereichAndBruch = (
                         fullBlockIsZahlenbereichAndBruch
@@ -2723,7 +2720,6 @@ def bruchBereichsManagementAndWbefehl(zahlenBereichC, stext, zahlenAngaben_):
         if avg < 1:
             rangesBruecheDictReverse = invert_dict_B(rangesBruecheDict2)
             rangesBruecheDict = {}
-    # x("J", zahlenAngaben_mehrere)
     zahlenAngaben_mehrere = list(set(zahlenAngaben_mehrere))
     if len(zahlenAngaben_mehrere) > 0:
         zahlenAngaben_mehrereStr = ",".join(zahlenAngaben_mehrere)
@@ -2752,7 +2748,6 @@ def bruchBereichsManagementAndWbefehl(zahlenBereichC, stext, zahlenAngaben_):
                 zahlenBereichC += "," + zahlenReiheKeineWteiler
         else:
             zahlenBereichC = zahlenAngaben_mehrereStr
-            # x("H", zahlenBereichC)
 
     try:
         zahlenReiheKeineWteiler
@@ -2780,11 +2775,9 @@ def bruchBereichsManagementAndWbefehl(zahlenBereichC, stext, zahlenAngaben_):
     )
 
     if len(dazu) > 0:
-        # x("K", zahlenBereichC)
         zahlenBereichC = ",".join(
             filter(None, sdazu + re.split(kpattern, zahlenBereichC))
         )
-        # x("X", zahlenBereichC)
         stext += [",".join(sdazu + dazu)]
         bruch_GanzZahlReziproke = ",".join(
             filter(
@@ -2895,10 +2888,8 @@ def PromptVonGrosserAusgabeSonderBefehlAusgaben(loggingSwitch, Txt, cmd_gave_out
 
 
 def verdreheWoReTaBefehl(text1: str, text2: str, text3: str, PromptMode: PromptModus):
-    # x("VERDREHT ?", [text1, text2, text3, PromptMode])
     if text2[:4] == "reta" and text1[:4] != "reta" and len(text3) > 0:
         return text2, text1, custom_split(text2)
-    # x("NICHT VERDREHT", PromptMode)
     return text1, text2, text3
 
 
@@ -3018,9 +3009,9 @@ def promptVorbereitungGrosseAusgabe(
     replacements = i18nRP.replacements
     if len(Txt.liste) > 0 and Txt.liste[0] not in [
         "reta",
-        "shell",
-        "python",
-        "abstand",
+        i18n.befehle2["shell"],
+        i18n.befehle2["python"],
+        i18n.befehle2["abstand"],
     ]:
         listeNeu: list = []
         for token in Txt.liste:

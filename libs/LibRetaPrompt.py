@@ -172,7 +172,7 @@ zeilenParas = [
     "--" + i18n.zeilenParas["primzahlen"] + "=",
     "--" + i18n.zeilenParas["invertieren"],
 ]
-hauptForNeben = ["-" + s for s in set(i18n.hauptForNeben.values()) - {"debug"}]
+hauptForNeben = ["-" + s for s in set(i18n.hauptForNeben.values()) - {i18n.mainParaCmds["debug"]}]
 # hauptForNeben = ("-zeilen", "-spalten", "-kombination", "-ausgabe", "-h", "-help")
 
 notParameterValues = ausgabeParas + zeilenParas + kombiMainParas + spalten + mainParas
@@ -508,8 +508,8 @@ def stextFromKleinKleinKleinBefehl(promptMode2, stext, textDazu):
             stext3[jjj] = "[" + stext3[jjj][1:-1] + "]"
     if stext[0] not in [
         "reta",
-        "shell",
-        "python",
+        i18n.befehle2["shell"],
+        i18n.befehle2["python"],
     ]:
         stext = stext3
     # x("stext", stext)
