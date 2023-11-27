@@ -46,15 +46,17 @@
 ***** unwichtiges
 + Ich könnte erweitern aus welchen Dingen ich noch bestehe, der höheren Art, wie höhere Gefühle und Impulse, etc. Denn das gabs vorher nicht.
 *** 2. Feature Ideen
-+ es fehlt noch kombi für regex
 + automatische Generierung meiner merkwürdigen Versionsnummern-Vergabe
 + rp könnte VariablenVergabe unterstützen für ZahlenBereiche und Zeichenketten
   (habe dazu aber eher nicht so den Bedarf)
 + mehrere Befehle hintereinander ermöglichen durch Semikolon getrennt, wie in der Schnell: in rp und bei AutoComplete
+  (bessere wäre die integrative modulare Unterstützung einer Skriptsprache, gleich besser Python)
 + Shell-Möglichkeiten, wie Pipelining und dann mit Shellbefehl abfangen, mit dem Befehl shell und dann gute Syntax ...
+  (bessere wäre die integrative modulare Unterstützung einer Skriptsprache, gleich besser Python)
 + in reta.py, dass einige Komponenten nicht mehrfach gebaut werden, bei mehrfachem reta aufruf programmieren
 + Dass man für Zeilenangaben die eigenen reta Python Funktionen aus den zentralen libs verwenden darf.
   Aber nur bei mulpri bzw. p
+  (eher nicht notwendig)
 + Ich sollte mal überlegen, nur mal überlegen, wie ich alles vollkommen anders architektonisch designen würde, wenn ich noch mal von vorn beginnen würde: Denn das alles ist im Verlauf entstanden, wo vorher noch nicht bekannt war, was für Inhalte in welcher Struktur kommen werden! Also noch mal alles neu denken! Das dann aber nutzen, um nicht alles anders zu machen, sondern für feine kleinere Designänderungen und ggf. Architekturänderungen und ggf. Refactoring.
 + kein Feature, sondern nur für mich kurzfristig wichtig:
   + ts index signaturen gehen so:
@@ -72,9 +74,6 @@
   + üall noch Testen üall in html wo brüche sind: Brucherweiterung von Universum dabei: ja nein, z.B. bei 2:=14/7 oder 7:=21/3
 + Weitere Farbschemen, wenigstens konzeptionalisieren: Aber eigentlich dürfte das Einprogrammieren nicht so das große Ding sein.
 + Dass man in der html per Parameter Spalten über Checkboxen vorselektieren kann.
-+ " * " mit "?" Symbolen wie bei Dateiselektierung oder regex überall auch, z.B. bei 15_*_10 oder bei Zahlenbereichen oder bei spalten.
-  + Ich könnte direkt die Python Regexe dafür verwenden, das also weiterleiten.
-  (habe dazu aber eher nicht so den Bedarf)
 + Reziproke und n/m für w Befehl ermöglichen
   (habe dazu aber eher nicht so den Bedarf)
 + andere Primzahlbedeutungen, außer 28 bis 32 (=Art des Geites, z.B. Gefühl oder Energie), der anderen Reihen auch hinzufügen
@@ -105,7 +104,6 @@
 + mit AI csvs übersetzen
 + "Mache mir eine Datenstruktur, in der nur alle diese strings drin auf die Art gespeichert sind, dass man mit dem python tool babel diese strings auch mit anderen strings für andere sprachen befüllen kann und programmiere mir, dass diese Datenstruktur aus nur diesen strings, die strings der einen großen Datenstruktur befüllt, sodass sie im einfachen Fall letztlich die gleiche Datenstruktur sein wird, nachdem sie wieder mit den strings befüllt wurde, die sie eigentlich ursprünglich hatte."
 ****  2.2. minder wichtig, aber geht schnell:
-+ Halb-Mond-Halb-Sonne Zahlen, wie 12 und 18 markieren: Für die Zeilenfilterung
 + refactoring: viel zu ändern, aber geht schnell: bei rp: statt viele if's für einzelne Befehle: merge der dicts und sets mit schnittmenge der befehle bilden, wo dicts auf funktionen oder so zeigen, und dann diese funktionen zu einer sogenannten komposition bauen bla1().bla2().bla3() und diese komposition dann ausführen: elegantere feinere Lösung, die auch schneller läuft
   aber eigentlich nicht so wichtig
   + Weitere Farbschemen, wenigstens konzeptionalisieren: Aber eigentlich dürfte das Einprogrammieren nicht so das große Ding sein.
@@ -114,9 +112,8 @@
     1. Weil das so sehr viel besser geht,
     2. weil es anders nur ein Verschieben von Problemen ist und
     3. weil grundsätzliches Neudesign auch wichtiger ist und eigentlich nicht ewig Zeit beanspruchen dürfte: Es ist nicht hochkomplex.
-  + +html zstd pro Spalte: sukkzessiv mit zentraler lib aber dennoch pro zelle komprimiert: so wie mehrere dateien auch zusammen verschlüsselt werden können, ohne dass die Kompression wieder von vorn beginnen muss: spart platz insgesamt.+
+  + nein: +html zstd pro Spalte: sukkzessiv mit zentraler lib aber dennoch pro zelle komprimiert: so wie mehrere dateien auch zusammen verschlüsselt werden können, ohne dass die Kompression wieder von vorn beginnen muss: spart platz insgesamt.+
   + --nocolor auch für html und bbcode für deren Tag als option umsetzen
-  + --parameter=* könnte alle Unter-Parameter meinen, als Kommandozeilenargument. Dürfte nicht so lange dauern einprogrammiert zu werden
     besser gleich: regexen von allen, das man alles regexn könnte
   + Dass man bei Kombinationen filtern kann nach nur bestimmten Zahlen, dazu und hinweg - am Besten mit den bisherigeen allen Filtermethoden, den Bereichsangaben, aber auch für Brüche dann ja wohl - das aber vorher detailliert und umfangreich und lang genug vorher planen!
   + KI die höheren antik griechischen Symbolnamen fortsetzen lassen und dann in die csv rein schreiben: also nur content

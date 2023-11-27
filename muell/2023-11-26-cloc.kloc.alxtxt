@@ -1,17 +1,17 @@
-     100 files     200 files     300 files     400 files     500 files     600 files     700 files     800 files     900 files    1000 files    1100 files    1200 files    1300 files    1400 files    1500 files    1600 files    1664 text files.
-classified 1664 filesDuplicate file check 1664 files (1194 known unique)Unique:      100 files                                          Unique:      200 files                                          Unique:      300 files                                          Unique:      400 files                                          Unique:      500 files                                          Unique:      600 files                                          Unique:      700 files                                          Unique:      800 files                                          Unique:      900 files                                          Unique:     1000 files                                          Unique:     1100 files                                              1641 unique files.                              
-Counting:  100Counting:  200Counting:  300Counting:  400Counting:  500Counting:  600Counting:  700Counting:  800Counting:  900Counting:  1000Counting:  1100Counting:  1200Counting:  1300Counting:  1400Counting:  1500Counting:  1600    1621 files ignored.
+     100 files     200 files     300 files     400 files     500 files     600 files     700 files     800 files     900 files    1000 files    1100 files    1200 files    1300 files    1400 files    1500 files    1600 files    1700 files    1710 text files.
+classified 1710 filesDuplicate file check 1710 files (1227 known unique)Unique:      100 files                                          Unique:      200 files                                          Unique:      300 files                                          Unique:      400 files                                          Unique:      500 files                                          Unique:      600 files                                          Unique:      700 files                                          Unique:      800 files                                          Unique:      900 files                                          Unique:     1000 files                                          Unique:     1100 files                                          Unique:     1200 files                                              1687 unique files.                              
+Counting:  100Counting:  200Counting:  300Counting:  400Counting:  500Counting:  600Counting:  700Counting:  800Counting:  900Counting:  1000Counting:  1100Counting:  1200Counting:  1300Counting:  1400Counting:  1500Counting:  1600    1665 files ignored.
 
-github.com/AlDanial/cloc v 1.90  T=0.24 s (187.9 files/s, 103800.9 lines/s)
+github.com/AlDanial/cloc v 1.90  T=0.66 s (72.7 files/s, 38559.9 lines/s)
 --------------------------------------------------------------------------------
 Language                      files          blank        comment           code
 --------------------------------------------------------------------------------
-Python                           23           1203           2085          16401
+Python                           23           1204           2085          16420
 TypeScript                        1            163            670           1701
-Bourne Shell                     17             23             48            277
+Bourne Shell                     19             24             49            286
 Jupyter Notebook                  2              0           2669            138
 TOML                              1              2              0             17
 Bourne Again Shell                2              0              0             14
 --------------------------------------------------------------------------------
-SUM:                             46           1391           5472          18548
+SUM:                             48           1393           5473          18576
 --------------------------------------------------------------------------------

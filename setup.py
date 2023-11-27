@@ -78,8 +78,10 @@ class ExtractMessages(Command):
 
 setup(
     name="reta",
-    version="2.202309.4492",
-    # Version 2 ab retaPrompt, Version 202309 ist Datum und Jahr, Version 4492 ist die Nummer der Anzahlen der Commits des Repos nachdem das alte Repo kaputt gegangen war
+    version="3.20231126.4516",
+    # Version 3 ab retaPrompt, Version 202309i01 ist Jahr Monat Tag, Version 4492 ist die Nummer der Anzahlen der Commits des Repos nachdem das alte Repo kaputt gegangen war
+    # bis Ende 2023 gab es keine Versionsnummern: Version 2 bedeutet, nun html Datei dazu, Version 3 bedeutet, nun retaPrompt dazu. Es beginnt nun also mit Version 3.
+    # So kann jeder nachträglich zu jedem reta selbst eine Versionsnummer bestimmen.
     description="Religions-Tabelle",
     author="Jupiter 3.0 alias trace",
     packages=find_packages(),

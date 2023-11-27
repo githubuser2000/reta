@@ -4,6 +4,7 @@ ABS_SCRIPT_PATH="$(realpath "${SCRIPT_PATH}")"
 #ABS_DIRECTORY="$(dirname "${ABS_SCRIPT_PATH}")"
 ABS_DIRECTORY="/home/alex/myRepos/reta"
 GIT_DIRECTORY="${ABS_DIRECTORY}/.git"
+${ABS_DIRECTORY}/libs/changeVersion.sh
 function ctrl_c() {
     cat ${ABS_DIRECTORY}/head1.alx
     cat ${ABS_DIRECTORY}/religionen.js

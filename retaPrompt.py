@@ -2906,6 +2906,7 @@ def regExReplace(Txt) -> list:
     neueListe: list = []
     foundParas4value: list = []
     i: int = -1
+    regexAufgeloest = False
     def lastRetaHauptPara() -> str:
         for el in reversed(neueListe):
             if el[:1] == "-" and el[:2] != "--":
@@ -3000,12 +3001,15 @@ def regExReplace(Txt) -> list:
             for haupt in i18n.hauptForNeben.values():
                 if any(re.findall(r""+regex, haupt)) or any(re.findall(r""+regex, "-"+haupt)):
                     newTokens += ["-"+haupt]
+
+        regexAufgeloest = True
         return newTokens
     def findregEx(regex, foundParas4value: list = [], eqThing="") -> list:
         def immerHauptParaAbarbeitung(newTokens):
             for haupt in i18n.hauptForNeben.values():
                 if (any(re.findall(r""+regex, haupt)) or any(re.findall(r""+regex, "-"+haupt))) and "-"+haupt not in newTokens:
                     newTokens += ["-"+haupt]
+            regexAufgeloest = True
 
         allResultTokens: list = []
         newTokens: list = []
@@ -3034,7 +3038,9 @@ def regExReplace(Txt) -> list:
             for i, eqThing7 in enumerate(eqThings2):
                 eqThings3 = []
                 for eqThing in eqThing7.split(",") if i == 1 else [eqThing7]:
-                    if eqThing[:2] == "_\"" and eqThing[-1] == "\"":
+                    if eqThing == "*":
+                        eqThing = "r\"(.*)\""
+                    if eqThing[:2] == "r\"" and eqThing[-1] == "\"":
                         regex = r""+eqThing[2:-1]
                         eqThings3 += findregEx(regex, foundParas4value)
                         flag = True
@@ -3051,13 +3057,13 @@ def regExReplace(Txt) -> list:
                     eqThings = eqThings3
             foundParas4value = []
             neueListe += [" ".join(eqThings)]
-        elif listenToken[:2] == "_\"" and listenToken[-1] == "\"":
+        elif listenToken[:2] == "r\"" and listenToken[-1] == "\"":
             regex = r""+listenToken[2:-1]
             i = -1
             neueListe += findregEx(regex)
         else:
             neueListe += [listenToken]
-    if not ifReta:
+    if not ifReta and regexAufgeloest:
         print(" ".join(neueListe))
     #exit()
     return neueListe
