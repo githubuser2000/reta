@@ -45,6 +45,8 @@ from prompt_toolkit.document import Document
 from word_completerAlx import WordCompleter
 
 __all__ = ["NestedCompleter"]
+hundert = list((str(n) for n in range(100)))
+hundert2 = list((str(n) for n in range(10, 100)))
 
 # NestedDict = Mapping[str, Union['NestedDict', Set[str], None, Completer]]
 NestedDict = Mapping[str, Union[Any, Set[str], None, Completer]]
@@ -364,18 +366,20 @@ class NestedCompleter(Completer):
         completer.kombiParaWort = (
             first_term if gleich else self.kombiParaWort if komma else None
         )
-
-        var4 = {
-            i18n.kombiMainParas["galaxie"]: [
+        a = [
                 item
                 for sublist in retaProgram.kombiParaNdataMatrix.values()
                 for item in sublist
-            ],
-            i18n.kombiMainParas["universum"]: [
+            ]
+        b = [
                 item
                 for sublist in retaProgram.kombiParaNdataMatrix2.values()
                 for item in sublist
-            ],
+            ]
+        var4 = {
+            i18n.kombiMainParas["galaxie"]: a,
+            i18n.kombiMainParas["universum"]: b,
+            "*": a+b
         }
         var2 = ComplSitua.kombiValPara
         var3 = self.kombiParaWort
@@ -386,12 +390,15 @@ class NestedCompleter(Completer):
         completer.zeilenParaWort = (
             first_term if gleich else self.zeilenParaWort if komma else None
         )
-        var4 = {key: [] for key in zeilenParas}
+        var4 = {key: hundert for key in i18n.zeilenParas if "--"+key+"=" in zeilenParas}
+        var4.update({key: [""] for key in i18n.zeilenParas if "--"+key+"=" not in zeilenParas})
         var4[i18n.zeilenParas["typ"]] = zeilenTypen + ["-" + t for t in zeilenTypen]
         var4[i18n.zeilenParas["primzahlen"]] = zeilenTypenB + [
             "-" + t for t in zeilenTypenB
         ]
         var4[i18n.zeilenParas["zeit"]] = zeilenZeit + ["-" + t for t in zeilenZeit]
+        var4.update({"*": var4[i18n.zeilenParas["typ"]] + var4[i18n.zeilenParas["primzahlen"]] + var4[i18n.zeilenParas["zeit"]]})
+        #var4.setdefault(hundert)
 
         var2 = ComplSitua.zeilenPara
         var3 = self.zeilenParaWort
@@ -402,8 +409,11 @@ class NestedCompleter(Completer):
         completer.ausgabeParaWort = (
             first_term if gleich else self.ausgabeParaWort if komma else None
         )
-        var4 = {key: [] for key in ausgabeParas}
+        var4 = {"*": ausgabeArt,
+                i18n.ausgabeParas["breite"]: hundert2,
+                i18n.ausgabeParas["breiten"]: hundert2}
         var4[i18n.ausgabeParas["art"]] = ausgabeArt
+        #var4.setdefault(hundert)
         var2 = ComplSitua.ausgabeValPara
         var3 = self.ausgabeParaWort
         completer.situationsTyp = ComplSitua.ausgabeValPara
@@ -414,6 +424,8 @@ class NestedCompleter(Completer):
             first_term if gleich else self.spaltenParaWort if komma else None
         )
         var4 = spaltenDict
+        var4.update({i18n.ausgabeParas["breite"]: hundert2,
+                i18n.ausgabeParas["breiten"]: hundert2})
         var2 = ComplSitua.spaltenValPara
         var3 = self.spaltenParaWort
         completer.situationsTyp = ComplSitua.spaltenValPara

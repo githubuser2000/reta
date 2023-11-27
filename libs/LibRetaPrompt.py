@@ -26,7 +26,7 @@ wahl16 = i18n.wahl16
 # retaProgram = reta.Program([sys.argv[0], "-" + i18n.retapy.nichtsWort])
 retaProgram = reta.Program([sys.argv[0], "-" + i18n.retapy.nichtsWort])
 mainParas = ["-" + a for a in retaProgram.mainParaCmds]
-spalten = ["--" + a[0] + "=" for a in retaProgram.paraDict.keys()]
+spalten = ["--" + a[0] + "=" for a in retaProgram.paraDict.keys()] + ["--="]
 eigsN, eigsR = [], []
 for pp in retaProgram.paraDict.keys():
     if pp[0] == i18n.konzeptE["konzept"]:
@@ -105,11 +105,17 @@ for tupel in retaProgram.paraNdataMatrix:
             spaltenDict[haupt] += list(tupel[1])
         except KeyError:
             spaltenDict[haupt] = list(tupel[1])
+        try:
+            spaltenDict["*"] += list(tupel[1])
+        except KeyError:
+            spaltenDict["*"] = list(tupel[1])
+
 
 spalten += [
     "--" + i18n.ausgabeParas["breite"] + "=",
     "--" + i18n.ausgabeParas["breiten"] + "=",
     "--" + i18n.ausgabeParas["keinenummerierung"],
+    "--*=",
 ]
 
 zeilenTypen = [
@@ -118,11 +124,13 @@ zeilenTypen = [
     i18n.zeilenParas["planet"],
     i18n.zeilenParas["schwarzesonne"],
     i18n.zeilenParas["SonneMitMondanteil"],
+    "*",
 ]
 zeilenZeit = [
     i18n.zeilenParas["heute"],
     i18n.zeilenParas["gestern"],
     i18n.zeilenParas["morgen"],
+    "*",
 ]
 
 zeilenTypenB = [
@@ -130,12 +138,13 @@ zeilenTypenB = [
     i18n.zeilenParas["innenerste"],
     i18n.zeilenParas["aussenalle"],
     i18n.zeilenParas["innenalle"],
+    "*",
 ]
 
 ausgabeParas = [
     "--" + s + ("=" if l else "")
     for s, l in zip(i18n.ausgabeParas.values(), i18n.ausgabeParasEqSign.values())
-]
+] + ["--*="]
 # ausgabeParas = [
 #    "--nocolor",
 #    "--justtext",
@@ -154,6 +163,7 @@ ausgabeParas = [
 kombiMainParas = [
     "--" + i18n.kombiMainParas["galaxie"] + "=",
     "--" + i18n.kombiMainParas["universum"] + "=",
+    "--*=",
 ]
 zeilenParas = [
     # "--"+i18n.zeilenParas["nichts"]+"",
@@ -171,6 +181,7 @@ zeilenParas = [
     "--" + i18n.zeilenParas["oberesmaximum"] + "=",
     "--" + i18n.zeilenParas["primzahlen"] + "=",
     "--" + i18n.zeilenParas["invertieren"],
+    "--*=",
 ]
 hauptForNeben = ["-" + s for s in set(i18n.hauptForNeben.values()) - {i18n.mainParaCmds["debug"]}]
 # hauptForNeben = ("-zeilen", "-spalten", "-kombination", "-ausgabe", "-h", "-help")

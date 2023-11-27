@@ -3038,7 +3038,7 @@ def regExReplace(Txt) -> list:
             for i, eqThing7 in enumerate(eqThings2):
                 eqThings3 = []
                 for eqThing in eqThing7.split(",") if i == 1 else [eqThing7]:
-                    if eqThing == "*":
+                    if eqThing == "*" or (eqThing in ("--*","--") and i == 0):
                         eqThing = "r\"(.*)\""
                     if eqThing[:2] == "r\"" and eqThing[-1] == "\"":
                         regex = r""+eqThing[2:-1]
