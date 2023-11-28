@@ -2114,8 +2114,10 @@ def PromptGrosseAusgabe(
                 None,
                 Txt,
             )
+    ifAbst = Txt.hasWithoutABC({i18n.befehle2["abstand"]})
+    ifAbstPrim = Txt.hasWithoutABC({i18n.befehle2["abstandPrim"]})
     if (
-        Txt.hasWithoutABC({i18n.befehle2["abstand"]})
+        ifAbst or ifAbstPrim
     ):
         zBereiche: list = []
         for i, s in enumerate(Txt.liste):
@@ -2134,8 +2136,10 @@ def PromptGrosseAusgabe(
 
         if len(zBereiche) > 1:
             cmd_gave_output = True
-            zeige = {}
-            zeigeAll = {}
+            zeige1 = {}
+            zeigeAll1 = {}
+            zeige2 = {}
+            zeigeAll2 = {}
             zahlenBereiche = set()
             for zB in zBereiche:
                 zahlenBereiche |= {frozenset(BereichToNumbers2(zB))}
@@ -2143,11 +2147,19 @@ def PromptGrosseAusgabe(
                 for k, zB2 in enumerate(zahlenBereiche - maxMenge(zahlenBereiche)):
                     if zB1 != zB2:
                         for zZahl1 in zB2:
-                            dictionary = {zZahl2: abs(zZahl1 - zZahl2) for zZahl2 in zB1}
-                            if len(dictionary.items()) > 1 or allAreNumbers:
-                                zeige.update(dictionary)
-                                zeigeAll.update({zZahl1:str(dictionary)[1:-1]})
-            for i, (key, value) in enumerate(zeigeAll.items()):
+                            if ifAbst:
+                                dictionary1 = {zZahl2: abs(zZahl1 - zZahl2) for zZahl2 in zB1}
+                                if len(dictionary1.items()) > 1 or allAreNumbers:
+                                    zeige1.update(dictionary1)
+                                    zeigeAll1.update({zZahl1:str(dictionary1)[1:-1]})
+                            if ifAbstPrim:
+                                dictionary2 = {zZahl2: primRepeat(primfaktoren(int(abs(zZahl1 - zZahl2)))) for zZahl2 in zB1}
+                                if len(dictionary2.items()) > 1 or allAreNumbers:
+                                    zeige2.update(dictionary2)
+                                    zeigeAll2.update({zZahl1:str(dictionary2)[1:-1]})
+            for i, (key, value) in enumerate(zeigeAll1.items()):
+                print(str(key)+"->: "+value)
+            for i, (key, value) in enumerate(zeigeAll2.items()):
                 print(str(key)+"->: "+value)
 
         elif Txt.hasWithoutABC({i18n.befehle2["abstand"]}):

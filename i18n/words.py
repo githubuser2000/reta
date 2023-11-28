@@ -481,6 +481,7 @@ befehle2.update(
             "keineEinZeichenZeilenPlusKeineAusgabeWelcherBefehlEsWar"
         ),
         "abstand": _("abstand"),
+        "abstandPrim": _("abstandPrim"),
     }
 )
 # KurzLangBefehle sind die Befehle, die mehr als ein Zeichen groß sind und für reta dennoch Abkürzungen sind.
@@ -4356,7 +4357,7 @@ class retaPrompt:
         _("der Befehl '")
         + befehle2["abstand"]
         + _(
-            "' ist nur erlaubt mit 2 weiteren Angaben mit Leerzeichen getrennt, einer Zahl und einem Zahlenbereich, z.B. '"
+            "' verlangt mindestens 2 Zahlenangaben, wie '"
         )
         + befehle2["abstand"]
         + " 7 17-25'"
