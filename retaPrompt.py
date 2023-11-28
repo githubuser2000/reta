@@ -2115,24 +2115,43 @@ def PromptGrosseAusgabe(
                 Txt,
             )
     if (
-        len(Txt.liste) == 3
-        and i18n.befehle2["abstand"] in Txt.liste
-        and any([s.isdecimal() for s in Txt.liste])
+        Txt.hasWithoutABC({i18n.befehle2["abstand"]})
     ):
-        flag = False
+        zBereiche: list = []
         for i, s in enumerate(Txt.liste):
-            if s.isdecimal():
-                zahlNum = i
             if isZeilenAngabe(s):
-                flag = True
-                bereich = s
-        if flag:
+                zBereiche += [s]
+        allAreNumbers = all((z.isdecimal() for z in zBereiche))
+        def maxMenge(mengen):
+            mengen = list(mengen)
+            if not mengen:
+                return set()
+            maxMenge: set = mengen[0]
+            for menge in mengen[1:]:
+                if len(maxMenge) < len(menge):
+                    maxMenge = menge
+            return maxMenge
+
+        if len(zBereiche) > 1:
             cmd_gave_output = True
-            zahl = int(Txt.liste[zahlNum])
-            zeige = {b: abs(b - zahl) for b in BereichToNumbers2(bereich)}
-            print(str(zeige)[1:-1])
-    elif i18n.befehle2["abstand"] in Txt.liste:
-        print(i18nRP.abstandMeldung)
+            zeige = {}
+            zeigeAll = {}
+            zahlenBereiche = set()
+            for zB in zBereiche:
+                zahlenBereiche |= {frozenset(BereichToNumbers2(zB))}
+            for i, zB1 in enumerate(zahlenBereiche):
+                for k, zB2 in enumerate(zahlenBereiche - maxMenge(zahlenBereiche)):
+                    if zB1 != zB2:
+                        for zZahl1 in zB2:
+                            dictionary = {zZahl2: abs(zZahl1 - zZahl2) for zZahl2 in zB1}
+                            if len(dictionary.items()) > 1 or allAreNumbers:
+                                zeige.update(dictionary)
+                                zeigeAll.update({zZahl1:str(dictionary)[1:-1]})
+            for i, (key, value) in enumerate(zeigeAll.items()):
+                print(str(key)+"->: "+value)
+
+        elif Txt.hasWithoutABC({i18n.befehle2["abstand"]}):
+            print(i18nRP.abstandMeldung)
 
     loggingSwitch, cmd_gave_output = PromptVonGrosserAusgabeSonderBefehlAusgaben(
         loggingSwitch, Txt, cmd_gave_output
