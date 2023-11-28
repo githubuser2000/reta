@@ -2933,11 +2933,14 @@ def verdreheWoReTaBefehl(text1: str, text2: str, text3: str, PromptMode: PromptM
 spaltenParaNvalueS: dict = {"zeilen": {},"spalten": {}, "ausgabe": {}, "kombination": {}}
 
 def regExReplace(Txt) -> list:
+    if not any(("r\"" in a or "*" in a for a in Txt.menge)):
+        return Txt.liste
     ifReta: bool = True if Txt.liste[:1] == ["reta"] else False
     neueListe: list = []
     foundParas4value: list = []
     i: int = -1
     regexAufgeloest = False
+    changedAtAll = False
     def lastRetaHauptPara() -> str:
         for el in reversed(neueListe):
             if el[:1] == "-" and el[:2] != "--":
@@ -3075,9 +3078,10 @@ def regExReplace(Txt) -> list:
                         regex = r""+eqThing[2:-1]
                         eqThings3 += findregEx(regex, foundParas4value)
                         flag = True
+                        changedAtAll = True
                     else:
                         if flag:
-                            eqThings = findregEx(None, foundParas4value, eqThing)
+                            eqThings += findregEx(None, foundParas4value, eqThing)
                         else:
                             if "=" not in eqThings[-1]:
                                 eqThings[-1] += eqThing + "="
@@ -3085,7 +3089,7 @@ def regExReplace(Txt) -> list:
                                 eqThings[-1] += eqThing
                             foundParas4value += [eqThing[2:]]
                 if len(eqThings3) > 0:
-                    eqThings = eqThings3
+                    eqThings += eqThings3
             foundParas4value = []
             neueListe += [" ".join(eqThings)]
         elif listenToken[:2] == "r\"" and listenToken[-1] == "\"":
@@ -3094,6 +3098,52 @@ def regExReplace(Txt) -> list:
             neueListe += findregEx(regex)
         else:
             neueListe += [listenToken]
+    if changedAtAll:
+        neueNeueListe: list = []
+        eqThings1: list = []
+        eqThings2 = []
+        def aufloesen(neueNeueListe, eqThings1, eqThings2, eqWo, ifEnde) -> tuple:
+            if len(eqThings1) > 1:
+                neueNeueListe += [eqThings1[:-1][0]]
+                bis = eqThings2
+                neueNeueListe[-1] += ",".join((a for a in bis if len(a) != 0))
+            elif len(eqThings1) == 1:
+                neueNeueListe += [eqThings1[0]+eqThings2[0]]
+            if eqWo == 0:
+                eqThings1, eqThings2 = [], []
+            else:
+                if ifEnde:
+                    neueNeueListe += [a+b for a, b in zip(eqThings1, eqThings2)]
+                    eqThings1 = []
+                    eqThings2 = []
+
+            return neueNeueListe, eqThings1, eqThings2
+
+        neueListe=(" ".join(neueListe)).split()
+        for i, n in enumerate(neueListe):
+            ifEnde = i+1 == len(neueListe)
+            eqWo = n.find("=")+1 # sucht nur nach ErstVorkommen!
+            if eqWo != 0:
+                if len(eqThings1) == 0:
+                    if ifEnde:
+                        neueNeueListe += [n]
+                    else:
+                        eqThings1 += [n[:eqWo]]
+                        eqThings2 += [n[eqWo:]]
+                elif all((n[:eqWo] == a for a in eqThings1)):
+                    eqThings1 += [n[:eqWo]]
+                    eqThings2 += [n[eqWo:]]
+                    if ifEnde:
+                        neueNeueListe += [eqThings1[:-1][0]]
+                        neueNeueListe[-1] += ",".join((a for a in eqThings2 if len(a) != 0))
+                else:
+                    neueNeueListe, eqThings1, eqThings2 = aufloesen(neueNeueListe, eqThings1, eqThings2, eqWo, ifEnde)
+                    eqThings1 = [n[:eqWo]]
+                    eqThings2 = [n[eqWo:]]
+            else:
+                neueNeueListe, eqThings1, eqThings2 = aufloesen(neueNeueListe, eqThings1, eqThings2, eqWo, ifEnde)
+                neueNeueListe += [n]
+        neueListe = neueNeueListe
     if not ifReta and regexAufgeloest:
         print(" ".join(neueListe))
     #exit()
