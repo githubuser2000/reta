@@ -46,7 +46,6 @@
 ***** unwichtiges
 + Ich könnte erweitern aus welchen Dingen ich noch bestehe, der höheren Art, wie höhere Gefühle und Impulse, etc. Denn das gabs vorher nicht.
 *** 2. Feature Ideen
-+ bei Primzahlen fehlen noch deren Vielfacher: also alles verdoppeln!
 + automatische Generierung meiner merkwürdigen Versionsnummern-Vergabe
 + rp könnte VariablenVergabe unterstützen für ZahlenBereiche und Zeichenketten
   (habe dazu aber eher nicht so den Bedarf)

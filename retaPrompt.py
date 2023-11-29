@@ -94,15 +94,15 @@ class TXT(object):
     _stextS = []
     _stextE = []
     _e = []
-    _stextEmenge = {}
-    _stextSet = {}
+    _stextEmenge = set()
+    _stextSet = set()
     _befehlDavor = ""
 
     def hasWithoutABC(self, hasSet: set) -> bool:
         """tells if any values of given set exists in TXT.menge and command abc and abcd is not inside"""
         return (
             len(hasSet & self._stextSet) > 0
-            and len({"abc", "abcd"} & self._stextSet) == 0
+            and len({i18n.befehle2["abc"], i18n.befehle2["abcd"]} & self._stextSet) == 0
         )
 
     def has(self, hasSet: set) -> bool:
@@ -1785,56 +1785,56 @@ def PromptGrosseAusgabe(
                     "1",
                     Txt,
                 )
-            if False and len(nennerZaehlerMakesWholeNum) != 0:
-                cmd_gave_output = True
-                nennerZaehlerMakesWholeNum = set(nennerZaehlerMakesWholeNum)
-                nennerZaehlerMakesWholeNum = ",".join(nennerZaehlerMakesWholeNum)
-                retaExecuteNprint(
-                    ketten,
-                    Txt.listeE,
-                    vorherVonAusschnittOderZaehlung(Txt, nennerZaehlerMakesWholeNum),
-                    "",
-                    [
-                        "".join(
-                            (
-                                "--",
-                                i18n.ParametersMain.universum[0],
-                                "=",
-                                i18n.transzendentalienWort,
-                            )
-                        )
-                    ],
-                    "4",
-                    Txt,
-                )
-            if False and len(nennerZaehlerMakesWholeNumReziproke) != 0:
-                cmd_gave_output = True
-                nennerZaehlerMakesWholeNumReziproke = set(
-                    nennerZaehlerMakesWholeNumReziproke
-                )
-                nennerZaehlerMakesWholeNumReziproke = ",".join(
-                    nennerZaehlerMakesWholeNumReziproke
-                )
-                retaExecuteNprint(
-                    ketten,
-                    Txt.listeE,
-                    vorherVonAusschnittOderZaehlung(
-                        Txt, nennerZaehlerMakesWholeNumReziproke
-                    ),
-                    "",
-                    [
-                        "".join(
-                            (
-                                "--",
-                                i18n.ParametersMain.universum[0],
-                                "=",
-                                i18n.transzendentaliereziprokeWort,
-                            )
-                        )
-                    ],
-                    "2",
-                    Txt,
-                )
+#            if False and len(nennerZaehlerMakesWholeNum) != 0:
+#                cmd_gave_output = True
+#                nennerZaehlerMakesWholeNum = set(nennerZaehlerMakesWholeNum)
+#                nennerZaehlerMakesWholeNum = ",".join(nennerZaehlerMakesWholeNum)
+#                retaExecuteNprint(
+#                    ketten,
+#                    Txt.listeE,
+#                    vorherVonAusschnittOderZaehlung(Txt, nennerZaehlerMakesWholeNum),
+#                    "",
+#                    [
+#                        "".join(
+#                            (
+#                                "--",
+#                                i18n.ParametersMain.universum[0],
+#                                "=",
+#                                i18n.transzendentalienWort,
+#                            )
+#                        )
+#                    ],
+#                    "4",
+#                    Txt,
+#                )
+#            if False and len(nennerZaehlerMakesWholeNumReziproke) != 0:
+#                cmd_gave_output = True
+#                nennerZaehlerMakesWholeNumReziproke = set(
+#                    nennerZaehlerMakesWholeNumReziproke
+#                )
+#                nennerZaehlerMakesWholeNumReziproke = ",".join(
+#                    nennerZaehlerMakesWholeNumReziproke
+#                )
+#                retaExecuteNprint(
+#                    ketten,
+#                    Txt.listeE,
+#                    vorherVonAusschnittOderZaehlung(
+#                        Txt, nennerZaehlerMakesWholeNumReziproke
+#                    ),
+#                    "",
+#                    [
+#                        "".join(
+#                            (
+#                                "--",
+#                                i18n.ParametersMain.universum[0],
+#                                "=",
+#                                i18n.transzendentaliereziprokeWort,
+#                            )
+#                        )
+#                    ],
+#                    "2",
+#                    Txt,
+#                )
     if bedingungZahl:
         if (
             len(
@@ -2945,7 +2945,7 @@ def regExReplace(Txt) -> list:
         for el in reversed(neueListe):
             if el[:1] == "-" and el[:2] != "--":
                 try:
-                    return i18n.hauptForNeben[el[1:]]
+                    return el[1:]
                 except:
                     return ""
         return ""
