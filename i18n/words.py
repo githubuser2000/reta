@@ -308,6 +308,141 @@ wahl15Words: dict = {
     ),
     "Maßnahmen_39": _("Maßnahmen_(39)"),
 }
+
+kugelnKreise = ["kugeln", "kreise"]
+ParametersMain: NamedTuple = namedtuple(
+    "ParametersMain",
+    "wichtigste wichtigste2 religionen galaxie strukturgroesse universum multiversum wirtschaft menschliches procontra licht bedeutung symbole Multiplikationen konzept konzept2 inkrementieren operationen universummetakonkret primzahlwirkung gebrochenuniversum gebrochengalaxie gebrochenemotion gebrochengroesse primvielfache planet strukturenkleinere grundstrukturen teilchen alles",
+)
+
+konzeptE = {"konzept": _("konzept"), "konzept2": _("konzept2")}
+gebrochenUniGal = {
+    "gebrochenuniversum": (
+        _("gebrochen-rational_Universum_n/m"),
+        _("gebrochenuniversum"),
+    ),
+    "gebrochengalaxie": (_("gebrochen-rational_Galaxie_n/m"), _("gebrochengalaxie")),
+    "gebrochenemotion": (_("gebrochen-rational_Gefuehle_n/m"), _("gebrochenemotion")),
+    "gebrochengroesse": (
+        _("gebrochen-rational_Strukturgroesse_n/m"),
+        _("gebrochengroesse"),
+    ),
+}
+gebrochenUniGalEinzeln = {b for a in gebrochenUniGal.values() for b in a}
+ParametersMain: NamedTuple = ParametersMain(
+    (
+        _("Wichtigstes_zum_verstehen"),
+        _("wichtigsteverstehen"),
+    ),
+    (
+        _("Wichtigstes_zum_gedanklich_einordnen"),
+        _("wichtigsteeinordnen"),
+    ),
+    (
+        _("Religionen"),
+        _("religionen"),
+        _("religion"),
+    ),
+    (
+        _("Galaxie"),
+        _("galaxie"),
+        _("alteschriften"),
+        _("kreis"),
+        _("galaxien"),
+        _("kreise"),
+    ),
+    (
+        _("Größenordnung"),
+        _("groessenordnung"),
+        _("strukturgroesse"),
+        _("strukturgroeße"),
+        _("strukturgrösse"),
+        _("strukturgröße"),
+        _("groesse"),
+        _("stufe"),
+        _("organisationen"),
+    ),
+    (
+        _("Universum"),
+        _("universum"),
+        _("transzendentalien"),
+        _("strukturalien"),
+        _("kugel"),
+        _("kugeln"),
+        _("ball"),
+        _("baelle"),
+        _("bälle"),
+    ),
+    (_("Multiversum"), _("multiversum")),
+    (_("Wirtschaft"), _("wirtschaft")),
+    (
+        _("Menschliches"),
+        _("menschliches"),
+    ),
+    (
+        _("Pro_Contra"),
+        _("procontra"),
+        _("dagegendafuer"),
+    ),
+    (
+        _("Licht"),
+        _("licht"),
+    ),
+    (
+        _("Bedeutung"),
+        _("bedeutung"),
+    ),
+    (
+        _("Symbole"),
+        _("symbole"),
+    ),
+    [a[0] for a in Multiplikationen],
+    (
+        _("Eigenschaften_n"),
+        _("eigenschaften"),
+        _("eigenschaft"),
+        konzeptE["konzept"],
+        _("konzepte"),
+    ),
+    (
+        _("Eigenschaften_1/n"),
+        konzeptE["konzept2"],
+        _("konzepte2"),
+    ),
+    (
+        _("Inkrementieren"),
+        _("inkrementieren"),
+    ),
+    (
+        _("Operationen"),
+        _("operationen"),
+    ),
+    (
+        _("Meta_vs_Konkret_(Universum)"),
+        _("universummetakonkret"),
+    ),
+    (
+        _("Primzahlwirkung"),
+        _("primzahlwirkung"),
+    ),
+    gebrochenUniGal["gebrochenuniversum"],
+    gebrochenUniGal["gebrochengalaxie"],
+    gebrochenUniGal["gebrochenemotion"],
+    gebrochenUniGal["gebrochengroesse"],
+    (
+        _("Multiplikationen"),
+        _("multiplikationen"),
+    ),
+    (_("Planet_(10_und_oder_12)"), _("planet")),
+    (
+        _("Strukturen_1_bis_9"),
+        _("strukturkleinerzehn"),
+    ),
+    (_("Grundstrukturen"), _("grundstrukturen")),
+    (_("Teilchen-Meta-Physik"), _("teilchen")),
+    (_("alles"),),
+)
+
 wahl15: dict = {
     #    "_": _("Strukturalien_bzw_Meta-Paradigmen_bzw_Transzendentalien_(15),Geist_(15)"),
     "15": ",".join(
@@ -378,6 +513,8 @@ wahl15: dict = {
     "24": _("Netzwerk"),
     "32": _("mathematisches_Design_(32)"),
     "gegen5": _("gegen_5"),
+    "9_6": ParametersMain.strukturgroesse[0],
+    "51": _("Kontroverse_(51)"),
 }
 
 wahl16 = {
@@ -577,139 +714,7 @@ befehle: list = list(befehle2.values())
 #    _("keineEinZeichenZeilenPlusKeineAusgabeWelcherBefehlEsWar"),
 #    _("abstand"),
 # ]
-kugelnKreise = ["kugeln", "kreise"]
-ParametersMain: NamedTuple = namedtuple(
-    "ParametersMain",
-    "wichtigste wichtigste2 religionen galaxie strukturgroesse universum multiversum wirtschaft menschliches procontra licht bedeutung symbole Multiplikationen konzept konzept2 inkrementieren operationen universummetakonkret primzahlwirkung gebrochenuniversum gebrochengalaxie gebrochenemotion gebrochengroesse primvielfache planet strukturenkleinere grundstrukturen teilchen alles",
-)
 
-konzeptE = {"konzept": _("konzept"), "konzept2": _("konzept2")}
-gebrochenUniGal = {
-    "gebrochenuniversum": (
-        _("gebrochen-rational_Universum_n/m"),
-        _("gebrochenuniversum"),
-    ),
-    "gebrochengalaxie": (_("gebrochen-rational_Galaxie_n/m"), _("gebrochengalaxie")),
-    "gebrochenemotion": (_("gebrochen-rational_Gefuehle_n/m"), _("gebrochenemotion")),
-    "gebrochengroesse": (
-        _("gebrochen-rational_Strukturgroesse_n/m"),
-        _("gebrochengroesse"),
-    ),
-}
-gebrochenUniGalEinzeln = {b for a in gebrochenUniGal.values() for b in a}
-ParametersMain: NamedTuple = ParametersMain(
-    (
-        _("Wichtigstes_zum_verstehen"),
-        _("wichtigsteverstehen"),
-    ),
-    (
-        _("Wichtigstes_zum_gedanklich_einordnen"),
-        _("wichtigsteeinordnen"),
-    ),
-    (
-        _("Religionen"),
-        _("religionen"),
-        _("religion"),
-    ),
-    (
-        _("Galaxie"),
-        _("galaxie"),
-        _("alteschriften"),
-        _("kreis"),
-        _("galaxien"),
-        _("kreise"),
-    ),
-    (
-        _("Größenordnung"),
-        _("groessenordnung"),
-        _("strukturgroesse"),
-        _("strukturgroeße"),
-        _("strukturgrösse"),
-        _("strukturgröße"),
-        _("groesse"),
-        _("stufe"),
-        _("organisationen"),
-    ),
-    (
-        _("Universum"),
-        _("universum"),
-        _("transzendentalien"),
-        _("strukturalien"),
-        _("kugel"),
-        _("kugeln"),
-        _("ball"),
-        _("baelle"),
-        _("bälle"),
-    ),
-    (_("Multiversum"), _("multiversum")),
-    (_("Wirtschaft"), _("wirtschaft")),
-    (
-        _("Menschliches"),
-        _("menschliches"),
-    ),
-    (
-        _("Pro_Contra"),
-        _("procontra"),
-        _("dagegendafuer"),
-    ),
-    (
-        _("Licht"),
-        _("licht"),
-    ),
-    (
-        _("Bedeutung"),
-        _("bedeutung"),
-    ),
-    (
-        _("Symbole"),
-        _("symbole"),
-    ),
-    [a[0] for a in Multiplikationen],
-    (
-        _("Eigenschaften_n"),
-        _("eigenschaften"),
-        _("eigenschaft"),
-        konzeptE["konzept"],
-        _("konzepte"),
-    ),
-    (
-        _("Eigenschaften_1/n"),
-        konzeptE["konzept2"],
-        _("konzepte2"),
-    ),
-    (
-        _("Inkrementieren"),
-        _("inkrementieren"),
-    ),
-    (
-        _("Operationen"),
-        _("operationen"),
-    ),
-    (
-        _("Meta_vs_Konkret_(Universum)"),
-        _("universummetakonkret"),
-    ),
-    (
-        _("Primzahlwirkung"),
-        _("primzahlwirkung"),
-    ),
-    gebrochenUniGal["gebrochenuniversum"],
-    gebrochenUniGal["gebrochengalaxie"],
-    gebrochenUniGal["gebrochenemotion"],
-    gebrochenUniGal["gebrochengroesse"],
-    (
-        _("Multiplikationen"),
-        _("multiplikationen"),
-    ),
-    (_("Planet_(10_und_oder_12)"), _("planet")),
-    (
-        _("Strukturen_1_bis_9"),
-        _("strukturkleinerzehn"),
-    ),
-    (_("Grundstrukturen"), _("grundstrukturen")),
-    (_("Teilchen-Meta-Physik"), _("teilchen")),
-    (_("alles"),),
-)
 
 haupt2neben = {hauptForNeben["zeilen"]: zeilenParas,
                hauptForNeben["ausgabe"]: ausgabeParas,
@@ -1003,6 +1008,14 @@ paraNdataMatrix: list = [
     ),
     (
         ParametersMain.universum,
+        (
+            _("Software-Lizenzen"),
+            _("softwarelizenz"),
+        ),
+        {422},
+    ),
+    (
+        ParametersMain.universum,
         (_("Strategie_Taktik_(15m8)"), _("strategie"), _("taktik")),
         {385},
     ),
@@ -1160,6 +1173,14 @@ paraNdataMatrix: list = [
     (
         ParametersMain.grundstrukturen,
         (
+            _("Kontroverse_(51)"),
+            _("kontroverse"),
+        ),
+        {421},
+    ),
+    (
+        ParametersMain.grundstrukturen,
+        (
             _("mathematisches_Design_(32)"),
             _("mathematischesdesign"),
         ),
@@ -1245,6 +1266,21 @@ paraNdataMatrix: list = [
         ),
         {20, 27, 313},
     ),
+    (
+        ParametersMain.grundstrukturen,
+        (
+            _("Strukturgrösse"),
+            ParametersMain.strukturgroesse[0],
+            _("größe"),
+            _("groesse"),
+            _("gross"),
+            _("strukturgroesse"),
+            _("strukturgroeße"),
+            _("strukturgrösse"),
+            _("strukturgröße"),
+        ),
+        {4, 21, 54, 197},
+    ),    
     (
         ParametersMain.strukturgroesse,
         (
