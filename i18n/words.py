@@ -1009,8 +1009,9 @@ paraNdataMatrix: list = [
     (
         ParametersMain.universum,
         (
-            _("Software-Lizenzen"),
+            _("Software-Lizenzen_akademische_Grade"),
             _("softwarelizenz"),
+            _("akademischeGrade"),
         ),
         {422},
     ),
@@ -2666,7 +2667,7 @@ paraNdataMatrix: list = [
             _("bedürfnisse"),
             _("werte"),
         ),
-        {254, 392, 396, 397},
+        {254, 392, 396, 397, 423},
     ),
     (
         ParametersMain.grundstrukturen,
