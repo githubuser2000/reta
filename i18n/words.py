@@ -515,6 +515,7 @@ wahl15: dict = {
     "gegen5": _("gegen_5"),
     "9_6": ParametersMain.strukturgroesse[0],
     "51": _("Kontroverse_(51)"),
+    "13_4": _("Taetigkeiten"),
 }
 
 wahl16 = {
@@ -1280,8 +1281,8 @@ paraNdataMatrix: list = [
             _("strukturgrösse"),
             _("strukturgröße"),
         ),
-        {4, 21, 54, 197},
-    ),    
+        {4, 21, 54, 197, 425},
+    ),
     (
         ParametersMain.strukturgroesse,
         (
@@ -1295,7 +1296,7 @@ paraNdataMatrix: list = [
             _("strukturgrösse"),
             _("strukturgröße"),
         ),
-        {4, 21, 54, 197},
+        {4, 21, 54, 197, 425},
     ),
     (
         ParametersMain.strukturgroesse,
@@ -1304,7 +1305,7 @@ paraNdataMatrix: list = [
             _("organisationen"),
             organisationWort,
         ),
-        {30, 82},
+        {30, 82, 425},
     ),
     (
         ParametersMain.strukturgroesse,
@@ -2668,6 +2669,15 @@ paraNdataMatrix: list = [
             _("werte"),
         ),
         {254, 392, 396, 397, 423},
+    ),
+    (
+        ParametersMain.grundstrukturen,
+        (
+            _("Taetigkeiten"),
+            _("tätigkeiten"),
+            _("taetigkeiten"),
+        ),
+        {424},
     ),
     (
         ParametersMain.grundstrukturen,
