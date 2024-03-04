@@ -1797,7 +1797,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.universum,
         (_("Geist__(15)"), geistWort),
-        {242},
+        {242, 426},
     ),
     (
         ParametersMain.universum,
@@ -2426,7 +2426,7 @@ paraNdataMatrix: list = [
             geistWort,
             _("bewusstsein"),
         ),
-        {229, 231, 242, 273, 297, 304},
+        {229, 231, 242, 273, 297, 304, 426},
     ),
     (
         ParametersMain.grundstrukturen,
