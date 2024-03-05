@@ -117,6 +117,12 @@
     besser gleich: regexen von allen, das man alles regexn könnte
   + Dass man bei Kombinationen filtern kann nach nur bestimmten Zahlen, dazu und hinweg - am Besten mit den bisherigeen allen Filtermethoden, den Bereichsangaben, aber auch für Brüche dann ja wohl - das aber vorher detailliert und umfangreich und lang genug vorher planen!
   + KI die höheren antik griechischen Symbolnamen fortsetzen lassen und dann in die csv rein schreiben: also nur content
+  + retaPrompt Befehl meta und damit auch konkret und praktisch theoretisch .... also all das das zu diesem gewissen algorithmus gehört
+    erstmalig hat mehrfach dieser Befehl eine zusätzliche Änderung an der Ausgabe
+    Bsp was mehrfach heißt:
+    meta "6 ist z.B. 1/12" und "konkret konkret 24 ist 6"
+    eigentlich brauche ich das für mich nicht zu programmieren, aber dürfte nicht so aufwändig sein
+    soll aber besser auch für alle rationalen Zahlen gehen ... mhh - Das könnte aufwändiger werden, zu implementieren
 **** 2.3. aus reta.py
 + kombinationen sortiert ausgeben und als Hierarchiebaum den Zahlenkombinationen entlang
 + kombinationen filterbar machen, dass nicht alle kombinationen bei einer Zahl immer angezeigt werden

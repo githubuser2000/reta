@@ -516,6 +516,8 @@ wahl15: dict = {
     "9_6": ParametersMain.strukturgroesse[0],
     "51": _("Kontroverse_(51)"),
     "13_4": _("Taetigkeiten"),
+    "7mit6": _("Wohlbefinden_(7mit6)"),
+    
 }
 
 wahl16 = {
@@ -2418,6 +2420,14 @@ paraNdataMatrix: list = [
             _("absicht10"),
         ),
         {260},
+    ),
+    (
+        ParametersMain.grundstrukturen,
+        (
+            _("Wohlbefinden_(7mit6)"),
+            _("wohlbefinden"),
+        ),
+        {427, 428},
     ),
     (
         ParametersMain.grundstrukturen,
