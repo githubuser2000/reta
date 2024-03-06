@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-05 05:32+0100\n"
+"POT-Creation-Date: 2024-03-06 01:12+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16292,6 +16292,9 @@ msgstr "pro"
 #: ../../words.py:2837 ../../words.py:2846 ../../words.py:2861
 #: ../../words.py:2869 ../../words.py:2870 ../../words.py:2871
 #: ../../words.py:2872 ../../words.py:2885 ../../words.py:2942
+#: ../../words.py:461 ../../words.py:476 ../../words.py:477 ../../words.py:478
+#: ../../words.py:495 ../../words.py:496 ../../words.py:497 ../../words.py:504
+#: ../../words.py:505 ../../words.py:506 ../../words.py:509 ../../words.py:511
 msgid "pro"
 msgstr "pro"
 
@@ -26865,7 +26868,7 @@ msgstr "universal_(16)"
 #: ../../words.py:1030 ../../words.py:1031 ../../words.py:1038
 #: ../../words.py:1041 ../../words.py:1042 ../../words.py:1043
 #: ../../words.py:1044 ../../words.py:1057 ../../words.py:1074
-msgid "das_Glaktische_(14)"
+msgid "das_Galaktische_(14)"
 msgstr "galactic_(14)"
 
 #: ../../words.py:980 ../../words.py:988 ../../words.py:989 ../../words.py:992
@@ -27132,3 +27135,11 @@ msgstr "actions"
 #: ../../words.py:2688
 msgid "taetigkeiten"
 msgstr "actions"
+
+#: ../../words.py:489 ../../words.py:519
+msgid "mit"
+msgstr "with"
+
+#: ../../words.py:515
+msgid "gegen"
+msgstr "against"

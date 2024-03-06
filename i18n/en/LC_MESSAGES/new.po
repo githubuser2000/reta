@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-28 10:53+0100\n"
+"POT-Creation-Date: 2024-03-05 07:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3779,7 +3779,7 @@ msgstr ""
 #~ msgid "das_Universelle_(15)"
 #~ msgstr "universal_(16)"
 
-#~ msgid "das_Glaktische_(14)"
+#~ msgid "das_Galaktische_(14)"
 #~ msgstr "galactic_(14)"
 
 #~ msgid "das_Multiverselle_(16)"
@@ -3861,7 +3861,7 @@ msgstr ""
 #~ msgstr "mathematicaldesign"
 
 #~ msgid "Primzahl"
-#~ msgstr "prime number"
+#~ msgstr "prime_number"
 
 #~ msgid "gegen_5"
 #~ msgstr "against_5"
@@ -3877,3 +3877,33 @@ msgstr ""
 
 #~ msgid "' verlangt mindestens 2 Zahlenangaben, wie '"
 #~ msgstr "' need at least 2 number or number ranges, as '"
+
+#~ msgid "Kontroverse_(51)"
+#~ msgstr "controversy_(51)"
+
+#~ msgid "Taetigkeiten"
+#~ msgstr "actions"
+
+#~ msgid "Wohlbefinden_(7mit6)"
+#~ msgstr "well-being_(7with6)"
+
+#~ msgid "Software-Lizenzen_akademische_Grade"
+#~ msgstr "software_licences_and_academic_degrees"
+
+#~ msgid "softwarelizenz"
+#~ msgstr "software_license"
+
+#~ msgid "akademischeGrade"
+#~ msgstr "academic_degrees"
+
+#~ msgid "kontroverse"
+#~ msgstr "controversy"
+
+#~ msgid "wohlbefinden"
+#~ msgstr "well-being"
+
+#~ msgid "tätigkeiten"
+#~ msgstr "actions"
+
+#~ msgid "taetigkeiten"
+#~ msgstr "actions"
