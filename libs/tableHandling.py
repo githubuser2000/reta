@@ -1488,7 +1488,7 @@ class Tables:
                 ]
                 for i, line in enumerate(self.relitable[2:]):
                     line1 = []
-                    if i % 3 == 0:
+                    if i % 3 == 1:
                         line1 += [
                             i18n.tableHandling.gestirnGrossschrift[
                                 "wäre eine schwarze Sonne (-3*n), wenn ins Negative durch eine Typ 13 verdreht"
