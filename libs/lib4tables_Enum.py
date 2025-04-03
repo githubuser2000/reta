@@ -221,7 +221,22 @@ tableTags = {
         421,
         423,
         425,
-        427
+        427,
+        431, 432, 433, 434, 437, 441, 442, 443, 445, 450,
+        435,
+        436,
+        451, 436,
+        446, 447, 448, 449,
+        452, 460,
+        453,
+        454,
+        457,
+        458,
+        459,
+        456,
+        438,
+        439,
+
     },
     frozenset({ST.sternPolygon, ST.galaxie}): {
         0,
@@ -351,6 +366,7 @@ tableTags = {
         307,
         315,
         316,
+        429, 455,
     },
     frozenset({ST.universum, ST.sternPolygon}): {
         5,
@@ -392,7 +408,8 @@ tableTags = {
         69,
         70,
         55,
-        426
+        426,
+        444,
     },
     frozenset({ST.galaxie, ST.gleichfoermigesPolygon}): {
         16,
@@ -402,6 +419,8 @@ tableTags = {
         161,
         162,
         237,
+        440,
+        455,
     },
     frozenset({ST.universum, ST.gleichfoermigesPolygon, ST.sternPolygon}): {},
     frozenset({ST.galaxie, ST.gleichfoermigesPolygon, ST.sternPolygon}): {
