@@ -458,7 +458,7 @@ ParametersMain: NamedTuple = ParametersMain(
     ),
     (_("Grundstrukturen"), _("grundstrukturen")),
     (_("Teilchen-Meta-Physik"), _("teilchen")),
-    (_("kontinuum"), _("Kontinuum")),
+    (_("Kontinuum"), _("kontinuum")),
     (_("alles"),),
 )
 
@@ -790,6 +790,13 @@ paraNdataMatrix: list = [
     (
         ParametersMain.menschliches,
         (
+            _("Formationen"),
+        ),
+        {461,},
+    ),
+    (
+        ParametersMain.menschliches,
+        (
             _("Ansichten_Standpunkte_(18_17)"),
             _("ansichten"),
         ),
@@ -1025,6 +1032,13 @@ paraNdataMatrix: list = [
             _("hochzuechten"),
         ),
         {318, 319},
+    ),
+    (
+        ParametersMain.universum,
+        (
+            _("Zahlenarten"),
+        ),
+        {462,},
     ),
     (
         ParametersMain.universum,
