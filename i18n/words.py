@@ -330,7 +330,7 @@ wahl15Words: dict = {
 kugelnKreise = ["kugeln", "kreise"]
 ParametersMain: NamedTuple = namedtuple(
     "ParametersMain",
-    "wichtigste wichtigste2 religionen galaxie strukturgroesse universum multiversum wirtschaft menschliches procontra licht bedeutung symbole Multiplikationen konzept konzept2 inkrementieren operationen universummetakonkret primzahlwirkung gebrochenuniversum gebrochengalaxie gebrochenemotion gebrochengroesse primvielfache planet strukturenkleinere grundstrukturen teilchen alles",
+    "wichtigste wichtigste2 religionen galaxie strukturgroesse universum multiversum wirtschaft menschliches procontra licht bedeutung symbole Multiplikationen konzept konzept2 inkrementieren operationen universummetakonkret primzahlwirkung gebrochenuniversum gebrochengalaxie gebrochenemotion gebrochengroesse primvielfache planet strukturenkleinere grundstrukturen teilchen kontinuum alles",
 )
 
 konzeptE = {"konzept": _("konzept"), "konzept2": _("konzept2")}
@@ -458,6 +458,7 @@ ParametersMain: NamedTuple = ParametersMain(
     ),
     (_("Grundstrukturen"), _("grundstrukturen")),
     (_("Teilchen-Meta-Physik"), _("teilchen")),
+    (_("kontinuum"), _("Kontinuum")),
     (_("alles"),),
 )
 
@@ -473,7 +474,7 @@ wahl15: dict = {
     ),
     "2": _("Konkreta_und_Focus_(2)"),
     "5": _("Impulse_(5)"),
-    "7": _("Gefühle_(7)"),
+    "7": ",".join((_("Gefühle_(7)"), _("Anführer_Arten_(7)"))),
     "8": _("Modus_und_Sein_(8)"),
     "10": _("Wirklichkeiten_Wahrheit_Wahrnehmung_(10)"),
     "1"+_("pro")+"30": _("analytische_Ontologie"),
@@ -540,7 +541,9 @@ wahl15: dict = {
 
 wahl16 = {
     "16": ",".join(wahl16Words.values()),
-    "1": _("Meta-Physik-Teilchen_(1)"),
+    "1":  _("Meta-Physik-Teilchen_(1)"),
+    "10": _("Struktur-Wissenschaften_(10)"),
+    "20": _("Muster-Wissenschaften_(20)"),
 }
 
 freiheitGleichheit = ("freiheit", "gleichheit")
@@ -550,6 +553,11 @@ gemeinsamkeitenWort = _("Gemeinsamkeiten")
 # WICHTIG WICHTIG: die Befehle mit nur einem zeichen dürfen  nur ein Zeichen haben !!!!!!!
 befehle2: OrderedDict = OrderedDict({"15_" + a: "15_" + a for a in wahl15.keys()})
 befehle2.update({"16_15_" + a: "16_15_" + a for a in wahl15.keys() if a != "15"})
+#befehle2.update({"16_10_" + a: "16_15_" + a for a in wahl15.keys() if a != "15"})
+#befehle2.update({"16_20_" + a: "16_15_" + a for a in wahl15.keys() if a != "15"})
+            #_("Struktur-Wissenschaften_(10)"),
+            #_("Muster-Wissenschaften_(20)"),
+
 befehle2.update({"16_" + a: "16_" + a for a in wahl16.keys()})
 befehle2.update(
     {
@@ -1190,7 +1198,7 @@ paraNdataMatrix: list = [
             _("Netzwerk"),
             _("netzwerk"),
         ),
-        {417},
+        {417, 436},
     ),
     (
         ParametersMain.grundstrukturen,
@@ -1962,6 +1970,8 @@ paraNdataMatrix: list = [
         {
             69,
             70,
+            440,
+            455,
         },
     ),
     (
@@ -2513,7 +2523,28 @@ paraNdataMatrix: list = [
             _("kombination"),
             _("kombinationen"),
         ),
-        {33, 290, 296, 325, 326, 327, 402, 403, 406, 407, 408},
+        {33, 290, 296, 325, 326, 327, 402, 403, 406, 407, 408, 430},
+    ),
+    (
+        ParametersMain.multiversum,
+        (
+            _("Struktur-Wissenschaften_(10)"),
+        ),
+        {438,},
+    ),
+    (
+        ParametersMain.multiversum,
+        (
+            _("Muster-Wissenschaften_(20)"),
+        ),
+        {439,},
+    ),
+    (
+        ParametersMain.grundstrukturen,
+        (
+            _("Anführer_Arten_(7)"),
+        ),
+         {429, 455},
     ),
     (
         ParametersMain.grundstrukturen,
@@ -3231,7 +3262,55 @@ paraNdataMatrix: list = [
         set(),
         {str(a) for a in range(2, gebrochenSpaltenMaximumPlus1)},
     ),
-    (ParametersMain.symbole, (), {36, 37}),
+    (ParametersMain.symbole, (_("Religionen"),), {36, 37}),
+    (ParametersMain.symbole,         (
+            _("Drei"),
+        ),
+        {452, 460}
+    ),
+    (ParametersMain.symbole,         (
+            _("Vier"),
+        ),
+        {453,}
+    ),
+    (ParametersMain.symbole,         (
+            _("Fünf"),
+            _("Fuenf"),
+        ),
+        {454,}
+    ),
+    (ParametersMain.symbole,         (
+            _("Sechs"),
+        ),
+        {457,}
+    ),
+    (ParametersMain.symbole,         (
+            _("Sieben"),
+        ),
+        {457,}
+    ),
+    (ParametersMain.symbole,         (
+            _("Acht"),
+        ),
+        {458,}
+    ),
+    (ParametersMain.symbole,         (
+            _("Neun"),
+        ),
+        {459,}
+    ),
+    (ParametersMain.symbole,         (
+            _("Zehn"),
+        ),
+        {456,}
+    ),
+    (ParametersMain.symbole,         (
+            _("Zwölf"),
+            _("Zwoelf"),
+        ),
+        {456,}
+    ),
+
     # (
     #    ParametersMain.Multiplikationen,
     #    allowedPrimNumbersForCommand,
@@ -3870,6 +3949,51 @@ paraNdataMatrix: list = [
         set(),
         set(),
         {"PrimCSV"},
+    ),
+    (
+        ParametersMain.kontinuum,
+        (_("Q"), _("q"), _("Siebzehn"),),
+        {431, 432, 433, 434, 437, 441, 442, 443, 445, 450},
+    ),
+    (
+        ParametersMain.multiversum,
+        (_("P"), _("p"), _("Sechszehn"),),
+        {435},
+    ),
+    (
+        ParametersMain.kontinuum,
+        (_("P"), _("p"), _("Sechszehn"),),
+        {435},
+    ),
+    (
+        ParametersMain.kontinuum,
+        (_("X"), _("x"), _("Vierundzwanzig"),),
+        {436,},
+    ),
+    (
+        ParametersMain.kontinuum,
+        (_("R"), _("r"), _("Achzehn"),),
+        {451, 436},
+    ),
+    (
+        ParametersMain.kontinuum,
+        (_("A"), _("a"), ),
+        {446,},
+    ),
+    (
+        ParametersMain.kontinuum,
+        (_("B"), _("b"), ),
+        {447,},
+    ),
+    (
+        ParametersMain.kontinuum,
+        (_("C"), _("c"), ),
+        {448,},
+    ),
+    (
+        ParametersMain.kontinuum,
+        (_("D"), _("d"), ),
+        {449,},
     ),
 ]
 paraNdataMatrix = paraNdataMatrix

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-20 15:48+0200\n"
+"POT-Creation-Date: 2025-04-03 17:30+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3455,9 +3455,6 @@ msgstr ""
 #~ "') is actually a command (or there are several), but there is nothing to "
 #~ "output."
 
-#~ msgid "Das ist kein Befehl! -> '{}''"
-#~ msgstr "This is not a command! -> '{}''"
-
 #~ msgid ""
 #~ "Wenn im Zähler oder Nenner eine 1 ist, so werden davon oft (nicht immer) "
 #~ "keine Vielfacher gebildet.\n"
@@ -3710,3 +3707,209 @@ msgstr ""
 
 #~ msgid "Planet (2*n)"
 #~ msgstr "planets (2*n)"
+
+#~ msgid "leeren"
+#~ msgstr "clear"
+
+#~ msgid "I"
+#~ msgstr "I"
+
+#~ msgid "R"
+#~ msgstr "R"
+
+#~ msgid "range"
+#~ msgstr "range"
+
+#~ msgid "kurzbefehle"
+#~ msgstr "shortcuts"
+
+#~ msgid "Kurzbefehle"
+#~ msgstr "shortcuts"
+
+#~ msgid "{}{}{} ergibt sich aus '{}' und ergibt danach reta-Befehl:"
+#~ msgstr "{}{}{} results from '{}' and results reta command after:"
+
+# msgid "ein Mal kein Tabelleninhalt"
+# msgstr "one time no table content"
+#~ msgid "Das ist kein Befehl! -> '{}'"
+#~ msgstr "This is not a command! -> '{}'"
+
+#~ msgid "multis3"
+#~ msgstr "multis3"
+
+#~ msgid "T"
+#~ msgstr "D"
+
+#~ msgid "einheiten"
+#~ msgstr "units"
+
+#~ msgid "ein Mal kein Tabelleninhalt"
+#~ msgstr "one time no table content"
+
+#~ msgid "innere_Werte_1/6_der_Reinigung_und_Klarheit"
+#~ msgstr "inner-values_1/6_of_cleaning_and_clarity"
+
+#~ msgid "innerewerte"
+#~ msgstr "innervalues"
+
+#~ msgid "Rechnen"
+#~ msgstr "calculate"
+
+#~ msgid "rechnen"
+#~ msgstr "calculate"
+
+#~ msgid "W"
+#~ msgstr "T"
+
+#~ msgid "lebensbereiche"
+#~ msgstr "areas_of_life"
+
+#~ msgid "lebensfelder"
+#~ msgstr "domains_of_life"
+
+#~ msgid "künstliches_Leben_(15)"
+#~ msgstr "artificial_life_(15)"
+
+#~ msgid "künstlichesleben"
+#~ msgstr "artificiallife"
+
+#~ msgid "grosseki"
+#~ msgstr "bigAI"
+
+#~ msgid "das_Universelle_(15)"
+#~ msgstr "universal_(16)"
+
+#~ msgid "das_Galaktische_(14)"
+#~ msgstr "galactic_(14)"
+
+#~ msgid "das_Multiverselle_(16)"
+#~ msgstr "multiverse_(16)"
+
+#~ msgid "die_Tugendsortierung_(13_mit_14)"
+#~ msgstr "non_value_virtue_sorting_(13_with_14)"
+
+#~ msgid "die_Galaxie_Unterbereiche_(13)"
+#~ msgstr "galaxy_sub_areas_(13)"
+
+#~ msgid "das_Gute_die_Richtung_(7)"
+#~ msgstr "goodness_and_direction_(7)"
+
+#~ msgid "Raum_und_Dimensionen_(8)"
+#~ msgstr "space_and_dimension_(8)"
+
+#~ msgid "Eigentum_und_Besitz"
+#~ msgstr "ownership_and_possession"
+
+#~ msgid "Lebensbereiche_Problemklassen_(28)"
+#~ msgstr "areas_of_life_and_classes_of_problems(28)"
+
+#~ msgid "problemklassen"
+#~ msgstr "classes_of_problems"
+
+#~ msgid "ee"
+#~ msgstr "ee"
+
+#~ msgid "aussenerste"
+#~ msgstr "outsidefirst"
+
+#~ msgid "innenerste"
+#~ msgstr "insidefirst"
+
+#~ msgid "aussenalle"
+#~ msgstr "outsideall"
+
+#~ msgid "innenalle"
+#~ msgstr "insideall"
+
+#~ msgid "Bewusstheit_statt_Bewusstsein_(1)"
+#~ msgstr "awareness_instead_of_consciousness_(1)"
+
+#~ msgid "bewusstheit"
+#~ msgstr "awareness"
+
+#~ msgid "Gemeinsamkeiten"
+#~ msgstr "commonalities"
+
+#~ msgid "primfaktorenvergleich"
+#~ msgstr "primaryfactorcomparison"
+
+#~ msgid "gebrochen-rational_Gefuehle_n/m"
+#~ msgstr "fractional-rational_numbered_emotions_n/m"
+
+#~ msgid "gebrochenemotion"
+#~ msgstr "fractionedemotion"
+
+#~ msgid "gebrochen-rational_Strukturgroesse_n/m"
+#~ msgstr "fractional-rational_numbered_structure_sizes_n/m"
+
+#~ msgid "gebrochengroesse"
+#~ msgstr "fractionalnumberedstructuresize"
+
+#~ msgid "Emotion"
+#~ msgstr "emotion"
+
+#~ msgid "Strukturgroesse"
+#~ msgstr "structuresize"
+
+#~ msgid " am Besten hineinversetzen."
+#~ msgstr " is able to mentally understand the mind inside."
+
+#~ msgid "mathematisches_Design_(32)"
+#~ msgstr "mathematical_design_(32)"
+
+#~ msgid "mathematischesdesign"
+#~ msgstr "mathematicaldesign"
+
+#~ msgid "Primzahl"
+#~ msgstr "prime_number"
+
+#~ msgid "gegen_5"
+#~ msgstr "against_5"
+
+#~ msgid "invertieren"
+#~ msgstr "invert"
+
+#~ msgid "SonneMitMondanteil"
+#~ msgstr "sunWithMoonParts"
+
+#~ msgid "abstandPrim"
+#~ msgstr "distancePrime"
+
+#~ msgid "' verlangt mindestens 2 Zahlenangaben, wie '"
+#~ msgstr "' need at least 2 number or number ranges, as '"
+
+#~ msgid "Kontroverse_(51)"
+#~ msgstr "controversy_(51)"
+
+#~ msgid "Taetigkeiten"
+#~ msgstr "actions"
+
+#~ msgid "Wohlbefinden_(7mit6)"
+#~ msgstr "well-being_(7with6)"
+
+#~ msgid "Software-Lizenzen_akademische_Grade"
+#~ msgstr "software_licences_and_academic_degrees"
+
+#~ msgid "softwarelizenz"
+#~ msgstr "software_license"
+
+#~ msgid "akademischeGrade"
+#~ msgstr "academic_degrees"
+
+#~ msgid "kontroverse"
+#~ msgstr "controversy"
+
+#~ msgid "wohlbefinden"
+#~ msgstr "well-being"
+
+#~ msgid "tätigkeiten"
+#~ msgstr "actions"
+
+#~ msgid "taetigkeiten"
+#~ msgstr "actions"
+
+#~ msgid "mit"
+#~ msgstr "with"
+
+#~ msgid "gegen"
+#~ msgstr "against"
