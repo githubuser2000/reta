@@ -540,8 +540,15 @@ wahl15: dict = {
 }
 
 wahl16 = {
-    "16": ",".join(wahl16Words.values()),
     "1":  _("Meta-Physik-Teilchen_(1)"),
+    "16": ",".join(wahl16Words.values()),
+    "5": ",".join((
+            _("Strukturalien_bzw_Meta-Paradigmen_bzw_Transzendentalien_(15)"),
+            _("Model_of_Hierarchical_Complexity"),)),
+    "6": _("Geist_(15)"),
+    "15": ",".join((
+            _("Strukturalien_bzw_Meta-Paradigmen_bzw_Transzendentalien_(15)"),
+            _("Model_of_Hierarchical_Complexity"),)),
     "10": _("Struktur-Wissenschaften_(10)"),
     "20": _("Muster-Wissenschaften_(20)"),
 }
@@ -1054,13 +1061,20 @@ paraNdataMatrix: list = [
         ),
         {464,},
     ),
-        (
+    (
         ParametersMain.menschliches,
         (
             _("Erlösung"),
             _("Erloesung"),
         ),
         {465,},
+    ),
+    (
+        ParametersMain.menschliches,
+        (
+            _("Gewalt"),
+        ),
+        {466,},
     ),
 (
         ParametersMain.universum,
@@ -1907,6 +1921,20 @@ paraNdataMatrix: list = [
         {65, 75, 203},
     ),
     (
+        ParametersMain.multiversum,
+        (
+            _("Model_of_Hierarchical_Complexity"),
+            _("modelofhierarchicalcomplexity"),
+            komplexWort,
+            _("komplexität"),
+            _("komplexitaet"),
+            _("complexity"),
+            _("model"),
+            _("abstraktion"),
+        ),
+        {65, 75, 203},
+    ),
+    (
         ParametersMain.operationen,
         (
             _("2"),
@@ -2177,6 +2205,20 @@ paraNdataMatrix: list = [
     ),
     (
         ParametersMain.grundstrukturen,
+        (
+            _("Strukturalien_bzw_Meta-Paradigmen_bzw_Transzendentalien_(15)"),
+            _("Transzendentalien"),
+            _("transzendentalien"),
+            _("transzendentalie"),
+            _("strukturalien"),
+            _("alien"),
+            _("universalien"),
+            _("meta-paradigmen"),
+        ),
+        {5, 229, 131},
+    ),
+    (
+        ParametersMain.multiversum,
         (
             _("Strukturalien_bzw_Meta-Paradigmen_bzw_Transzendentalien_(15)"),
             _("Transzendentalien"),
@@ -2502,6 +2544,15 @@ paraNdataMatrix: list = [
     ),
     (
         ParametersMain.grundstrukturen,
+        (
+            _("Geist_(15)"),
+            geistWort,
+            _("bewusstsein"),
+        ),
+        {229, 231, 242, 273, 297, 304, 426},
+    ),
+    (
+        ParametersMain.multiversum,
         (
             _("Geist_(15)"),
             geistWort,

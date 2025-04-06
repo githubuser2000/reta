@@ -454,6 +454,7 @@ tableTags = {
         463,
         464,
         465,
+        466,
     },
     frozenset({ST.universum, ST.gleichfoermigesPolygon}): {
         131,
