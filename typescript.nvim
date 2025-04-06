@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/workspace-noneclipse/reta
+cd ~/Eigene-Dateien/myRepos/reta
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -14,9 +14,9 @@ else
   set shortmess=aoO
 endif
 badd +5 religionen.before23-0429.js
-badd +0 ~/workspace-noneclipse/reta/religionen.js
-badd +0 ~/workspace-noneclipse/reta/religion.csv
-badd +0 ~/workspace-noneclipse/reta/religionen.ts
+badd +0 ~/Eigene-Dateien/myRepos/reta/religionen.js
+badd +0 ~/Eigene-Dateien/myRepos/reta/religion.csv
+badd +0 ~/Eigene-Dateien/myRepos/reta/religionen.ts
 argglobal
 %argdel
 $argadd religionen.before23-0429.js
@@ -75,7 +75,7 @@ wincmd w
 exe 'vert 1resize ' . ((&columns * 40 + 48) / 96)
 exe 'vert 2resize ' . ((&columns * 55 + 48) / 96)
 tabnext
-edit ~/workspace-noneclipse/reta/religionen.ts
+edit ~/Eigene-Dateien/myRepos/reta/religionen.ts
 argglobal
 balt religionen.before23-0429.js
 setlocal fdm=manual
@@ -95,7 +95,7 @@ normal! zt
 keepjumps 200
 normal! 07|
 tabnext
-edit ~/workspace-noneclipse/reta/religionen.js
+edit ~/Eigene-Dateien/myRepos/reta/religionen.js
 argglobal
 balt religionen.before23-0429.js
 setlocal fdm=indent

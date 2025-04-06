@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-05 07:14+0100\n"
+"POT-Creation-Date: 2025-04-06 20:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3907,3 +3907,108 @@ msgstr ""
 
 #~ msgid "taetigkeiten"
 #~ msgstr "actions"
+
+#~ msgid "mit"
+#~ msgstr "with"
+
+#~ msgid "gegen"
+#~ msgstr "against"
+
+#~ msgid "kontinuum"
+#~ msgstr "continuum"
+
+#~ msgid "Kontinuum"
+#~ msgstr "continuum"
+
+#~ msgid "Anführer_Arten_(7)"
+#~ msgstr "leadership_types_(7)"
+
+#~ msgid "Struktur-Wissenschaften_(10)"
+#~ msgstr "structure_sciences_(10)"
+
+#~ msgid "Muster-Wissenschaften_(20)"
+#~ msgstr "pattern_sciences_(20)"
+
+#~ msgid "Drei"
+#~ msgstr "Three"
+
+#~ msgid "Vier"
+#~ msgstr "Four"
+
+#~ msgid "Fünf"
+#~ msgstr "Fife"
+
+#~ msgid "Fuenf"
+#~ msgstr "Fife"
+
+#~ msgid "Sechs"
+#~ msgstr "Six"
+
+#~ msgid "Sieben"
+#~ msgstr "Seven"
+
+#~ msgid "Acht"
+#~ msgstr "Eight"
+
+#~ msgid "Neun"
+#~ msgstr "Nine"
+
+#~ msgid "Zehn"
+#~ msgstr "Ten"
+
+#~ msgid "Zwölf"
+#~ msgstr "Twelve"
+
+#~ msgid "Zwoelf"
+#~ msgstr "Twelve"
+
+#~ msgid "Q"
+#~ msgstr "Q"
+
+#~ msgid "Siebzehn"
+#~ msgstr "Seventeen"
+
+#~ msgid "P"
+#~ msgstr "P"
+
+#~ msgid "Sechszehn"
+#~ msgstr "Sixteen"
+
+#~ msgid "X"
+#~ msgstr "X"
+
+#~ msgid "x"
+#~ msgstr "x"
+
+#~ msgid "Vierundzwanzig"
+#~ msgstr "Twentyfour"
+
+#~ msgid "Achzehn"
+#~ msgstr "Eighteen"
+
+#~ msgid "A"
+#~ msgstr "A"
+
+#~ msgid "b"
+#~ msgstr "b"
+
+#~ msgid "C"
+#~ msgstr "C"
+
+#~ msgid "c"
+#~ msgstr "c"
+
+#~ msgid "D"
+#~ msgstr "D"
+
+#~ msgid "d"
+#~ msgstr "d"
+
+#~ msgid "Farben"
+#~ msgstr "colors"
+
+#~ msgid "Formationen"
+#~ msgstr "formations"
+
+#~ msgid "Zahlenarten"
+#~ msgstr "types_numbers"

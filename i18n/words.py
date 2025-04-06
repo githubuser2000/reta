@@ -536,7 +536,7 @@ wahl15: dict = {
     "51": _("Kontroverse_(51)"),
     "13_4": _("Taetigkeiten"),
     "7"+_("mit")+"6": _("Wohlbefinden_(7mit6)"),
-    
+
 }
 
 wahl16 = {
@@ -1041,6 +1041,28 @@ paraNdataMatrix: list = [
         {462,},
     ),
     (
+        ParametersMain.menschliches,
+        (
+            _("Bestrafung"),
+        ),
+        {463,},
+    ),
+    (
+        ParametersMain.menschliches,
+        (
+            _("weniger_am_Menschen"),
+        ),
+        {464,},
+    ),
+        (
+        ParametersMain.menschliches,
+        (
+            _("Erlösung"),
+            _("Erloesung"),
+        ),
+        {465,},
+    ),
+(
         ParametersMain.universum,
         (
             _("Farben"),
