@@ -245,6 +245,7 @@ ausgabeArt: dict = {
 
 wahl16Words: dict = {
     "Multiversalien_(16)": _("Multiversalien_(16)"),
+    "P": _("P"),
     # "Meta-Physik-Teilchen_(1)": _("Meta-Physik-Teilchen_(1)"),
 }
 
@@ -474,8 +475,8 @@ wahl15: dict = {
     ),
     "2": _("Konkreta_und_Focus_(2)"),
     "5": _("Impulse_(5)"),
-    "7": ",".join((_("Gefühle_(7)"), _("Anführer_Arten_(7)"))),
-    "8": _("Modus_und_Sein_(8)"),
+    "7": ",".join((_("Gefühle_(7)"), _("Anführer_Arten_(7)"), _("Erlösung"))),
+    "8": ",".join((_("Modus_und_Sein_(8)"), _("Bestrafung"),_("Gewalt"))),
     "10": _("Wirklichkeiten_Wahrheit_Wahrnehmung_(10)"),
     "1"+_("pro")+"30": _("analytische_Ontologie"),
     "12": ",".join((_("Meta-Systeme_(12)"), _("Ordnung_und_Filterung_12_und_1pro12"))),
@@ -542,6 +543,9 @@ wahl15: dict = {
 wahl16 = {
     "1":  _("Meta-Physik-Teilchen_(1)"),
     "16": ",".join(wahl16Words.values()),
+    "2": ",".join((
+            _("Strukturalien_bzw_Meta-Paradigmen_bzw_Transzendentalien_(15)"),
+            _("Model_of_Hierarchical_Complexity"),)),
     "5": ",".join((
             _("Strukturalien_bzw_Meta-Paradigmen_bzw_Transzendentalien_(15)"),
             _("Model_of_Hierarchical_Complexity"),)),
@@ -1055,6 +1059,13 @@ paraNdataMatrix: list = [
         {463,},
     ),
     (
+        ParametersMain.grundstrukturen,
+        (
+            _("Bestrafung"),
+        ),
+        {463,},
+    ),
+    (
         ParametersMain.menschliches,
         (
             _("weniger_am_Menschen"),
@@ -1070,13 +1081,28 @@ paraNdataMatrix: list = [
         {465,},
     ),
     (
+        ParametersMain.grundstrukturen,
+        (
+            _("Erlösung"),
+            _("Erloesung"),
+        ),
+        {465,},
+    ),
+    (
         ParametersMain.menschliches,
         (
             _("Gewalt"),
         ),
         {466,},
     ),
-(
+    (
+        ParametersMain.grundstrukturen,
+        (
+            _("Gewalt"),
+        ),
+        {466,},
+    ),
+    (
         ParametersMain.universum,
         (
             _("Farben"),
