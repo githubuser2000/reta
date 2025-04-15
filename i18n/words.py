@@ -4073,7 +4073,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.kontinuum,
         (_("Q"), _("q"), _("Siebzehn"),),
-        {431, 432, 433, 434, 437, 441, 442, 443, 445, 450},
+        {431, 432, 433, 434, 437, 441, 442, 443, 445, 450, 467, 468, 469},
     ),
     (
         ParametersMain.multiversum,
