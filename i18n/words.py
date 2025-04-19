@@ -960,7 +960,7 @@ paraNdataMatrix: list = [
             _("dertierkreiszeichen"),
             _("babylon"),
         ),
-        {0, 36, 207},
+        {0, 36, 207, 477, 478},
     ),
     (
         ParametersMain.religionen,
@@ -1012,6 +1012,13 @@ paraNdataMatrix: list = [
             _("kugeln"),
         ),
         {23},
+    ),
+    (
+        ParametersMain.galaxie,
+        (
+            _("Lebewesen_Galaxie_am_Besten"),
+        ),
+        {470, 471, 473},
     ),
     (
         ParametersMain.galaxie,
@@ -1225,6 +1232,13 @@ paraNdataMatrix: list = [
             kugelnKreise[1],
         ),
         {77, 145},
+    ),
+    (
+        ParametersMain.multiversum,
+        (
+            _("Raumzeit_Anordnung_mathematisch_universell"),
+        ),
+        {472},
     ),
     (
         ParametersMain.multiversum,
@@ -2069,6 +2083,7 @@ paraNdataMatrix: list = [
             70,
             440,
             455,
+            476,
         },
     ),
     (
@@ -3236,7 +3251,7 @@ paraNdataMatrix: list = [
             _("in_ReTa"),
             _("inreta"),
         ),
-        {209, 210},
+        {209, 210, 474, 475},
     ),
     (
         ParametersMain.bedeutung,
