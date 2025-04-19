@@ -1100,14 +1100,14 @@ paraNdataMatrix: list = [
         (
             _("Gewalt"),
         ),
-        {466,},
+        {466},
     ),
     (
         ParametersMain.grundstrukturen,
         (
             _("Gewalt"),
         ),
-        {466,},
+        {466, 479},
     ),
     (
         ParametersMain.universum,
@@ -2637,7 +2637,7 @@ paraNdataMatrix: list = [
             _("wahrheit"),
             _("wahrnehmung"),
         ),
-        {233, 265, 268, 322, 342},
+        {233, 265, 268, 322, 342, 480},
     ),
     (
         ParametersMain.grundstrukturen,
@@ -2679,7 +2679,7 @@ paraNdataMatrix: list = [
         (
             _("Anführer_Arten_(7)"),
         ),
-         {429, 455},
+         {429, 455, 481, 482},
     ),
     (
         ParametersMain.grundstrukturen,
