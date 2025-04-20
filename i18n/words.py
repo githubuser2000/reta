@@ -840,7 +840,7 @@ paraNdataMatrix: list = [
             _("meta-systeme"),
             _("meta-system"),
         ),
-        {232, 288, 334, 410, 411},
+        {232, 288, 334, 410, 411, 483},
     ),
     (
         ParametersMain.planet,
@@ -1050,6 +1050,13 @@ paraNdataMatrix: list = [
             _("hochzuechten"),
         ),
         {318, 319},
+    ),
+    (
+        ParametersMain.universum,
+        (
+            _("Zusammenhang_Gehirn_Kosmos_Universum"),
+        ),
+        {489,},
     ),
     (
         ParametersMain.universum,
@@ -1944,7 +1951,7 @@ paraNdataMatrix: list = [
             _("model"),
             _("abstraktion"),
         ),
-        {65, 75, 203},
+        {65, 75, 203, 483},
     ),
     (
         ParametersMain.universum,
@@ -2672,7 +2679,7 @@ paraNdataMatrix: list = [
         (
             _("Muster-Wissenschaften_(20)"),
         ),
-        {439,},
+        {439, 484},
     ),
     (
         ParametersMain.grundstrukturen,
@@ -2688,7 +2695,7 @@ paraNdataMatrix: list = [
             _("klasse"),
             _("klassen"),
         ),
-        {241, 289, 394, 395},
+        {241, 289, 394, 395, 485},
     ),
     (
         ParametersMain.grundstrukturen,
@@ -2711,7 +2718,7 @@ paraNdataMatrix: list = [
             _("menge"),
             _("mengen"),
         ),
-        {232, 288, 334, 410, 411},
+        {232, 288, 334, 410, 411, 483},
     ),
     (
         ParametersMain.grundstrukturen,
@@ -4088,7 +4095,12 @@ paraNdataMatrix: list = [
     (
         ParametersMain.kontinuum,
         (_("Q"), _("q"), _("Siebzehn"),),
-        {431, 432, 433, 434, 437, 441, 442, 443, 445, 450, 467, 468, 469},
+        {431, 432, 433, 434, 437, 441, 442, 443, 445, 450, 467, 468, 469, 487, 488},
+    ),
+    (
+        ParametersMain.kontinuum,
+        (_("T"), _("t"), _("Zwanzig"),),
+        {486},
     ),
     (
         ParametersMain.multiversum,

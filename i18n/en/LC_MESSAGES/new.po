@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-19 16:28+0200\n"
+"POT-Creation-Date: 2025-04-20 20:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -4027,3 +4027,15 @@ msgstr ""
 
 #~ msgid "Gewalt"
 #~ msgstr "violence"
+
+#~ msgid "Lebewesen_Galaxie_am_Besten"
+#~ msgstr "living_creatures_galaxy_best_at"
+
+#~ msgid "Raumzeit_Anordnung_mathematisch_universell"
+#~ msgstr "space_time_arrangement_mathematically_universal"
+
+#~ msgid "Zusammenhang_Gehirn_Kosmos_Universum"
+#~ msgstr "context_brain_cosmos_universe"
+
+#~ msgid "Zwanzig"
+#~ msgstr "twenty"
