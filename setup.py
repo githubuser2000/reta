@@ -78,7 +78,7 @@ class ExtractMessages(Command):
 
 setup(
     name="reta",
-    version="3.20250419.4550",
+    version="3.20250419.4551",
     # Version 3 ab retaPrompt, Version 20230901 ist Jahr Monat Tag, Version 4492 ist die Nummer der Anzahlen der Commits des Repos nachdem das alte Repo kaputt gegangen war
     # bis Ende 2023 gab es keine Versionsnummern: Version 2 bedeutet, nun html Datei dazu, Version 3 bedeutet, nun retaPrompt dazu. Es beginnt nun also mit Version 3.
     # So kann jeder nachträglich zu jedem reta selbst eine Versionsnummer bestimmen.
