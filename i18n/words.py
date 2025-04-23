@@ -2686,7 +2686,7 @@ paraNdataMatrix: list = [
         (
             _("Anführer_Arten_(7)"),
         ),
-         {429, 455, 481, 482},
+         {429, 455, 481, 482, 490},
     ),
     (
         ParametersMain.grundstrukturen,
@@ -2999,7 +2999,7 @@ paraNdataMatrix: list = [
             _("anfuehrer"),
             _("chef"),
         ),
-        {29, 170, 429, 455},
+        {29, 170, 429, 455, 490},
     ),
     (
         ParametersMain.menschliches,
