@@ -2899,7 +2899,7 @@ paraNdataMatrix: list = [
             _("modi"),
             _("sein"),
         ),
-        {234, 337, 385, 387},
+        {234, 337, 385, 387, 491},
     ),
     (
         ParametersMain.menschliches,
@@ -4096,6 +4096,11 @@ paraNdataMatrix: list = [
         ParametersMain.kontinuum,
         (_("Q"), _("q"), _("Siebzehn"),),
         {431, 432, 433, 434, 437, 441, 442, 443, 445, 450, 467, 468, 469, 487, 488},
+    ),
+    (
+        ParametersMain.kontinuum,
+        (_("H"), _("h"), _("Acht"),),
+        {491},
     ),
     (
         ParametersMain.kontinuum,
