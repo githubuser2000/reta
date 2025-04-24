@@ -2665,7 +2665,7 @@ paraNdataMatrix: list = [
             _("kombination"),
             _("kombinationen"),
         ),
-        {33, 290, 296, 325, 326, 327, 402, 403, 406, 407, 408, 430},
+        {33, 290, 296, 325, 326, 327, 402, 403, 406, 407, 408, 430, 492},
     ),
     (
         ParametersMain.multiversum,
@@ -4101,6 +4101,11 @@ paraNdataMatrix: list = [
         ParametersMain.kontinuum,
         (_("H"), _("h"), _("Acht"),),
         {491},
+    ),
+    (
+        ParametersMain.kontinuum,
+        (_("N"), _("n"), _("Vierzehn"),),
+        {492},
     ),
     (
         ParametersMain.kontinuum,
