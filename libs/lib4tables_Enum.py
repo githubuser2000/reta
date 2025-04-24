@@ -25,6 +25,7 @@ tableTags = {
         395,
         424,
         492,
+        493,
     },
     frozenset(
         {ST.universum, ST.keinParaOdMetaP, ST.sternPolygon, ST.gleichfoermigesPolygon}

@@ -2633,7 +2633,7 @@ paraNdataMatrix: list = [
             _("paradigmen"),
             _("absichten"),
         ),
-        {10, 42, 410, 411},
+        {10, 42, 410, 411, 493},
     ),
     (
         ParametersMain.grundstrukturen,
@@ -4106,6 +4106,11 @@ paraNdataMatrix: list = [
         ParametersMain.kontinuum,
         (_("N"), _("n"), _("Vierzehn"),),
         {492},
+    ),
+    (
+        ParametersMain.kontinuum,
+        (_("M"), _("m"), _("Dreizehn"),),
+        {493},
     ),
     (
         ParametersMain.kontinuum,
