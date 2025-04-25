@@ -801,6 +801,14 @@ paraNdataMatrix: list = [
     (
         ParametersMain.menschliches,
         (
+            _("Superkräfte"),
+            _("Superkraefte"),
+        ),
+        {494,},
+    ),
+    (
+        ParametersMain.menschliches,
+        (
             _("Formationen"),
         ),
         {461,},
@@ -4130,7 +4138,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.kontinuum,
         (_("X"), _("x"), _("Vierundzwanzig"),),
-        {436,},
+        {436, 25},
     ),
     (
         ParametersMain.kontinuum,
