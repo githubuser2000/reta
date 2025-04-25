@@ -953,6 +953,16 @@ paraNdataMatrix: list = [
     ),
     (
         ParametersMain.religionen,
+        (_("Satan_Teufel"),),
+        {495},
+    ),
+    (
+        ParametersMain.menschliches,
+        (_("Satan_Teufel"),),
+        {495},
+    ),
+    (
+        ParametersMain.religionen,
         (_("Hinduismus"), _("hinduismus")),
         {217},
     ),

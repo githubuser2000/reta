@@ -65,7 +65,8 @@ tableTags = {
         36,
         21,
         4,
-        422
+        422,
+        495,
     },
     frozenset(
         {ST.gleichfoermigesPolygon, ST.galaxie, ST.universum, ST.keinParaOdMetaP}
