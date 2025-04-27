@@ -799,19 +799,35 @@ paraNdataMatrix: list = [
         {314},
     ),
     (
+        ParametersMain.religionen,
+        (
+            _("Superkräfte"),
+            _("Superkraefte"),
+        ),
+        {444, 494, 496},
+    ),
+    (
+        ParametersMain.galaxie,
+        (
+            _("Superkräfte"),
+            _("Superkraefte"),
+        ),
+        {444, 494, 496},
+    ),
+    (
         ParametersMain.menschliches,
         (
             _("Superkräfte"),
             _("Superkraefte"),
         ),
-        {494,},
+        {444, 494, 496},
     ),
     (
         ParametersMain.menschliches,
         (
             _("Formationen"),
         ),
-        {461,},
+        {461},
     ),
     (
         ParametersMain.menschliches,
@@ -2651,7 +2667,7 @@ paraNdataMatrix: list = [
             _("paradigmen"),
             _("absichten"),
         ),
-        {10, 42, 410, 411, 493},
+        {10, 42, 410, 411, 493, 494 },
     ),
     (
         ParametersMain.grundstrukturen,
@@ -4117,6 +4133,11 @@ paraNdataMatrix: list = [
     ),
     (
         ParametersMain.kontinuum,
+        (_("O"), _("o"), _("Fünfzehn"),),
+        {5},
+    ),
+    (
+        ParametersMain.kontinuum,
         (_("H"), _("h"), _("Acht"),),
         {491},
     ),
@@ -4148,7 +4169,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.kontinuum,
         (_("X"), _("x"), _("Vierundzwanzig"),),
-        {436, 25},
+        {436, 25, 386},
     ),
     (
         ParametersMain.kontinuum,

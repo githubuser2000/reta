@@ -254,6 +254,7 @@ tableTags = {
         488,
         491,
         494,
+        496,
     },
     frozenset({ST.sternPolygon, ST.galaxie}): {
         0,
