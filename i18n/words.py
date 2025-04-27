@@ -549,7 +549,7 @@ wahl16 = {
             _("Model_of_Hierarchical_Complexity"),)),
     "5": ",".join((
             _("Strukturalien_bzw_Meta-Paradigmen_bzw_Transzendentalien_(15)"),
-            _("Model_of_Hierarchical_Complexity"),_("Biologischer_Baum_(16_->_5)"),)),
+            _("Model_of_Hierarchical_Complexity"),_("Biologischer_Baum_(16_->_5)"), _("P5"),)),
     "6": _("Geist_(15)"),
     "15": ",".join((
             _("Strukturalien_bzw_Meta-Paradigmen_bzw_Transzendentalien_(15)"),
@@ -805,7 +805,7 @@ paraNdataMatrix: list = [
             _("Superkräfte"),
             _("Superkraefte"),
         ),
-        {444, 494, 496},
+        {444, 494, 496, 503},
     ),
     (
         ParametersMain.galaxie,
@@ -966,7 +966,7 @@ paraNdataMatrix: list = [
             _("archon"),
             _("religionsgruendertyp"),
         ),
-        {72},
+        {72, 503},
     ),
     (
         ParametersMain.religionen,
@@ -1017,7 +1017,7 @@ paraNdataMatrix: list = [
             _("messiase"),
             _("messiasse"),
         ),
-        {7},
+        {7, 503},
     ),
     (
         ParametersMain.religionen,
@@ -2721,7 +2721,7 @@ paraNdataMatrix: list = [
         (
             _("Anführer_Arten_(7)"),
         ),
-         {429, 455, 481, 482, 490, 497, 498, 499},
+         {429, 455, 481, 482, 490, 497, 498, 499, 502},
     ),
     (
         ParametersMain.grundstrukturen,
@@ -3034,7 +3034,7 @@ paraNdataMatrix: list = [
             _("anfuehrer"),
             _("chef"),
         ),
-        {29, 170, 429, 455, 490},
+        {29, 170, 429, 455, 490, 502},
     ),
     (
         ParametersMain.grundstrukturen,
@@ -4192,6 +4192,16 @@ paraNdataMatrix: list = [
     ),
     (
         ParametersMain.kontinuum,
+        (_("P5"), _("p5"), _("Sechszehn->Fünf"),),
+        {501},
+    ),
+    (
+        ParametersMain.multiversum,
+        (_("P5"), _("p5"), _("Sechszehn->Fünf"),),
+        {501},
+    ),
+    (
+        ParametersMain.kontinuum,
         (_("P"), _("p"), _("Sechszehn"),),
         {435},
     ),
@@ -4202,7 +4212,12 @@ paraNdataMatrix: list = [
     ),
     (
         ParametersMain.kontinuum,
-        (_("R"), _("r"), _("Achzehn"),),
+        (_("S"), _("s"), _("Neunzehn"),),
+        {504},
+    ),
+    (
+        ParametersMain.kontinuum,
+        (_("R"), _("r"), _("Achtzehn"),),
         {451, 436},
     ),
     (

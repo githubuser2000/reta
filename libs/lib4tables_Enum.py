@@ -257,6 +257,10 @@ tableTags = {
         491,
         494,
         496,
+        501,
+        502,
+        503,
+        504,
     },
     frozenset({ST.sternPolygon, ST.galaxie}): {
         0,
@@ -443,6 +447,7 @@ tableTags = {
         480,
         481,
         482,
+        500,
     },
     frozenset({ST.galaxie, ST.gleichfoermigesPolygon}): {
         16,
