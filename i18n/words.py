@@ -864,7 +864,7 @@ paraNdataMatrix: list = [
             _("meta-systeme"),
             _("meta-system"),
         ),
-        {232, 288, 334, 410, 411, 483, 79, 80, 497},
+        {232, 288, 334, 410, 411, 483, 79, 80, 497, 498, 499},
     ),
     (
         ParametersMain.planet,
@@ -879,7 +879,7 @@ paraNdataMatrix: list = [
             _(freiheitGleichheit[0]),
             _(freiheitGleichheit[1]),
         ),
-        {132, 324, 328, 79, 80, 331, 335, 497},
+        {132, 324, 328, 79, 80, 331, 335, 497, 498, 499},
     ),
     (
         ParametersMain.planet,
@@ -2026,7 +2026,7 @@ paraNdataMatrix: list = [
             _("alternierend"),
             _("zweierstruktur"),
         ),
-        {78, 79, 80, 331, 497},
+        {78, 79, 80, 331, 497, 498, 499},
     ),
     (
         ParametersMain.operationen,
@@ -2720,7 +2720,7 @@ paraNdataMatrix: list = [
         (
             _("Anführer_Arten_(7)"),
         ),
-         {429, 455, 481, 482, 490},
+         {429, 455, 481, 482, 490, 497, 498, 499},
     ),
     (
         ParametersMain.grundstrukturen,
@@ -2752,7 +2752,7 @@ paraNdataMatrix: list = [
             _("menge"),
             _("mengen"),
         ),
-        {232, 288, 334, 410, 411, 483, 79, 80, 497},
+        {232, 288, 334, 410, 411, 483, 79, 80, 497, 498, 499},
     ),
     (
         ParametersMain.grundstrukturen,

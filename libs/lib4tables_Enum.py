@@ -103,6 +103,7 @@ tableTags = {
         205,
         346,
         484,
+        499,
     },
     frozenset({ST.sternPolygon, ST.keinParaOdMetaP, ST.universum}): {
         132,
@@ -121,6 +122,7 @@ tableTags = {
         473,
         489,
         490,
+        497, 498
     },
     frozenset({ST.sternPolygon, ST.keinParaOdMetaP}): {
         232,
