@@ -470,6 +470,7 @@ wahl15: dict = {
             _("Strukturalien_bzw_Meta-Paradigmen_bzw_Transzendentalien_(15)"),
             _("Geist_(15)"),
             _("Model_of_Hierarchical_Complexity"),
+            _("Biologischer_Baum_(15)"),
             Primzahlkreuz_pro_contra_strs_Fkt[1],
         )
     ),
@@ -548,7 +549,7 @@ wahl16 = {
             _("Model_of_Hierarchical_Complexity"),)),
     "5": ",".join((
             _("Strukturalien_bzw_Meta-Paradigmen_bzw_Transzendentalien_(15)"),
-            _("Model_of_Hierarchical_Complexity"),)),
+            _("Model_of_Hierarchical_Complexity"),_("Biologischer_Baum_(16_->_5)"),)),
     "6": _("Geist_(15)"),
     "15": ",".join((
             _("Strukturalien_bzw_Meta-Paradigmen_bzw_Transzendentalien_(15)"),
@@ -3034,6 +3035,34 @@ paraNdataMatrix: list = [
             _("chef"),
         ),
         {29, 170, 429, 455, 490},
+    ),
+    (
+        ParametersMain.grundstrukturen,
+        (
+            _("Biologischer_Baum_(15)"),
+        ),
+        {500},
+    ),
+    (
+        ParametersMain.multiversum,
+        (
+            _("Biologischer_Baum_(16_->_5)"),
+        ),
+        {500},
+    ),
+    (
+        ParametersMain.universum,
+        (
+            _("Biologischer_Baum_(15)"),
+        ),
+        {500},
+    ),
+    (
+        ParametersMain.menschliches,
+        (
+            _("Biologischer_Baum_(15)"),
+        ),
+        {500},
     ),
     (
         ParametersMain.menschliches,
