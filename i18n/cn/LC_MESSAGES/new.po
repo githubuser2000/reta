@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-05 07:14+0100\n"
+"POT-Creation-Date: 2025-04-28 05:42+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3907,3 +3907,192 @@ msgstr ""
 
 #~ msgid "taetigkeiten"
 #~ msgstr "actions"
+
+#~ msgid "mit"
+#~ msgstr "with"
+
+#~ msgid "gegen"
+#~ msgstr "against"
+
+#~ msgid "kontinuum"
+#~ msgstr "continuum"
+
+#~ msgid "Kontinuum"
+#~ msgstr "continuum"
+
+#~ msgid "Anführer_Arten_(7)"
+#~ msgstr "leadership_types_(7)"
+
+#~ msgid "Struktur-Wissenschaften_(10)"
+#~ msgstr "structure_sciences_(10)"
+
+#~ msgid "Muster-Wissenschaften_(20)"
+#~ msgstr "pattern_sciences_(20)"
+
+#~ msgid "Drei"
+#~ msgstr "Three"
+
+#~ msgid "Vier"
+#~ msgstr "Four"
+
+#~ msgid "Fünf"
+#~ msgstr "Fife"
+
+#~ msgid "Fuenf"
+#~ msgstr "Fife"
+
+#~ msgid "Sechs"
+#~ msgstr "Six"
+
+#~ msgid "Sieben"
+#~ msgstr "Seven"
+
+#~ msgid "Acht"
+#~ msgstr "Eight"
+
+#~ msgid "Neun"
+#~ msgstr "Nine"
+
+#~ msgid "Zehn"
+#~ msgstr "Ten"
+
+#~ msgid "Zwölf"
+#~ msgstr "Twelve"
+
+#~ msgid "Zwoelf"
+#~ msgstr "Twelve"
+
+#~ msgid "Q"
+#~ msgstr "Q"
+
+#~ msgid "Siebzehn"
+#~ msgstr "Seventeen"
+
+#~ msgid "P"
+#~ msgstr "P"
+
+#~ msgid "Sechszehn"
+#~ msgstr "Sixteen"
+
+#~ msgid "X"
+#~ msgstr "X"
+
+#~ msgid "x"
+#~ msgstr "x"
+
+#~ msgid "Vierundzwanzig"
+#~ msgstr "Twentyfour"
+
+#~ msgid "Achzehn"
+#~ msgstr "Eighteen"
+
+#~ msgid "A"
+#~ msgstr "A"
+
+#~ msgid "b"
+#~ msgstr "b"
+
+#~ msgid "C"
+#~ msgstr "C"
+
+#~ msgid "c"
+#~ msgstr "c"
+
+#~ msgid "D"
+#~ msgstr "D"
+
+#~ msgid "d"
+#~ msgstr "d"
+
+#~ msgid "Farben"
+#~ msgstr "colors"
+
+#~ msgid "Formationen"
+#~ msgstr "formations"
+
+#~ msgid "Zahlenarten"
+#~ msgstr "types_numbers"
+
+#~ msgid "Bestrafung"
+#~ msgstr "punishment"
+
+#~ msgid "weniger_am_Menschen"
+#~ msgstr "less_at_human"
+
+#~ msgid "Erlösung"
+#~ msgstr "salvation"
+
+#~ msgid "Erloesung"
+#~ msgstr "Salvation"
+
+#~ msgid "Gewalt"
+#~ msgstr "violence"
+
+#~ msgid "Lebewesen_Galaxie_am_Besten"
+#~ msgstr "living_creatures_galaxy_best_at"
+
+#~ msgid "Raumzeit_Anordnung_mathematisch_universell"
+#~ msgstr "space_time_arrangement_mathematically_universal"
+
+#~ msgid "Zusammenhang_Gehirn_Kosmos_Universum"
+#~ msgstr "context_brain_cosmos_universe"
+
+#~ msgid "Zwanzig"
+#~ msgstr "twenty"
+
+#~ msgid "H"
+#~ msgstr "H"
+
+#~ msgid "N"
+#~ msgstr "N"
+
+#~ msgid "n"
+#~ msgstr "n"
+
+#~ msgid "Vierzehn"
+#~ msgstr "fourteen"
+
+#~ msgid "M"
+#~ msgstr "M"
+
+#~ msgid "m"
+#~ msgstr "m"
+
+#~ msgid "Dreizehn"
+#~ msgstr "thirteen"
+
+#~ msgid "Superkräfte"
+#~ msgstr "Superpowers"
+
+#~ msgid "Superkraefte"
+#~ msgstr "Superpowers"
+
+#~ msgid "Satan_Teufel"
+#~ msgstr "Satan_Devil"
+
+#~ msgid "O"
+#~ msgstr "O"
+
+#~ msgid "Fünfzehn"
+#~ msgstr "fifeteen"
+
+#~ msgid "Biologischer_Baum_(15)"
+#~ msgstr "biological_tree_(15)"
+
+#~ msgid "Biologischer_Baum_(16_->_5)"
+#~ msgstr "biological_tree_(16-->_15)"
+
+#~ msgid "P5"
+#~ msgstr "P5"
+
+#~ msgid "p5"
+#~ msgstr "p5"
+
+#~ msgid "Sechszehn->Fünf"
+#~ msgstr "sixteen->fife"
+
+#~ msgid "Neunzehn"
+#~ msgstr "nineteen"
+
+#~ msgid "Achtzehn"
+#~ msgstr "Eighteen"

@@ -818,6 +818,13 @@ paraNdataMatrix: list = [
     (
         ParametersMain.menschliches,
         (
+            _("schöne_hübsche_Menschen_Lebensaufgaben_Jobs_Macht_Schicksal"),
+        ),
+        {505},
+    ),
+    (
+        ParametersMain.menschliches,
+        (
             _("Superkräfte"),
             _("Superkraefte"),
         ),
@@ -4951,3 +4958,5 @@ wrongLangSentence = (
     _("für '-languages=' sind die Paramter-Werte erlaubt: ")
     + str(tuple(sprachen.values()))[1:-1]
 )
+
+tomDecodedMotivesLang = {"kr": "kr-thomas-decodedDekodiert-in-motives-purposesAbsichten.csv", "vn": "vn-thomas-decodedDekodiert-in-motives-purposesAbsichten.csv", "cn": "cn-thomas-decodedDekodiert-in-motives-purposesAbsichten.csv"}

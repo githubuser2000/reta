@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-28 00:15+0200\n"
+"POT-Creation-Date: 2025-04-28 05:42+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -4081,3 +4081,18 @@ msgstr ""
 
 #~ msgid "Biologischer_Baum_(16_->_5)"
 #~ msgstr "biological_tree_(16-->_15)"
+
+#~ msgid "P5"
+#~ msgstr "P5"
+
+#~ msgid "p5"
+#~ msgstr "p5"
+
+#~ msgid "Sechszehn->Fünf"
+#~ msgstr "sixteen->fife"
+
+#~ msgid "Neunzehn"
+#~ msgstr "nineteen"
+
+#~ msgid "Achtzehn"
+#~ msgstr "Eighteen"

@@ -1280,6 +1280,20 @@ class Program:
                 len(self.relitable) + 1, self.tables.hoechsteZeile[1024] + 2
             ):
                 self.relitable += [[""] * len(self.relitable[0])]
+        changeMotivesColumn = i18n.tomDecodedMotivesLang["kr"] if i18n.sprachen[i18n.sprachenWahl] == "kr" else i18n.tomDecodedMotivesLang["cn"] if i18n.sprachen[i18n.sprachenWahl] == "cn" else i18n.tomDecodedMotivesLang["vn"] if i18n.sprachen[i18n.sprachenWahl] == "vn" else ""
+        if changeMotivesColumn not in ("", "de"):
+            place = os.path.join(
+                os.getcwd(),
+                os.path.dirname(__file__),
+                "csv",
+                os.path.basename(changeMotivesColumn),
+            )
+            with open(place, mode="r", encoding="utf-8") as csv_file:
+                for i, col in enumerate(csv.reader(csv_file, delimiter=";")):
+                    try:
+                        self.relitable[i][10] = col[0]
+                    except IndexError:
+                        pass
         self.htmlOrBBcode = False
         self.breiteORbreiten = False
         self.keineleereninhalte = False
