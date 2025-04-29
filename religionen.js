@@ -191,38 +191,27 @@ class StarPolygon {
         return this.canvas.toDataURL();
     }
 }
-function subFkt1_PolyTpes_oldAndToReplaceThisFkt(Enums1) {
-    var Enums = new Set(Enums1);
-    var abzug = [];
-    if (Enums.has(ST.gebrRat) && !Enums.has(ST.sternPolygon))
-        abzug.push(ST.sternPolygon);
-    if (Enums.has(ST.gebrRat) && !Enums.has(ST.gleichfoermigesPolygon))
-        abzug.push(ST.gleichfoermigesPolygon);
-    if (Enums.has(ST.gleichfoermigesPolygon) && !Enums.has(ST.sternPolygon))
-        abzug.push(ST.sternPolygon);
-    if (Enums.has(ST.gleichfoermigesPolygon) && !Enums.has(ST.gebrRat))
-        abzug.push(ST.gebrRat);
-    if (Enums.has(ST.sternPolygon) && !Enums.has(ST.gleichfoermigesPolygon))
-        abzug.push(ST.gleichfoermigesPolygon);
-    if (Enums.has(ST.sternPolygon) && !Enums.has(ST.gebrRat))
-        abzug.push(ST.gebrRat);
-    if (Enums.has(ST.galaxie) && !Enums.has(ST.universum))
-        abzug.push(ST.universum);
-    if (Enums.has(ST.galaxie) && !Enums.has(ST.keinParaOdMetaP))
-        abzug.push(ST.keinParaOdMetaP);
-    if (Enums.has(ST.universum) && !Enums.has(ST.galaxie))
-        abzug.push(ST.galaxie);
-    if (Enums.has(ST.universum) && !Enums.has(ST.keinParaOdMetaP))
-        abzug.push(ST.keinParaOdMetaP);
-    if (Enums.has(ST.keinParaOdMetaP) && !Enums.has(ST.galaxie))
-        abzug.push(ST.galaxie);
-    if (Enums.has(ST.keinParaOdMetaP) && !Enums.has(ST.universum))
-        abzug.push(ST.universum);
-    var Enume = new Set([...Enums, ...Enume1]);
-    for (var i = 0; i < abzug.length; i++)
-        Enume.delete(abzug[i]);
-    return Array.from(Enume);
+/*
+function subFkt1_PolyTpes_oldAndToReplaceThisFkt(Enums1: Array<number> | Set<number> | HTMLCollectionOf<any>): number[] {
+  var Enums: Set<ST> | Array<number> = new Set(Enums1);
+  var abzug: number[] = [];
+  if (Enums.has(ST.gebrRat) && !Enums.has(ST.sternPolygon)) abzug.push(ST.sternPolygon);
+  if (Enums.has(ST.gebrRat) && !Enums.has(ST.gleichfoermigesPolygon)) abzug.push(ST.gleichfoermigesPolygon);
+  if (Enums.has(ST.gleichfoermigesPolygon) && !Enums.has(ST.sternPolygon)) abzug.push(ST.sternPolygon);
+  if (Enums.has(ST.gleichfoermigesPolygon) && !Enums.has(ST.gebrRat)) abzug.push(ST.gebrRat);
+  if (Enums.has(ST.sternPolygon) && !Enums.has(ST.gleichfoermigesPolygon)) abzug.push(ST.gleichfoermigesPolygon);
+  if (Enums.has(ST.sternPolygon) && !Enums.has(ST.gebrRat)) abzug.push(ST.gebrRat);
+  if (Enums.has(ST.galaxie) && !Enums.has(ST.universum)) abzug.push(ST.universum);
+  if (Enums.has(ST.galaxie) && !Enums.has(ST.keinParaOdMetaP)) abzug.push(ST.keinParaOdMetaP);
+  if (Enums.has(ST.universum) && !Enums.has(ST.galaxie)) abzug.push(ST.galaxie);
+  if (Enums.has(ST.universum) && !Enums.has(ST.keinParaOdMetaP)) abzug.push(ST.keinParaOdMetaP);
+  if (Enums.has(ST.keinParaOdMetaP) && !Enums.has(ST.galaxie)) abzug.push(ST.galaxie);
+  if (Enums.has(ST.keinParaOdMetaP) && !Enums.has(ST.universum)) abzug.push(ST.universum);
+  var Enume : Set<number>= new Set([...Enums, ...Enume1]);
+  for (var i = 0; i < abzug.length; i++) Enume.delete(abzug[i]);
+  return Array.from(Enume);
 }
+*/
 var ST;
 (function (ST) {
     ST[ST["sternPolygon"] = 0] = "sternPolygon";
@@ -237,6 +226,7 @@ var merkeEnumTags = new Set([ST.sternPolygon, ST.gleichfoermigesPolygon, ST.gebr
 var vergangenheitEnumTagsZahlenArt = new Set([ST.sternPolygon, ST.gleichfoermigesPolygon, ST.gebrRat]);
 var vergangenheitEnumTagsUniOrGal = new Set([ST.galaxie, ST.universum, ST.keinParaOdMetaP]);
 function subFkt1_PolyTpes2(Enums1) {
+    // WICHTIG: eigentlich müsste man aus Typ ST[][]  Typ TS[][][] machen, wo noch mal für jede Spalte einzeln unterschieden wird: Denn dann kann richtiger für die eine Checkbox dieser Spalten bestimmt werden, ob wann diese ausgegraut werden soll, wann dessen Spalten ausgegraut sind. So ist es wie jetzt mehr falsch, aber es ist okay, weil es auch eine eigene Art von Richtigkeit dabei besitzt, weshalb ich das mal so toleriere, denn das hat eine abstraktere Richtigkeit, die okay sein kann!
     var Enums = new Set(Enums1);
     //var abzug: number[] = [];
     /*
@@ -927,7 +917,7 @@ function makeMapsOfHeadLCheckB(p1, p2, num, tags) {
     }
     if (typeof mapMapMapTags[p1] === "undefined")
         mapMapMapTags[p1] = [];
-    if (typeof mapMapMapTags[p1][p2] === "undefined")
+    if (!(typeof mapMapMapTags[p1][p2] instanceof Set))
         mapMapMapTags[p1][p2] = new Set();
     if (typeof tags != "undefined" && tags != "null") {
         //if (mapMapMapTags[p1][p2].size > 0) { console.log(mapMapMapTags[p1][p2]);var bla = true; } else var bla = false;
@@ -1060,6 +1050,7 @@ function subFkt3(Enums, SubFkt3SubFkt2Var, SubFkt3SubFkt1Var, chks2orSpaltenTags
         for (var k = 0; k < ((TRs === chks2orSpaltenTagsOrTRs) ? chks2orSpaltenTagsOrTRs[i].cells.length : chks2orSpaltenTagsOrTRs[i].length); k++) {
             if (chks2orSpaltenTagsOrTRs === TRs) {
                 for (var l = 0; l < Enums.length; l++) {
+                    // WICHTIG: eigentlich müsste man aus Typ ST[][]  Typ TS[][][] machen, wo noch mal für jede Spalte einzeln unterschieden wird: Denn dann kann richtiger für die eine Checkbox dieser Spalten bestimmt werden, ob wann diese ausgegraut werden soll, wann dessen Spalten ausgegraut sind. So ist es wie jetzt mehr falsch, aber es ist okay, weil es auch eine eigene Art von Richtigkeit dabei besitzt, weshalb ich das mal so toleriere, denn das hat eine abstraktere Richtigkeit, die okay sein kann!
                     Enum2 = spaltenTags[i][k];
                     if (Enum2 == Enums[l])
                         enumi.add(Enums[l]);
@@ -1067,6 +1058,7 @@ function subFkt3(Enums, SubFkt3SubFkt2Var, SubFkt3SubFkt1Var, chks2orSpaltenTags
             }
             else
                 for (var l = 0; l < Enums.length; l++) {
+                    // WICHTIG: eigentlich müsste man aus Typ ST[][]  Typ TS[][][] machen, wo noch mal für jede Spalte einzeln unterschieden wird: Denn dann kann richtiger für die eine Checkbox dieser Spalten bestimmt werden, ob wann diese ausgegraut werden soll, wann dessen Spalten ausgegraut sind. So ist es wie jetzt mehr falsch, aber es ist okay, weil es auch eine eigene Art von Richtigkeit dabei besitzt, weshalb ich das mal so toleriere, denn das hat eine abstraktere Richtigkeit, die okay sein kann!
                     Enum2 = chks2orSpaltenTagsOrTRs[i][k];
                     if (Enum2 == Enums[l])
                         enumi.add(Enums[l]);

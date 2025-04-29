@@ -970,7 +970,7 @@ function makeMapsOfHeadLCheckB(p1: string, p2: string | null, num: string | numb
     mapMapMap[p1][p2].add(num);
   }
   if (typeof mapMapMapTags[p1] === "undefined") mapMapMapTags[p1] = [];
-  if (typeof mapMapMapTags[p1][p2] === "undefined")
+  if (!(typeof mapMapMapTags[p1][p2] instanceof Set))
     mapMapMapTags[p1][p2] = new Set();
   if (typeof tags != "undefined" && tags != "null") {
     //if (mapMapMapTags[p1][p2].size > 0) { console.log(mapMapMapTags[p1][p2]);var bla = true; } else var bla = false;

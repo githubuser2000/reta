@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-28 05:42+0200\n"
+"POT-Creation-Date: 2025-04-30 00:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3143,7 +3143,7 @@ msgstr ""
 #~ msgstr " contra this number is "
 
 #~ msgid "Sternpolygone"
-#~ msgstr "star polygons"
+#~ msgstr "star_polygons"
 
 #~ msgid "gleichförmige Polygone"
 #~ msgstr "regular polygons"
@@ -3173,7 +3173,7 @@ msgstr ""
 #~ msgstr "| moreover:"
 
 #~ msgid "Viertwichtigste"
-#~ msgstr "fourth most important"
+#~ msgstr "fourth_most_important"
 
 #~ msgid "Meta-Thema: "
 #~ msgstr "meta-topic:"
@@ -3653,7 +3653,7 @@ msgstr ""
 #~ msgstr "multiversalias_(16)"
 
 #~ msgid "Meta-Physik-Teilchen_(1)"
-#~ msgstr "multiverse_particles_(1)"
+#~ msgstr "meta_physic_particles_(1)"
 
 #~ msgid "Multiversum"
 #~ msgstr "multiverse"
@@ -3680,7 +3680,7 @@ msgstr ""
 #~ msgstr "domination over submission"
 
 #~ msgid "Freiheit"
-#~ msgstr "freedom and or liberty"
+#~ msgstr "freedom_and_or_liberty"
 
 #~ msgid "Einschränkung der Freiheit"
 #~ msgstr "reduction of liberty and or freedom"
@@ -4080,7 +4080,7 @@ msgstr ""
 #~ msgstr "biological_tree_(15)"
 
 #~ msgid "Biologischer_Baum_(16_->_5)"
-#~ msgstr "biological_tree_(16-->_15)"
+#~ msgstr "biological_tree_(16_->_15)"
 
 #~ msgid "P5"
 #~ msgstr "P5"
@@ -4096,3 +4096,9 @@ msgstr ""
 
 #~ msgid "Achtzehn"
 #~ msgstr "Eighteen"
+
+#~ msgid "schöne_hübsche_Menschen_Lebensaufgaben_Jobs_Macht_Schicksal"
+#~ msgstr "beautiful_pretty_humans_life_tasks_jobs_power_over_people_fate"
+
+#~ msgid "L"
+#~ msgstr "L"
