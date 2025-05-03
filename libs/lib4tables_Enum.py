@@ -125,6 +125,7 @@ tableTags = {
         497,
         498,
         509,
+        512,
     },
     frozenset({ST.sternPolygon, ST.keinParaOdMetaP}): {
         232,

@@ -471,6 +471,7 @@ wahl15: dict = {
             _("Geist_(15)"),
             _("Model_of_Hierarchical_Complexity"),
             _("Biologischer_Baum_(15)"),
+            _("Teilchen_anderes_Universum"),
             Primzahlkreuz_pro_contra_strs_Fkt[1],
         )
     ),
@@ -543,10 +544,11 @@ wahl15: dict = {
 
 wahl16 = {
     "1":  _("Meta-Physik-Teilchen_(1)"),
-    "16": ",".join(wahl16Words.values()),
     "2": ",".join((
             _("Strukturalien_bzw_Meta-Paradigmen_bzw_Transzendentalien_(15)"),
             _("Model_of_Hierarchical_Complexity"),)),
+
+    "3":  _("Teilchen_anderes_Universum"),
     "5": ",".join((
             _("Strukturalien_bzw_Meta-Paradigmen_bzw_Transzendentalien_(15)"),
             _("Model_of_Hierarchical_Complexity"),_("Biologischer_Baum_(16_->_5)"), _("P5"),)),
@@ -555,6 +557,7 @@ wahl16 = {
             _("Strukturalien_bzw_Meta-Paradigmen_bzw_Transzendentalien_(15)"),
             _("Model_of_Hierarchical_Complexity"),)),
     "10": _("Struktur-Wissenschaften_(10)"),
+    "16": ",".join(wahl16Words.values()),
     "20": _("Muster-Wissenschaften_(20)"),
 }
 
@@ -1092,6 +1095,27 @@ paraNdataMatrix: list = [
             _("hochzuechten"),
         ),
         {318, 319},
+    ),
+    (
+        ParametersMain.multiversum,
+        (
+            _("Teilchen_anderes_Universum"),
+        ),
+        {512,},
+    ),
+    (
+        ParametersMain.grundstrukturen,
+        (
+            _("Teilchen_anderes_Universum"),
+        ),
+        {512,},
+    ),
+    (
+        ParametersMain.universum,
+        (
+            _("Teilchen_anderes_Universum"),
+        ),
+        {512,},
     ),
     (
         ParametersMain.universum,
