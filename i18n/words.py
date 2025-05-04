@@ -485,7 +485,7 @@ wahl15: dict = {
     "13": _("Paradigmen_sind_Absichten_(13)"),
     "17": _("Gedanken_sind_Positionen_(17)"),
     "18": _("Verbundenheiten_(18)"),
-    "6": _("Triebe_und_Bedürfnisse_(6)"),
+    "6": ",".join((_("Triebe_und_Bedürfnisse_(6)"), _("System"))),
     "9": _("Lust_(9)"),
     "3": _("Reflexe_(3),Existenzialien_(3)"),
     "13_6": _("Absicht_6_ist_Vorteilsmaximierung"),
@@ -2146,6 +2146,21 @@ paraNdataMatrix: list = [
         {99},
     ),
     (
+        ParametersMain.grundstrukturen,
+        (
+            _("System"),
+            _("system"),
+        ),
+        {
+            69,
+            70,
+            440,
+            455,
+            476,
+            513,
+        },
+    ),
+    (
         ParametersMain.wirtschaft,
         (
             _("System"),
@@ -2157,6 +2172,7 @@ paraNdataMatrix: list = [
             440,
             455,
             476,
+            513,
         },
     ),
     (
