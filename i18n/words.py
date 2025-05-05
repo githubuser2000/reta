@@ -2777,7 +2777,7 @@ paraNdataMatrix: list = [
             _("klasse"),
             _("klassen"),
         ),
-        {241, 289, 394, 395, 485},
+        {241, 289, 394, 395, 485, 516},
     ),
     (
         ParametersMain.grundstrukturen,
