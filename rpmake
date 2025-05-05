@@ -1,0 +1,18 @@
+#!/bin/zsh
+cd /home/alex/Eigene-Dateien/myRepos/reta
+cp /home/alex/Eigene-Dateien/myRepos/reta/i18n/en/LC_MESSAGES/messages.po /home/alex/Eigene-Dateien/myRepos/reta/i18n/vn/LC_MESSAGES/vn.po;cp /home/alex/Eigene-Dateien/myRepos/reta/i18n/en/LC_MESSAGES/messages.po /home/alex/Eigene-Dateien/myRepos/reta/i18n/kr/LC_MESSAGES/kr.po;cp /home/alex/Eigene-Dateien/myRepos/reta/i18n/en/LC_MESSAGES/messages.po /home/alex/Eigene-Dateien/myRepos/reta/i18n/cn/LC_MESSAGES/cn.po;msgfmt -o /home/alex/Eigene-Dateien/myRepos/reta/i18n/vn/LC_MESSAGES/vn.mo /home/alex/Eigene-Dateien/myRepos/reta/i18n/vn/LC_MESSAGES/vn.po;msgfmt -o /home/alex/Eigene-Dateien/myRepos/reta/i18n/cn/LC_MESSAGES/cn.mo /home/alex/Eigene-Dateien/myRepos/reta/i18n/cn/LC_MESSAGES/cn.po;msgfmt -o /home/alex/Eigene-Dateien/myRepos/reta/i18n/kr/LC_MESSAGES/kr.mo /home/alex/Eigene-Dateien/myRepos/reta/i18n/kr/LC_MESSAGES/kr.po
+/home/alex/Eigene-Dateien/myRepos/reta/libs/changeVersion.sh
+cd -
+cd /home/alex/Eigene-Dateien/myRepos/reta
+git add -A
+git commit -m ${3}
+git pushall
+cd -
+cd /home/alex/Eigene-Dateien/myRepos/
+tar --exclude=lib --exclude=__pycache__ --exclude=i18n/__pycache__ --exclude=libs/__pycache__ -c reta > 2025-${1}-reta-repo${2}.tar;brotli -k --large_window=29 -Z 2025-${1}-reta-repo${2}.tar -o 2025-${1}-reta-repo${2}.tar.br;xz -k --threads=16 -e -9 --lzma2=dict=128MiB 2025-${1}-reta-repo${2}.tar;tar --exclude=.git --exclude=lib --exclude=__pycache__ --exclude=i18n/__pycache__ --exclude=libs/__pycache__ -c reta > 2025-${1}-reta${2}.tar;cd ~/Eigene-Dateien/myRepos/reta;rm /home/alex/Eigene-Dateien/myRepos/religionen*.html.{xz,br};./pypy-reta-all2.sh reta > ../religionen.html;./pypy-reta-all2-VnCnKrEn.sh reta korean > ../religionen-korean.html;./pypy-reta-all2-VnCnKrEn.sh reta vietnamese > ../religionen-vietnamese.html;./pypy-reta-all2-VnCnKrEn.sh reta english > ../religionen-english.html;./pypy-reta-all2-VnCnKrEn.sh reta chinese > ../religionen-chinese.html;cd ~/Eigene-Dateien/myRepos;brotli -k --large_window=29 -Z 2025-${1}-reta${2}.tar;brotli -k --large_window=29 -Z religionen-english.html;xz -k --threads=16 -e -9 --lzma2=dict=128MiB religionen-english.html;brotli -k --large_window=29 -Z religionen.html;xz -k --threads=16 -e -9 --lzma2=dict=128MiB religionen.html;brotli -k --large_window=29 -Z religionen-chinese.html;xz -k --threads=16 -e -9 --lzma2=dict=128MiB religionen-chinese.html;brotli -k --large_window=29 -Z religionen-korean.html;xz -k --threads=16 -e -9 --lzma2=dict=128MiB religionen-korean.html;brotli -k --large_window=29 -Z religionen-vietnamese.html;xz -k --threads=16 -e -9 --lzma2=dict=128MiB religionen-vietnamese.html;xz -k --threads=16 -e -9 --lzma2=dict=128MiB 2025-${1}-reta${2}.tar;split -d -b 9000000 2025-${1}-reta-repo${2}.tar.xz 2025-${1}-reta-repo${2}.tar.xz.;split -d -b 9000000 2025-${1}-reta-repo${2}.tar.br 2025-${1}-reta-repo${2}.tar.br.
+rm 2025-${1}-reta-repo${2}.tar
+rm 2025-${1}-reta${2}.tar
+cd -
+rm -f /home/alex/Eigene-Dateien/myRepos/up/*
+cp -ax /home/alex/Eigene-Dateien/myRepos/{*html.{xz,br},2025-${1}-*${2}*.{xz,br}*,rpmake} /home/alex/Eigene-Dateien/myRepos/up
+touch /home/alex/Eigene-Dateien/myRepos/up/*.*0*
