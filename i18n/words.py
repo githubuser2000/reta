@@ -4209,6 +4209,16 @@ paraNdataMatrix: list = [
     ),
     (
         ParametersMain.kontinuum,
+        ("J", "j", _("Zehn"),),
+        {514},
+    ),
+    (
+        ParametersMain.kontinuum,
+        ("k", "K", _("Elf"),),
+        {515},
+    ),
+    (
+        ParametersMain.kontinuum,
         ("E", "e", _("Fünf"),),
         {511},
     ),
