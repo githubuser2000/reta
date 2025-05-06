@@ -818,12 +818,20 @@ paraNdataMatrix: list = [
         ),
         {444, 494, 496},
     ),
+
+    (
+        ParametersMain.universum,
+        (
+            _("Evolution_vs_Design_intelligent"),
+        ),
+        {519},
+    ),
     (
         ParametersMain.menschliches,
         (
-            _("schöne_hübsche_Menschen_Lebensaufgaben_Jobs_Macht_Schicksal"),
+            _("Evolution_vs_Design_intelligent"),
         ),
-        {505},
+        {519},
     ),
     (
         ParametersMain.menschliches,
@@ -4300,7 +4308,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.kontinuum,
         ("X", "x", _("Vierundzwanzig"),),
-        {436, 25, 386},
+        {25, 55, 436, 25, 386},
     ),
     (
         ParametersMain.kontinuum,
