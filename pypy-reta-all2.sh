@@ -15,4 +15,3 @@ cat ~/middle.alx
 pypy3 ${ABS_DIRECTORY}/grundStrukHtml.py blank
 cat ${ABS_DIRECTORY}/footer.alx
 #chown -R alex:alex ${ABS_DIRECTORY}
-ctrl_c
