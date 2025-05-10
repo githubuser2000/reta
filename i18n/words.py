@@ -472,6 +472,7 @@ wahl15: dict = {
             _("Model_of_Hierarchical_Complexity"),
             _("Biologischer_Baum_(15)"),
             _("Teilchen_anderes_Universum"),
+            _("Naturrecht"),
             Primzahlkreuz_pro_contra_strs_Fkt[1],
         )
     ),
@@ -551,8 +552,9 @@ wahl16 = {
     "3":  _("Teilchen_anderes_Universum"),
     "5": ",".join((
             _("Strukturalien_bzw_Meta-Paradigmen_bzw_Transzendentalien_(15)"),
-            _("Model_of_Hierarchical_Complexity"),_("Biologischer_Baum_(16_->_5)"), _("P5"),)),
-    "6": _("Geist_(15)"),
+            _("Model_of_Hierarchical_Complexity"),_("Biologischer_Baum_(16_->_5)"), _("P5"),
+            _("naturrecht")))
+    ,"6": _("Geist_(15)"),
     "15": ",".join((
             _("Strukturalien_bzw_Meta-Paradigmen_bzw_Transzendentalien_(15)"),
             _("Model_of_Hierarchical_Complexity"),)),
@@ -818,7 +820,34 @@ paraNdataMatrix: list = [
         ),
         {444, 494, 496},
     ),
-
+    (
+        ParametersMain.menschliches,
+        (
+            _("Naturrecht"), _("naturrecht"), _("pentgrammrecht"), _("Pentagrammrecht"),
+        ),
+        {520},
+    ),
+    (
+        ParametersMain.multiversum,
+        (
+            _("Naturrecht"), _("naturrecht"), _("pentgrammrecht"), _("Pentagrammrecht"),
+        ),
+        {520},
+    ),
+    (
+        ParametersMain.grundstrukturen,
+        (
+            _("Naturrecht"), _("naturrecht"), _("pentgrammrecht"), _("Pentagrammrecht"),
+        ),
+        {520},
+    ),
+    (
+        ParametersMain.universum,
+        (
+            _("Naturrecht"), _("naturrecht"), _("pentgrammrecht"), _("Pentagrammrecht"),
+        ),
+        {520},
+    ),
     (
         ParametersMain.universum,
         (
