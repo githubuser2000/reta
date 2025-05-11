@@ -480,7 +480,7 @@ wahl15: dict = {
     "5": _("Impulse_(5)"),
     "7": ",".join((_("Gefühle_(7)"), _("Anführer_Arten_(7)"), _("Erlösung"))),
     "8": ",".join((_("Modus_und_Sein_(8)"), _("Bestrafung"),_("Gewalt"))),
-    "10": _("Wirklichkeiten_Wahrheit_Wahrnehmung_(10)"),
+    "10": ",".join((_("Wirklichkeiten_Wahrheit_Wahrnehmung_(10)"), _("Machiavellisten-Recht"))),
     "1"+_("pro")+"30": _("analytische_Ontologie"),
     "12": ",".join((_("Meta-Systeme_(12)"), _("Ordnung_und_Filterung_12_und_1pro12"))),
     "13": _("Paradigmen_sind_Absichten_(13)"),
@@ -558,7 +558,9 @@ wahl16 = {
     "15": ",".join((
             _("Strukturalien_bzw_Meta-Paradigmen_bzw_Transzendentalien_(15)"),
             _("Model_of_Hierarchical_Complexity"),)),
-    "10": _("Struktur-Wissenschaften_(10)"),
+    "10": ",".join((
+            _("Struktur-Wissenschaften_(10)"),
+            _("Machiavellisten-Recht"))),
     "16": ",".join(wahl16Words.values()),
     "20": _("Muster-Wissenschaften_(20)"),
 }
@@ -819,6 +821,34 @@ paraNdataMatrix: list = [
             _("Superkraefte"),
         ),
         {444, 494, 496},
+    ),
+    (
+        ParametersMain.universum,
+        (
+            _("Machiavellisten-Recht"),
+        ),
+        {521},
+    ),
+    (
+        ParametersMain.grundstrukturen,
+        (
+            _("Machiavellisten-Recht"),
+        ),
+        {521},
+    ),
+    (
+        ParametersMain.multiversum,
+        (
+            _("Machiavellisten-Recht"),
+        ),
+        {521},
+    ),
+    (
+        ParametersMain.menschliches,
+        (
+            _("Machiavellisten-Recht"),
+        ),
+        {521},
     ),
     (
         ParametersMain.menschliches,
