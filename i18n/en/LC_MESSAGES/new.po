@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-11 22:27+0200\n"
+"POT-Creation-Date: 2025-05-13 20:20+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -4135,3 +4135,33 @@ msgstr ""
 
 #~ msgid "Pentagrammrecht"
 #~ msgstr "pentagram_justice"
+
+#~ msgid "Machiavellisten-Recht"
+#~ msgstr "machiavellists_justice"
+
+#~ msgid "Dekagramm-Recht"
+#~ msgstr "decagram_justice"
+
+#~ msgid "Wirklichkeits-Recht"
+#~ msgstr "truth_justice"
+
+#~ msgid "Mathematik-Recht"
+#~ msgstr "mathatmical_justice"
+
+#~ msgid "Strukturwissenschaft-Recht"
+#~ msgstr "structure_science_justice"
+
+#~ msgid "Planeten-Recht"
+#~ msgstr "planet_justice"
+
+#~ msgid "Satanistenrecht"
+#~ msgstr "satanic_justice"
+
+#~ msgid "Psychopathenrecht"
+#~ msgstr "psychopath_justice"
+
+#~ msgid "Physikrecht"
+#~ msgstr "physics_justice"
+
+#~ msgid "Zentralpersonenrecht"
+#~ msgstr "central_person_justice"

@@ -477,7 +477,8 @@ wahl15: dict = {
         )
     ),
     "2": _("Konkreta_und_Focus_(2)"),
-    "5": _("Impulse_(5)"),
+    "5": ",".join((_("Impulse_(5)"),
+         _("Naturrecht"))),
     "7": ",".join((_("Gefühle_(7)"), _("Anführer_Arten_(7)"), _("Erlösung"))),
     "8": ",".join((_("Modus_und_Sein_(8)"), _("Bestrafung"),_("Gewalt"))),
     "10": ",".join((_("Wirklichkeiten_Wahrheit_Wahrnehmung_(10)"), _("Machiavellisten-Recht"))),
@@ -825,56 +826,56 @@ paraNdataMatrix: list = [
     (
         ParametersMain.universum,
         (
-            _("Machiavellisten-Recht"),
+            _("Machiavellisten-Recht"), _("Dekagramm-Recht"), _("Wirklichkeits-Recht"), _("Mathematik-Recht"), _("Strukturwissenschaft-Recht"), _("Planeten-Recht"),
         ),
         {521},
     ),
     (
         ParametersMain.grundstrukturen,
         (
-            _("Machiavellisten-Recht"),
+            _("Machiavellisten-Recht"), _("Dekagramm-Recht"), _("Wirklichkeits-Recht"), _("Mathematik-Recht"), _("Strukturwissenschaft-Recht"), _("Planeten-Recht"),
         ),
         {521},
     ),
     (
         ParametersMain.multiversum,
         (
-            _("Machiavellisten-Recht"),
+            _("Machiavellisten-Recht"), _("Dekagramm-Recht"), _("Wirklichkeits-Recht"), _("Mathematik-Recht"), _("Strukturwissenschaft-Recht"), _("Planeten-Recht"),
         ),
         {521},
     ),
     (
         ParametersMain.menschliches,
         (
-            _("Machiavellisten-Recht"),
+            _("Machiavellisten-Recht"), _("Dekagramm-Recht"), _("Wirklichkeits-Recht"), _("Mathematik-Recht"), _("Strukturwissenschaft-Recht"), _("Planeten-Recht"),
         ),
         {521},
     ),
     (
         ParametersMain.menschliches,
         (
-            _("Naturrecht"), _("naturrecht"), _("pentgrammrecht"), _("Pentagrammrecht"),
+            _("Naturrecht"), _("naturrecht"), _("pentgrammrecht"), _("Pentagrammrecht"), _("Satanistenrecht"), _("Psychopathenrecht"), _("Physikrecht"), _("Zentralpersonenrecht"),
         ),
         {520},
     ),
     (
         ParametersMain.multiversum,
         (
-            _("Naturrecht"), _("naturrecht"), _("pentgrammrecht"), _("Pentagrammrecht"),
+            _("Naturrecht"), _("naturrecht"), _("pentgrammrecht"), _("Pentagrammrecht"), _("Satanistenrecht"), _("Psychopathenrecht"), _("Physikrecht"), _("Zentralpersonenrecht"),
         ),
         {520},
     ),
     (
         ParametersMain.grundstrukturen,
         (
-            _("Naturrecht"), _("naturrecht"), _("pentgrammrecht"), _("Pentagrammrecht"),
+            _("Naturrecht"), _("naturrecht"), _("pentgrammrecht"), _("Pentagrammrecht"), _("Satanistenrecht"), _("Psychopathenrecht"), _("Physikrecht"), _("Zentralpersonenrecht"),
         ),
         {520},
     ),
     (
         ParametersMain.universum,
         (
-            _("Naturrecht"), _("naturrecht"), _("pentgrammrecht"), _("Pentagrammrecht"),
+            _("Naturrecht"), _("naturrecht"), _("pentgrammrecht"), _("Pentagrammrecht"), _("Satanistenrecht"), _("Psychopathenrecht"), _("Physikrecht"), _("Zentralpersonenrecht"),
         ),
         {520},
     ),
