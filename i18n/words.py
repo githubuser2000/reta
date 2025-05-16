@@ -843,56 +843,56 @@ paraNdataMatrix: list = [
     (
         ParametersMain.universum,
         (
-            _("Machiavellisten-Recht"), _("Dekagramm-Recht"), _("Wirklichkeits-Recht"), _("Mathematik-Recht"), _("Strukturwissenschaft-Recht"), _("Planeten-Recht"), _("Globalisten-Recht"),
+            _("Machiavellisten-Recht"), _("Dekagramm-Recht"), _("Wirklichkeits-Recht"), _("Mathematik-Recht"), _("Strukturwissenschaft-Recht"), _("Planeten-Recht"), _("Globalisten-Recht"), _("Optimal-Korrekten-Recht"),
         ),
         {521},
     ),
     (
         ParametersMain.grundstrukturen,
         (
-            _("Machiavellisten-Recht"), _("Dekagramm-Recht"), _("Wirklichkeits-Recht"), _("Mathematik-Recht"), _("Strukturwissenschaft-Recht"), _("Planeten-Recht"), _("Globalisten-Recht"),
+            _("Machiavellisten-Recht"), _("Dekagramm-Recht"), _("Wirklichkeits-Recht"), _("Mathematik-Recht"), _("Strukturwissenschaft-Recht"), _("Planeten-Recht"), _("Globalisten-Recht"), _("Optimal-Korrekten-Recht"),
         ),
         {521},
     ),
     (
         ParametersMain.multiversum,
         (
-            _("Machiavellisten-Recht"), _("Dekagramm-Recht"), _("Wirklichkeits-Recht"), _("Mathematik-Recht"), _("Strukturwissenschaft-Recht"), _("Planeten-Recht"), _("Globalisten-Recht"),
+            _("Machiavellisten-Recht"), _("Dekagramm-Recht"), _("Wirklichkeits-Recht"), _("Mathematik-Recht"), _("Strukturwissenschaft-Recht"), _("Planeten-Recht"), _("Globalisten-Recht"), _("Optimal-Korrekten-Recht"),
         ),
         {521},
     ),
     (
         ParametersMain.menschliches,
         (
-            _("Machiavellisten-Recht"), _("Dekagramm-Recht"), _("Wirklichkeits-Recht"), _("Mathematik-Recht"), _("Strukturwissenschaft-Recht"), _("Planeten-Recht"), _("Globalisten-Recht"),
+            _("Machiavellisten-Recht"), _("Dekagramm-Recht"), _("Wirklichkeits-Recht"), _("Mathematik-Recht"), _("Strukturwissenschaft-Recht"), _("Planeten-Recht"), _("Globalisten-Recht"), _("Optimal-Korrekten-Recht"),
         ),
         {521},
     ),
     (
         ParametersMain.menschliches,
         (
-            _("Naturrecht"), _("naturrecht"), _("pentgrammrecht"), _("Pentagrammrecht"), _("Satanistenrecht"), _("Psychopathenrecht"), _("Physikrecht"), _("Zentralpersonenrecht"), _("Straßenrecht"),
+            _("Naturrecht"), _("naturrecht"), _("pentgrammrecht"), _("Pentagrammrecht"), _("Satanistenrecht"), _("Psychopathenrecht"), _("Physikrecht"), _("Zentralpersonenrecht"), _("Straßenrecht"), _("Gesellschaftsschichtrecht_Unterschicht1recht"),
         ),
         {520},
     ),
     (
         ParametersMain.multiversum,
         (
-            _("Naturrecht"), _("naturrecht"), _("pentgrammrecht"), _("Pentagrammrecht"), _("Satanistenrecht"), _("Psychopathenrecht"), _("Physikrecht"), _("Zentralpersonenrecht"), _("Straßenrecht"),
+            _("Naturrecht"), _("naturrecht"), _("pentgrammrecht"), _("Pentagrammrecht"), _("Satanistenrecht"), _("Psychopathenrecht"), _("Physikrecht"), _("Zentralpersonenrecht"), _("Straßenrecht"), _("Gesellschaftsschichtrecht_Unterschicht1recht"),
         ),
         {520},
     ),
     (
         ParametersMain.grundstrukturen,
         (
-            _("Naturrecht"), _("naturrecht"), _("pentgrammrecht"), _("Pentagrammrecht"), _("Satanistenrecht"), _("Psychopathenrecht"), _("Physikrecht"), _("Zentralpersonenrecht"), _("Straßenrecht"),
+            _("Naturrecht"), _("naturrecht"), _("pentgrammrecht"), _("Pentagrammrecht"), _("Satanistenrecht"), _("Psychopathenrecht"), _("Physikrecht"), _("Zentralpersonenrecht"), _("Straßenrecht"), _("Gesellschaftsschichtrecht_Unterschicht1recht"),
         ),
         {520},
     ),
     (
         ParametersMain.universum,
         (
-            _("Naturrecht"), _("naturrecht"), _("pentgrammrecht"), _("Pentagrammrecht"), _("Satanistenrecht"), _("Psychopathenrecht"), _("Physikrecht"), _("Zentralpersonenrecht"), _("Straßenrecht"),
+            _("Naturrecht"), _("naturrecht"), _("pentgrammrecht"), _("Pentagrammrecht"), _("Satanistenrecht"), _("Psychopathenrecht"), _("Physikrecht"), _("Zentralpersonenrecht"), _("Straßenrecht"), _("Gesellschaftsschichtrecht_Unterschicht1recht"),
         ),
         {520},
     ),
