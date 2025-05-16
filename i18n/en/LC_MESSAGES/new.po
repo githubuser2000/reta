@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-13 20:20+0200\n"
+"POT-Creation-Date: 2025-05-16 11:20+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -4165,3 +4165,9 @@ msgstr ""
 
 #~ msgid "Zentralpersonenrecht"
 #~ msgstr "central_person_justice"
+
+#~ msgid "Division_durch_Null"
+#~ msgstr "division_by_zero"
+
+#~ msgid "Straßenrecht"
+#~ msgstr "Street_justice"

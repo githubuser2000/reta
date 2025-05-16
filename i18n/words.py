@@ -545,7 +545,10 @@ wahl15: dict = {
 }
 
 wahl16 = {
-    "1":  _("Meta-Physik-Teilchen_(1)"),
+    "1": ",".join((
+            _("Meta-Physik-Teilchen_(1)"),
+            _("Division_durch_Null"),)),
+
     "2": ",".join((
             _("Strukturalien_bzw_Meta-Paradigmen_bzw_Transzendentalien_(15)"),
             _("Model_of_Hierarchical_Complexity"),)),
@@ -826,56 +829,70 @@ paraNdataMatrix: list = [
     (
         ParametersMain.universum,
         (
-            _("Machiavellisten-Recht"), _("Dekagramm-Recht"), _("Wirklichkeits-Recht"), _("Mathematik-Recht"), _("Strukturwissenschaft-Recht"), _("Planeten-Recht"),
+            _("Division_durch_Null"),
+        ),
+        {522},
+    ),
+    (
+        ParametersMain.multiversum,
+        (
+            _("Division_durch_Null"),
+        ),
+        {522},
+    ),
+    (
+        ParametersMain.universum,
+        (
+            _("Machiavellisten-Recht"), _("Dekagramm-Recht"), _("Wirklichkeits-Recht"), _("Mathematik-Recht"), _("Strukturwissenschaft-Recht"), _("Planeten-Recht"), _("Globalisten-Recht"),
         ),
         {521},
     ),
     (
         ParametersMain.grundstrukturen,
         (
-            _("Machiavellisten-Recht"), _("Dekagramm-Recht"), _("Wirklichkeits-Recht"), _("Mathematik-Recht"), _("Strukturwissenschaft-Recht"), _("Planeten-Recht"),
+            _("Machiavellisten-Recht"), _("Dekagramm-Recht"), _("Wirklichkeits-Recht"), _("Mathematik-Recht"), _("Strukturwissenschaft-Recht"), _("Planeten-Recht"), _("Globalisten-Recht"),
         ),
         {521},
     ),
     (
         ParametersMain.multiversum,
         (
-            _("Machiavellisten-Recht"), _("Dekagramm-Recht"), _("Wirklichkeits-Recht"), _("Mathematik-Recht"), _("Strukturwissenschaft-Recht"), _("Planeten-Recht"),
+            _("Machiavellisten-Recht"), _("Dekagramm-Recht"), _("Wirklichkeits-Recht"), _("Mathematik-Recht"), _("Strukturwissenschaft-Recht"), _("Planeten-Recht"), _("Globalisten-Recht"),
         ),
         {521},
     ),
     (
         ParametersMain.menschliches,
         (
-            _("Machiavellisten-Recht"), _("Dekagramm-Recht"), _("Wirklichkeits-Recht"), _("Mathematik-Recht"), _("Strukturwissenschaft-Recht"), _("Planeten-Recht"),
+            _("Machiavellisten-Recht"), _("Dekagramm-Recht"), _("Wirklichkeits-Recht"), _("Mathematik-Recht"), _("Strukturwissenschaft-Recht"), _("Planeten-Recht"), _("Globalisten-Recht"),
         ),
         {521},
     ),
     (
         ParametersMain.menschliches,
         (
-            _("Naturrecht"), _("naturrecht"), _("pentgrammrecht"), _("Pentagrammrecht"), _("Satanistenrecht"), _("Psychopathenrecht"), _("Physikrecht"), _("Zentralpersonenrecht"),
+            _("Naturrecht"), _("naturrecht"), _("pentgrammrecht"), _("Pentagrammrecht"), _("Satanistenrecht"), _("Psychopathenrecht"), _("Physikrecht"), _("Zentralpersonenrecht"), _("Straßenrecht"),
         ),
         {520},
     ),
     (
         ParametersMain.multiversum,
         (
-            _("Naturrecht"), _("naturrecht"), _("pentgrammrecht"), _("Pentagrammrecht"), _("Satanistenrecht"), _("Psychopathenrecht"), _("Physikrecht"), _("Zentralpersonenrecht"),
+            _("Naturrecht"), _("naturrecht"), _("pentgrammrecht"), _("Pentagrammrecht"), _("Satanistenrecht"), _("Psychopathenrecht"), _("Physikrecht"), _("Zentralpersonenrecht"), _("Straßenrecht"),
         ),
         {520},
     ),
     (
         ParametersMain.grundstrukturen,
         (
-            _("Naturrecht"), _("naturrecht"), _("pentgrammrecht"), _("Pentagrammrecht"), _("Satanistenrecht"), _("Psychopathenrecht"), _("Physikrecht"), _("Zentralpersonenrecht"),
+            _("Naturrecht"), _("naturrecht"), _("pentgrammrecht"), _("Pentagrammrecht"), _("Satanistenrecht"), _("Psychopathenrecht"), _("Physikrecht"), _("Zentralpersonenrecht"), _("Straßenrecht"),
         ),
         {520},
     ),
     (
         ParametersMain.universum,
         (
-            _("Naturrecht"), _("naturrecht"), _("pentgrammrecht"), _("Pentagrammrecht"), _("Satanistenrecht"), _("Psychopathenrecht"), _("Physikrecht"), _("Zentralpersonenrecht"),
+            _("Naturrecht"), _("naturrecht"), _("pentgrammrecht"), _("Pentagrammrecht"), _("Satanistenrecht"), _("Psychopathenrecht"), _("Physikrecht"), _("Zentralpersonenrecht"), _("Straßenrecht"),
         ),
         {520},
     ),
