@@ -834,6 +834,13 @@ paraNdataMatrix: list = [
         {444, 494, 496},
     ),
     (
+        ParametersMain.menschliches,
+        (
+            _("Alpha-Beta-Mann-Frau"),
+        ),
+        {526},
+    ),
+    (
         ParametersMain.universum,
         (
             _("Division_durch_Null"),
