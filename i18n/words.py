@@ -474,12 +474,15 @@ wahl15: dict = {
             _("Teilchen_anderes_Universum"),
             _("Naturrecht"),
             Primzahlkreuz_pro_contra_strs_Fkt[1],
+            _("Wolf-Recht_(7)"),
+            _("Machiavellisten-Recht"),
+            _("Überlegenheits-Recht_(15)"),
         )
     ),
     "2": _("Konkreta_und_Focus_(2)"),
     "5": ",".join((_("Impulse_(5)"),
          _("Naturrecht"))),
-    "7": ",".join((_("Gefühle_(7)"), _("Anführer_Arten_(7)"), _("Erlösung"))),
+    "7": ",".join((_("Gefühle_(7)"), _("Anführer_Arten_(7)"), _("Erlösung"), _("Wolf-Recht_(7)"))),
     "8": ",".join((_("Modus_und_Sein_(8)"), _("Bestrafung"),_("Gewalt"))),
     "10": ",".join((_("Wirklichkeiten_Wahrheit_Wahrnehmung_(10)"), _("Machiavellisten-Recht"))),
     "1"+_("pro")+"30": _("analytische_Ontologie"),
@@ -487,7 +490,7 @@ wahl15: dict = {
     "13": _("Paradigmen_sind_Absichten_(13)"),
     "17": _("Gedanken_sind_Positionen_(17)"),
     "18": _("Verbundenheiten_(18)"),
-    "6": ",".join((_("Triebe_und_Bedürfnisse_(6)"), _("System"))),
+    "6": ",".join((_("Triebe_und_Bedürfnisse_(6)"), _("System"), _("Soziopathen-Recht_(6)"))),
     "9": _("Lust_(9)"),
     "3": _("Reflexe_(3),Existenzialien_(3)"),
     "13_6": _("Absicht_6_ist_Vorteilsmaximierung"),
@@ -557,7 +560,11 @@ wahl16 = {
     "5": ",".join((
             _("Strukturalien_bzw_Meta-Paradigmen_bzw_Transzendentalien_(15)"),
             _("Model_of_Hierarchical_Complexity"),_("Biologischer_Baum_(16_->_5)"), _("P5"),
-            _("naturrecht")))
+            _("naturrecht"),
+            _("Soziopathen-Recht_(6)"),
+            _("Wolf-Recht_(7)"),
+            _("Machiavellisten-Recht"),
+            _("Überlegenheits-Recht_(15)")))
     ,"6": _("Geist_(15)"),
     "15": ",".join((
             _("Strukturalien_bzw_Meta-Paradigmen_bzw_Transzendentalien_(15)"),
@@ -834,11 +841,95 @@ paraNdataMatrix: list = [
         {522},
     ),
     (
+        ParametersMain.grundstrukturen,
+        (
+            _("Soziopathen-Recht_(6)"), _("Ausbeutungs-Recht"), _("Ausdehnungs-Recht"), _("Narzissten-Recht"),
+        ),
+        {523},
+    ),
+    (
+        ParametersMain.grundstrukturen,
+        (
+            _("Überlegenheits-Recht_(15)"),
+        ),
+        {524},
+    ),
+    (
+        ParametersMain.grundstrukturen,
+        (
+            _("Wolf-Recht_(7)"), _("Wolf_im_Schafspelz"),
+        ),
+        {525},
+    ),
+    (
+        ParametersMain.menschliches,
+        (
+            _("Soziopathen-Recht_(6)"), _("Ausbeutungs-Recht"), _("Ausdehnungs-Recht"), _("Narzissten-Recht"),
+        ),
+        {523},
+    ),
+    (
+        ParametersMain.menschliches,
+        (
+            _("Überlegenheits-Recht_(15)"),
+        ),
+        {524},
+    ),
+    (
+        ParametersMain.menschliches,
+        (
+            _("Wolf-Recht_(7)"), _("Wolf_im_Schafspelz"),
+        ),
+        {525},
+    ),
+ (
         ParametersMain.multiversum,
         (
             _("Division_durch_Null"),
         ),
         {522},
+    ),
+    (
+        ParametersMain.multiversum,
+        (
+            _("Soziopathen-Recht_(6)"), _("Ausbeutungs-Recht"), _("Ausdehnungs-Recht"), _("Narzissten-Recht"),
+        ),
+        {523},
+    ),
+    (
+        ParametersMain.multiversum,
+        (
+            _("Überlegenheits-Recht_(15)"),
+        ),
+        {524},
+    ),
+    (
+        ParametersMain.multiversum,
+        (
+            _("Wolf-Recht_(7)"), _("Wolf_im_Schafspelz"),
+        ),
+        {525},
+    ),
+    (
+        ParametersMain.universum,
+        (
+            _("Soziopathen-Recht_(6)"), _("Ausbeutungs-Recht"), _("Ausdehnungs-Recht"), _("Narzissten-Recht"),
+        ),
+        {523},
+    ),
+    (
+        ParametersMain.universum,
+        (
+            _("Überlegenheits-Recht_(15)"),
+        ),
+        {524},
+    ),
+    (
+        ParametersMain.universum,
+        (
+            _("Wolf-Recht_(7)"), _("Wolf_im_Schafspelz"),
+        ),
+        {525},
     ),
     (
         ParametersMain.universum,

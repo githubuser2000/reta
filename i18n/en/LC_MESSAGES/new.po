@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-16 14:31+0200\n"
+"POT-Creation-Date: 2025-05-17 20:39+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -4174,3 +4174,27 @@ msgstr ""
 
 #~ msgid "Globalisten-Recht"
 #~ msgstr "Globalists_justice"
+
+#~ msgid "Optimal-Korrekten-Recht"
+#~ msgstr "optimum-corrects-justice"
+
+#~ msgid "Gesellschaftsschichtrecht_Unterschicht1recht"
+#~ msgstr "societyclassesjustice_lowerclassesjustice"
+
+#~ msgid "Soziopathen-Recht_(6)"
+#~ msgstr "Sociopath-justice_(6)"
+
+#~ msgid "Ausbeutungs-Recht"
+#~ msgstr "exploitation-justice"
+
+#~ msgid "Ausdehnungs-Recht"
+#~ msgstr "expansion-justice"
+
+#~ msgid "Narzissten-Recht"
+#~ msgstr "narcissm-justice"
+
+#~ msgid "Überlegenheits-Recht_(15)"
+#~ msgstr "superiority-justice_(15)"
+
+#~ msgid "Wolf-Recht_(7)"
+#~ msgstr "wolf-justice_(7)"
