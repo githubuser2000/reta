@@ -850,7 +850,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.grundstrukturen,
         (
-            _("Soziopathen-Recht_(6)"), _("Ausbeutungs-Recht"), _("Ausdehnungs-Recht"), _("Narzissten-Recht"),
+            _("Soziopathen-Recht_(6)"), _("Ausbeutungs-Recht"), _("Ausdehnungs-Recht"), _("Narzissten-Recht"), _("Honig-Dachs-Recht"),
         ),
         {523},
     ),
@@ -871,7 +871,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.menschliches,
         (
-            _("Soziopathen-Recht_(6)"), _("Ausbeutungs-Recht"), _("Ausdehnungs-Recht"), _("Narzissten-Recht"),
+            _("Soziopathen-Recht_(6)"), _("Ausbeutungs-Recht"), _("Ausdehnungs-Recht"), _("Narzissten-Recht"), _("Honig-Dachs-Recht"),
         ),
         {523},
     ),
@@ -899,7 +899,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.multiversum,
         (
-            _("Soziopathen-Recht_(6)"), _("Ausbeutungs-Recht"), _("Ausdehnungs-Recht"), _("Narzissten-Recht"),
+            _("Soziopathen-Recht_(6)"), _("Ausbeutungs-Recht"), _("Ausdehnungs-Recht"), _("Narzissten-Recht"), _("Honig-Dachs-Recht"),
         ),
         {523},
     ),
@@ -920,7 +920,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.universum,
         (
-            _("Soziopathen-Recht_(6)"), _("Ausbeutungs-Recht"), _("Ausdehnungs-Recht"), _("Narzissten-Recht"),
+            _("Soziopathen-Recht_(6)"), _("Ausbeutungs-Recht"), _("Ausdehnungs-Recht"), _("Narzissten-Recht"), _("Honig-Dachs-Recht"),
         ),
         {523},
     ),
@@ -4493,7 +4493,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.kontinuum,
         ("R", "r", _("Achtzehn"),),
-        {451, 436},
+        {451},
     ),
     (
         ParametersMain.kontinuum,
