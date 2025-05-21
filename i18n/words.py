@@ -823,7 +823,7 @@ paraNdataMatrix: list = [
             _("Superkräfte"),
             _("Superkraefte"),
         ),
-        {444, 494, 496, 503},
+        {444, 494, 496, 503, 527},
     ),
     (
         ParametersMain.galaxie,
@@ -831,7 +831,7 @@ paraNdataMatrix: list = [
             _("Superkräfte"),
             _("Superkraefte"),
         ),
-        {444, 494, 496},
+        {444, 494, 496, 503, 527},
     ),
     (
         ParametersMain.menschliches,
@@ -873,14 +873,14 @@ paraNdataMatrix: list = [
         (
             _("Götter"),
         ),
-        {527},
+        {444, 494, 527},
     ),
     (
         ParametersMain.menschliches,
         (
             _("Götter"),
         ),
-        {527},
+        {444, 494, 527},
     ),
     (
         ParametersMain.menschliches,
@@ -1028,7 +1028,7 @@ paraNdataMatrix: list = [
             _("Superkräfte"),
             _("Superkraefte"),
         ),
-        {444, 494, 496},
+        {444, 494, 496, 503, 527},
     ),
     (
         ParametersMain.menschliches,
