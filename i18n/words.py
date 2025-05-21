@@ -869,6 +869,20 @@ paraNdataMatrix: list = [
         {525},
     ),
     (
+        ParametersMain.religionen,
+        (
+            _("Götter"),
+        ),
+        {527},
+    ),
+    (
+        ParametersMain.menschliches,
+        (
+            _("Götter"),
+        ),
+        {527},
+    ),
+    (
         ParametersMain.menschliches,
         (
             _("Soziopathen-Recht_(6)"), _("Ausbeutungs-Recht"), _("Ausdehnungs-Recht"), _("Narzissten-Recht"), _("Honig-Dachs-Recht"),
