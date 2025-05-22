@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "reta"
-version ="3.20250522.4614"
+version ="3.20250522.4615"
 description = ""
 authors = ["Alexander Kern <alexgit@alexkern.de>"]
 readme = "readme-retaPrompt.md"
