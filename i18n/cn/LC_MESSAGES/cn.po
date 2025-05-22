@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-21 19:56+0200\n"
+"POT-Creation-Date: 2025-05-22 07:44+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40577,3 +40577,19 @@ msgstr "honey-badger-justice"
 #: ../../words.py:874 ../../words.py:881
 msgid "Götter"
 msgstr "gods"
+
+#: ../../words.py:860 ../../words.py:895 ../../words.py:923 ../../words.py:944
+msgid "Schwarz-Afrikaner_Recht_(15)"
+msgstr "black_africans_justice_(15)"
+
+#: ../../words.py:860 ../../words.py:895 ../../words.py:923 ../../words.py:944
+msgid "Spezies_Recht_(15)"
+msgstr "species_justice_(15)"
+
+#: ../../words.py:860 ../../words.py:895 ../../words.py:923 ../../words.py:944
+msgid "Erhabenheits-Recht_(15)"
+msgstr "sublimity-justice_(15)"
+
+#: ../../words.py:860 ../../words.py:895 ../../words.py:923 ../../words.py:944
+msgid "Bewusstseins-Recht_(15)"
+msgstr "consciousness-justice_(15)"

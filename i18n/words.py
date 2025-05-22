@@ -857,7 +857,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.grundstrukturen,
         (
-            _("Überlegenheits-Recht_(15)"),
+            _("Überlegenheits-Recht_(15)"), _("Schwarz-Afrikaner_Recht_(15)"), _("Spezies_Recht_(15)"), _("Erhabenheits-Recht_(15)"), _("Bewusstseins-Recht_(15)"),
         ),
         {524},
     ),
@@ -892,7 +892,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.menschliches,
         (
-            _("Überlegenheits-Recht_(15)"),
+            _("Überlegenheits-Recht_(15)"), _("Schwarz-Afrikaner_Recht_(15)"), _("Spezies_Recht_(15)"), _("Erhabenheits-Recht_(15)"), _("Bewusstseins-Recht_(15)"),
         ),
         {524},
     ),
@@ -920,7 +920,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.multiversum,
         (
-            _("Überlegenheits-Recht_(15)"),
+            _("Überlegenheits-Recht_(15)"), _("Schwarz-Afrikaner_Recht_(15)"), _("Spezies_Recht_(15)"), _("Erhabenheits-Recht_(15)"), _("Bewusstseins-Recht_(15)")
         ),
         {524},
     ),
@@ -941,7 +941,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.universum,
         (
-            _("Überlegenheits-Recht_(15)"),
+            _("Überlegenheits-Recht_(15)"), _("Schwarz-Afrikaner_Recht_(15)"), _("Spezies_Recht_(15)"), _("Erhabenheits-Recht_(15)"), _("Bewusstseins-Recht_(15)"),
         ),
         {524},
     ),
