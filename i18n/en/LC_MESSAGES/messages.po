@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-22 07:44+0200\n"
+"POT-Creation-Date: 2025-05-22 07:54+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40593,3 +40593,11 @@ msgstr "sublimity-justice_(15)"
 #: ../../words.py:860 ../../words.py:895 ../../words.py:923 ../../words.py:944
 msgid "Bewusstseins-Recht_(15)"
 msgstr "consciousness-justice_(15)"
+
+#: ../../words.py:860 ../../words.py:895 ../../words.py:923 ../../words.py:944
+msgid "geistiger_Kosmos_Recht_(15)"
+msgstr "mental_cosmos_justice_(15)"
+
+#: ../../words.py:860 ../../words.py:895 ../../words.py:923 ../../words.py:944
+msgid "Universum_Recht_(15)"
+msgstr "universe-justice_(15)"
