@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-22 07:44+0200\n"
+"POT-Creation-Date: 2025-05-22 07:54+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40379,7 +40379,7 @@ msgstr "nature_justice"
 #: ../../words.py:965 ../../words.py:972 ../../words.py:979 ../../words.py:964
 #: ../../words.py:971 ../../words.py:978 ../../words.py:985 ../../words.py:986
 #: ../../words.py:993 ../../words.py:1000 ../../words.py:1007
-msgid "pentgrammrecht"
+msgid "pentagrammrecht"
 msgstr "pentagram_justice"
 
 #: ../../words.py:826 ../../words.py:833 ../../words.py:840 ../../words.py:847
@@ -40512,7 +40512,7 @@ msgstr "optimum-corrects-justice"
 #: ../../words.py:964 ../../words.py:971 ../../words.py:978 ../../words.py:985
 #: ../../words.py:986 ../../words.py:993 ../../words.py:1000
 #: ../../words.py:1007
-msgid "Gesellschaftsschichtrecht_Unterschicht1recht"
+msgid "Gesellschaftsschichtrecht_Unterschichten_Recht"
 msgstr "societyclassesjustice_lowerclassesjustice"
 
 #: ../../words.py:839 ../../words.py:860 ../../words.py:888 ../../words.py:909
@@ -40593,3 +40593,11 @@ msgstr "sublimity-justice_(15)"
 #: ../../words.py:860 ../../words.py:895 ../../words.py:923 ../../words.py:944
 msgid "Bewusstseins-Recht_(15)"
 msgstr "consciousness-justice_(15)"
+
+#: ../../words.py:860 ../../words.py:895 ../../words.py:923 ../../words.py:944
+msgid "geistiger_Kosmos_Recht_(15)"
+msgstr "mental_cosmos_justice_(15)"
+
+#: ../../words.py:860 ../../words.py:895 ../../words.py:923 ../../words.py:944
+msgid "Universum_Recht_(15)"
+msgstr "universe-justice_(15)"

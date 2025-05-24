@@ -983,28 +983,28 @@ paraNdataMatrix: list = [
     (
         ParametersMain.menschliches,
         (
-            _("Naturrecht"), _("naturrecht"), _("pentgrammrecht"), _("Pentagrammrecht"), _("Satanistenrecht"), _("Psychopathenrecht"), _("Physikrecht"), _("Zentralpersonenrecht"), _("Straßenrecht"), _("Gesellschaftsschichtrecht_Unterschicht1recht"),
+            _("Naturrecht"), _("naturrecht"), _("pentagrammrecht"), _("Pentagrammrecht"), _("Satanistenrecht"), _("Psychopathenrecht"), _("Physikrecht"), _("Zentralpersonenrecht"), _("Straßenrecht"), _("Gesellschaftsschichtrecht_Unterschichten_Recht"),
         ),
         {520},
     ),
     (
         ParametersMain.multiversum,
         (
-            _("Naturrecht"), _("naturrecht"), _("pentgrammrecht"), _("Pentagrammrecht"), _("Satanistenrecht"), _("Psychopathenrecht"), _("Physikrecht"), _("Zentralpersonenrecht"), _("Straßenrecht"), _("Gesellschaftsschichtrecht_Unterschicht1recht"),
+            _("Naturrecht"), _("naturrecht"), _("pentagrammrecht"), _("Pentagrammrecht"), _("Satanistenrecht"), _("Psychopathenrecht"), _("Physikrecht"), _("Zentralpersonenrecht"), _("Straßenrecht"), _("Gesellschaftsschichtrecht_Unterschichten_Recht"),
         ),
         {520},
     ),
     (
         ParametersMain.grundstrukturen,
         (
-            _("Naturrecht"), _("naturrecht"), _("pentgrammrecht"), _("Pentagrammrecht"), _("Satanistenrecht"), _("Psychopathenrecht"), _("Physikrecht"), _("Zentralpersonenrecht"), _("Straßenrecht"), _("Gesellschaftsschichtrecht_Unterschicht1recht"),
+            _("Naturrecht"), _("naturrecht"), _("pentagrammrecht"), _("Pentagrammrecht"), _("Satanistenrecht"), _("Psychopathenrecht"), _("Physikrecht"), _("Zentralpersonenrecht"), _("Straßenrecht"), _("Gesellschaftsschichtrecht_Unterschichten_Recht"),
         ),
         {520},
     ),
     (
         ParametersMain.universum,
         (
-            _("Naturrecht"), _("naturrecht"), _("pentgrammrecht"), _("Pentagrammrecht"), _("Satanistenrecht"), _("Psychopathenrecht"), _("Physikrecht"), _("Zentralpersonenrecht"), _("Straßenrecht"), _("Gesellschaftsschichtrecht_Unterschicht1recht"),
+            _("Naturrecht"), _("naturrecht"), _("pentagrammrecht"), _("Pentagrammrecht"), _("Satanistenrecht"), _("Psychopathenrecht"), _("Physikrecht"), _("Zentralpersonenrecht"), _("Straßenrecht"), _("Gesellschaftsschichtrecht_Unterschichten_Recht"),
         ),
         {520},
     ),
