@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-22 07:54+0200\n"
+"POT-Creation-Date: 2025-05-06 15:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -4120,105 +4120,3 @@ msgstr ""
 
 #~ msgid "Elf"
 #~ msgstr "eleven"
-
-#~ msgid "Evolution_vs_Design_intelligent"
-#~ msgstr "evolution_vs_design_intelligent"
-
-#~ msgid "Naturrecht"
-#~ msgstr "nature_justice"
-
-#~ msgid "naturrecht"
-#~ msgstr "nature_justice"
-
-#~ msgid "pentgrammrecht"
-#~ msgstr "pentagram_justice"
-
-#~ msgid "Pentagrammrecht"
-#~ msgstr "pentagram_justice"
-
-#~ msgid "Machiavellisten-Recht"
-#~ msgstr "machiavellists_justice"
-
-#~ msgid "Dekagramm-Recht"
-#~ msgstr "decagram_justice"
-
-#~ msgid "Wirklichkeits-Recht"
-#~ msgstr "truth_justice"
-
-#~ msgid "Mathematik-Recht"
-#~ msgstr "mathatmical_justice"
-
-#~ msgid "Strukturwissenschaft-Recht"
-#~ msgstr "structure_science_justice"
-
-#~ msgid "Planeten-Recht"
-#~ msgstr "planet_justice"
-
-#~ msgid "Satanistenrecht"
-#~ msgstr "satanic_justice"
-
-#~ msgid "Psychopathenrecht"
-#~ msgstr "psychopath_justice"
-
-#~ msgid "Physikrecht"
-#~ msgstr "physics_justice"
-
-#~ msgid "Zentralpersonenrecht"
-#~ msgstr "central_person_justice"
-
-#~ msgid "Division_durch_Null"
-#~ msgstr "division_by_zero"
-
-#~ msgid "Straßenrecht"
-#~ msgstr "Street_justice"
-
-#~ msgid "Globalisten-Recht"
-#~ msgstr "Globalists_justice"
-
-#~ msgid "Optimal-Korrekten-Recht"
-#~ msgstr "optimum-corrects-justice"
-
-#~ msgid "Gesellschaftsschichtrecht_Unterschicht1recht"
-#~ msgstr "societyclassesjustice_lowerclassesjustice"
-
-#~ msgid "Soziopathen-Recht_(6)"
-#~ msgstr "Sociopath-justice_(6)"
-
-#~ msgid "Ausbeutungs-Recht"
-#~ msgstr "exploitation-justice"
-
-#~ msgid "Ausdehnungs-Recht"
-#~ msgstr "expansion-justice"
-
-#~ msgid "Narzissten-Recht"
-#~ msgstr "narcissm-justice"
-
-#~ msgid "Überlegenheits-Recht_(15)"
-#~ msgstr "superiority-justice_(15)"
-
-#~ msgid "Wolf-Recht_(7)"
-#~ msgstr "wolf-justice_(7)"
-
-#~ msgid "Wolf_im_Schafspelz"
-#~ msgstr "Wolf_in_sheeps_clothing"
-
-#~ msgid "Alpha-Beta-Mann-Frau"
-#~ msgstr "alpha-beta-man-women"
-
-#~ msgid "Honig-Dachs-Recht"
-#~ msgstr "honey-badger-justice"
-
-#~ msgid "Götter"
-#~ msgstr "gods"
-
-#~ msgid "Schwarz-Afrikaner_Recht_(15)"
-#~ msgstr "black_africans_justice_(15)"
-
-#~ msgid "Spezies_Recht_(15)"
-#~ msgstr "species_justice_(15)"
-
-#~ msgid "Erhabenheits-Recht_(15)"
-#~ msgstr "sublimity-justice_(15)"
-
-#~ msgid "Bewusstseins-Recht_(15)"
-#~ msgstr "consciousness-justice_(15)"

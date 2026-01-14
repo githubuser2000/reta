@@ -472,25 +472,20 @@ wahl15: dict = {
             _("Model_of_Hierarchical_Complexity"),
             _("Biologischer_Baum_(15)"),
             _("Teilchen_anderes_Universum"),
-            _("Naturrecht"),
             Primzahlkreuz_pro_contra_strs_Fkt[1],
-            _("Wolf-Recht_(7)"),
-            _("Machiavellisten-Recht"),
-            _("Überlegenheits-Recht_(15)"),
         )
     ),
     "2": _("Konkreta_und_Focus_(2)"),
-    "5": ",".join((_("Impulse_(5)"),
-         _("Naturrecht"))),
-    "7": ",".join((_("Gefühle_(7)"), _("Anführer_Arten_(7)"), _("Erlösung"), _("Wolf-Recht_(7)"))),
+    "5": _("Impulse_(5)"),
+    "7": ",".join((_("Gefühle_(7)"), _("Anführer_Arten_(7)"), _("Erlösung"))),
     "8": ",".join((_("Modus_und_Sein_(8)"), _("Bestrafung"),_("Gewalt"))),
-    "10": ",".join((_("Wirklichkeiten_Wahrheit_Wahrnehmung_(10)"), _("Machiavellisten-Recht"))),
+    "10": _("Wirklichkeiten_Wahrheit_Wahrnehmung_(10)"),
     "1"+_("pro")+"30": _("analytische_Ontologie"),
     "12": ",".join((_("Meta-Systeme_(12)"), _("Ordnung_und_Filterung_12_und_1pro12"))),
     "13": _("Paradigmen_sind_Absichten_(13)"),
     "17": _("Gedanken_sind_Positionen_(17)"),
     "18": _("Verbundenheiten_(18)"),
-    "6": ",".join((_("Triebe_und_Bedürfnisse_(6)"), _("System"), _("Soziopathen-Recht_(6)"))),
+    "6": ",".join((_("Triebe_und_Bedürfnisse_(6)"), _("System"))),
     "9": _("Lust_(9)"),
     "3": _("Reflexe_(3),Existenzialien_(3)"),
     "13_6": _("Absicht_6_ist_Vorteilsmaximierung"),
@@ -548,10 +543,7 @@ wahl15: dict = {
 }
 
 wahl16 = {
-    "1": ",".join((
-            _("Meta-Physik-Teilchen_(1)"),
-            _("Division_durch_Null"),)),
-
+    "1":  _("Meta-Physik-Teilchen_(1)"),
     "2": ",".join((
             _("Strukturalien_bzw_Meta-Paradigmen_bzw_Transzendentalien_(15)"),
             _("Model_of_Hierarchical_Complexity"),)),
@@ -559,19 +551,12 @@ wahl16 = {
     "3":  _("Teilchen_anderes_Universum"),
     "5": ",".join((
             _("Strukturalien_bzw_Meta-Paradigmen_bzw_Transzendentalien_(15)"),
-            _("Model_of_Hierarchical_Complexity"),_("Biologischer_Baum_(16_->_5)"), _("P5"),
-            _("naturrecht"),
-            _("Soziopathen-Recht_(6)"),
-            _("Wolf-Recht_(7)"),
-            _("Machiavellisten-Recht"),
-            _("Überlegenheits-Recht_(15)")))
-    ,"6": _("Geist_(15)"),
+            _("Model_of_Hierarchical_Complexity"),_("Biologischer_Baum_(16_->_5)"), _("P5"),)),
+    "6": _("Geist_(15)"),
     "15": ",".join((
             _("Strukturalien_bzw_Meta-Paradigmen_bzw_Transzendentalien_(15)"),
             _("Model_of_Hierarchical_Complexity"),)),
-    "10": ",".join((
-            _("Struktur-Wissenschaften_(10)"),
-            _("Machiavellisten-Recht"))),
+    "10": _("Struktur-Wissenschaften_(10)"),
     "16": ",".join(wahl16Words.values()),
     "20": _("Muster-Wissenschaften_(20)"),
 }
@@ -823,7 +808,7 @@ paraNdataMatrix: list = [
             _("Superkräfte"),
             _("Superkraefte"),
         ),
-        {444, 494, 496, 503, 527},
+        {444, 494, 496, 503},
     ),
     (
         ParametersMain.galaxie,
@@ -831,183 +816,9 @@ paraNdataMatrix: list = [
             _("Superkräfte"),
             _("Superkraefte"),
         ),
-        {444, 494, 496, 503, 527},
+        {444, 494, 496},
     ),
-    (
-        ParametersMain.menschliches,
-        (
-            _("Alpha-Beta-Mann-Frau"),
-        ),
-        {526},
-    ),
-    (
-        ParametersMain.universum,
-        (
-            _("Division_durch_Null"),
-        ),
-        {522},
-    ),
-    (
-        ParametersMain.grundstrukturen,
-        (
-            _("Soziopathen-Recht_(6)"), _("Ausbeutungs-Recht"), _("Ausdehnungs-Recht"), _("Narzissten-Recht"), _("Honig-Dachs-Recht"),
-        ),
-        {523},
-    ),
-    (
-        ParametersMain.grundstrukturen,
-        (
-            _("Überlegenheits-Recht_(15)"), _("Schwarz-Afrikaner_Recht_(15)"), _("Spezies_Recht_(15)"), _("Erhabenheits-Recht_(15)"), _("Bewusstseins-Recht_(15)"), _("geistiger_Kosmos_Recht_(15)"), _("Universum_Recht_(15)"),
-        ),
-        {524},
-    ),
-    (
-        ParametersMain.grundstrukturen,
-        (
-            _("Wolf-Recht_(7)"), _("Wolf_im_Schafspelz"),
-        ),
-        {525},
-    ),
-    (
-        ParametersMain.religionen,
-        (
-            _("Götter"),
-        ),
-        {444, 494, 527},
-    ),
-    (
-        ParametersMain.menschliches,
-        (
-            _("Götter"),
-        ),
-        {444, 494, 527},
-    ),
-    (
-        ParametersMain.menschliches,
-        (
-            _("Soziopathen-Recht_(6)"), _("Ausbeutungs-Recht"), _("Ausdehnungs-Recht"), _("Narzissten-Recht"), _("Honig-Dachs-Recht"),
-        ),
-        {523},
-    ),
-    (
-        ParametersMain.menschliches,
-        (
-            _("Überlegenheits-Recht_(15)"), _("Schwarz-Afrikaner_Recht_(15)"), _("Spezies_Recht_(15)"), _("Erhabenheits-Recht_(15)"), _("Bewusstseins-Recht_(15)"), _("geistiger_Kosmos_Recht_(15)"), _("Universum_Recht_(15)"),
-        ),
-        {524},
-    ),
-    (
-        ParametersMain.menschliches,
-        (
-            _("Wolf-Recht_(7)"), _("Wolf_im_Schafspelz"),
-        ),
-        {525},
-    ),
- (
-        ParametersMain.multiversum,
-        (
-            _("Division_durch_Null"),
-        ),
-        {522},
-    ),
-    (
-        ParametersMain.multiversum,
-        (
-            _("Soziopathen-Recht_(6)"), _("Ausbeutungs-Recht"), _("Ausdehnungs-Recht"), _("Narzissten-Recht"), _("Honig-Dachs-Recht"),
-        ),
-        {523},
-    ),
-    (
-        ParametersMain.multiversum,
-        (
-            _("Überlegenheits-Recht_(15)"), _("Schwarz-Afrikaner_Recht_(15)"), _("Spezies_Recht_(15)"), _("Erhabenheits-Recht_(15)"), _("Bewusstseins-Recht_(15)"), _("geistiger_Kosmos_Recht_(15)"), _("Universum_Recht_(15)"),
-        ),
-        {524},
-    ),
-    (
-        ParametersMain.multiversum,
-        (
-            _("Wolf-Recht_(7)"), _("Wolf_im_Schafspelz"),
-        ),
-        {525},
-    ),
-    (
-        ParametersMain.universum,
-        (
-            _("Soziopathen-Recht_(6)"), _("Ausbeutungs-Recht"), _("Ausdehnungs-Recht"), _("Narzissten-Recht"), _("Honig-Dachs-Recht"),
-        ),
-        {523},
-    ),
-    (
-        ParametersMain.universum,
-        (
-            _("Überlegenheits-Recht_(15)"), _("Schwarz-Afrikaner_Recht_(15)"), _("Spezies_Recht_(15)"), _("Erhabenheits-Recht_(15)"), _("Bewusstseins-Recht_(15)"), _("geistiger_Kosmos_Recht_(15)"), _("Universum_Recht_(15)"),
-        ),
-        {524},
-    ),
-    (
-        ParametersMain.universum,
-        (
-            _("Wolf-Recht_(7)"), _("Wolf_im_Schafspelz"),
-        ),
-        {525},
-    ),
-    (
-        ParametersMain.universum,
-        (
-            _("Machiavellisten-Recht"), _("Dekagramm-Recht"), _("Wirklichkeits-Recht"), _("Mathematik-Recht"), _("Strukturwissenschaft-Recht"), _("Planeten-Recht"), _("Globalisten-Recht"), _("Optimal-Korrekten-Recht"),
-        ),
-        {521},
-    ),
-    (
-        ParametersMain.grundstrukturen,
-        (
-            _("Machiavellisten-Recht"), _("Dekagramm-Recht"), _("Wirklichkeits-Recht"), _("Mathematik-Recht"), _("Strukturwissenschaft-Recht"), _("Planeten-Recht"), _("Globalisten-Recht"), _("Optimal-Korrekten-Recht"),
-        ),
-        {521},
-    ),
-    (
-        ParametersMain.multiversum,
-        (
-            _("Machiavellisten-Recht"), _("Dekagramm-Recht"), _("Wirklichkeits-Recht"), _("Mathematik-Recht"), _("Strukturwissenschaft-Recht"), _("Planeten-Recht"), _("Globalisten-Recht"), _("Optimal-Korrekten-Recht"),
-        ),
-        {521},
-    ),
-    (
-        ParametersMain.menschliches,
-        (
-            _("Machiavellisten-Recht"), _("Dekagramm-Recht"), _("Wirklichkeits-Recht"), _("Mathematik-Recht"), _("Strukturwissenschaft-Recht"), _("Planeten-Recht"), _("Globalisten-Recht"), _("Optimal-Korrekten-Recht"),
-        ),
-        {521},
-    ),
-    (
-        ParametersMain.menschliches,
-        (
-            _("Naturrecht"), _("naturrecht"), _("pentagrammrecht"), _("Pentagrammrecht"), _("Satanistenrecht"), _("Psychopathenrecht"), _("Physikrecht"), _("Zentralpersonenrecht"), _("Straßenrecht"), _("Gesellschaftsschichtrecht_Unterschichten_Recht"),
-        ),
-        {520},
-    ),
-    (
-        ParametersMain.multiversum,
-        (
-            _("Naturrecht"), _("naturrecht"), _("pentagrammrecht"), _("Pentagrammrecht"), _("Satanistenrecht"), _("Psychopathenrecht"), _("Physikrecht"), _("Zentralpersonenrecht"), _("Straßenrecht"), _("Gesellschaftsschichtrecht_Unterschichten_Recht"),
-        ),
-        {520},
-    ),
-    (
-        ParametersMain.grundstrukturen,
-        (
-            _("Naturrecht"), _("naturrecht"), _("pentagrammrecht"), _("Pentagrammrecht"), _("Satanistenrecht"), _("Psychopathenrecht"), _("Physikrecht"), _("Zentralpersonenrecht"), _("Straßenrecht"), _("Gesellschaftsschichtrecht_Unterschichten_Recht"),
-        ),
-        {520},
-    ),
-    (
-        ParametersMain.universum,
-        (
-            _("Naturrecht"), _("naturrecht"), _("pentagrammrecht"), _("Pentagrammrecht"), _("Satanistenrecht"), _("Psychopathenrecht"), _("Physikrecht"), _("Zentralpersonenrecht"), _("Straßenrecht"), _("Gesellschaftsschichtrecht_Unterschichten_Recht"),
-        ),
-        {520},
-    ),
+
     (
         ParametersMain.universum,
         (
@@ -1028,7 +839,7 @@ paraNdataMatrix: list = [
             _("Superkräfte"),
             _("Superkraefte"),
         ),
-        {444, 494, 496, 503, 527},
+        {444, 494, 496},
     ),
     (
         ParametersMain.menschliches,
@@ -4507,7 +4318,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.kontinuum,
         ("R", "r", _("Achtzehn"),),
-        {451},
+        {451, 436},
     ),
     (
         ParametersMain.kontinuum,

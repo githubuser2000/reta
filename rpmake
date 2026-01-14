@@ -1,16 +1,11 @@
 #!/bin/zsh
 place="/home/alex/Eigene-Dateien/myRepos/"
-retaplace=${place}"reta"
 re="religionen"
-langEn="/i18n/en/LC_MESSAGES/messages."
-langCn="/i18n/cn/LC_MESSAGES/cn."
-langvn="/i18n/vn/LC_MESSAGES/vn."
-langKr="/i18n/kr/LC_MESSAGES/kr."
-cd ${retaplace}
-cp ${retaplace}${langEn}po ${retaplace}${langVn}po;cp ${retaplace}${langEn}po ${retaplace}${langKr}po;cp ${retaplace}${langEn}po ${retaplace}${langCn}po;msgfmt -o ${retaplace}${langVn}mo ${retaplace}${langVn}po;msgfmt -o ${retaplace}${langCn}mo ${retaplace}${langCn}po;msgfmt -o ${retaplace}${langKr}mo ${retaplace}${langKr}po
-${retaplace}/libs/changeVersion.sh
+cd ${place}reta
+cp ${place}reta/i18n/en/LC_MESSAGES/messages.po ${place}reta/i18n/vn/LC_MESSAGES/vn.po;cp ${place}reta/i18n/en/LC_MESSAGES/messages.po ${place}reta/i18n/kr/LC_MESSAGES/kr.po;cp ${place}reta/i18n/en/LC_MESSAGES/messages.po ${place}reta/i18n/cn/LC_MESSAGES/cn.po;msgfmt -o ${place}reta/i18n/vn/LC_MESSAGES/vn.mo ${place}reta/i18n/vn/LC_MESSAGES/vn.po;msgfmt -o ${place}reta/i18n/cn/LC_MESSAGES/cn.mo ${place}reta/i18n/cn/LC_MESSAGES/cn.po;msgfmt -o ${place}reta/i18n/kr/LC_MESSAGES/kr.mo ${place}reta/i18n/kr/LC_MESSAGES/kr.po
+${place}reta/libs/changeVersion.sh
 cd -
-cd ${retaplace}
+cd ${place}reta
 git add -A
 git commit -m ${3}
 git pushall
@@ -36,7 +31,9 @@ bzip2 -z -k -9 ${place}${re}-english.html
 bzip2 -z -k -9 ${place}${re}-chinese.html
 bzip2 -z -k -9 ${place}${re}-vietnamese.html
 split -d -b 9000000 2025-${1}-reta-repo${2}.tar.bz2 2025-${1}-reta-repo${2}.tar.bz2.
+split -d -b 9000000 2025-${1}-reta${2}.tar.bz2 2025-${1}-reta${2}.tar.bz2.
 split -d -b 9000000 2025-${1}-reta-repo${2}.tar.zip 2025-${1}-reta-repo${2}.tar.zip.
+split -d -b 9000000 2025-${1}-reta${2}.tar.zip 2025-${1}-reta${2}.tar.zip.
 cd -
 rm -f ${place}up/*
 cp -ax ${place}{*html.{xz,br,bz2,zip},2025-${1}-*${2}*.{xz,br,zip,bz2}*,reta/rpmake} ${place}up
