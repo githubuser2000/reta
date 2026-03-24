@@ -449,8 +449,8 @@ ParametersMain: NamedTuple = ParametersMain(
     gebrochenUniGal["gebrochenemotion"],
     gebrochenUniGal["gebrochengroesse"],
     (
-        _("Multiplikationen"),
-        _("multiplikationen"),
+        _("Primvielfache"),
+        _("primvielfache"),
     ),
     (_("Planet_(10_und_oder_12)"), _("planet")),
     (
