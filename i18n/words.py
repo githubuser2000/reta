@@ -1968,7 +1968,7 @@ paraNdataMatrix: list = [
         set(),
         set(),
         set(),
-        {(10)},
+        {(10,)},
     ),
     (
         ParametersMain.primzahlwirkung,
