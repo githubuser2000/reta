@@ -862,12 +862,20 @@ paraNdataMatrix: list = [
         {564, 573},
     ),
     (
+        ParametersMain.planet,
+        (
+            _("Planetenherrschaft"),
+            _("herrschaft"),
+        ),
+        {536, 542, 562, 588},
+    ),
+     (
         ParametersMain.herrschaft,
         (
             _("Planetenherrschaft"),
             _("planet"),
         ),
-        {536, 542, 562},
+        {536, 542, 562, 588},
     ),
     (
         ParametersMain.religionen,
@@ -2452,7 +2460,7 @@ paraNdataMatrix: list = [
             _("liebe"),
             _("ethik"),
         ),
-        {8, 9, 28, 208, 330},
+        {8, 9, 28, 208, 330, 580},
         {(121, 122)},
     ),
     (
@@ -3045,12 +3053,30 @@ paraNdataMatrix: list = [
         {240, 346},
     ),
     (
+        ParametersMain.menschliches,
+        (
+            _("Psychopath_Soziopath"),
+            _("sadist"),
+            _("psychopath"),
+            _("soziopath"),
+        ),
+        {581,},
+    ),
+     (
+        ParametersMain.menschliches,
+        (
+            _("Verbundenheiten_(18)"),
+            _("verbundenheiten"),
+        ),
+        {252, 299, 300, 336, 580},
+    ),
+     (
         ParametersMain.grundstrukturen,
         (
             _("Verbundenheiten_(18)"),
             _("verbundenheiten"),
         ),
-        {252, 299, 300, 336},
+        {252, 299, 300, 336, 580},
     ),
     (
         ParametersMain.grundstrukturen,
@@ -3064,7 +3090,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.grundstrukturen,
         (_("Liebe_(7)"), _("liebe")),
-        {8, 9, 28, 208, 221, 330},
+        {8, 9, 28, 208, 221, 330, 580},
         {(121, 122)},
     ),
     (
@@ -3237,6 +3263,14 @@ paraNdataMatrix: list = [
             _("Biologischer_Baum_(16_->_5)"),
         ),
         {500},
+    ),
+    (
+        ParametersMain.universum,
+        (
+            _("Spezies_Typofikation"),
+            _("spezies"),
+        ),
+        {582,},
     ),
     (
         ParametersMain.universum,
@@ -4350,6 +4384,11 @@ paraNdataMatrix: list = [
     ),
     (
         ParametersMain.kontinuum,
+        ("AB", "ab", _("Achtundzwanzig"),),
+        {583, 587},
+    ),
+    (
+        ParametersMain.kontinuum,
         ("Z", "z", _("Sechsundzwanzig"),),
         {543},
     ),
@@ -4376,7 +4415,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.kontinuum,
         ("k", "K", _("Elf"),),
-        {515},
+        {515, 577, 578},
     ),
     (
         ParametersMain.kontinuum,
@@ -4411,7 +4450,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.kontinuum,
         ("AC", "ac", _("Neunundzwanzig"),),
-        {528,},
+        {528, 586},
     ),
     (
         ParametersMain.kontinuum,
@@ -4465,6 +4504,11 @@ paraNdataMatrix: list = [
     ),
     (
         ParametersMain.multiversum,
+        ( _("Religionen_Kraefte_Krieg_der_Sterne_Star_Wars"),),
+        {584},
+    ),
+    (
+        ParametersMain.multiversum,
         ("P", "p", _("Sechszehn"),),
         {435, 569},
     ),
@@ -4491,7 +4535,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.kontinuum,
         ("S", "s", _("Neunzehn"),),
-        {504},
+        {504, 575},
     ),
     (
         ParametersMain.kontinuum,
@@ -4514,9 +4558,14 @@ paraNdataMatrix: list = [
         {448,},
     ),
     (
+        ParametersMain.menschliches,
+        ( _("Eliten"), _("elite")),
+        {585},
+    ),
+    (
         ParametersMain.kontinuum,
         ("D", "d", _("Vier")),
-        {449,},
+        {449, 585},
     ),
 ]
 paraNdataMatrix = paraNdataMatrix
