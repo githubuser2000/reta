@@ -824,12 +824,23 @@ paraNdataMatrix: list = [
     (
         ParametersMain.herrschaft,
         (
+            _("Herrschaftsformen"),
+            _("formen"),
+            _("Strukturgroesse"),
+            _("groesse"),
+            _("Größe"),
+        ),
+        {603},
+    ),
+    (
+        ParametersMain.herrschaft,
+        (
             _("Orbit-Herrschafts"),
             _("orbit"),
         ),
         {548},
     ),
-     (
+    (
         ParametersMain.herrschaft,
         (
             _("Herrschafts_Datenstruktur"),
@@ -849,9 +860,10 @@ paraNdataMatrix: list = [
         ParametersMain.herrschaft,
         (
             _("Galaxieherrschaft"),
+            _("Galaxie"),
             _("galaxie"),
         ),
-        {537,},
+        {537, 604},
     ),
     (
         ParametersMain.herrschaft,
@@ -1197,6 +1209,25 @@ paraNdataMatrix: list = [
     (
         ParametersMain.multiversum,
         (
+            _("Maschinen"),
+            _("Computer"),
+            _("computer"),
+            _("maschinen"),
+        ),
+        {592, 593},
+    ),
+    (
+        ParametersMain.multiversum,
+        (
+            _("Kybernetik_und_Meta_Chemie"),
+            _("kybernetik"),
+            _("metachemie"),
+        ),
+        {606,},
+    ),
+    (
+        ParametersMain.multiversum,
+        (
             _("Teilchen_anderes_Universum"),
         ),
         {512,},
@@ -1230,6 +1261,15 @@ paraNdataMatrix: list = [
             _("nummern"),
         ),
         {462, 563},
+    ),
+    (
+        ParametersMain.menschliches,
+        (
+            _("Diplomatie"),
+            _("diplomatie"),
+            _("lateral"),
+        ),
+        {594, 523},
     ),
     (
         ParametersMain.menschliches,
@@ -2215,13 +2255,6 @@ paraNdataMatrix: list = [
     (
         ParametersMain.menschliches,
         (
-            _("Mono_Stereo_Musik"),
-        ),
-        {523},
-    ),
-    (
-        ParametersMain.menschliches,
-        (
             _("Ränge"),
             _("raenge"),
         ),
@@ -3060,7 +3093,7 @@ paraNdataMatrix: list = [
             _("psychopath"),
             _("soziopath"),
         ),
-        {581,},
+        {581, 602},
     ),
      (
         ParametersMain.menschliches,
@@ -3160,7 +3193,7 @@ paraNdataMatrix: list = [
             _("absicht"),
             _("absichten"),
         ),
-        {10, 18, 42, 167, 168, 149, 229, 230, 561},
+        {10, 18, 42, 167, 168, 149, 229, 230, 561, 607},
     ),
     (
         ParametersMain.menschliches,
@@ -3314,7 +3347,7 @@ paraNdataMatrix: list = [
         ),
         {31},
     ),
-    (ParametersMain.menschliches, (_("Musik"), _("musik")), {33}),
+    (ParametersMain.menschliches, (_("Musik"), _("musik")), {33, 523}),
     (
         ParametersMain.procontra,
         (
@@ -4380,7 +4413,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.kontinuum,
         ("Q", "q", _("Siebzehn"),),
-        {431, 432, 433, 434, 437, 441, 442, 443, 445, 450, 467, 468, 469, 487, 488, 544, 570},
+        {431, 432, 433, 434, 437, 441, 442, 443, 445, 450, 467, 468, 469, 487, 488, 544, 570, 590},
     ),
     (
         ParametersMain.kontinuum,
@@ -4510,7 +4543,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.multiversum,
         ("P", "p", _("Sechszehn"),),
-        {435, 569},
+        {435, 569, 605},
     ),
     (
         ParametersMain.kontinuum,
@@ -4525,12 +4558,12 @@ paraNdataMatrix: list = [
     (
         ParametersMain.kontinuum,
         ("P", "p", _("Sechszehn"),),
-        {435, 569},
+        {435, 569, 605},
     ),
     (
         ParametersMain.kontinuum,
         ("X", "x", _("Vierundzwanzig"),),
-        {25, 55, 436, 25, 386, 549, 554, 565, 566},
+        {25, 55, 436, 25, 386, 549, 554, 565, 566, 591},
     ),
     (
         ParametersMain.kontinuum,
@@ -4556,6 +4589,16 @@ paraNdataMatrix: list = [
         ParametersMain.kontinuum,
         ("C", "c", _("Drei") ),
         {448,},
+    ),
+    (
+        ParametersMain.menschliches,
+        ( _("Meisterschaft"), _("Professioneller"), _("meister"), _("profi")),
+        {596},
+    ),
+    (
+        ParametersMain.menschliches,
+        ( _("Karriere"), _("karriere")),
+        {595, 597},
     ),
     (
         ParametersMain.menschliches,
