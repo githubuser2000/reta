@@ -1218,6 +1218,15 @@ paraNdataMatrix: list = [
     (
         ParametersMain.multiversum,
         (
+            _("Farben"),
+            _("farbe"),
+            _("Farben_Sind_Signale_Signale_sind_Dimension_Dreizehn"),
+        ),
+        {624, 659},
+    ),
+     (
+        ParametersMain.multiversum,
+        (
             _("Maschinen"),
             _("Computer"),
             _("computer"),
@@ -1251,6 +1260,14 @@ paraNdataMatrix: list = [
     (
         ParametersMain.universum,
         (
+            _("Entwicklungs_Stadium_Spezies"),
+            _("Spezies_Entwicklung"),
+        ),
+        {661,},
+    ),
+    (
+        ParametersMain.universum,
+        (
             _("Teilchen_anderes_Universum"),
         ),
         {512,},
@@ -1272,6 +1289,14 @@ paraNdataMatrix: list = [
         {462, 563},
     ),
     (
+        ParametersMain.menschliches,
+        (
+            _("Bestrafung"),
+            _("bestrafen"),
+        ),
+        {636},
+    ),
+     (
         ParametersMain.menschliches,
         (
             _("Diplomatie"),
@@ -4551,8 +4576,8 @@ paraNdataMatrix: list = [
     ),
     (
         ParametersMain.multiversum,
-        ("P", "p", _("Sechszehn"),),
-        {435, 569, 605},
+        ("P", "p", _("Sechszehn"), _("Dimensionen"),_("Multiversum_sind_die_Dimensionen")),
+        {435, 569, 605, 637},
     ),
     (
         ParametersMain.kontinuum,
@@ -4567,7 +4592,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.kontinuum,
         ("P", "p", _("Sechszehn"),),
-        {435, 569, 605},
+        {435, 569, 605, 637},
     ),
     (
         ParametersMain.kontinuum,
@@ -4601,8 +4626,23 @@ paraNdataMatrix: list = [
     ),
     (
         ParametersMain.menschliches,
+        ( _("Konservativismus"), _("konservativ")),
+        {651, 652, 653, 654, 655, 656},
+    ),
+    (
+        ParametersMain.menschliches,
         ( _("Meisterschaft"), _("Professioneller"), _("meister"), _("profi")),
         {596},
+    ),
+    (
+        ParametersMain.menschliches,
+        ( _("Management"), _("managen"), _("handhaben")),
+        {658},
+    ),
+    (
+        ParametersMain.menschliches,
+        ( _("Evolution"), _("intelligent_Design")),
+        {657},
     ),
     (
         ParametersMain.menschliches,
