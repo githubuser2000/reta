@@ -1315,7 +1315,7 @@ paraNdataMatrix: list = [
             _("zahlen"),
             _("nummern"),
         ),
-        {462, 563},
+        {462, 563, 704},
     ),
     (
         ParametersMain.menschliches,
@@ -2330,7 +2330,7 @@ paraNdataMatrix: list = [
             _("klasse"),
             _("klassen"),
         ),
-        {241, 551, 555},
+        {241, 551, 555, 697},
     ),
     (
         ParametersMain.menschliches,
@@ -3022,7 +3022,7 @@ paraNdataMatrix: list = [
             _("klasse"),
             _("klassen"),
         ),
-        {241, 289, 394, 395, 485, 516},
+        {241, 289, 394, 395, 485, 516, 697},
     ),
     (
         ParametersMain.grundstrukturen,
@@ -4476,7 +4476,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.kontinuum,
         ("Q", "q", _("Siebzehn"),),
-        {431, 432, 433, 434, 437, 441, 442, 443, 445, 450, 467, 468, 469, 487, 488, 544, 570, 590, 616},
+        {431, 432, 433, 434, 437, 441, 442, 443, 445, 450, 467, 468, 469, 487, 488, 544, 570, 590, 616, 700},
     ),
     (
         ParametersMain.kontinuum,
@@ -4511,7 +4511,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.kontinuum,
         ("k", "K", _("Elf"),),
-        {515, 577, 578},
+        {515, 577, 578, 705, 706, 707},
     ),
     (
         ParametersMain.kontinuum,
