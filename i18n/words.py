@@ -856,10 +856,18 @@ paraNdataMatrix: list = [
     (
         ParametersMain.herrschaft,
         (
+            _("abstrakte_Herrschaft"),
+            _("abstrakt"),
+        ),
+        {564, 573},
+    ),
+    (
+        ParametersMain.herrschaft,
+        (
             _("Planetenherrschaft"),
             _("planet"),
         ),
-        {536, 542},
+        {536, 542, 562},
     ),
     (
         ParametersMain.religionen,
@@ -1210,8 +1218,10 @@ paraNdataMatrix: list = [
         ParametersMain.universum,
         (
             _("Zahlenarten"),
+            _("zahlen"),
+            _("nummern"),
         ),
-        {462,},
+        {462, 563},
     ),
     (
         ParametersMain.menschliches,
@@ -1823,7 +1833,7 @@ paraNdataMatrix: list = [
         set(),
         set(),
         set(),
-        {(10,)},
+        {(10)},
     ),
     (
         ParametersMain.primzahlwirkung,
@@ -3124,7 +3134,7 @@ paraNdataMatrix: list = [
             _("absicht"),
             _("absichten"),
         ),
-        {10, 18, 42, 167, 168, 149, 229, 230},
+        {10, 18, 42, 167, 168, 149, 229, 230, 561},
     ),
     (
         ParametersMain.menschliches,
@@ -4336,17 +4346,22 @@ paraNdataMatrix: list = [
     (
         ParametersMain.kontinuum,
         ("Q", "q", _("Siebzehn"),),
-        {431, 432, 433, 434, 437, 441, 442, 443, 445, 450, 467, 468, 469, 487, 488, 544},
+        {431, 432, 433, 434, 437, 441, 442, 443, 445, 450, 467, 468, 469, 487, 488, 544, 570},
     ),
     (
         ParametersMain.kontinuum,
-        ("z", "Z", _("Sechsundzwanzig"),),
+        ("Z", "z", _("Sechsundzwanzig"),),
         {543},
     ),
-     (
+    (
+        ParametersMain.kontinuum,
+        ("AA", "aa", _("Sechsundzwanzig"),),
+        {558, 559, 560},
+    ),
+    (
         ParametersMain.kontinuum,
         ("i", "I", _("Neun"),),
-        {517},
+        {517, 565},
     ),
     (
         ParametersMain.kontinuum,
@@ -4400,8 +4415,13 @@ paraNdataMatrix: list = [
     ),
     (
         ParametersMain.kontinuum,
+        ("AT", "at", _("Sechsundvierzig"),),
+        {568},
+    ),
+    (
+        ParametersMain.kontinuum,
         ("W", "w", _("Dreiundzwanzig"),),
-        {527,},
+        {527, 567},
     ),
     (
         ParametersMain.kontinuum,
@@ -4441,12 +4461,12 @@ paraNdataMatrix: list = [
     (
         ParametersMain.kontinuum,
         ("T", "t", _("Zwanzig"),),
-        {486},
+        {486, 571, 572},
     ),
     (
         ParametersMain.multiversum,
         ("P", "p", _("Sechszehn"),),
-        {435},
+        {435, 569},
     ),
     (
         ParametersMain.kontinuum,
@@ -4461,12 +4481,12 @@ paraNdataMatrix: list = [
     (
         ParametersMain.kontinuum,
         ("P", "p", _("Sechszehn"),),
-        {435},
+        {435, 569},
     ),
     (
         ParametersMain.kontinuum,
         ("X", "x", _("Vierundzwanzig"),),
-        {25, 55, 436, 25, 386, 549, 554},
+        {25, 55, 436, 25, 386, 549, 554, 565, 566},
     ),
     (
         ParametersMain.kontinuum,
