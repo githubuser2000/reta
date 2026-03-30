@@ -830,7 +830,7 @@ paraNdataMatrix: list = [
             _("groesse"),
             _("Größe"),
         ),
-        {603},
+        {603, 617},
     ),
     (
         ParametersMain.herrschaft,
@@ -872,6 +872,15 @@ paraNdataMatrix: list = [
             _("abstrakt"),
         ),
         {564, 573},
+    ),
+    (
+        ParametersMain.planet,
+        (
+            _("Kreislaufwirtschaft"),
+            _("kreislauf"),
+            _("Kreislauf"),
+        ),
+        {610},
     ),
     (
         ParametersMain.planet,
@@ -2504,7 +2513,7 @@ paraNdataMatrix: list = [
             _("erkenntnis"),
             _("glaube"),
         ),
-        {59},
+        {59, 621},
     ),
     (
         ParametersMain.menschliches,
@@ -4413,7 +4422,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.kontinuum,
         ("Q", "q", _("Siebzehn"),),
-        {431, 432, 433, 434, 437, 441, 442, 443, 445, 450, 467, 468, 469, 487, 488, 544, 570, 590},
+        {431, 432, 433, 434, 437, 441, 442, 443, 445, 450, 467, 468, 469, 487, 488, 544, 570, 590, 616},
     ),
     (
         ParametersMain.kontinuum,
@@ -4473,12 +4482,12 @@ paraNdataMatrix: list = [
     (
         ParametersMain.kontinuum,
         ("AE", "ae", _("Einunddreissig"),),
-        {530,},
+        {530, 612, 613},
     ),
     (
         ParametersMain.kontinuum,
         ("AD", "ad", _("Dreissig"),),
-        {529, 547},
+        {529, 547, 614},
     ),
     (
         ParametersMain.kontinuum,
@@ -4538,7 +4547,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.multiversum,
         ( _("Religionen_Kraefte_Krieg_der_Sterne_Star_Wars"),),
-        {584},
+        {584, 623},
     ),
     (
         ParametersMain.multiversum,
@@ -4563,7 +4572,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.kontinuum,
         ("X", "x", _("Vierundzwanzig"),),
-        {25, 55, 436, 25, 386, 549, 554, 565, 566, 591},
+        {25, 55, 436, 25, 386, 549, 554, 565, 566, 591, 618, 619},
     ),
     (
         ParametersMain.kontinuum,
@@ -4573,7 +4582,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.kontinuum,
         ("R", "r", _("Achtzehn"),),
-        {451, 436, 556},
+        {451, 436, 556, 618},
     ),
     (
         ParametersMain.kontinuum,
