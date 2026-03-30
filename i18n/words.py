@@ -331,7 +331,7 @@ wahl15Words: dict = {
 kugelnKreise = ["kugeln", "kreise"]
 ParametersMain: NamedTuple = namedtuple(
     "ParametersMain",
-    "wichtigste wichtigste2 religionen galaxie strukturgroesse universum multiversum wirtschaft menschliches procontra licht bedeutung symbole Multiplikationen konzept konzept2 inkrementieren operationen universummetakonkret primzahlwirkung gebrochenuniversum gebrochengalaxie gebrochenemotion gebrochengroesse primvielfache planet strukturenkleinere grundstrukturen teilchen kontinuum alles",
+    "wichtigste wichtigste2 religionen galaxie strukturgroesse universum multiversum wirtschaft menschliches procontra licht bedeutung symbole Multiplikationen konzept konzept2 inkrementieren operationen universummetakonkret primzahlwirkung gebrochenuniversum gebrochengalaxie gebrochenemotion gebrochengroesse primvielfache planet strukturenkleinere grundstrukturen teilchen kontinuum herrschaft alles",
 )
 
 konzeptE = {"konzept": _("konzept"), "konzept2": _("konzept2")}
@@ -460,6 +460,7 @@ ParametersMain: NamedTuple = ParametersMain(
     (_("Grundstrukturen"), _("grundstrukturen")),
     (_("Teilchen-Meta-Physik"), _("teilchen")),
     (_("Kontinuum"), _("kontinuum")),
+    (_("Herrschaft"), _("macht")),
     (_("alles"),),
 )
 
@@ -803,6 +804,56 @@ paraNdataMatrix: list = [
         {314},
     ),
     (
+        ParametersMain.menschliches,
+        (
+            _("Verbrechen_und_Bestrafung"),
+            _("kriminell"),
+            _("bestrafen"),
+        ),
+        {539, 540},
+    ),
+    (
+        ParametersMain.herrschaft,
+        (
+            _("Galaxienclusterherrschaft"),
+            _("cluster"),
+            _("interglaktisch"),
+        ),
+        {538,},
+    ),
+    (
+        ParametersMain.herrschaft,
+        (
+            _("Herrschafts_Datenstruktur"),
+            _("struktur"),
+        ),
+        {541, 544},
+    ),
+    (
+        ParametersMain.herrschaft,
+        (
+            _("Sternen_System"),
+            _("sonne"),
+        ),
+        {545,},
+    ),
+    (
+        ParametersMain.herrschaft,
+        (
+            _("Galaxieherrschaft"),
+            _("galaxie"),
+        ),
+        {537,},
+    ),
+    (
+        ParametersMain.herrschaft,
+        (
+            _("Planetenherrschaft"),
+            _("planet"),
+        ),
+        {536, 542},
+    ),
+    (
         ParametersMain.religionen,
         (
             _("Superkräfte"),
@@ -818,20 +869,34 @@ paraNdataMatrix: list = [
         ),
         {444, 494, 496},
     ),
-
     (
+        ParametersMain.universum,
+        (
+            _("Objekte",),
+            _("objekt",),
+        ),
+        {546,},
+    ),
+     (
         ParametersMain.universum,
         (
             _("Evolution_vs_Design_intelligent"),
         ),
-        {519},
+        {519,},
     ),
     (
         ParametersMain.menschliches,
         (
-            _("Evolution_vs_Design_intelligent"),
+            _("Gott_und_Prophet",),
         ),
-        {519},
+        {534,},
+    ),
+    (
+        ParametersMain.menschliches,
+        (
+            _("Sinne",),
+        ),
+        {533,},
     ),
     (
         ParametersMain.menschliches,
@@ -1997,6 +2062,11 @@ paraNdataMatrix: list = [
     ),
     (
         ParametersMain.galaxie,
+        ( _("ZergAliens_MenschenHumanoid_ProtosPraedatoren"),),
+        {521},
+    ),
+    (
+        ParametersMain.galaxie,
         (_("Raum-Missionen"), _("weltall")),
         {218},
     ),
@@ -2085,6 +2155,50 @@ paraNdataMatrix: list = [
             _("viererabfolgen"),
         ),
         {76, 77, 81, 104, 145},
+    ),
+    (
+        ParametersMain.menschliches,
+        (
+            _("Weltordnung"),
+            _("Zeitalter"),
+        ),
+        {522},
+    ),
+    (
+        ParametersMain.menschliches,
+        (
+            _("Himmel_Hoelle_Kettenmolekuele"),
+        ),
+        {526},
+    ),
+    (
+        ParametersMain.menschliches,
+        (
+            _("Spiele-Genre"),
+        ),
+        {525},
+    ),
+    (
+        ParametersMain.menschliches,
+        (
+            _("Land_Laender-Dach-Organisation"),
+        ),
+        {524},
+    ),
+    (
+        ParametersMain.menschliches,
+        (
+            _("Mono_Stereo_Musik"),
+        ),
+        {523},
+    ),
+    (
+        ParametersMain.menschliches,
+        (
+            _("Ränge"),
+            _("raenge"),
+        ),
+        {520, 535},
     ),
     (
         ParametersMain.menschliches,
@@ -4213,9 +4327,14 @@ paraNdataMatrix: list = [
     (
         ParametersMain.kontinuum,
         ("Q", "q", _("Siebzehn"),),
-        {431, 432, 433, 434, 437, 441, 442, 443, 445, 450, 467, 468, 469, 487, 488},
+        {431, 432, 433, 434, 437, 441, 442, 443, 445, 450, 467, 468, 469, 487, 488, 544},
     ),
     (
+        ParametersMain.kontinuum,
+        ("z", "Z", _("Sechsundzwanzig"),),
+        {543},
+    ),
+     (
         ParametersMain.kontinuum,
         ("i", "I", _("Neun"),),
         {517},
@@ -4244,6 +4363,36 @@ paraNdataMatrix: list = [
         ParametersMain.kontinuum,
         ("L", "l", _("Zwölf"),),
         {506},
+    ),
+    (
+        ParametersMain.kontinuum,
+        ("AU", "au", _("Siebenundvierzig"),),
+        {532,},
+    ),
+     (
+        ParametersMain.kontinuum,
+        ("AK", "ak", _("Siebenunddreissig"),),
+        {531,},
+    ),
+    (
+        ParametersMain.kontinuum,
+        ("AE", "ae", _("Einunddreissig"),),
+        {530,},
+    ),
+    (
+        ParametersMain.kontinuum,
+        ("AD", "ad", _("Dreissig"),),
+        {529,},
+    ),
+    (
+        ParametersMain.kontinuum,
+        ("AC", "ac", _("Neunundzwanzig"),),
+        {528,},
+    ),
+    (
+        ParametersMain.kontinuum,
+        ("W", "w", _("Dreiundzwanzig"),),
+        {527,},
     ),
     (
         ParametersMain.kontinuum,
