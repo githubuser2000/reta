@@ -824,6 +824,14 @@ paraNdataMatrix: list = [
     (
         ParametersMain.herrschaft,
         (
+            _("Orbit-Herrschafts"),
+            _("orbit"),
+        ),
+        {548},
+    ),
+     (
+        ParametersMain.herrschaft,
+        (
             _("Herrschafts_Datenstruktur"),
             _("struktur"),
         ),
@@ -888,8 +896,9 @@ paraNdataMatrix: list = [
         ParametersMain.menschliches,
         (
             _("Gott_und_Prophet",),
+            _("goetter",),
         ),
-        {534,},
+        {534, 550, 552, 553, 557},
     ),
     (
         ParametersMain.menschliches,
@@ -2207,7 +2216,7 @@ paraNdataMatrix: list = [
             _("klasse"),
             _("klassen"),
         ),
-        {241},
+        {241, 551, 555},
     ),
     (
         ParametersMain.menschliches,
@@ -4382,7 +4391,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.kontinuum,
         ("AD", "ad", _("Dreissig"),),
-        {529,},
+        {529, 547},
     ),
     (
         ParametersMain.kontinuum,
@@ -4457,7 +4466,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.kontinuum,
         ("X", "x", _("Vierundzwanzig"),),
-        {25, 55, 436, 25, 386},
+        {25, 55, 436, 25, 386, 549, 554},
     ),
     (
         ParametersMain.kontinuum,
@@ -4467,7 +4476,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.kontinuum,
         ("R", "r", _("Achtzehn"),),
-        {451, 436},
+        {451, 436, 556},
     ),
     (
         ParametersMain.kontinuum,
