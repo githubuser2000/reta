@@ -884,13 +884,37 @@ paraNdataMatrix: list = [
         {564, 573},
     ),
     (
+        ParametersMain.universum,
+        (
+            _("Winkel"),
+            _("winkel"),
+        ),
+        {726},
+    ),
+    (
+        ParametersMain.universum,
+        (
+            _("Logik"),
+            _("logik"),
+        ),
+        {725},
+    ),
+    (
         ParametersMain.planet,
         (
-            _("Kreislaufwirtschaft"),
-            _("kreislauf"),
-            _("Kreislauf"),
+            _("Logik"),
+            _("logik"),
         ),
-        {610},
+        {725},
+    ),
+    (
+        ParametersMain.planet,
+        (
+        _("Kreislaufwirtschaft"),
+        _("kreislauf"),
+        _("Kreislauf"),
+    ),
+    {610},
     ),
     (
         ParametersMain.planet,
@@ -1315,7 +1339,7 @@ paraNdataMatrix: list = [
             _("zahlen"),
             _("nummern"),
         ),
-        {462, 563, 704},
+        {462, 563, 704, 717, 724, 728},
     ),
     (
         ParametersMain.menschliches,
@@ -3340,11 +3364,10 @@ paraNdataMatrix: list = [
     (
         ParametersMain.menschliches,
         (
-            _("Anführer"),
-            _("anfuehrer"),
-            _("chef"),
+            _("Anführer_und_Chef"),
+            _("anfuehrer_und_boss"),
         ),
-        {29, 170, 429, 455, 490, 502, 509},
+        {29, 170, 429, 455, 490, 502, 509, 708},
     ),
     (
         ParametersMain.grundstrukturen,
@@ -4544,9 +4567,14 @@ paraNdataMatrix: list = [
         {529, 547, 614},
     ),
     (
+        ParametersMain.universum,
+        (_("Morphismen"), _("morphismus")),
+        {727},
+    ),
+    (
         ParametersMain.kontinuum,
         ("AC", "ac", _("Neunundzwanzig"),),
-        {528, 586},
+        {528, 586, 727},
     ),
     (
         ParametersMain.kontinuum,
@@ -4676,7 +4704,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.menschliches,
         ( _("Karriere"), _("karriere")),
-        {595, 597},
+        {595, 597, 712, 713, 714, 715},
     ),
     (
         ParametersMain.menschliches,
