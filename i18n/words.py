@@ -331,7 +331,7 @@ wahl15Words: dict = {
 kugelnKreise = ["kugeln", "kreise"]
 ParametersMain: NamedTuple = namedtuple(
     "ParametersMain",
-    "wichtigste wichtigste2 religionen galaxie strukturgroesse universum multiversum wirtschaft menschliches procontra licht bedeutung symbole Multiplikationen konzept konzept2 inkrementieren operationen universummetakonkret primzahlwirkung gebrochenuniversum gebrochengalaxie gebrochenemotion gebrochengroesse primvielfache planet strukturenkleinere grundstrukturen teilchen kontinuum herrschaft alles",
+    "wichtigste wichtigste2 religionen galaxie strukturgroesse universum multiversum wirtschaft menschliches procontra licht bedeutung symbole Multiplikationen konzept konzept2 inkrementieren operationen universummetakonkret primzahlwirkung gebrochenuniversum gebrochengalaxie gebrochenemotion gebrochengroesse primvielfache planet strukturenkleinere grundstrukturen teilchen kontinuum herrschaft metachemiemetametaphysik alles",
 )
 
 konzeptE = {"konzept": _("konzept"), "konzept2": _("konzept2")}
@@ -461,6 +461,7 @@ ParametersMain: NamedTuple = ParametersMain(
     (_("Teilchen-Meta-Physik"), _("teilchen")),
     (_("Kontinuum"), _("kontinuum")),
     (_("Herrschaft"), _("macht")),
+    (_("MetaMetaPhysik_und_MetaChemie"),),
     (_("alles"),),
 )
 
@@ -837,6 +838,8 @@ paraNdataMatrix: list = [
         (
             _("Orbit-Herrschafts"),
             _("orbit"),
+            _("Massenmedien"),
+            _("Satelliten"),
         ),
         {548},
     ),
@@ -847,6 +850,13 @@ paraNdataMatrix: list = [
             _("struktur"),
         ),
         {541, 544},
+    ),
+    (
+        ParametersMain.metachemiemetametaphysik,
+        (
+            _("Meta_Meta_Physik_Einteilungen"),
+        ),
+        {670, 671, 672, 673, 674, 675},
     ),
     (
         ParametersMain.herrschaft,
@@ -887,16 +897,26 @@ paraNdataMatrix: list = [
         (
             _("Planetenherrschaft"),
             _("herrschaft"),
+            _("Planetenkorrekturherrschaft"),
         ),
-        {536, 542, 562, 588},
+        {536, 542, 562, 588, 664},
     ),
-     (
+    (
+        ParametersMain.herrschaft,
+        (
+            _("Spezies"),
+            _("Speziesherrschaftsformen"),
+        ),
+        {668, 669},
+    ),
+    (
         ParametersMain.herrschaft,
         (
             _("Planetenherrschaft"),
             _("planet"),
+            _("Planetenkorrektur"),
         ),
-        {536, 542, 562, 588},
+        {536, 542, 562, 588, 664},
     ),
     (
         ParametersMain.religionen,
@@ -1232,7 +1252,16 @@ paraNdataMatrix: list = [
             _("computer"),
             _("maschinen"),
         ),
-        {592, 593},
+        {89 ,592, 593, 685, 686, 687},
+    ),
+    (
+        ParametersMain.metachemiemetametaphysik,
+        (
+            _("Kybernetik_und_Meta_Chemie"),
+            _("kybernetik"),
+            _("metachemie"),
+        ),
+        {606,},
     ),
     (
         ParametersMain.multiversum,
@@ -2348,7 +2377,7 @@ paraNdataMatrix: list = [
             _("geraete"),
             _("geraet"),
         ),
-        {89},
+        {89, 592, 593, 685, 686, 687},
     ),
     (
         ParametersMain.wirtschaft,
@@ -4467,7 +4496,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.kontinuum,
         ("i", "I", _("Neun"),),
-        {517, 565},
+        {517, 565, 681},
     ),
     (
         ParametersMain.kontinuum,
@@ -4577,7 +4606,7 @@ paraNdataMatrix: list = [
     (
         ParametersMain.multiversum,
         ("P", "p", _("Sechszehn"), _("Dimensionen"),_("Multiversum_sind_die_Dimensionen")),
-        {435, 569, 605, 637, 663},
+        {435, 569, 605, 637, 663, 691},
     ),
     (
         ParametersMain.kontinuum,
@@ -4592,12 +4621,12 @@ paraNdataMatrix: list = [
     (
         ParametersMain.kontinuum,
         ("P", "p", _("Sechszehn"),),
-        {435, 569, 605, 637},
+        {435, 569, 605, 637, 663, 691},
     ),
     (
         ParametersMain.kontinuum,
         ("X", "x", _("Vierundzwanzig"),),
-        {25, 55, 436, 25, 386, 549, 554, 565, 566, 591, 618, 619},
+        {25, 55, 436, 25, 386, 549, 554, 565, 566, 591, 618, 619, 681},
     ),
     (
         ParametersMain.kontinuum,
