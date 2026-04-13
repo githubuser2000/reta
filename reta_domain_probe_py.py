@@ -270,6 +270,7 @@ def column_json(column_number: int) -> Dict[str, object]:
         "column_number": int(column_number),
         "matches": exact_meta_for_column(column_number),
         "summary_pairs": pairs,
+        "html": html_meta_for_column(column_number),
     }
 
 
@@ -290,6 +291,9 @@ Aufruf:
   {program_name} column <spaltennummer>
   {program_name} column-json <spaltennummer>
   {program_name} reverse <spaltennummer>
+  {program_name} html-json <spaltennummer>
+  {program_name} html-all-json
+  {program_name} pair-html-json <hauptparameter> <unterparameter>
 
 Befehle:
   mains
@@ -324,11 +328,84 @@ Befehle:
 
   reverse <spaltennummer>
       Zeigt nur die kanonischen Rückwärts-Paare einer Spalte.
+
+  html-json <spaltennummer>
+      Zeigt die extrahierte HTML-Meta einer Spalte.
+
+  html-all-json
+      Zeigt die extrahierte HTML-Meta aller bekannten Spalten als JSON-Zeilen.
+
+  pair-html-json <hauptparameter> <unterparameter>
+      Zeigt für alle direkten Spalten eines Paars zusätzlich die HTML-Meta.
 """
 
 
 def print_json(value: object) -> None:
     print(json.dumps(value, ensure_ascii=False, separators=(",", ":")))
+
+
+# ---- HTML reference support (external jsonl, extracted from real reta.py HTML output) ----
+
+def _candidate_html_reference_paths() -> List[Path]:
+    here = Path(__file__).resolve()
+    repo_root = REPO_ROOT if "REPO_ROOT" in globals() else here.parent
+    return [
+        here.parent / "htmlclassesPy.jsonl",
+        repo_root / "htmlclassesPy.jsonl",
+        Path.cwd() / "htmlclassesPy.jsonl",
+        Path("/mnt/data/htmlclassesPy.jsonl"),
+    ]
+
+
+def _load_html_reference_map() -> Dict[int, Dict[str, object]]:
+    for path in _candidate_html_reference_paths():
+        if not path.exists():
+            continue
+        out: Dict[int, Dict[str, object]] = {}
+        with path.open("r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                obj = json.loads(line)
+                out[int(obj["column_number"])] = obj
+        return out
+    searched = "\n".join(str(p) for p in _candidate_html_reference_paths())
+    raise SystemExit(
+        "Keine HTML-Referenzdatei gefunden. Erwartet wird htmlclassesPy.jsonl an einem dieser Orte:\n"
+        + searched
+    )
+
+
+_HTML_REFERENCE_MAP: Optional[Dict[int, Dict[str, object]]] = None
+
+
+def html_reference_map() -> Dict[int, Dict[str, object]]:
+    global _HTML_REFERENCE_MAP
+    if _HTML_REFERENCE_MAP is None:
+        _HTML_REFERENCE_MAP = _load_html_reference_map()
+    return _HTML_REFERENCE_MAP
+
+
+def html_meta_for_column(column_number: int) -> Dict[str, object]:
+    return html_reference_map().get(
+        int(column_number),
+        {
+            "column_number": int(column_number),
+            "classes": [],
+            "class_string": "",
+            "class_attributes": [],
+            "extra_class_strings": [],
+            "all_classes": [],
+            "data_attributes": {},
+            "attributes": [],
+            "attributes_first": {},
+            "text": "",
+            "raw_open_tag": "",
+            "raw_html": "",
+            "html_elements": [],
+        },
+    )
 
 
 def main(argv: Sequence[str]) -> int:
@@ -423,6 +500,35 @@ def main(argv: Sequence[str]) -> int:
             raise SystemExit(f"Erwartet: {program_name} reverse <spaltennummer>")
         reverse = reverse_map_canonical_pairs()
         print(f"summary_pairs={reverse.get(int(argv[2]), [])}")
+        return 0
+
+    if cmd == "html-json":
+        if len(argv) != 3:
+            raise SystemExit(f"Erwartet: {program_name} html-json <spaltennummer>")
+        print_json(html_meta_for_column(int(argv[2])))
+        return 0
+
+    if cmd == "html-all-json":
+        for column_number in sorted(html_reference_map()):
+            print_json(html_reference_map()[column_number])
+        return 0
+
+    if cmd == "pair-html-json":
+        if len(argv) != 4:
+            raise SystemExit(f"Erwartet: {program_name} pair-html-json <hauptparameter> <unterparameter>")
+        pair = canonicalize_pair(argv[2], argv[3])
+        if pair is None:
+            raise SystemExit(f"Unbekanntes Paar: {argv[2]} / {argv[3]}")
+        canonical_main, canonical_parameter = pair
+        columns = column_numbers_for_pair(canonical_main, canonical_parameter)
+        print_json({
+            "input_main": argv[2],
+            "input_parameter": argv[3],
+            "canonical_main": canonical_main,
+            "canonical_parameter": canonical_parameter,
+            "columns": columns,
+            "html": [html_meta_for_column(col) for col in columns],
+        })
         return 0
 
     raise SystemExit(f"Unbekannter Befehl: {cmd}")
